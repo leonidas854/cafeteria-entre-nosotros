@@ -1,4 +1,4 @@
-﻿namespace Cafeteria_back.Models
+﻿namespace Cafeteria_back.Usuarios.Cliente
 {
     public class Cliente
     {

@@ -1,0 +1,14 @@
+https://drive.google.com/file/d/1Rr9s4y7Y5rJCjIlUtQBNXih-lNhSHHVH/view?usp=sharing
+
+
+
+factory method creación de pedido
+builder creador de combos
+
+
+decorator
+adapter
+
+
+observer
+strategy 

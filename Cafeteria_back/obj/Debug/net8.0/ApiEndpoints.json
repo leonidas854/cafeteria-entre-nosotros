@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "Cafeteria_back.Controllers.AccesoController",
+    "Method": "Login",
+    "RelativePath": "api/Acceso/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "Cafeteria_back.Entities.DTOs.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.AccesoController",
+    "Method": "Registrarse",
+    "RelativePath": "api/Acceso/Registrarse",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prueba",
+        "Type": "Cafeteria_back.Entities.DTOs.UsuarioPruebaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafeteria_back.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

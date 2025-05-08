@@ -3,6 +3,7 @@ using System;
 using Cafeteria_back.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cafeteria_back.Migrations
 {
     [DbContext(typeof(MiDbContext))]
-    partial class MiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250508175521_Addarreglar_tablas")]
+    partial class Addarreglar_tablas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -326,8 +329,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasIndex("Empleado_id");
 
-                    b.HasIndex("Pedido_id")
-                        .IsUnique();
+                    b.HasIndex("Pedido_id");
 
                     b.ToTable("Ventas");
                 });
@@ -409,8 +411,8 @@ namespace Cafeteria_back.Migrations
                         .IsRequired();
 
                     b.HasOne("Cafeteria_back.Entities.Pedidos.Pedido", "Pedido")
-                        .WithOne("Venta")
-                        .HasForeignKey("Cafeteria_back.Entities.Ventas.Venta", "Pedido_id")
+                        .WithMany("Ventas")
+                        .HasForeignKey("Pedido_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -428,7 +430,7 @@ namespace Cafeteria_back.Migrations
                 {
                     b.Navigation("Detalle_pedido");
 
-                    b.Navigation("Venta");
+                    b.Navigation("Ventas");
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Productos.Producto", b =>

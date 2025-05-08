@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "vuOvNhJVx/WVnwyQ+V83F3GTDNsjEfZOzcSJuCB7vo0=",
+  "Hash": "pK5YxucIg5Ha62+SVqMPhruRRe4K8MviZtqOm/rnYtM=",
   "Source": "Cafeteria_back",
   "BasePath": "_content/Cafeteria_back",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

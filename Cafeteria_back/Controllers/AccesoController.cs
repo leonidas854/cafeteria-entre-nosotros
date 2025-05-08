@@ -29,7 +29,7 @@ namespace Cafeteria_back.Controllers
             var ModelCliente = new Cliente { 
                 Nombre = prueba.nombre,
                 Usuari = prueba.usuario,
-                Password = prueba.password
+                Password = _utilidades.EncriptarSHA256(prueba.password)
             };
             await _context.Clientes.AddAsync(ModelCliente);
             await _context.SaveChangesAsync();
@@ -38,5 +38,29 @@ namespace Cafeteria_back.Controllers
             else
                 return StatusCode(StatusCodes.Status200OK, new { isSuccess = false });
         }
+        [HttpPost]
+        [Route("Login")]
+        public async Task<IActionResult> Login(LoginDTO objeto)
+        {
+            var usuarioEncontrado = await _context.Clientes
+                .Where(u =>
+                    u.Usuari == objeto.usuario &&
+                    u.Password == _utilidades.EncriptarSHA256(objeto.password)
+                ).FirstOrDefaultAsync();
+
+            if (usuarioEncontrado == null)
+            {
+                return StatusCode(StatusCodes.Status200OK, new { isSuccess = false, token = "" });
+            }
+            else
+            {
+                return StatusCode(StatusCodes.Status200OK, new
+                {
+                    isSuccess = true,
+                    token = _utilidades.generarJWT(usuarioEncontrado)
+                });
+            }
+        }
+
     }
 }

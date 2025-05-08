@@ -26,6 +26,10 @@ namespace Cafeteria_back.Repositorio
 
             modelBuilder.Entity<Detalle_extra>()
                 .HasKey(de => new { de.Detalle_pedido_id, de.Extra_id });
+            modelBuilder.Entity<Pedido>()
+                .HasOne(p => p.Venta)
+                .WithOne(v => v.Pedido)
+                .HasForeignKey<Venta>(v => v.Pedido_id);
 
             base.OnModelCreating(modelBuilder);
         }

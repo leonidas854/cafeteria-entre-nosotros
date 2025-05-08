@@ -25,7 +25,7 @@ namespace Cafeteria_back.Entities.Pedidos
 
         public Estado_pedido? estado { get; set; }
 
-        public List<Venta>? Ventas { get; set; }
+        public Venta? Venta { get; set; }
 
         public List<Detalle_pedido>? Detalle_pedido { get; set; }
 

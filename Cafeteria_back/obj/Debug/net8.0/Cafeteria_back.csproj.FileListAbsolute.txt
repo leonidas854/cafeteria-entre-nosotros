@@ -274,3 +274,11 @@ C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net8.0\r
 C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net8.0\Cafeteria_back.pdb
 C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net8.0\Cafeteria_back.genruntimeconfig.cache
 C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net8.0\ref\Cafeteria_back.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

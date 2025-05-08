@@ -1,0 +1,10 @@
+factory method creación de pedido
+
+
+
+decorator
+adapter
+
+
+observer
+strategy 

@@ -17,11 +17,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Producto\" />
-    <Folder Include="Usuarios\Empleado\" />
-    <Folder Include="Venta\" />
-    <Folder Include="Pedido\" />
-  </ItemGroup>
-
 </Project>

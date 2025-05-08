@@ -1,3 +1,7 @@
+using Cafeteria_back.Repositorio;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+//conecion base de datos
+
+var connecctionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<MiDbContext>(options => 
+options.UseNpgsql(connecctionString));
 
 var app = builder.Build();
 

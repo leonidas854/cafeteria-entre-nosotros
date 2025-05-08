@@ -3,8 +3,84 @@
   "WorkspaceRootPath": "D:\\Cafeteria\\Cafeteria_back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\usuarios\\cliente\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:usuarios\\cliente\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\ventas\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:ventas\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\usuarios\\empleados\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:usuarios\\empleados\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\usuarios\\clientes\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:usuarios\\clientes\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositorio\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositorio\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\tablas_intermedias\\detalle_extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:tablas_intermedias\\detalle_extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\tablas_intermedias\\pedido_combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:tablas_intermedias\\pedido_combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\tablas_intermedias\\combo_producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:tablas_intermedias\\combo_producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\combos\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:combos\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\migrations\\20250508050009_add_image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:migrations\\20250508050009_add_image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\migrations\\20250508043912_add_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:migrations\\20250508043912_add_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,16 +106,244 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Usuarios\\Cliente\\Cliente.cs",
-              "RelativeDocumentMoniker": "Usuarios\\Cliente\\Cliente.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Usuarios\\Cliente\\Cliente.cs",
-              "RelativeToolTip": "Usuarios\\Cliente\\Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "20250508050009_add_image.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Migrations\\20250508050009_add_image.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250508050009_add_image.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Migrations\\20250508050009_add_image.cs",
+              "RelativeToolTip": "Migrations\\20250508050009_add_image.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T02:05:54.027Z",
+              "WhenOpened": "2025-05-08T05:00:10.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20250508043912_add_tablas.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Migrations\\20250508043912_add_tablas.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250508043912_add_tablas.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Migrations\\20250508043912_add_tablas.cs",
+              "RelativeToolTip": "Migrations\\20250508043912_add_tablas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T04:39:12.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Producto_Promocion.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Producto_Promocion.cs",
+              "RelativeDocumentMoniker": "Tablas_intermedias\\Producto_Promocion.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Producto_Promocion.cs",
+              "RelativeToolTip": "Tablas_intermedias\\Producto_Promocion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:39:10.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Detalle_extra.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Detalle_extra.cs",
+              "RelativeDocumentMoniker": "Tablas_intermedias\\Detalle_extra.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Detalle_extra.cs",
+              "RelativeToolTip": "Tablas_intermedias\\Detalle_extra.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:38:34.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Combo_producto.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Combo_producto.cs",
+              "RelativeDocumentMoniker": "Tablas_intermedias\\Combo_producto.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Combo_producto.cs",
+              "RelativeToolTip": "Tablas_intermedias\\Combo_producto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:38:22.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Pedido_combo.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Pedido_combo.cs",
+              "RelativeDocumentMoniker": "Tablas_intermedias\\Pedido_combo.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Pedido_combo.cs",
+              "RelativeToolTip": "Tablas_intermedias\\Pedido_combo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:38:11.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Detalle_pedido.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Detalle_pedido.cs",
+              "RelativeDocumentMoniker": "Tablas_intermedias\\Detalle_pedido.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Tablas_intermedias\\Detalle_pedido.cs",
+              "RelativeToolTip": "Tablas_intermedias\\Detalle_pedido.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:38:03.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:35:00.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Extra.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Extras\\Extra.cs",
+              "RelativeDocumentMoniker": "Extras\\Extra.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Extras\\Extra.cs",
+              "RelativeToolTip": "Extras\\Extra.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:34:55.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Combo.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Combos\\Combo.cs",
+              "RelativeDocumentMoniker": "Combos\\Combo.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Combos\\Combo.cs",
+              "RelativeToolTip": "Combos\\Combo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:34:47.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Promocion.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Promociones\\Promocion.cs",
+              "RelativeDocumentMoniker": "Promociones\\Promocion.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Promociones\\Promocion.cs",
+              "RelativeToolTip": "Promociones\\Promocion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:34:33.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Productos\\Producto.cs",
+              "RelativeDocumentMoniker": "Productos\\Producto.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Productos\\Producto.cs",
+              "RelativeToolTip": "Productos\\Producto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:34:26.798Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Venta.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Ventas\\Venta.cs",
+              "RelativeDocumentMoniker": "Ventas\\Venta.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Ventas\\Venta.cs",
+              "RelativeToolTip": "Ventas\\Venta.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:25:04.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Pedidos\\Pedido.cs",
+              "RelativeDocumentMoniker": "Pedidos\\Pedido.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Pedidos\\Pedido.cs",
+              "RelativeToolTip": "Pedidos\\Pedido.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:24:57.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Empleado.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Usuarios\\Empleados\\Empleado.cs",
+              "RelativeDocumentMoniker": "Usuarios\\Empleados\\Empleado.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Usuarios\\Empleados\\Empleado.cs",
+              "RelativeToolTip": "Usuarios\\Empleados\\Empleado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T00:56:30.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MiDbContext.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositorio\\MiDbContext.cs",
+              "RelativeDocumentMoniker": "Repositorio\\MiDbContext.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositorio\\MiDbContext.cs",
+              "RelativeToolTip": "Repositorio\\MiDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAUwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T00:36:51.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T00:30:52.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-08T00:29:18.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Usuarios\\Usuario.cs",
+              "RelativeDocumentMoniker": "Usuarios\\Usuario.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Usuarios\\Usuario.cs",
+              "RelativeToolTip": "Usuarios\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T00:22:51.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Usuarios\\Clientes\\Cliente.cs",
+              "RelativeDocumentMoniker": "Usuarios\\Clientes\\Cliente.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Usuarios\\Clientes\\Cliente.cs",
+              "RelativeToolTip": "Usuarios\\Clientes\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T02:05:54.027Z"
             }
           ]
         },

@@ -7,7 +7,7 @@ namespace Cafeteria_back.Entities.Usuarios.Empleados
     {
         public string? Rol { get; set; }
 
-        public string? CodEmpleado { get; set; }
+       // public string? CodEmpleado { get; set; }
 
         public DateTime? FechaContrato { get; set; }
 

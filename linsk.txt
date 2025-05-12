@@ -2,8 +2,8 @@ DIAGRAMA DE CLASES:
 https://drive.google.com/file/d/1Rr9s4y7Y5rJCjIlUtQBNXih-lNhSHHVH/view?usp=sharing
 DIAGRAMA DE ACTIVIDADES: 
 https://app.diagrams.net/#G1EHTqKX2A0d2_HU5RAhEkzOLm6Nkj4vJX#%7B%22pageId%22%3A%2215at5QhavLW4cnK31oy4%22%7D
-Shara:
-https://codepen.io/Foonky/pen/emmLZZP
+
+
 https://www.figma.com/design/a8zZmxiAB3TV51DGdC5dpM/Coffee-Shop-Website-Landing-Page--Community-?node-id=0-1&p=f&t=Lh1VVukYtf6QH5Bn-0
 
 

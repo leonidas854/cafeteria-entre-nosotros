@@ -7,9 +7,13 @@ using Cafeteria_back.Repositorio;
 using Cafeteria_back.Custom;
 using Cafeteria_back.Entities.DTOs;
 using Cafeteria_back.Entities.Usuarios.Clientes;
+using Cafeteria_back.Repositories.Implementations;
+using Cafeteria_back.Repositories.Interfaces;
 
 namespace Cafeteria_back.Controllers
 {
+    //api 
+    //AIzaSyAFGecad0uizurpdb1U4R6KPG_SJdQRkmU
     [Route("api/[controller]")]
     [AllowAnonymous]
     [ApiController]
@@ -17,18 +21,30 @@ namespace Cafeteria_back.Controllers
     {
         private readonly MiDbContext _context;
         private readonly Utilidades _utilidades;
-        public AccesoController(MiDbContext context, Utilidades utilidades)
+        private readonly IGeolocalizador _geolocalizador;
+        public AccesoController(MiDbContext context, Utilidades utilidades, IGeolocalizador geoLocalizador)
         {
             _context = context;
             _utilidades = utilidades;
+            _geolocalizador = geoLocalizador;
         }
+
         [HttpPost]
         [Route("Registrarse")]
         public async Task<IActionResult> Registrarse(UsuarioPruebaDTO prueba)
         {
+           
+
             var ModelCliente = new Cliente { 
                 Nombre = prueba.nombre,
+                ApellidoPaterno = prueba.apell_paterno,
+                ApellidoMaterno = prueba.apell_materno,
+                Telefono = prueba.telefono,
+                Nit = prueba.NIT,
+                Latitud = prueba.latitud,
+                Longitud = prueba.longitud,
                 Usuari = prueba.usuario,
+                Ubicacion = _geolocalizador.ObtenerDireccion(prueba.latitud, prueba.longitud),
                 Password = _utilidades.EncriptarSHA256(prueba.password)
             };
             await _context.Clientes.AddAsync(ModelCliente);

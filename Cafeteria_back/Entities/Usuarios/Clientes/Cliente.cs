@@ -9,9 +9,9 @@ namespace Cafeteria_back.Entities.Usuarios.Clientes
 
         public int? Nit { get; set; }
 
-        public float? Latitud { get; set; }
+        public double? Latitud { get; set; }
 
-        public float? Longitud { get; set; }
+        public double? Longitud { get; set; }
 
         public List<Pedido>? Pedidos { get; set; }
     }

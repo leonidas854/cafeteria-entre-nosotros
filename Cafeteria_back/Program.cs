@@ -6,6 +6,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Cafeteria_back.Custom;
 using Cafeteria_back.Entities.Usuarios;
+using Cafeteria_back.Repositories.Implementations;
+using Cafeteria_back.Repositories.Interfaces;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,8 +23,12 @@ builder.Services.AddSwaggerGen();
 //conecion base de datos
 
 var connecctionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<MiDbContext>(options => 
+builder.Services.AddDbContext<MiDbContext>(options =>
 options.UseNpgsql(connecctionString));
+
+
+builder.Services.AddSingleton<GoogleMapsApi>();
+builder.Services.AddScoped<IGeolocalizador, GoogleMapsAdapter>();
 
 
 builder.Services.AddSingleton<Utilidades>();

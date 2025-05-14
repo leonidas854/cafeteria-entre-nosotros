@@ -2,6 +2,6 @@
 {
     public interface IGeolocalizador
     {
-        public string ObtenerDireccion(double lat, double lon);
+       Task<string> ObtenerDireccion(double latitud, double longitud);
     }
 }

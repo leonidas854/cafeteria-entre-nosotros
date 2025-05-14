@@ -12,8 +12,7 @@ using Cafeteria_back.Repositories.Interfaces;
 
 namespace Cafeteria_back.Controllers
 {
-    //api 
-    //AIzaSyAFGecad0uizurpdb1U4R6KPG_SJdQRkmU
+   
     [Route("api/[controller]")]
     [AllowAnonymous]
     [ApiController]
@@ -44,7 +43,7 @@ namespace Cafeteria_back.Controllers
                 Latitud = prueba.latitud,
                 Longitud = prueba.longitud,
                 Usuari = prueba.usuario,
-                Ubicacion = _geolocalizador.ObtenerDireccion(prueba.latitud, prueba.longitud),
+                Ubicacion = await _geolocalizador.ObtenerDireccion(prueba.latitud, prueba.longitud),
                 Password = _utilidades.EncriptarSHA256(prueba.password)
             };
             await _context.Clientes.AddAsync(ModelCliente);

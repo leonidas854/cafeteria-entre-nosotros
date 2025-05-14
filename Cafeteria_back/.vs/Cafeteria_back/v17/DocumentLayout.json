@@ -1,125 +1,133 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Cafeteria\\Cafeteria_back\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\googlemapsadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\googlemapsadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\googlemapsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\repositories\\implementations\\googlemapsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\googlemapsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\usuariopruebadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\usuariopruebadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\usuarios\\clientes\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\clientes\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\data\\migrations\\20250514155640_adderrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250514155640_adderrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\usuarios\\empleados\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\empleados\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\ventas\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\ventas\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\usuarios\\clientes\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\clientes\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\repositories\\implementations\\googlemapsadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\googlemapsadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\dtos\\usuariopruebadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\usuariopruebadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\usuarios\\empleados\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\empleados\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\ventas\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\ventas\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\cafeteria_back.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\cafeteria_back.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:cafeteria_back.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\detalle_extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\detalle_extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\detalle_extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\20250508050009_add_image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\data\\migrations\\20250508050009_add_image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250508050009_add_image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\20250508043912_add_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\data\\migrations\\20250508043912_add_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250508043912_add_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\20250508180249_addrelacion_uno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\data\\migrations\\20250508180249_addrelacion_uno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250508180249_addrelacion_uno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\20250508175521_addarreglar_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\data\\migrations\\20250508175521_addarreglar_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250508175521_addarreglar_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\20250511233941_addchaucod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|c:\\users\\asus zephyrus m16\\documents\\cafeteria\\cafeteria_back\\data\\migrations\\20250511233941_addchaucod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250511233941_addchaucod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -130,7 +138,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -145,40 +153,69 @@
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Cafeteria_back.http",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.http",
-              "RelativeDocumentMoniker": "Cafeteria_back.http",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.http",
-              "RelativeToolTip": "Cafeteria_back.http",
+              "Title": "MiDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\MiDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\MiDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\MiDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Data\\Migrations\\MiDbContextModelSnapshot.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-05-14T03:38:53.146Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T15:57:28.718Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": "20250514155640_AddErrores.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250514155640_AddErrores.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20250514155640_AddErrores.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250514155640_AddErrores.cs",
+              "RelativeToolTip": "Data\\Migrations\\20250514155640_AddErrores.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T15:56:41.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Cafeteria_back.http",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Cafeteria_back.http",
+              "RelativeDocumentMoniker": "Cafeteria_back.http",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Cafeteria_back.http",
+              "RelativeToolTip": "Cafeteria_back.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-05-14T03:38:53.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "GoogleMapsAdapter.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsAdapter.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsAdapter.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\GoogleMapsAdapter.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsAdapter.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsAdapter.cs",
               "RelativeToolTip": "Repositories\\Implementations\\GoogleMapsAdapter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T03:30:48.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "GoogleMapsApi.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\GoogleMapsApi.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
               "RelativeToolTip": "Repositories\\Implementations\\GoogleMapsApi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAASwBoAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T03:28:36.015Z",
               "EditorCaption": ""
@@ -187,22 +224,22 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "IGeolocalizador.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IGeolocalizador.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IGeolocalizador.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IGeolocalizador.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IGeolocalizador.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IGeolocalizador.cs",
               "RelativeToolTip": "Repositories\\Interfaces\\IGeolocalizador.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T03:25:36.105Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "20250511233941_Addchaucod.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250511233941_Addchaucod.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250511233941_Addchaucod.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250511233941_Addchaucod.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250511233941_Addchaucod.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250511233941_Addchaucod.cs",
               "RelativeToolTip": "Data\\Migrations\\20250511233941_Addchaucod.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -210,11 +247,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "20250508180249_AddRelacion_uno.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508180249_AddRelacion_uno.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508180249_AddRelacion_uno.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250508180249_AddRelacion_uno.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508180249_AddRelacion_uno.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508180249_AddRelacion_uno.cs",
               "RelativeToolTip": "Data\\Migrations\\20250508180249_AddRelacion_uno.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -222,11 +259,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "20250508175521_Addarreglar_tablas.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508175521_Addarreglar_tablas.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508175521_Addarreglar_tablas.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250508175521_Addarreglar_tablas.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508175521_Addarreglar_tablas.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508175521_Addarreglar_tablas.cs",
               "RelativeToolTip": "Data\\Migrations\\20250508175521_Addarreglar_tablas.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -234,62 +271,62 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AccesoController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccesoController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
               "RelativeToolTip": "Controllers\\AccesoController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAEwC0AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-08T15:27:44.397Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "UsuarioPruebaDTO.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\UsuarioPruebaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\UsuarioPruebaDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\UsuarioPruebaDTO.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\UsuarioPruebaDTO.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\UsuarioPruebaDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\UsuarioPruebaDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T15:21:42.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T15:21:42.699Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "LoginDTO.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\LoginDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\LoginDTO.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\LoginDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\LoginDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-08T15:20:36.471Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 5,
               "Title": "Utilidades.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
               "RelativeDocumentMoniker": "Custom\\Utilidades.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
               "RelativeToolTip": "Custom\\Utilidades.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwCcAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwB8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T14:31:32.015Z"
+              "WhenOpened": "2025-05-08T14:31:32.015Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "WeatherForecast.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\WeatherForecast.cs",
               "RelativeToolTip": "WeatherForecast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -297,11 +334,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Cafeteria_back.csproj",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
               "RelativeDocumentMoniker": "Cafeteria_back.csproj",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
               "RelativeToolTip": "Cafeteria_back.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -309,11 +346,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "20250508050009_add_image.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508050009_add_image.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508050009_add_image.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250508050009_add_image.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508050009_add_image.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508050009_add_image.cs",
               "RelativeToolTip": "Data\\Migrations\\20250508050009_add_image.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -321,11 +358,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "20250508043912_add_tablas.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508043912_add_tablas.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508043912_add_tablas.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250508043912_add_tablas.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508043912_add_tablas.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250508043912_add_tablas.cs",
               "RelativeToolTip": "Data\\Migrations\\20250508043912_add_tablas.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -333,23 +370,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 15,
               "Title": "Producto_Promocion.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Producto_Promocion.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Producto_Promocion.cs",
               "RelativeDocumentMoniker": "Entities\\Tablas_intermedias\\Producto_Promocion.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Producto_Promocion.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Producto_Promocion.cs",
               "RelativeToolTip": "Entities\\Tablas_intermedias\\Producto_Promocion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T02:39:10.011Z"
+              "WhenOpened": "2025-05-08T02:39:10.011Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "Detalle_extra.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_extra.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_extra.cs",
               "RelativeDocumentMoniker": "Entities\\Tablas_intermedias\\Detalle_extra.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_extra.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_extra.cs",
               "RelativeToolTip": "Entities\\Tablas_intermedias\\Detalle_extra.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -357,11 +395,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "Detalle_pedido.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_pedido.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_pedido.cs",
               "RelativeDocumentMoniker": "Entities\\Tablas_intermedias\\Detalle_pedido.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_pedido.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_pedido.cs",
               "RelativeToolTip": "Entities\\Tablas_intermedias\\Detalle_pedido.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAABcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -369,24 +407,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Controllers\\WeatherForecastController.cs",
               "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T02:35:00.84Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T02:35:00.84Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "Extra.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Extras\\Extra.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Extras\\Extra.cs",
               "RelativeDocumentMoniker": "Entities\\Extras\\Extra.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Extras\\Extra.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Extras\\Extra.cs",
               "RelativeToolTip": "Entities\\Extras\\Extra.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -394,11 +431,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Promocion.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
               "RelativeDocumentMoniker": "Entities\\Promociones\\Promocion.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
               "RelativeToolTip": "Entities\\Promociones\\Promocion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -406,23 +443,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Producto.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Producto.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Producto.cs",
               "RelativeDocumentMoniker": "Entities\\Productos\\Producto.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Producto.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Producto.cs",
               "RelativeToolTip": "Entities\\Productos\\Producto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T02:34:26.798Z"
+              "WhenOpened": "2025-05-08T02:34:26.798Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "Venta.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Ventas\\Venta.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Ventas\\Venta.cs",
               "RelativeDocumentMoniker": "Entities\\Ventas\\Venta.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Ventas\\Venta.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Ventas\\Venta.cs",
               "RelativeToolTip": "Entities\\Ventas\\Venta.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAAABoAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -430,23 +468,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "Pedido.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Pedido.cs",
               "RelativeDocumentMoniker": "Entities\\Pedidos\\Pedido.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Pedido.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Pedido.cs",
               "RelativeToolTip": "Entities\\Pedidos\\Pedido.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAAABsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T02:24:57.292Z"
+              "WhenOpened": "2025-05-08T02:24:57.292Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "Empleado.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Empleados\\Empleado.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Empleados\\Empleado.cs",
               "RelativeDocumentMoniker": "Entities\\Usuarios\\Empleados\\Empleado.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Empleados\\Empleado.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Empleados\\Empleado.cs",
               "RelativeToolTip": "Entities\\Usuarios\\Empleados\\Empleado.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -454,64 +493,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 8,
               "Title": "MiDbContext.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\MiDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\MiDbContext.cs",
               "RelativeDocumentMoniker": "Data\\MiDbContext.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\MiDbContext.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Data\\MiDbContext.cs",
               "RelativeToolTip": "Data\\MiDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwCQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T00:36:51.069Z"
+              "WhenOpened": "2025-05-08T00:36:51.069Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Program.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAUwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-08T00:30:52.014Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\appsettings.json",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-05-08T00:29:18.377Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Usuario.cs",
               "RelativeDocumentMoniker": "Entities\\Usuarios\\Usuario.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Usuario.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Usuario.cs",
               "RelativeToolTip": "Entities\\Usuarios\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAnwA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-08T00:22:51.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "Cliente.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Clientes\\Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Clientes\\Cliente.cs",
               "RelativeDocumentMoniker": "Entities\\Usuarios\\Clientes\\Cliente.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Clientes\\Cliente.cs",
+              "ToolTip": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Clientes\\Cliente.cs",
               "RelativeToolTip": "Entities\\Usuarios\\Clientes\\Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T02:05:54.027Z",
               "EditorCaption": ""

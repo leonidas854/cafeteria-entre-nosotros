@@ -282,3 +282,15 @@ D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.d
 D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Cafeteria_back.staticwebassets.endpoints.json
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets\msbuild.Cafeteria_back.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

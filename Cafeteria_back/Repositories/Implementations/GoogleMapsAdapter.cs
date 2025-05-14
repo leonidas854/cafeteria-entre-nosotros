@@ -8,9 +8,10 @@ namespace Cafeteria_back.Repositories.Implementations
         public GoogleMapsAdapter(GoogleMapsApi api) {
             _api = api;
         }
-        public string ObtenerDireccion(double lat, double lon)
+        public async Task<string> ObtenerDireccion(double latitud, double longitud)
         {
-            return _api.GetDireccion(lat, lon);
+            return await _api.GetDireccionAsync(latitud, longitud);
         }
+
     }
 }

@@ -130,6 +130,30 @@
             "type": "string",
             "nullable": true
           },
+          "apell_paterno": {
+            "type": "string",
+            "nullable": true
+          },
+          "apell_materno": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "latitud": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitud": {
+            "type": "number",
+            "format": "double"
+          },
           "usuario": {
             "type": "string",
             "nullable": true

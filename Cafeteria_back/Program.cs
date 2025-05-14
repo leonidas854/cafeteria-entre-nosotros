@@ -26,8 +26,7 @@ var connecctionString = builder.Configuration.GetConnectionString("DefaultConnec
 builder.Services.AddDbContext<MiDbContext>(options =>
 options.UseNpgsql(connecctionString));
 
-
-builder.Services.AddSingleton<GoogleMapsApi>();
+builder.Services.AddHttpClient<GoogleMapsApi>();
 builder.Services.AddScoped<IGeolocalizador, GoogleMapsAdapter>();
 
 

@@ -1,5 +1,5 @@
 ﻿using System.Net.Http;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace Cafeteria_back.Repositories.Implementations
 {
@@ -24,29 +24,42 @@ namespace Cafeteria_back.Repositories.Implementations
             if (!response.IsSuccessStatusCode)
                 return $"Ubicación no disponible (HTTP {(int)response.StatusCode})";
 
-            var data = JsonSerializer.Deserialize<GoogleMapsResponse>(json);
+            var data = JsonConvert.DeserializeObject<GoogleMapsResponse>(json);
 
-            // Filtra por resultados que tengan como tipo "street_address"
-            var direccionExacta = data?.results?
-                .FirstOrDefault(r => r.types != null && r.types.Contains("street_address"))?
-                .formatted_address;
+          
+            var resultadoConCalleYNumero = data?.results?
+                .FirstOrDefault(r =>
+                    r.address_components != null &&
+                    r.address_components.Any(c => c.types != null && c.types.Contains("street_number")) &&
+                    r.address_components.Any(c => c.types != null && c.types.Contains("route"))
+                );
 
-            // Si no hay dirección exacta, se toma la primera como fallback
-            return direccionExacta ?? data?.results?.FirstOrDefault()?.formatted_address ?? "Dirección no encontrada";
+            return resultadoConCalleYNumero?.formatted_address
+                ?? data?.results?.FirstOrDefault()?.formatted_address
+                ?? "Dirección no encontrada";
         }
+
+
 
 
         private class GoogleMapsResponse
         {
             public List<Result>? results { get; set; }
         }
-
-
         private class Result
         {
             public string? formatted_address { get; set; }
             public List<string>? types { get; set; }
+            public List<AddressComponent>? address_components { get; set; }
         }
+
+        private class AddressComponent
+        {
+            public string? long_name { get; set; }
+            public string? short_name { get; set; }
+            public List<string>? types { get; set; }
+        }
+
 
     }
 }

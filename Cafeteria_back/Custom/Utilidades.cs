@@ -29,23 +29,27 @@ namespace Cafeteria_back.Custom
             }
             
         }
-        public string generarJWT(Cliente cliente)
+        public string GenerarJWT(Usuario usuario)
         {
-            var userClaims = new List<Claim>
+            var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, cliente.Id_user.ToString()),
-                new Claim(ClaimTypes.Email, cliente.Usuari!)
+                new Claim(ClaimTypes.NameIdentifier, usuario.Id_user.ToString()),
+                new Claim(ClaimTypes.Email, usuario.Usuari!),
+                new Claim(ClaimTypes.Role, usuario.GetType().Name) 
             };
-            var SecurityKey = new SymmetricSecurityKey
-                (Encoding.UTF8.GetBytes(Configuration["Jwt:key"]!));
-            var credentials = new SigningCredentials
-                (SecurityKey, SecurityAlgorithms.HmacSha256Signature);
-            var jwtConfig = new JwtSecurityToken(
-                claims:userClaims,
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:key"]!));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
                 expires: DateTime.UtcNow.AddHours(5),
-                signingCredentials:credentials);
-            return new JwtSecurityTokenHandler().WriteToken(jwtConfig);
+                signingCredentials: credentials
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
     }
 
 }

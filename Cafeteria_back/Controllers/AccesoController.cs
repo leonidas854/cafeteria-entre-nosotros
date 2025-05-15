@@ -9,11 +9,12 @@ using Cafeteria_back.Entities.DTOs;
 using Cafeteria_back.Entities.Usuarios.Clientes;
 using Cafeteria_back.Repositories.Implementations;
 using Cafeteria_back.Repositories.Interfaces;
+using Cafeteria_back.Entities.Usuarios.Empleados;
 
 namespace Cafeteria_back.Controllers
 {
    
-    [Route("api/[controller]")]
+    [Route("/[controller]")]
     [AllowAnonymous]
     [ApiController]
     public class AccesoController : ControllerBase
@@ -29,11 +30,9 @@ namespace Cafeteria_back.Controllers
         }
 
         [HttpPost]
-        [Route("Registrarse")]
+        [Route("Registrarse_Cliente")]
         public async Task<IActionResult> Registrarse(UsuarioPruebaDTO prueba)
         {
-           
-
             var ModelCliente = new Cliente { 
                 Nombre = prueba.nombre,
                 ApellidoPaterno = prueba.apell_paterno,
@@ -54,6 +53,29 @@ namespace Cafeteria_back.Controllers
                 return StatusCode(StatusCodes.Status200OK, new { isSuccess = false });
         }
         [HttpPost]
+        [Route("Registrar_Empleado")]
+        public async Task<IActionResult>Registrar_E(EmpleadoDTO empleado)
+        {
+            var ModelEmpleado = new Empleado
+            {
+                Nombre = empleado.nombre,
+                ApellidoPaterno = empleado.apell_paterno,
+                ApellidoMaterno = empleado.apell_materno,
+                Telefono = empleado.telefono,
+                Usuari = empleado.usuario,
+                Password = empleado.password,
+                FechaContrato = DateTime.Now,
+                Rol = empleado.Empleado_rol
+            };
+            await _context.Empleados.AddAsync(ModelEmpleado);
+            await _context.SaveChangesAsync();
+            if(ModelEmpleado.Id_user != 0)
+                return StatusCode(StatusCodes.Status200OK,new { isSuccess = true });
+            else
+                return StatusCode(StatusCodes.Status200OK, new { isSuccess = false });
+
+        }
+        [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login(LoginDTO objeto)
         {
@@ -72,7 +94,7 @@ namespace Cafeteria_back.Controllers
                 return StatusCode(StatusCodes.Status200OK, new
                 {
                     isSuccess = true,
-                    token = _utilidades.generarJWT(usuarioEncontrado)
+                    token = _utilidades.GenerarJWT(usuarioEncontrado)
                 });
             }
         }

@@ -25,11 +25,11 @@ builder.Services.AddSwaggerGen();
 var connecctionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MiDbContext>(options =>
 options.UseNpgsql(connecctionString));
-
+//google maps
 builder.Services.AddHttpClient<GoogleMapsApi>();
 builder.Services.AddScoped<IGeolocalizador, GoogleMapsAdapter>();
 
-
+//jwt
 builder.Services.AddSingleton<Utilidades>();
 builder.Services.AddAuthentication(config =>
 {

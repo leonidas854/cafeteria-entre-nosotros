@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Globalization;
+using System.Net.Http;
 using Newtonsoft.Json;
 
 namespace Cafeteria_back.Repositories.Implementations
@@ -17,7 +18,8 @@ namespace Cafeteria_back.Repositories.Implementations
 
         public async Task<string> GetDireccionAsync(double lat, double lon)
         {
-            var url = $"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lon}&key={_apiKey}";
+            var url = $"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat.ToString(CultureInfo.InvariantCulture)},{lon.ToString(CultureInfo.InvariantCulture)}&key={_apiKey}";
+
             var response = await _httpClient.GetAsync(url);
             var json = await response.Content.ReadAsStringAsync();
 
@@ -26,7 +28,6 @@ namespace Cafeteria_back.Repositories.Implementations
 
             var data = JsonConvert.DeserializeObject<GoogleMapsResponse>(json);
 
-          
             var resultadoConCalleYNumero = data?.results?
                 .FirstOrDefault(r =>
                     r.address_components != null &&
@@ -38,8 +39,6 @@ namespace Cafeteria_back.Repositories.Implementations
                 ?? data?.results?.FirstOrDefault()?.formatted_address
                 ?? "Dirección no encontrada";
         }
-
-
 
 
         private class GoogleMapsResponse

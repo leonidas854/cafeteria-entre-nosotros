@@ -15,13 +15,13 @@ namespace Cafeteria_back.Entities.Tablas_intermedias
 
         public int? Cantidad { get; set; }
         public float? Precio_unitario { get; set; }
-        public float? Sub_total { get; set; }
+       // public float? Sub_total { get; set; }
 
         [ForeignKey("Pedido_id")]
         public Pedido? Pedido { get; set; }
 
         [ForeignKey("Producto_id")]
         public Producto? Producto { get; set; }
-        public string? Sabor_elegido { get; set; }
+        //public string? Sabor_elegido { get; set; }
     }
 }

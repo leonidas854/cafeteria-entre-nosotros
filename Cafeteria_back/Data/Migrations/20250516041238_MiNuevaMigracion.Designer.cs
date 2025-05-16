@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cafeteria_back.Migrations
 {
     [DbContext(typeof(MiDbContext))]
-    [Migration("20250508043912_add_tablas")]
-    partial class add_tablas
+    [Migration("20250516041238_MiNuevaMigracion")]
+    partial class MiNuevaMigracion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,26 +25,7 @@ namespace Cafeteria_back.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Cafeteria_back.Combos.Combo", b =>
-                {
-                    b.Property<long>("Idcombo")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Idcombo"));
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("text");
-
-                    b.Property<float?>("Precio_combo")
-                        .HasColumnType("real");
-
-                    b.HasKey("Idcombo");
-
-                    b.ToTable("Combos");
-                });
-
-            modelBuilder.Entity("Cafeteria_back.Extras.Extra", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Extras.Extra", b =>
                 {
                     b.Property<long>("Id_extra")
                         .ValueGeneratedOnAdd()
@@ -63,7 +44,7 @@ namespace Cafeteria_back.Migrations
                     b.ToTable("Extras");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Pedidos.Pedido", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Pedidos.Pedido", b =>
                 {
                     b.Property<long>("Id_pedido")
                         .ValueGeneratedOnAdd()
@@ -93,7 +74,7 @@ namespace Cafeteria_back.Migrations
                     b.ToTable("Pedidos");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Productos.Producto", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Productos.Producto", b =>
                 {
                     b.Property<long>("Id_producto")
                         .ValueGeneratedOnAdd()
@@ -101,11 +82,17 @@ namespace Cafeteria_back.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id_producto"));
 
+                    b.Property<string>("Categoria")
+                        .HasColumnType("text");
+
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
                     b.Property<bool?>("Estado")
                         .HasColumnType("boolean");
+
+                    b.Property<string>("Image_url")
+                        .HasColumnType("text");
 
                     b.Property<string>("Nombre")
                         .HasColumnType("text");
@@ -113,15 +100,23 @@ namespace Cafeteria_back.Migrations
                     b.Property<float?>("Precio")
                         .HasColumnType("real");
 
+                    b.Property<string>("Sabores")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Sub_categoria")
+                        .HasColumnType("text");
+
                     b.Property<string>("Tipo")
                         .HasColumnType("text");
 
                     b.HasKey("Id_producto");
 
-                    b.ToTable("Productos");
+                    b.ToTable("Producto", (string)null);
+
+                    b.UseTptMappingStrategy();
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Promociones.Promocion", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Promociones.Promocion", b =>
                 {
                     b.Property<long>("Id_promocion")
                         .ValueGeneratedOnAdd()
@@ -149,25 +144,7 @@ namespace Cafeteria_back.Migrations
                     b.ToTable("Promociones");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Combo_producto", b =>
-                {
-                    b.Property<long>("Combo_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("Producto_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<int?>("Cantidad")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Combo_id", "Producto_id");
-
-                    b.HasIndex("Producto_id");
-
-                    b.ToTable("CombosProducto");
-                });
-
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Detalle_extra", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Detalle_extra", b =>
                 {
                     b.Property<long>("Detalle_pedido_id")
                         .HasColumnType("bigint");
@@ -182,7 +159,7 @@ namespace Cafeteria_back.Migrations
                     b.ToTable("DetalleExtra");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Detalle_pedido", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Detalle_pedido", b =>
                 {
                     b.Property<long>("Id_detalle_pedido")
                         .ValueGeneratedOnAdd()
@@ -202,9 +179,6 @@ namespace Cafeteria_back.Migrations
                     b.Property<long>("Producto_id")
                         .HasColumnType("bigint");
 
-                    b.Property<float?>("Sub_total")
-                        .HasColumnType("real");
-
                     b.HasKey("Id_detalle_pedido");
 
                     b.HasIndex("Pedido_id");
@@ -214,22 +188,7 @@ namespace Cafeteria_back.Migrations
                     b.ToTable("DetallesPedido");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Pedido_combo", b =>
-                {
-                    b.Property<long>("Pedido_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("Combo_id")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Pedido_id", "Combo_id");
-
-                    b.HasIndex("Combo_id");
-
-                    b.ToTable("PedidoCombos");
-                });
-
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Producto_Promocion", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Producto_Promocion", b =>
                 {
                     b.Property<long>("Producto_id")
                         .HasColumnType("bigint");
@@ -244,7 +203,7 @@ namespace Cafeteria_back.Migrations
                     b.ToTable("ProductopPromocion");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Usuarios.Clientes.Cliente", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Usuarios.Cliente", b =>
                 {
                     b.Property<long>("Id_user")
                         .ValueGeneratedOnAdd()
@@ -258,11 +217,11 @@ namespace Cafeteria_back.Migrations
                     b.Property<string>("ApellidoPaterno")
                         .HasColumnType("text");
 
-                    b.Property<float?>("Latitud")
-                        .HasColumnType("real");
+                    b.Property<double?>("Latitud")
+                        .HasColumnType("double precision");
 
-                    b.Property<float?>("Longitud")
-                        .HasColumnType("real");
+                    b.Property<double?>("Longitud")
+                        .HasColumnType("double precision");
 
                     b.Property<int?>("Nit")
                         .HasColumnType("integer");
@@ -275,8 +234,8 @@ namespace Cafeteria_back.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Telefono")
-                        .HasColumnType("text");
+                    b.Property<int?>("Telefono")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Ubicacion")
                         .HasColumnType("text");
@@ -290,7 +249,7 @@ namespace Cafeteria_back.Migrations
                     b.ToTable("Cliente", (string)null);
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Usuarios.Empleados.Empleado", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Usuarios.Empleado", b =>
                 {
                     b.Property<long>("Id_user")
                         .ValueGeneratedOnAdd()
@@ -302,9 +261,6 @@ namespace Cafeteria_back.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("ApellidoPaterno")
-                        .HasColumnType("text");
-
-                    b.Property<string>("CodEmpleado")
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("FechaContrato")
@@ -321,8 +277,8 @@ namespace Cafeteria_back.Migrations
                     b.Property<string>("Rol")
                         .HasColumnType("text");
 
-                    b.Property<string>("Telefono")
-                        .HasColumnType("text");
+                    b.Property<int?>("Telefono")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Usuari")
                         .IsRequired()
@@ -333,7 +289,7 @@ namespace Cafeteria_back.Migrations
                     b.ToTable("Empleado", (string)null);
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Ventas.Venta", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Ventas.Venta", b =>
                 {
                     b.Property<long>("Id_venta")
                         .ValueGeneratedOnAdd()
@@ -360,14 +316,35 @@ namespace Cafeteria_back.Migrations
 
                     b.HasIndex("Empleado_id");
 
-                    b.HasIndex("Pedido_id");
+                    b.HasIndex("Pedido_id")
+                        .IsUnique();
 
                     b.ToTable("Ventas");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Pedidos.Pedido", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Productos.Bebida", b =>
                 {
-                    b.HasOne("Cafeteria_back.Usuarios.Clientes.Cliente", "Cliente")
+                    b.HasBaseType("Cafeteria_back.Entities.Productos.Producto");
+
+                    b.Property<string>("Tamanio")
+                        .HasColumnType("text");
+
+                    b.ToTable("Bebida", (string)null);
+                });
+
+            modelBuilder.Entity("Cafeteria_back.Entities.Productos.Comida", b =>
+                {
+                    b.HasBaseType("Cafeteria_back.Entities.Productos.Producto");
+
+                    b.Property<string>("Proporcion")
+                        .HasColumnType("text");
+
+                    b.ToTable("Comida", (string)null);
+                });
+
+            modelBuilder.Entity("Cafeteria_back.Entities.Pedidos.Pedido", b =>
+                {
+                    b.HasOne("Cafeteria_back.Entities.Usuarios.Cliente", "Cliente")
                         .WithMany("Pedidos")
                         .HasForeignKey("Cliente_id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -376,34 +353,15 @@ namespace Cafeteria_back.Migrations
                     b.Navigation("Cliente");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Combo_producto", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Detalle_extra", b =>
                 {
-                    b.HasOne("Cafeteria_back.Combos.Combo", "Combo")
-                        .WithMany("Combo_producto")
-                        .HasForeignKey("Combo_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Cafeteria_back.Productos.Producto", "Producto")
-                        .WithMany("Combo_producto")
-                        .HasForeignKey("Producto_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Combo");
-
-                    b.Navigation("Producto");
-                });
-
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Detalle_extra", b =>
-                {
-                    b.HasOne("Cafeteria_back.Tablas_intermedias.Detalle_pedido", "Detalle_pedido")
+                    b.HasOne("Cafeteria_back.Entities.Tablas_intermedias.Detalle_pedido", "Detalle_pedido")
                         .WithMany()
                         .HasForeignKey("Detalle_pedido_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Cafeteria_back.Extras.Extra", "Extra")
+                    b.HasOne("Cafeteria_back.Entities.Extras.Extra", "Extra")
                         .WithMany("Detalle_extra")
                         .HasForeignKey("Extra_id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -414,15 +372,15 @@ namespace Cafeteria_back.Migrations
                     b.Navigation("Extra");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Detalle_pedido", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Detalle_pedido", b =>
                 {
-                    b.HasOne("Cafeteria_back.Pedidos.Pedido", "Pedido")
+                    b.HasOne("Cafeteria_back.Entities.Pedidos.Pedido", "Pedido")
                         .WithMany("Detalle_pedido")
                         .HasForeignKey("Pedido_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Cafeteria_back.Productos.Producto", "Producto")
+                    b.HasOne("Cafeteria_back.Entities.Productos.Producto", "Producto")
                         .WithMany("Detalle_pedido")
                         .HasForeignKey("Producto_id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -433,34 +391,15 @@ namespace Cafeteria_back.Migrations
                     b.Navigation("Producto");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Pedido_combo", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Producto_Promocion", b =>
                 {
-                    b.HasOne("Cafeteria_back.Combos.Combo", "Combo")
-                        .WithMany("Pedido_combo")
-                        .HasForeignKey("Combo_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Cafeteria_back.Pedidos.Pedido", "Pedido")
-                        .WithMany("Pedido_combo")
-                        .HasForeignKey("Pedido_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Combo");
-
-                    b.Navigation("Pedido");
-                });
-
-            modelBuilder.Entity("Cafeteria_back.Tablas_intermedias.Producto_Promocion", b =>
-                {
-                    b.HasOne("Cafeteria_back.Productos.Producto", "Producto")
+                    b.HasOne("Cafeteria_back.Entities.Productos.Producto", "Producto")
                         .WithMany("Producto_promocion")
                         .HasForeignKey("Producto_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Cafeteria_back.Promociones.Promocion", "Promocion")
+                    b.HasOne("Cafeteria_back.Entities.Promociones.Promocion", "Promocion")
                         .WithMany("Producto_promocion")
                         .HasForeignKey("Promocion_id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -471,17 +410,17 @@ namespace Cafeteria_back.Migrations
                     b.Navigation("Promocion");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Ventas.Venta", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Ventas.Venta", b =>
                 {
-                    b.HasOne("Cafeteria_back.Usuarios.Empleados.Empleado", "Empleado")
+                    b.HasOne("Cafeteria_back.Entities.Usuarios.Empleado", "Empleado")
                         .WithMany("Ventas")
                         .HasForeignKey("Empleado_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Cafeteria_back.Pedidos.Pedido", "Pedido")
-                        .WithMany("Ventas")
-                        .HasForeignKey("Pedido_id")
+                    b.HasOne("Cafeteria_back.Entities.Pedidos.Pedido", "Pedido")
+                        .WithOne("Venta")
+                        .HasForeignKey("Cafeteria_back.Entities.Ventas.Venta", "Pedido_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -490,47 +429,54 @@ namespace Cafeteria_back.Migrations
                     b.Navigation("Pedido");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Combos.Combo", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Productos.Bebida", b =>
                 {
-                    b.Navigation("Combo_producto");
-
-                    b.Navigation("Pedido_combo");
+                    b.HasOne("Cafeteria_back.Entities.Productos.Producto", null)
+                        .WithOne()
+                        .HasForeignKey("Cafeteria_back.Entities.Productos.Bebida", "Id_producto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Extras.Extra", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Productos.Comida", b =>
+                {
+                    b.HasOne("Cafeteria_back.Entities.Productos.Producto", null)
+                        .WithOne()
+                        .HasForeignKey("Cafeteria_back.Entities.Productos.Comida", "Id_producto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Cafeteria_back.Entities.Extras.Extra", b =>
                 {
                     b.Navigation("Detalle_extra");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Pedidos.Pedido", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Pedidos.Pedido", b =>
                 {
                     b.Navigation("Detalle_pedido");
 
-                    b.Navigation("Pedido_combo");
-
-                    b.Navigation("Ventas");
+                    b.Navigation("Venta");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Productos.Producto", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Productos.Producto", b =>
                 {
-                    b.Navigation("Combo_producto");
-
                     b.Navigation("Detalle_pedido");
 
                     b.Navigation("Producto_promocion");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Promociones.Promocion", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Promociones.Promocion", b =>
                 {
                     b.Navigation("Producto_promocion");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Usuarios.Clientes.Cliente", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Usuarios.Cliente", b =>
                 {
                     b.Navigation("Pedidos");
                 });
 
-            modelBuilder.Entity("Cafeteria_back.Usuarios.Empleados.Empleado", b =>
+            modelBuilder.Entity("Cafeteria_back.Entities.Usuarios.Empleado", b =>
                 {
                     b.Navigation("Ventas");
                 });

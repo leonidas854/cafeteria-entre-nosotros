@@ -4,8 +4,7 @@ using Cafeteria_back.Entities.Pedidos;
 using Cafeteria_back.Entities.Productos;
 using Cafeteria_back.Entities.Promociones;
 using Cafeteria_back.Entities.Tablas_intermedias;
-using Cafeteria_back.Entities.Usuarios.Clientes;
-using Cafeteria_back.Entities.Usuarios.Empleados;
+using Cafeteria_back.Entities.Usuarios;
 using Cafeteria_back.Entities.Ventas;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +16,10 @@ namespace Cafeteria_back.Repositorio
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Producto>().ToTable("Producto");
+            modelBuilder.Entity<Bebida>().ToTable("Bebida");
+            modelBuilder.Entity<Comida>().ToTable("Comida");
+
             modelBuilder.Entity<Cliente>().ToTable("Cliente");
             modelBuilder.Entity<Empleado>().ToTable("Empleado");
             
@@ -40,7 +43,10 @@ namespace Cafeteria_back.Repositorio
         public virtual DbSet<Extra> Extras { get; set; }
         public virtual DbSet<Pedido> Pedidos { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
-       
+        public virtual DbSet<Bebida> Bebidas { get; set; }
+        public virtual DbSet<Comida> Comidas { get; set; }
+
+
         public virtual DbSet<Promocion> Promociones { get; set; }
         
         

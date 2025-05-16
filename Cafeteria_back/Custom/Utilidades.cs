@@ -4,7 +4,6 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using Cafeteria_back.Entities.Usuarios;
-using Cafeteria_back.Entities.Usuarios.Clientes;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 namespace Cafeteria_back.Custom
 {

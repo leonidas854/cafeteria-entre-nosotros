@@ -1,7 +1,6 @@
 ﻿using Cafeteria_back.Entities.Pedidos;
-using Cafeteria_back.Entities.Usuarios;
 
-namespace Cafeteria_back.Entities.Usuarios.Clientes
+namespace Cafeteria_back.Entities.Usuarios
 {
     public class Cliente : Usuario
     {

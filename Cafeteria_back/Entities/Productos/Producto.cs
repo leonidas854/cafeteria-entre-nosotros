@@ -21,10 +21,9 @@ namespace Cafeteria_back.Entities.Productos
         public bool? Estado { get; set; }
         public string? Sabores { get; set; }
         public string? Image_url { get; set; }
-        //comida
-        public string? Proporcion {  get; set; }
-        //bebida
-        public string? Tamanio { get; set; }
+        
+        //public Bebida? Bebida { get; set; }
+        //public Comida? Comida { get; set; }
 
         public List<Detalle_pedido>? Detalle_pedido { get; set; }
 

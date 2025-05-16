@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Cafeteria_back.Entities.Pedidos;
-using Cafeteria_back.Entities.Usuarios.Empleados;
+using Cafeteria_back.Entities.Usuarios;
 
 namespace Cafeteria_back.Entities.Ventas
 {

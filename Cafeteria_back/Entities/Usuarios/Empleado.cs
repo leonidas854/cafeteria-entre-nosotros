@@ -1,7 +1,6 @@
-﻿using Cafeteria_back.Entities.Usuarios;
-using Cafeteria_back.Entities.Ventas;
+﻿using Cafeteria_back.Entities.Ventas;
 
-namespace Cafeteria_back.Entities.Usuarios.Empleados
+namespace Cafeteria_back.Entities.Usuarios
 {
     public class Empleado : Usuario
     {

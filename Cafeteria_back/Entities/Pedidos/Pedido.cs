@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Cafeteria_back.Entities.Tablas_intermedias;
-using Cafeteria_back.Entities.Usuarios.Clientes;
 using Cafeteria_back.Entities.Ventas;
+using Cafeteria_back.Entities.Usuarios;
 
 namespace Cafeteria_back.Entities.Pedidos
 {

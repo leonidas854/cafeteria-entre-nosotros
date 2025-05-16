@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cafeteria_back.Migrations
 {
     /// <inheritdoc />
-    public partial class add_tablas : Migration
+    public partial class MiNuevaMigracion : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -20,12 +20,12 @@ namespace Cafeteria_back.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Ubicacion = table.Column<string>(type: "text", nullable: true),
                     Nit = table.Column<int>(type: "integer", nullable: true),
-                    Latitud = table.Column<float>(type: "real", nullable: true),
-                    Longitud = table.Column<float>(type: "real", nullable: true),
+                    Latitud = table.Column<double>(type: "double precision", nullable: true),
+                    Longitud = table.Column<double>(type: "double precision", nullable: true),
                     Nombre = table.Column<string>(type: "text", nullable: false),
                     ApellidoPaterno = table.Column<string>(type: "text", nullable: true),
                     ApellidoMaterno = table.Column<string>(type: "text", nullable: true),
-                    Telefono = table.Column<string>(type: "text", nullable: true),
+                    Telefono = table.Column<int>(type: "integer", nullable: true),
                     Usuari = table.Column<string>(type: "text", nullable: false),
                     Password = table.Column<string>(type: "text", nullable: false)
                 },
@@ -35,32 +35,17 @@ namespace Cafeteria_back.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Combos",
-                columns: table => new
-                {
-                    Idcombo = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nombre = table.Column<string>(type: "text", nullable: true),
-                    Precio_combo = table.Column<float>(type: "real", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Combos", x => x.Idcombo);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Empleado",
                 columns: table => new
                 {
                     Id_user = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Rol = table.Column<string>(type: "text", nullable: true),
-                    CodEmpleado = table.Column<string>(type: "text", nullable: true),
                     FechaContrato = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     Nombre = table.Column<string>(type: "text", nullable: false),
                     ApellidoPaterno = table.Column<string>(type: "text", nullable: true),
                     ApellidoMaterno = table.Column<string>(type: "text", nullable: true),
-                    Telefono = table.Column<string>(type: "text", nullable: true),
+                    Telefono = table.Column<int>(type: "integer", nullable: true),
                     Usuari = table.Column<string>(type: "text", nullable: false),
                     Password = table.Column<string>(type: "text", nullable: false)
                 },
@@ -84,20 +69,24 @@ namespace Cafeteria_back.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Productos",
+                name: "Producto",
                 columns: table => new
                 {
                     Id_producto = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Tipo = table.Column<string>(type: "text", nullable: true),
+                    Categoria = table.Column<string>(type: "text", nullable: true),
+                    Sub_categoria = table.Column<string>(type: "text", nullable: true),
                     Descripcion = table.Column<string>(type: "text", nullable: true),
                     Nombre = table.Column<string>(type: "text", nullable: true),
                     Precio = table.Column<float>(type: "real", nullable: true),
-                    Estado = table.Column<bool>(type: "boolean", nullable: true)
+                    Estado = table.Column<bool>(type: "boolean", nullable: true),
+                    Sabores = table.Column<string>(type: "text", nullable: true),
+                    Image_url = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Productos", x => x.Id_producto);
+                    table.PrimaryKey("PK_Producto", x => x.Id_producto);
                 });
 
             migrationBuilder.CreateTable(
@@ -141,26 +130,37 @@ namespace Cafeteria_back.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CombosProducto",
+                name: "Bebida",
                 columns: table => new
                 {
-                    Combo_id = table.Column<long>(type: "bigint", nullable: false),
-                    Producto_id = table.Column<long>(type: "bigint", nullable: false),
-                    Cantidad = table.Column<int>(type: "integer", nullable: true)
+                    Id_producto = table.Column<long>(type: "bigint", nullable: false),
+                    Tamanio = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CombosProducto", x => new { x.Combo_id, x.Producto_id });
+                    table.PrimaryKey("PK_Bebida", x => x.Id_producto);
                     table.ForeignKey(
-                        name: "FK_CombosProducto_Combos_Combo_id",
-                        column: x => x.Combo_id,
-                        principalTable: "Combos",
-                        principalColumn: "Idcombo",
+                        name: "FK_Bebida_Producto_Id_producto",
+                        column: x => x.Id_producto,
+                        principalTable: "Producto",
+                        principalColumn: "Id_producto",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Comida",
+                columns: table => new
+                {
+                    Id_producto = table.Column<long>(type: "bigint", nullable: false),
+                    Proporcion = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comida", x => x.Id_producto);
                     table.ForeignKey(
-                        name: "FK_CombosProducto_Productos_Producto_id",
-                        column: x => x.Producto_id,
-                        principalTable: "Productos",
+                        name: "FK_Comida_Producto_Id_producto",
+                        column: x => x.Id_producto,
+                        principalTable: "Producto",
                         principalColumn: "Id_producto",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -176,9 +176,9 @@ namespace Cafeteria_back.Migrations
                 {
                     table.PrimaryKey("PK_ProductopPromocion", x => new { x.Producto_id, x.Promocion_id });
                     table.ForeignKey(
-                        name: "FK_ProductopPromocion_Productos_Producto_id",
+                        name: "FK_ProductopPromocion_Producto_Producto_id",
                         column: x => x.Producto_id,
-                        principalTable: "Productos",
+                        principalTable: "Producto",
                         principalColumn: "Id_producto",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -198,8 +198,7 @@ namespace Cafeteria_back.Migrations
                     Pedido_id = table.Column<long>(type: "bigint", nullable: false),
                     Producto_id = table.Column<long>(type: "bigint", nullable: false),
                     Cantidad = table.Column<int>(type: "integer", nullable: true),
-                    Precio_unitario = table.Column<float>(type: "real", nullable: true),
-                    Sub_total = table.Column<float>(type: "real", nullable: true)
+                    Precio_unitario = table.Column<float>(type: "real", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -211,34 +210,10 @@ namespace Cafeteria_back.Migrations
                         principalColumn: "Id_pedido",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_DetallesPedido_Productos_Producto_id",
+                        name: "FK_DetallesPedido_Producto_Producto_id",
                         column: x => x.Producto_id,
-                        principalTable: "Productos",
+                        principalTable: "Producto",
                         principalColumn: "Id_producto",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PedidoCombos",
-                columns: table => new
-                {
-                    Pedido_id = table.Column<long>(type: "bigint", nullable: false),
-                    Combo_id = table.Column<long>(type: "bigint", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PedidoCombos", x => new { x.Pedido_id, x.Combo_id });
-                    table.ForeignKey(
-                        name: "FK_PedidoCombos_Combos_Combo_id",
-                        column: x => x.Combo_id,
-                        principalTable: "Combos",
-                        principalColumn: "Idcombo",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PedidoCombos_Pedidos_Pedido_id",
-                        column: x => x.Pedido_id,
-                        principalTable: "Pedidos",
-                        principalColumn: "Id_pedido",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -296,11 +271,6 @@ namespace Cafeteria_back.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CombosProducto_Producto_id",
-                table: "CombosProducto",
-                column: "Producto_id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_DetalleExtra_Extra_id",
                 table: "DetalleExtra",
                 column: "Extra_id");
@@ -314,11 +284,6 @@ namespace Cafeteria_back.Migrations
                 name: "IX_DetallesPedido_Producto_id",
                 table: "DetallesPedido",
                 column: "Producto_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PedidoCombos_Combo_id",
-                table: "PedidoCombos",
-                column: "Combo_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pedidos_Cliente_id",
@@ -338,20 +303,21 @@ namespace Cafeteria_back.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Ventas_Pedido_id",
                 table: "Ventas",
-                column: "Pedido_id");
+                column: "Pedido_id",
+                unique: true);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CombosProducto");
+                name: "Bebida");
+
+            migrationBuilder.DropTable(
+                name: "Comida");
 
             migrationBuilder.DropTable(
                 name: "DetalleExtra");
-
-            migrationBuilder.DropTable(
-                name: "PedidoCombos");
 
             migrationBuilder.DropTable(
                 name: "ProductopPromocion");
@@ -366,9 +332,6 @@ namespace Cafeteria_back.Migrations
                 name: "Extras");
 
             migrationBuilder.DropTable(
-                name: "Combos");
-
-            migrationBuilder.DropTable(
                 name: "Promociones");
 
             migrationBuilder.DropTable(
@@ -378,7 +341,7 @@ namespace Cafeteria_back.Migrations
                 name: "Pedidos");
 
             migrationBuilder.DropTable(
-                name: "Productos");
+                name: "Producto");
 
             migrationBuilder.DropTable(
                 name: "Cliente");

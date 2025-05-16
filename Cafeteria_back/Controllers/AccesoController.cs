@@ -6,10 +6,10 @@ using Cafeteria_back.Entities.Usuarios;
 using Cafeteria_back.Repositorio;
 using Cafeteria_back.Custom;
 using Cafeteria_back.Entities.DTOs;
-using Cafeteria_back.Entities.Usuarios.Clientes;
+
 using Cafeteria_back.Repositories.Implementations;
 using Cafeteria_back.Repositories.Interfaces;
-using Cafeteria_back.Entities.Usuarios.Empleados;
+
 
 namespace Cafeteria_back.Controllers
 {

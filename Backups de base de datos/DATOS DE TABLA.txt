@@ -1,0 +1,133 @@
+(DEFAULT, 'Bebida', 'café en grano', 'Mezcla de la casa', 'Un café en grano especial que usamos para preparar todas nuestras bebidas: americano, espresso, cappuccino y mokaccino.', 'Mezcla de la casa', 60, true, NULL, 'Mezcla de la casa.jpg'),
+
+-- Espresso Simple
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Espresso', 'Con un sabor intenso y aroma fuerte. Ideal para quienes prefieren una experiencia de café pura y rápida.', 'Espresso Simple', 9, true, NULL, 'Espresso Simple.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Espresso', 'Con un sabor intenso y aroma fuerte. Ideal para quienes prefieren una experiencia de café pura y rápida.', 'Espresso Simple', 12, true, NULL, 'Espresso Simple.jpg'),
+
+-- Espresso Doble
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Espresso', 'Dos shots de café concentrado para quienes disfrutan un sabor fuerte y energizante.', 'Espresso Doble', 13, true, NULL, 'Espresso Doble.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Espresso', 'Dos shots de café concentrado para quienes disfrutan un sabor fuerte y energizante.', 'Espresso Doble', 17, true, NULL, 'Espresso Doble.jpg'),
+
+-- Espresso Macchiato
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Espresso', 'Un espresso con un toque de leche espumada. Mantiene el sabor fuerte del café con una ligera suavidad al final.', 'Espresso Macchiato', 15, true, NULL, 'Espresso Macchiato.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Espresso', 'Un espresso con un toque de leche espumada. Mantiene el sabor fuerte del café con una ligera suavidad al final.', 'Espresso Macchiato', 19, true, NULL, 'Espresso Macchiato.jpg'),
+
+-- Espresso Dolce
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Espresso', 'Un espresso suave y dulce, ideal para quienes prefieren un sabor menos amargo. Perfecto balance entre intensidad y dulzura.', 'Espresso Dolce', 17, true, NULL, 'Espresso Macchiato.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Espresso', 'Un espresso suave y dulce, ideal para quienes prefieren un sabor menos amargo. Perfecto balance entre intensidad y dulzura.', 'Espresso Dolce', 21, true, NULL, 'Espresso Macchiato.jpg'),
+
+-- Americano Regular
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Americano', 'Café suave y ligero, preparado con café filtrado. Perfecto para quienes disfrutan una taza más larga con un sabor equilibrado.', 'Americano Regular', 19, true, NULL, 'Americano Regular.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Americano', 'Café suave y ligero, preparado con café filtrado. Perfecto para quienes disfrutan una taza más larga con un sabor equilibrado.', 'Americano Regular', 22, true, NULL, 'Americano Regular.jpg'),
+
+-- Americano Macchiato
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Americano', 'Café americano con un toque de leche espumada. Combina la suavidad del americano con una capa ligera y cremosa.', 'Americano Macchiato', 21, true, NULL, 'Americano Macchiato.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Americano', 'Café americano con un toque de leche espumada. Combina la suavidad del americano con una capa ligera y cremosa.', 'Americano Macchiato', 24, true, NULL, 'Americano Macchiato.jpg'),
+
+-- Capuccino
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Capucchino', 'Clásica bebida italiana de café espresso con leche vaporizada y una suave capa de espuma, con un equilibrio perfecto entre intensidad y cremosidad.', 'Capucchino', 23, true, 'Vainilla, Dulce de leche, Caramelo, Canela, Chocolate Blanco', 'Capuccino.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Capucchino', 'Clásica bebida italiana de café espresso con leche vaporizada y una suave capa de espuma, con un equilibrio perfecto entre intensidad y cremosidad.', 'Capucchino', 26, true, 'Vainilla, Dulce de leche, Caramelo, Canela, Chocolate Blanco', 'Capuccino.jpg'),
+-- Mokaccino Regular
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Mokaccino', 'Deliciosa combinación de café, leche vaporizada y chocolate. Cremoso y dulce, ideal para los amantes del café con un toque de cacao.', 'Mokaccino Regular', 25, true, NULL, 'Mokaccino.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Mokaccino', 'Deliciosa combinación de café, leche vaporizada y chocolate. Cremoso y dulce, ideal para los amantes del café con un toque de cacao.', 'Mokaccino Regular', 28, true, NULL, 'Mokaccino.jpg'),
+
+-- Mokaccino con Menta
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Mokaccino', 'Café con leche y chocolate, combinado con un toque refrescante de menta. Una mezcla dulce, cremosa y aromática para disfrutar caliente o frío.', 'Mokaccino con Menta', 25, true, NULL, 'Mokaccino Menta.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes con cafe', 'Mokaccino', 'Café con leche y chocolate, combinado con un toque refrescante de menta. Una mezcla dulce, cremosa y aromática para disfrutar caliente o frío.', 'Mokaccino con Menta', 28, true, NULL, 'Mokaccino Menta.jpg'),
+
+-- Chocolate
+(DEFAULT, 'Bebida', 'Bebidas calientes sin cafe', 'N/D', 'Bebida cremosa y reconfortante, elaborada con leche y cacao, perfecta para disfrutar en cualquier momento del día.', 'Chocolate', 23, true, NULL, 'Chocolate.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes sin cafe', 'N/D', 'Bebida cremosa y reconfortante, elaborada con leche y cacao, perfecta para disfrutar en cualquier momento del día.', 'Chocolate', 26, true, NULL, 'Chocolate.jpg'),
+
+-- Chai Latte
+(DEFAULT, 'Bebida', 'Bebidas calientes sin cafe', 'N/D', 'Infusión de té negro con especias aromáticas y leche caliente, con un sabor dulce y ligeramente picante.', 'Chai Latte', 24, true, NULL, 'Chai Latte.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes sin cafe', 'N/D', 'Infusión de té negro con especias aromáticas y leche caliente, con un sabor dulce y ligeramente picante.', 'Chai Latte', 27, true, NULL, 'Chai Latte.jpg'),
+
+-- Té
+(DEFAULT, 'Bebida', 'Bebidas calientes sin cafe', 'N/D', 'Bebida caliente y ligera, preparada con hojas naturales', 'Te', 18, true, NULL, 'Te.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas calientes sin cafe', 'N/D', 'Bebida caliente y ligera, preparada con hojas naturales', 'Te', 21, true, NULL, 'Te.jpg'),
+
+-- Frappe Capuccino
+(DEFAULT, 'Bebida', 'Bebidas Frias con cafe', 'N/D', 'Café frío batido con leche y hielo, con un toque de sabor a capuccino y una textura cremosa y refrescante.', 'Frappe Capuccino', 24, true, 'Regular, vainilla, Dulce de leche, Oreo, mokkaccino, mokkacino con menta, chocolate blanco', 'Frappe Capuccino.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas Frias con cafe', 'N/D', 'Café frío batido con leche y hielo, con un toque de sabor a capuccino y una textura cremosa y refrescante.', 'Frappe Capuccino', 27, true, 'Regular, vainilla, Dulce de leche, Oreo, mokkaccino, mokkacino con menta, chocolate blanco', 'Frappe Capuccino.jpg'),
+
+-- Latte Ice
+(DEFAULT, 'Bebida', 'Bebidas Frias con cafe', 'N/D', 'Café espresso con leche fría y hielo, suave y refrescante, ideal para los días calurosos.', 'Latte Ice', 24, true, NULL, 'Latte Ice.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas Frias con cafe', 'N/D', 'Café espresso con leche fría y hielo, suave y refrescante, ideal para los días calurosos.', 'Latte Ice', 27, true, NULL, 'Latte Ice.jpg'),
+
+-- Vienessa affogato
+(DEFAULT, 'Bebida', 'Bebidas Frias con cafe', 'N/D', 'Postre italiano que combina una bola de helado de vainilla con un shot de café espresso caliente, creando un contraste delicioso y elegante.', 'Vienessa affogato', 26, true, NULL, 'Vienessa affogato.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas Frias con cafe', 'N/D', 'Postre italiano que combina una bola de helado de vainilla con un shot de café espresso caliente, creando un contraste delicioso y elegante.', 'Vienessa affogato', 30, true, NULL, 'Vienessa affogato.jpg'),
+
+-- Café Ice
+(DEFAULT, 'Bebida', 'Bebidas Frias con cafe', 'N/D', 'Café enfriado servido con hielo, de sabor intenso y refrescante, perfecto para disfrutar en cualquier momento del día.', 'Café Ice', 22, true, NULL, 'Café Ice.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas Frias con cafe', 'N/D', 'Café enfriado servido con hielo, de sabor intenso y refrescante, perfecto para disfrutar en cualquier momento del día.', 'Café Ice', 26, true, NULL, 'Café Ice.jpg'),
+
+-- Té Ice
+(DEFAULT, 'Bebida', 'Tes Frios', 'N/D', 'Bebida refrescante elaborada con té natural y servida con hielo', 'Te Ice', 23, true, NULL, 'Te Ice.jpg'),
+(DEFAULT, 'Bebida', 'Tes Frios', 'N/D', 'Bebida refrescante elaborada con té natural y servida con hielo', 'Te Ice', 27, true, NULL, 'Te Ice.jpg'),
+
+-- Té Frappe
+(DEFAULT, 'Bebida', 'Tes frios', 'N/D', 'Té batido con hielo, suave y espumoso, perfecto para refrescarte con un toque ligero y delicioso.', 'Te Frappe', 24, true, NULL, 'Te Frappe.jpg'),
+(DEFAULT, 'Bebida', 'Tes frios', 'N/D', 'Té batido con hielo, suave y espumoso, perfecto para refrescarte con un toque ligero y delicioso.', 'Te Frappe', 28, true, NULL, 'Te Frappe.jpg'),
+
+-- Jugos
+(DEFAULT, 'Bebida', 'Bebidas Con frutas', 'N/D', 'Refrescante bebida elaborada con frutas frescas', 'Jugos', 22, true, 'Piña,Limon,Sandia,Frutilla,Mango,Durazno,Copoazu,Maracuya,Frambuesa y Achachairu', 'Jugos.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas Con frutas', 'N/D', 'Refrescante bebida elaborada con frutas frescas', 'Jugos', 25, true, 'Piña,Limon,Sandia,Frutilla,Mango,Durazno,Copoazu,Maracuya,Frambuesa y Achachairu', 'Jugos.jpg'),
+
+-- Milkshake
+(DEFAULT, 'Bebida', 'Bebidas Con frutas', 'N/D', 'Refrescante bebida elaborada con frutas frescas y leche', 'Milkshake', 25, true, 'Piña,Limon,Sandia,Frutilla,Mango,Durazno,Copoazu,Maracuya,Frambuesa y Achachairu', 'Milkshake.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas Con frutas', 'N/D', 'Refrescante bebida elaborada con frutas frescas y leche', 'Milkshake', 29, true, 'Piña,Limon,Sandia,Frutilla,Mango,Durazno,Copoazu,Maracuya,Frambuesa y Achachairu', 'Milkshake.jpg'),
+
+-- Smoothie Yogurt (frutas)
+(DEFAULT, 'Bebida', 'Bebidas Con frutas', 'N/D', 'Bebida cremosa y refrescante hecha con frutas naturales y hielo', 'Smoothie Yogurt', 25, true, 'Piña,Limon,Sandia,Frutilla,Mango,Durazno,Copoazu,Maracuya,Frambuesa y Achachairu', 'Smoothie.jpg'),
+(DEFAULT, 'Bebida', 'Bebidas Con frutas', 'N/D', 'Bebida cremosa y refrescante hecha con frutas naturales y hielo', 'Smoothie Yogurt', 29, true, 'Piña,Limon,Sandia,Frutilla,Mango,Durazno,Copoazu,Maracuya,Frambuesa y Achachairu', 'Smoothie.jpg'),
+
+-- Smoothie Yogurt (musli)
+(DEFAULT, 'Bebida', 'Bebidas Con frutas', 'N/D', 'Yogurt cremoso acompañado de muesli crujiente y un toque de miel natural', 'Yogurt musli', 22, true, NULL, 'Yogurt musli.jpg');
+//de 1 a 44 bebidas///
+####Comidas#######
+-- Revuelto de huevos
+(DEFAULT, 'Comida', 'Desayunos', 'N/D', 'Huevos batidos y cocinados a la perfección, servidos calientes y esponjosos, con tocino y tomate mas un café americano o un te', 'Revuelto de huevos', 20, true, NULL, 'Revuelto huevos.jpg'),
+(DEFAULT, 'Comida', 'Desayunos', 'N/D', 'Huevos batidos y cocinados a la perfección, servidos calientes y esponjosos, con tocino y tomate mas un café americano o un te', 'Revuelto de huevos', 32, true, NULL, 'Revuelto huevos.jpg'),
+
+-- Desayuno Italiano
+(DEFAULT, 'Comida', 'Desayunos', 'N/D', 'Panini tostado relleno con ingredientes frescos, acompañado de un capuccino mas un jugo de frutas del sabor preferido', 'Desayuno Italiano', 20, true, NULL, 'Panini.jpg'),
+(DEFAULT, 'Comida', 'Desayunos', 'N/D', 'Panini tostado relleno con ingredientes frescos, acompañado de un capuccino mas un jugo de frutas del sabor preferido', 'Desayuno Italiano', 32, true, NULL, 'Panini.jpg');
+////de 45 a 48 comidas////
+#######Reposteria######
+ -- Pies
+(DEFAULT, 'Postre', 'Reposteria', 'N/D', 'Delicioso postre con base crujiente y relleno suave de fruta', 'Pies', 24, true, 'Limon, maracuyá, oreo, snickers, manzana y Entero mix', 'Pies.jpg'),
+(DEFAULT, 'Postre', 'Reposteria', 'N/D', 'Delicioso postre con base crujiente y relleno suave de fruta', 'Pies', 180, true, 'Limon, maracuyá, oreo, snickers, manzana y Entero mix', 'Pies.jpg'),
+
+-- Tortas
+(DEFAULT, 'Postre', 'Reposteria', 'N/D', 'Esponjoso y suave, cubierto con un delicioso glaseado o relleno', 'Tortas', 25, true, 'Chocolate, Capuccino, Selva negra, Tres leches y zanahoria', 'Torta.jpg'),
+(DEFAULT, 'Postre', 'Reposteria', 'N/D', 'Esponjoso y suave, cubierto con un delicioso glaseado o relleno', 'Tortas', 187, true, 'Chocolate, Capuccino, Selva negra, Tres leches y zanahoria', 'Torta.jpg'),
+
+-- Cheesecakes
+(DEFAULT, 'Postre', 'Reposteria', 'N/D', 'Delicioso pastel cremoso a base de queso suave sobre una base crujiente de galleta', 'Cheesecakes', 25, true, 'Berries, maracuyá, mango, oreo y Entero Mix', 'Cheesecake.jpg'),
+(DEFAULT, 'Postre', 'Reposteria', 'N/D', 'Delicioso pastel cremoso a base de queso suave sobre una base crujiente de galleta', 'Cheesecakes', 187, true, 'Berries, maracuyá, mango, oreo y Entero Mix', 'Cheesecake.jpg'),
+
+-- Galletas
+(DEFAULT, 'Postre', 'Reposteria', 'N/D', 'Dulces y crujientes, hechas con ingredientes frescos.', 'Galletas', 9, true, 'Avena, chispas de chocolate y mixto', 'Galleta.jpg'),
+(DEFAULT, 'Postre', 'Reposteria', 'N/D', 'Dulces y crujientes, hechas con ingredientes frescos.', 'Galletas', 50, true, 'Avena, chispas de chocolate y mixto', 'Galleta.jpg');
+////del 48 al onceavo infierno (56)/////
+##JOISN##
+SELECT p."Nombre", p."Precio", b."Tamanio"
+FROM public."Producto" p
+JOIN public."Bebida" b ON p."Id_producto" = b."Id_producto";
+
+SELECT p."Nombre", p."Precio", c."Proporcion"
+FROM public."Producto" p
+JOIN public."Comida" c ON p."Id_producto" = c."Id_producto";
+###PROMOCIONES###
+VALUES
+VALUES -- Promoción por el Día de la Madre
+(DEFAULT, '15%', '2025-05-10 00:00:00', '2025-05-12 23:59:59', 'Descuento especial del 15% por el Día de la Madre en todos los productos con café.', 'DIA_MADRE_2025'),
+
+-- Promoción de temporada fría
+(DEFAULT, '12%', '2025-06-01 00:00:00', '2025-06-30 23:59:59', '12% de descuento en bebidas calientes para acompañar el invierno.', 'INVIERNO_CALIENTE'),
+
+-- Promoción por primera compra
+(DEFAULT, '10%', '2025-01-01 00:00:00', '2025-12-31 23:59:59', '10% de descuento exclusivo en la primera compra del cliente.', 'PRIMERA_COMPRA');
+select * from "Promociones";

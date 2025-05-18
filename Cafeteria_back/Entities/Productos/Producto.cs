@@ -16,9 +16,9 @@ namespace Cafeteria_back.Entities.Productos
 
         public string? Nombre { get; set; }
 
-        public float? Precio { get; set; }
+        public float Precio { get; set; }
 
-        public bool? Estado { get; set; }
+        public bool Estado { get; set; }
         public string? Sabores { get; set; }
         public string? Image_url { get; set; }
         

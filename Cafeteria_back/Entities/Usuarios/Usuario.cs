@@ -14,7 +14,7 @@ namespace Cafeteria_back.Entities.Usuarios
 
         public string? ApellidoMaterno { get; set; }
 
-        public int? Telefono { get; set; }
+        public int Telefono { get; set; }
 
         [Required]
         public string? Usuari { get; set; }

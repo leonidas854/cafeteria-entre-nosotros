@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Cafeteria_back.Controllers.AccesoController",
+    "Method": "Login_empleado",
+    "RelativePath": "Acceso/Login_Empleado",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "Cafeteria_back.Entities.DTOs.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.AccesoController",
     "Method": "Registrar_E",
     "RelativePath": "Acceso/Registrar_Empleado",
     "HttpMethod": "POST",
@@ -57,7 +73,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.Entities.Extras.Extra, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.Entities.DTOs.ExtraDTO, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -77,33 +93,23 @@
     "Parameters": [
       {
         "Name": "extra",
-        "Type": "Cafeteria_back.Entities.Extras.Extra",
+        "Type": "Cafeteria_back.Entities.DTOs.ExtraDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Cafeteria_back.Entities.Extras.Extra",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Cafeteria_back.Controllers.ExtrasController",
     "Method": "GetExtra",
-    "RelativePath": "api/Extras/{id}",
+    "RelativePath": "api/Extras/nombre/{Nombre}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Nullable\u00601[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Name": "Nombre",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -122,19 +128,19 @@
   {
     "ContainingType": "Cafeteria_back.Controllers.ExtrasController",
     "Method": "PutExtra",
-    "RelativePath": "api/Extras/{id}",
+    "RelativePath": "api/Extras/Nombre/{Nombre}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Nullable\u00601[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Name": "Nombre",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
         "Name": "extra",
-        "Type": "Cafeteria_back.Entities.Extras.Extra",
+        "Type": "Cafeteria_back.Entities.DTOs.ExtraDTO",
         "IsRequired": true
       }
     ],
@@ -143,30 +149,46 @@
   {
     "ContainingType": "Cafeteria_back.Controllers.ExtrasController",
     "Method": "DeleteExtra",
-    "RelativePath": "api/Extras/{id}",
+    "RelativePath": "api/Extras/Nombre/{Nombre}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Nullable\u00601[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Name": "Nombre",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Cafeteria_back.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "Cafeteria_back.Controllers.ProductoController",
+    "Method": "CrearProducto",
+    "RelativePath": "api/Producto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Cafeteria_back.Entities.DTOs.ProductoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.ProductoController",
+    "Method": "ObtenerProductos",
+    "RelativePath": "api/Producto",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.WeatherForecast, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.Entities.DTOs.ProductoDTO, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -174,7 +196,230 @@
         ],
         "StatusCode": 200
       }
+    ]
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.ProductoController",
+    "Method": "ActualizarProducto",
+    "RelativePath": "api/Producto/nombre/{nombre}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombre",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Cafeteria_back.Entities.DTOs.ProductoDTO",
+        "IsRequired": true
+      }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.ProductoController",
+    "Method": "EliminarProducto",
+    "RelativePath": "api/Producto/nombre/{nombre}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombre",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.PromocionesController",
+    "Method": "CrearPromocion",
+    "RelativePath": "api/Promociones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Cafeteria_back.Entities.DTOs.PromocionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.PromocionesController",
+    "Method": "ObtenerPromociones",
+    "RelativePath": "api/Promociones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.Entities.DTOs.PromocionDTO, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.PromocionesController",
+    "Method": "EditarPromocion",
+    "RelativePath": "api/Promociones/{strategykey}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "strategykey",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Cafeteria_back.Entities.DTOs.PromocionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.PromocionesController",
+    "Method": "EliminarPromocion",
+    "RelativePath": "api/Promociones/{strategykey}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "strategykey",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.UsuariosController",
+    "Method": "DeleteCliente",
+    "RelativePath": "api/Usuarios/cliente/usuario",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Cafeteria_back.Entities.DTOs.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.UsuariosController",
+    "Method": "PutCliente",
+    "RelativePath": "api/Usuarios/cliente/usuario/{usuarioActual}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioActual",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cliente",
+        "Type": "Cafeteria_back.Entities.DTOs.UsuarioPruebaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.UsuariosController",
+    "Method": "GetClientes",
+    "RelativePath": "api/Usuarios/Clientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.Entities.DTOs.UsuarioPruebaDTO, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.UsuariosController",
+    "Method": "DeleteEmpleado",
+    "RelativePath": "api/Usuarios/empleado/usuario",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Cafeteria_back.Entities.DTOs.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.UsuariosController",
+    "Method": "PutEmpleado",
+    "RelativePath": "api/Usuarios/empleado/usuario/{usuarioActual}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioActual",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "empleado",
+        "Type": "Cafeteria_back.Entities.DTOs.EmpleadoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.UsuariosController",
+    "Method": "GetEmpleado",
+    "RelativePath": "api/Usuarios/Empleados",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.Entities.DTOs.EmpleadoDTO, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

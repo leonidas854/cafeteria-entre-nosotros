@@ -30,9 +30,17 @@ namespace Cafeteria_back.Controllers
         }
 
         [HttpPost]
+        
         [Route("Registrarse_Cliente")]
         public async Task<IActionResult> Registrarse(UsuarioPruebaDTO prueba)
         {
+            bool usuarioExiste = await _context.Clientes
+        .AnyAsync(c => c.Usuari!.ToLower() == prueba.usuario.ToLower());
+
+            if (usuarioExiste)
+            {
+                return Conflict(new { mensaje = "El nombre de usuario ya está en uso." });
+            }
             var ModelCliente = new Cliente { 
                 Nombre = prueba.nombre,
                 ApellidoPaterno = prueba.apell_paterno,
@@ -56,6 +64,13 @@ namespace Cafeteria_back.Controllers
         [Route("Registrar_Empleado")]
         public async Task<IActionResult>Registrar_E(EmpleadoDTO empleado)
         {
+            bool usuarioExiste = await _context.Empleados
+        .AnyAsync(c => c.Usuari!.ToLower() == empleado.usuario.ToLower());
+
+            if (usuarioExiste)
+            {
+                return Conflict(new { mensaje = "El nombre de usuario ya está en uso." });
+            }
             var ModelEmpleado = new Empleado
             {
                 Nombre = empleado.nombre,
@@ -63,8 +78,8 @@ namespace Cafeteria_back.Controllers
                 ApellidoMaterno = empleado.apell_materno,
                 Telefono = empleado.telefono,
                 Usuari = empleado.usuario,
-                Password = empleado.password,
-                FechaContrato = DateTime.Now,
+                Password = _utilidades.EncriptarSHA256(empleado.password),
+                FechaContrato = DateTime.UtcNow,
                 Rol = empleado.Empleado_rol
             };
             await _context.Empleados.AddAsync(ModelEmpleado);
@@ -94,6 +109,30 @@ namespace Cafeteria_back.Controllers
                 return StatusCode(StatusCodes.Status200OK, new
                 {
                     isSuccess = true,
+                    token = _utilidades.GenerarJWT(usuarioEncontrado)
+                });
+            }
+        }
+        [HttpPost]
+        [Route("Login_Empleado")]
+        public async Task<IActionResult> Login_empleado(LoginDTO objeto)
+        {
+            var usuarioEncontrado = await _context.Empleados
+                .Where(u =>
+                    u.Usuari == objeto.usuario &&
+                    u.Password == _utilidades.EncriptarSHA256(objeto.password)
+                ).FirstOrDefaultAsync();
+
+            if (usuarioEncontrado == null)
+            {
+                return StatusCode(StatusCodes.Status200OK, new { isSuccess = false, token = "" });
+            }
+            else
+            {
+                return StatusCode(StatusCodes.Status200OK, new
+                {
+                    isSuccess = true,
+                    Rol = usuarioEncontrado.Rol,
                     token = _utilidades.GenerarJWT(usuarioEncontrado)
                 });
             }

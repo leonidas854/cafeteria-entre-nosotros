@@ -10,6 +10,7 @@ namespace Cafeteria_back.Entities.DTOs
         public string apell_materno { get; set; }
         public int telefono { get; set; }
         public int NIT { get; set; }
+        public string? Ubicacion {  get; set; }
         public double latitud { get; set; }
         public double longitud { get; set; }
         public string usuario { get; set; }

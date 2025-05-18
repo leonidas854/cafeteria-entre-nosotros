@@ -9,7 +9,8 @@
        
         public string usuario { get; set; }
         public string password { get; set; }
+        public DateTime? fecha_contrato { get; set; }
       
-        public string Empleado_rol {  get; set; }
+        public string? Empleado_rol {  get; set; }
     }
 }

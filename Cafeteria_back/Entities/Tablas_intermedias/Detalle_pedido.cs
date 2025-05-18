@@ -22,6 +22,7 @@ namespace Cafeteria_back.Entities.Tablas_intermedias
 
         [ForeignKey("Producto_id")]
         public Producto? Producto { get; set; }
+        public List<Detalle_extra>? Detalle_extras { get; set; }
         //public string? Sabor_elegido { get; set; }
     }
 }

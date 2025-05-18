@@ -541,10 +541,10 @@ D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets\msbuild.build.Cafet
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Cafeteria_back.props
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Cafeteria_back.props
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets.pack.json
-D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\Cafeteri.7C5A0B00.Up2Date
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\Cafeteria_back.dll
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\refint\Cafeteria_back.dll
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\Cafeteria_back.pdb
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\Cafeteria_back.genruntimeconfig.cache
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\ref\Cafeteria_back.dll
+D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

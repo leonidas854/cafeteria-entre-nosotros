@@ -6,7 +6,7 @@ namespace Cafeteria_back.Entities.Usuarios
     {
         public string? Ubicacion { get; set; }
 
-        public int? Nit { get; set; }
+        public int Nit { get; set; }
 
         public double? Latitud { get; set; }
 

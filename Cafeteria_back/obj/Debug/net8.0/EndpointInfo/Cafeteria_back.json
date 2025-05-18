@@ -98,6 +98,37 @@
         }
       }
     },
+    "/Acceso/Login_Empleado": {
+      "post": {
+        "tags": [
+          "Acceso"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Extras": {
       "get": {
         "tags": [
@@ -111,7 +142,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Extra"
+                    "$ref": "#/components/schemas/ExtraDTO"
                   }
                 }
               },
@@ -119,7 +150,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Extra"
+                    "$ref": "#/components/schemas/ExtraDTO"
                   }
                 }
               },
@@ -127,7 +158,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Extra"
+                    "$ref": "#/components/schemas/ExtraDTO"
                   }
                 }
               }
@@ -143,21 +174,43 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Extra"
+                "$ref": "#/components/schemas/ExtraDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Extra"
+                "$ref": "#/components/schemas/ExtraDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Extra"
+                "$ref": "#/components/schemas/ExtraDTO"
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Extras/nombre/{Nombre}": {
+      "get": {
+        "tags": [
+          "Extras"
+        ],
+        "parameters": [
+          {
+            "name": "Nombre",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -182,57 +235,18 @@
         }
       }
     },
-    "/api/Extras/{id}": {
-      "get": {
-        "tags": [
-          "Extras"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Extra"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Extra"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Extra"
-                }
-              }
-            }
-          }
-        }
-      },
+    "/api/Extras/Nombre/{Nombre}": {
       "put": {
         "tags": [
           "Extras"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "Nombre",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string"
             }
           }
         ],
@@ -240,17 +254,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Extra"
+                "$ref": "#/components/schemas/ExtraDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Extra"
+                "$ref": "#/components/schemas/ExtraDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Extra"
+                "$ref": "#/components/schemas/ExtraDTO"
               }
             }
           }
@@ -267,12 +281,11 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "Nombre",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string"
             }
           }
         ],
@@ -283,12 +296,40 @@
         }
       }
     },
-    "/WeatherForecast": {
+    "/api/Producto": {
+      "post": {
+        "tags": [
+          "Producto"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Producto"
         ],
-        "operationId": "GetWeatherForecast",
         "responses": {
           "200": {
             "description": "OK",
@@ -297,7 +338,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/ProductoDTO"
                   }
                 }
               },
@@ -305,7 +346,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/ProductoDTO"
                   }
                 }
               },
@@ -313,11 +354,420 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/ProductoDTO"
                   }
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/Producto/nombre/{nombre}": {
+      "put": {
+        "tags": [
+          "Producto"
+        ],
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Producto"
+        ],
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Promociones": {
+      "post": {
+        "tags": [
+          "Promociones"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PromocionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PromocionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PromocionDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Promociones"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PromocionDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PromocionDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PromocionDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Promociones/{strategykey}": {
+      "put": {
+        "tags": [
+          "Promociones"
+        ],
+        "parameters": [
+          {
+            "name": "strategykey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PromocionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PromocionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PromocionDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Promociones"
+        ],
+        "parameters": [
+          {
+            "name": "strategykey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/Clientes": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsuarioPruebaDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsuarioPruebaDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsuarioPruebaDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Usuarios/Empleados": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmpleadoDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmpleadoDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmpleadoDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Usuarios/cliente/usuario/{usuarioActual}": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioActual",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioPruebaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioPruebaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioPruebaDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/empleado/usuario/{usuarioActual}": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioActual",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/cliente/usuario": {
+      "delete": {
+        "tags": [
+          "Usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/empleado/usuario": {
+      "delete": {
+        "tags": [
+          "Usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -351,8 +801,7 @@
           },
           "telefono": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "usuari": {
             "minLength": 1,
@@ -368,8 +817,7 @@
           },
           "nit": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "latitud": {
             "type": "number",
@@ -436,19 +884,17 @@
             "format": "float",
             "nullable": true
           },
-          "sub_total": {
-            "type": "number",
-            "format": "float",
-            "nullable": true
-          },
           "pedido": {
             "$ref": "#/components/schemas/Pedido"
           },
           "producto": {
             "$ref": "#/components/schemas/Producto"
           },
-          "sabor_elegido": {
-            "type": "string",
+          "detalle_extras": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Detalle_extra"
+            },
             "nullable": true
           }
         },
@@ -480,8 +926,7 @@
           },
           "telefono": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "usuari": {
             "minLength": 1,
@@ -537,6 +982,11 @@
             "type": "string",
             "nullable": true
           },
+          "fecha_contrato": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
           "empleado_rol": {
             "type": "string",
             "nullable": true
@@ -576,6 +1026,21 @@
             "items": {
               "$ref": "#/components/schemas/Detalle_extra"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExtraDTO": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "precio": {
+            "type": "number",
+            "format": "float",
             "nullable": true
           }
         },
@@ -667,26 +1132,16 @@
           },
           "precio": {
             "type": "number",
-            "format": "float",
-            "nullable": true
+            "format": "float"
           },
           "estado": {
-            "type": "boolean",
-            "nullable": true
+            "type": "boolean"
           },
           "sabores": {
             "type": "string",
             "nullable": true
           },
           "image_url": {
-            "type": "string",
-            "nullable": true
-          },
-          "proporcion": {
-            "type": "string",
-            "nullable": true
-          },
-          "tamanio": {
             "type": "string",
             "nullable": true
           },
@@ -702,6 +1157,55 @@
             "items": {
               "$ref": "#/components/schemas/Producto_Promocion"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductoDTO": {
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "sub_categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "precio": {
+            "type": "number",
+            "format": "float"
+          },
+          "estado": {
+            "type": "boolean"
+          },
+          "sabores": {
+            "type": "string",
+            "nullable": true
+          },
+          "proporcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "tamanio": {
+            "type": "string",
+            "nullable": true
+          },
+          "image_url": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -736,18 +1240,15 @@
           },
           "descuento": {
             "type": "number",
-            "format": "float",
-            "nullable": true
+            "format": "float"
           },
           "fech_ini": {
             "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "fecha_final": {
             "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "descripcion": {
             "type": "string",
@@ -761,6 +1262,39 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Producto_Promocion"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PromocionDTO": {
+        "type": "object",
+        "properties": {
+          "descuento": {
+            "type": "number",
+            "format": "float"
+          },
+          "fech_ini": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fecha_final": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "strategykey": {
+            "type": "string",
+            "nullable": true
+          },
+          "productos": {
+            "type": "array",
+            "items": {
+              "type": "string"
             },
             "nullable": true
           }
@@ -798,6 +1332,10 @@
           "nit": {
             "type": "integer",
             "format": "int32"
+          },
+          "ubicacion": {
+            "type": "string",
+            "nullable": true
           },
           "latitud": {
             "type": "number",
@@ -848,29 +1386,6 @@
             "format": "date-time"
           },
           "tipo_de_Pago": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "WeatherForecast": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
             "type": "string",
             "nullable": true
           }

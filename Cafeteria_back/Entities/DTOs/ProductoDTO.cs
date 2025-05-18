@@ -1,0 +1,21 @@
+﻿namespace Cafeteria_back.Entities.DTOs
+{
+    public class ProductoDTO
+    {
+        public string? Tipo { get; set; }
+        public string? Categoria { get; set; }
+        public string? Sub_categoria { get; set; }
+
+        public string? Descripcion { get; set; }
+
+        public string? Nombre { get; set; }
+
+        public float Precio { get; set; }
+
+        public bool Estado { get; set; }
+        public string? Sabores { get; set; }
+        public string? Proporcion { get; set; }
+        public string? Tamanio { get; set; }
+        public string? Image_url { get; set; }
+    }
+}

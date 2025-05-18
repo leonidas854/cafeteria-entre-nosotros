@@ -8,10 +8,10 @@ namespace Cafeteria_back.Entities.Promociones
         [Key]
         public long Id_promocion { get; set; }
 
-        public float? Descuento { get; set; }
+        public float Descuento { get; set; }
 
-        public DateTime? Fech_ini { get; set; }
-        public DateTime? Fecha_final { get; set; }
+        public DateTime Fech_ini { get; set; }
+        public DateTime  Fecha_final { get; set; }
 
         public string? Descripcion { get; set; }
 

@@ -98,6 +98,18 @@
         }
       }
     },
+    "/Acceso/Logout": {
+      "post": {
+        "tags": [
+          "Acceso"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Acceso/Login_Empleado": {
       "post": {
         "tags": [

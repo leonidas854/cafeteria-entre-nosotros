@@ -33,6 +33,16 @@
   },
   {
     "ContainingType": "Cafeteria_back.Controllers.AccesoController",
+    "Method": "Logout",
+    "RelativePath": "Acceso/Logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.AccesoController",
     "Method": "Registrar_E",
     "RelativePath": "Acceso/Registrar_Empleado",
     "HttpMethod": "POST",

@@ -106,13 +106,35 @@ namespace Cafeteria_back.Controllers
             }
             else
             {
+                Response.Cookies.Append("jwt", _utilidades.GenerarJWT(usuarioEncontrado), new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true, 
+                    SameSite = SameSiteMode.Strict, 
+                    Expires = DateTimeOffset.UtcNow.AddHours(5)
+                });
                 return StatusCode(StatusCodes.Status200OK, new
                 {
-                    isSuccess = true,
-                    token = _utilidades.GenerarJWT(usuarioEncontrado)
+                    isSuccess = true
+                   
                 });
             }
         }
+        [Authorize]
+        [HttpPost]
+        [Route("Logout")]
+        public IActionResult Logout()
+        {
+           
+            Response.Cookies.Delete("jwt");
+
+            return Ok(new
+            {
+                isSuccess = true,
+                message = "Sesión cerrada exitosamente"
+            });
+        }
+
         [HttpPost]
         [Route("Login_Empleado")]
         public async Task<IActionResult> Login_empleado(LoginDTO objeto)
@@ -129,11 +151,17 @@ namespace Cafeteria_back.Controllers
             }
             else
             {
+                Response.Cookies.Append("jwt", _utilidades.GenerarJWT(usuarioEncontrado), new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.Strict,
+                    Expires = DateTimeOffset.UtcNow.AddHours(5)
+                });
                 return StatusCode(StatusCodes.Status200OK, new
                 {
                     isSuccess = true,
-                    Rol = usuarioEncontrado.Rol,
-                    token = _utilidades.GenerarJWT(usuarioEncontrado)
+                    Rol = usuarioEncontrado.Rol
                 });
             }
         }

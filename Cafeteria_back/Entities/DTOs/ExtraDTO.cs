@@ -3,6 +3,6 @@
     public class ExtraDTO
     {
         public string? Nombre { get; set; }
-        public float? precio { get; set; }
+        public float precio { get; set; }
     }
 }

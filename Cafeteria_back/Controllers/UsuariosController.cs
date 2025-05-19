@@ -31,6 +31,8 @@ namespace Cafeteria_back.Controllers
                     Ubicacion = e.Ubicacion,
                     NIT = e.Nit,
                     telefono = e.Telefono,
+                    latitud = e.Latitud,
+                    longitud = e.Longitud,
                     usuario = e.Usuari!,
                     password = _utilidades.EncriptarSHA256(e.Password!)
                 }).ToListAsync();

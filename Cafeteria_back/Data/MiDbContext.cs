@@ -5,7 +5,6 @@ using Cafeteria_back.Entities.Productos;
 using Cafeteria_back.Entities.Promociones;
 using Cafeteria_back.Entities.Tablas_intermedias;
 using Cafeteria_back.Entities.Usuarios;
-using Cafeteria_back.Entities.Ventas;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cafeteria_back.Repositorio

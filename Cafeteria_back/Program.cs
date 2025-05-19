@@ -8,6 +8,8 @@ using Cafeteria_back.Custom;
 using Cafeteria_back.Entities.Usuarios;
 using Cafeteria_back.Repositories.Implementations;
 using Cafeteria_back.Repositories.Interfaces;
+using Cafeteria_back.Data;
+using Cafeteria_back.Entities.Carritos;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -64,6 +66,15 @@ builder.Services.AddAuthentication(config =>
         }
     };
 });
+//strategy
+builder.Services.AddScoped<DescuentoStrategyContext>();
+
+
+//mongodb
+builder.Services.Configure<MongoDbSettings>(
+    builder.Configuration.GetSection("MongoDbSettings"));
+builder.Services.AddSingleton<CarritoService>();
+
 
 //habilitar cors
 builder.Services.AddCors(options =>
@@ -81,6 +92,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseStaticFiles(); 
 
 app.UseCors("NewPolicy");
 app.UseHttpsRedirection();

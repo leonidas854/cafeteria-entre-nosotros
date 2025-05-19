@@ -14,6 +14,7 @@
 
         public bool Estado { get; set; }
         public string? Sabores { get; set; }
+        public IFormFile? Imagen { get; set; }  
         public string? Proporcion { get; set; }
         public string? Tamanio { get; set; }
         public string? Image_url { get; set; }

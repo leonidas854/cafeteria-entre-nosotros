@@ -1,0 +1,58 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagenes\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Cafeteria_back</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Cafeteria_back</BasePath>
+      <RelativePath>imagenes/0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>lvgqvpth6b</Fingerprint>
+      <Integrity>8WpwYs9+3VxaqgFi5Ox4MG66+wMmSm/d5JswZ/StHEM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagenes\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagenes\4856e44b-d2a5-4743-9fca-834b59731574.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Cafeteria_back</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Cafeteria_back</BasePath>
+      <RelativePath>imagenes/4856e44b-d2a5-4743-9fca-834b59731574.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6w9b5754xm</Fingerprint>
+      <Integrity>1vfPcTE4VGAaf90G/opH8D1Zi9aMCJ6urwmHYrvHqIQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagenes\4856e44b-d2a5-4743-9fca-834b59731574.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagenes\ab4b43e0-80db-4992-8581-b38374b5e8ca.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Cafeteria_back</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Cafeteria_back</BasePath>
+      <RelativePath>imagenes/ab4b43e0-80db-4992-8581-b38374b5e8ca.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6w9b5754xm</Fingerprint>
+      <Integrity>1vfPcTE4VGAaf90G/opH8D1Zi9aMCJ6urwmHYrvHqIQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagenes\ab4b43e0-80db-4992-8581-b38374b5e8ca.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

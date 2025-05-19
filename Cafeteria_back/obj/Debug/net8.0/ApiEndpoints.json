@@ -74,6 +74,96 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafeteria_back.Controllers.CarritoController",
+    "Method": "Obtener",
+    "RelativePath": "api/Carrito",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.CarritoController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Carrito/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.CarritoController",
+    "Method": "Agregar",
+    "RelativePath": "api/Carrito/agregar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carrito",
+        "Type": "Cafeteria_back.Entities.Carritos.Carrito",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.CarritoController",
+    "Method": "ModificarCantidad",
+    "RelativePath": "api/Carrito/modificar-cantidad",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Cafeteria_back.Entities.Carritos.ModificarCantidadDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.CarritoController",
+    "Method": "ModificarExtras",
+    "RelativePath": "api/Carrito/modificar-extras",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Cafeteria_back.Entities.Carritos.ModificarExtrasDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.CarritoController",
+    "Method": "QuitarProducto",
+    "RelativePath": "api/Carrito/quitar-producto",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Cafeteria_back.Entities.Carritos.QuitarProductoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafeteria_back.Controllers.ExtrasController",
     "Method": "GetExtras",
     "RelativePath": "api/Extras",
@@ -173,6 +263,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafeteria_back.Controllers.PedidoController",
+    "Method": "ConfirmarPedido",
+    "RelativePath": "api/Pedido/confirmar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tipoEntrega",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafeteria_back.Controllers.ProductoController",
     "Method": "CrearProducto",
     "RelativePath": "api/Producto",
@@ -181,9 +292,64 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "Cafeteria_back.Entities.DTOs.ProductoDTO",
-        "IsRequired": true
+        "Name": "Tipo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sub_categoria",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Precio",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "Estado",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sabores",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Imagen",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Proporcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Tamanio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image_url",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -222,9 +388,64 @@
         "IsRequired": true
       },
       {
-        "Name": "dto",
-        "Type": "Cafeteria_back.Entities.DTOs.ProductoDTO",
-        "IsRequired": true
+        "Name": "Tipo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sub_categoria",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Precio",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "Estado",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sabores",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Imagen",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Proporcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Tamanio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image_url",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

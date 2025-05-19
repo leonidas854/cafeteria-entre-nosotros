@@ -18,5 +18,11 @@ namespace Cafeteria_back.Entities.Promociones
         public string? Strategykey { get; set; }
 
         public List<Producto_Promocion>? Producto_promocion { get; set; }
+
+        public bool EsValidaEnFecha(DateTime fecha)
+        {
+            return fecha >= Fech_ini && fecha <= Fecha_final;
+        }
     }
+
 }

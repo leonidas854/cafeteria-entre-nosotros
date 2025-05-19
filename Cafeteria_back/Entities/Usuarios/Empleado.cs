@@ -1,4 +1,4 @@
-﻿using Cafeteria_back.Entities.Ventas;
+﻿using Cafeteria_back.Entities.Pedidos;
 
 namespace Cafeteria_back.Entities.Usuarios
 {

@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
+      "PackagePath": "staticwebassets\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png"
+    },
+    {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4856e44b-d2a5-4743-9fca-834b59731574.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\4856e44b-d2a5-4743-9fca-834b59731574.jpg"
+    },
+    {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ab4b43e0-80db-4992-8581-b38374b5e8ca.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\ab4b43e0-80db-4992-8581-b38374b5e8ca.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Cafeteria_back.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Cafeteria_back.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Cafeteria_back.props",
+      "PackagePath": "build\\Cafeteria_back.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Cafeteria_back.props",
+      "PackagePath": "buildMultiTargeting\\Cafeteria_back.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Cafeteria_back.props",
+      "PackagePath": "buildTransitive\\Cafeteria_back.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

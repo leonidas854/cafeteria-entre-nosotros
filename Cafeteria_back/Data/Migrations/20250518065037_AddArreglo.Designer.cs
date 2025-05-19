@@ -85,7 +85,7 @@ namespace Cafeteria_back.Migrations
                     b.Property<string>("Categoria")
                         .HasColumnType("text");
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("Nombre_")
                         .HasColumnType("text");
 
                     b.Property<bool>("Estado")
@@ -124,7 +124,7 @@ namespace Cafeteria_back.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id_promocion"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("Nombre_")
                         .HasColumnType("text");
 
                     b.Property<float>("Descuento")

@@ -141,6 +141,164 @@
         }
       }
     },
+    "/api/Carrito": {
+      "get": {
+        "tags": [
+          "Carrito"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Carrito/agregar": {
+      "post": {
+        "tags": [
+          "Carrito"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carrito"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carrito"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carrito"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Carrito/modificar-cantidad": {
+      "put": {
+        "tags": [
+          "Carrito"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModificarCantidadDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModificarCantidadDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModificarCantidadDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Carrito/modificar-extras": {
+      "put": {
+        "tags": [
+          "Carrito"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModificarExtrasDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModificarExtrasDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModificarExtrasDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Carrito/quitar-producto": {
+      "delete": {
+        "tags": [
+          "Carrito"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuitarProductoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuitarProductoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuitarProductoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Carrito/{id}": {
+      "delete": {
+        "tags": [
+          "Carrito"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Extras": {
       "get": {
         "tags": [
@@ -308,6 +466,34 @@
         }
       }
     },
+    "/api/Pedido/confirmar": {
+      "post": {
+        "tags": [
+          "Pedido"
+        ],
+        "parameters": [
+          {
+            "name": "carritoId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tipoEntrega",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Producto": {
       "post": {
         "tags": [
@@ -315,19 +501,87 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductoDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductoDTO"
+                "type": "object",
+                "properties": {
+                  "Tipo": {
+                    "type": "string"
+                  },
+                  "Categoria": {
+                    "type": "string"
+                  },
+                  "Sub_categoria": {
+                    "type": "string"
+                  },
+                  "Descripcion": {
+                    "type": "string"
+                  },
+                  "Nombre": {
+                    "type": "string"
+                  },
+                  "Precio": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "Estado": {
+                    "type": "boolean"
+                  },
+                  "Sabores": {
+                    "type": "string"
+                  },
+                  "Imagen": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "Proporcion": {
+                    "type": "string"
+                  },
+                  "Tamanio": {
+                    "type": "string"
+                  },
+                  "Image_url": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Tipo": {
+                  "style": "form"
+                },
+                "Categoria": {
+                  "style": "form"
+                },
+                "Sub_categoria": {
+                  "style": "form"
+                },
+                "Descripcion": {
+                  "style": "form"
+                },
+                "Nombre": {
+                  "style": "form"
+                },
+                "Precio": {
+                  "style": "form"
+                },
+                "Estado": {
+                  "style": "form"
+                },
+                "Sabores": {
+                  "style": "form"
+                },
+                "Imagen": {
+                  "style": "form"
+                },
+                "Proporcion": {
+                  "style": "form"
+                },
+                "Tamanio": {
+                  "style": "form"
+                },
+                "Image_url": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -392,19 +646,87 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductoDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductoDTO"
+                "type": "object",
+                "properties": {
+                  "Tipo": {
+                    "type": "string"
+                  },
+                  "Categoria": {
+                    "type": "string"
+                  },
+                  "Sub_categoria": {
+                    "type": "string"
+                  },
+                  "Descripcion": {
+                    "type": "string"
+                  },
+                  "Nombre": {
+                    "type": "string"
+                  },
+                  "Precio": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "Estado": {
+                    "type": "boolean"
+                  },
+                  "Sabores": {
+                    "type": "string"
+                  },
+                  "Imagen": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "Proporcion": {
+                    "type": "string"
+                  },
+                  "Tamanio": {
+                    "type": "string"
+                  },
+                  "Image_url": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Tipo": {
+                  "style": "form"
+                },
+                "Categoria": {
+                  "style": "form"
+                },
+                "Sub_categoria": {
+                  "style": "form"
+                },
+                "Descripcion": {
+                  "style": "form"
+                },
+                "Nombre": {
+                  "style": "form"
+                },
+                "Precio": {
+                  "style": "form"
+                },
+                "Estado": {
+                  "style": "form"
+                },
+                "Sabores": {
+                  "style": "form"
+                },
+                "Imagen": {
+                  "style": "form"
+                },
+                "Proporcion": {
+                  "style": "form"
+                },
+                "Tamanio": {
+                  "style": "form"
+                },
+                "Image_url": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -787,6 +1109,27 @@
   },
   "components": {
     "schemas": {
+      "Carrito": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemCarrito"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Cliente": {
         "required": [
           "nombre",
@@ -833,13 +1176,11 @@
           },
           "latitud": {
             "type": "number",
-            "format": "double",
-            "nullable": true
+            "format": "double"
           },
           "longitud": {
             "type": "number",
-            "format": "double",
-            "nullable": true
+            "format": "double"
           },
           "pedidos": {
             "type": "array",
@@ -1026,8 +1367,7 @@
           },
           "precio": {
             "type": "number",
-            "format": "float",
-            "nullable": true
+            "format": "float"
           },
           "name": {
             "type": "string",
@@ -1043,6 +1383,24 @@
         },
         "additionalProperties": false
       },
+      "ExtraCarrito": {
+        "type": "object",
+        "properties": {
+          "extraId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "precio": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "additionalProperties": false
+      },
       "ExtraDTO": {
         "type": "object",
         "properties": {
@@ -1052,7 +1410,47 @@
           },
           "precio": {
             "type": "number",
+            "format": "float"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemCarrito": {
+        "type": "object",
+        "properties": {
+          "productoId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioUnitario": {
+            "type": "number",
+            "format": "float"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extras": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExtraCarrito"
+            },
+            "nullable": true
+          },
+          "tienePromocion": {
+            "type": "boolean"
+          },
+          "precioPromocional": {
+            "type": "number",
             "format": "float",
+            "nullable": true
+          },
+          "descripcionPromocion": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -1067,6 +1465,45 @@
           },
           "password": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModificarCantidadDto": {
+        "type": "object",
+        "properties": {
+          "productoId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nuevaCantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extraIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModificarExtrasDto": {
+        "type": "object",
+        "properties": {
+          "productoId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nuevosExtras": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExtraCarrito"
+            },
             "nullable": true
           }
         },
@@ -1208,6 +1645,11 @@
             "type": "string",
             "nullable": true
           },
+          "imagen": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
           "proporcion": {
             "type": "string",
             "nullable": true
@@ -1307,6 +1749,24 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "QuitarProductoDto": {
+        "type": "object",
+        "properties": {
+          "productoId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "extraIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
             },
             "nullable": true
           }

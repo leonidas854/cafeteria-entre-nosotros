@@ -548,3 +548,10 @@ D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\Cafeteria_back.pdb
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\Cafeteria_back.genruntimeconfig.cache
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\ref\Cafeteria_back.dll
 D:\Cafeteria\Cafeteria_back\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\DnsClient.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\SharpCompress.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Snappier.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\ZstdSharp.dll
+D:\Cafeteria\Cafeteria_back\bin\Debug\net8.0\Cafeteria_back.staticwebassets.runtime.json

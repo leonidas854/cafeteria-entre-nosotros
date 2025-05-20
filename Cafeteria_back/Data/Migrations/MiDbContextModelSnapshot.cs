@@ -103,7 +103,7 @@ namespace Cafeteria_back.Migrations
                     b.Property<string>("Sub_categoria")
                         .HasColumnType("text");
 
-                    b.Property<string>("Tipo")
+                    b.Property<string>("Categoria")
                         .HasColumnType("text");
 
                     b.HasKey("Id_producto");

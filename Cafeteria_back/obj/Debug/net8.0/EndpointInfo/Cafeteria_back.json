@@ -1118,7 +1118,8 @@
           },
           "clienteId": {
             "type": "integer",
-            "format": "int64"
+            "format": "int64",
+            "nullable": true
           },
           "items": {
             "type": "array",
@@ -1404,6 +1405,11 @@
       "ExtraDTO": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
           "nombre": {
             "type": "string",
             "nullable": true

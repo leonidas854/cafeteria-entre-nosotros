@@ -17,8 +17,8 @@ namespace Cafeteria_back.Repositories.Implementations
 
         public virtual string Nombre() => $"{_producto.Nombre()} + {_extra.Name}";
         public virtual float Precio() => _producto.Precio() + _extra.Precio;
-        public virtual string Tipo() => _producto.Tipo();
+        public virtual string Categoria() => _producto.Categoria();
 
-        public virtual bool ValidarEsCafe() => _producto.Tipo().ToLower() == "café";
+        public virtual bool ValidarEsCafe() => _producto.Categoria().ToLower() == "café";
     }
 }

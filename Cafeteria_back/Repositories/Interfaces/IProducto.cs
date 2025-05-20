@@ -4,25 +4,25 @@
     {
         string Nombre();
         float Precio();
-        string Tipo(); 
+        string Categoria(); 
     }
 
     public class ProductoBase : IProducto
     {
         public string _nombre;
         public float _precio;
-        public string _tipo;
+        public string _Categoria;
 
-        public ProductoBase(string nombre, float precio, string tipo)
+        public ProductoBase(string nombre, float precio, string Categoria)
         {
             _nombre = nombre;
             _precio = precio;
-            _tipo = tipo;
+            _Categoria = Categoria;
         }
 
         public string Nombre() => _nombre;
         public float Precio() => _precio;
-        public string Tipo() => _tipo;
+        public string Categoria() => _Categoria;
     }
 
 

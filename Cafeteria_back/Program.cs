@@ -81,7 +81,11 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("NewPolicy", app =>
     {
-        app.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        app.WithOrigins("http://localhost:3000") 
+   .AllowAnyHeader()
+   .AllowAnyMethod()
+   .AllowCredentials();
+
     });
 });
 var app = builder.Build();
@@ -96,6 +100,7 @@ app.UseStaticFiles();
 
 app.UseCors("NewPolicy");
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
 app.UseAuthorization();
 

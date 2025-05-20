@@ -27,16 +27,32 @@ namespace Cafeteria_back.Controllers
             _context = context;
             _descuentoContext = descuentoContext;
         }
+        private long ObtenerClienteIdDesdeToken()
+        {
+            var claim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (claim == null || !long.TryParse(claim.Value, out var clienteId))
+                throw new UnauthorizedAccessException("No se pudo obtener el ID del cliente desde el token.");
+            return clienteId;
+        }
 
         [HttpPost("confirmar")]
         public async Task<IActionResult> ConfirmarPedido([FromQuery] string carritoId, [FromQuery] string tipoEntrega)
         {
+            long clienteId;
+            try
+            {
+                clienteId = ObtenerClienteIdDesdeToken();
+            }
+            catch
+            {
+                return Unauthorized("Token inválido o faltan claims.");
+            }
             var carrito = await _carritoService.ObtenerPorId(carritoId);
             if (carrito == null) return NotFound("Carrito no encontrado");
 
             var pedido = new Pedido
             {
-                Cliente_id = carrito.ClienteId,
+                Cliente_id = clienteId,
                 Tipo_Entrega = Enum.Parse<Tipo_entrega>(tipoEntrega),
                 estado = Estado_pedido.En_espera,
                 Total_estimado = 0,

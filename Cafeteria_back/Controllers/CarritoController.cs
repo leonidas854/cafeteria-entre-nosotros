@@ -25,8 +25,8 @@ namespace Cafeteria_back.Controllers
         {
             return await _miDbContext.ProductopPromocion
                 .Where(pp => pp.Producto_id == productoId &&
-                             pp.Promocion!.Fech_ini <= DateTime.Now &&
-                             pp.Promocion.Fecha_final >= DateTime.Now)
+                             pp.Promocion!.Fech_ini <= DateTime.UtcNow &&
+                             pp.Promocion.Fecha_final >= DateTime.UtcNow)
                 .Select(pp => pp.Promocion)
                 .FirstOrDefaultAsync();
         }

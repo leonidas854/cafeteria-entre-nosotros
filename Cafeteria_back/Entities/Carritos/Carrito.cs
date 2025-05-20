@@ -11,7 +11,7 @@ namespace Cafeteria_back.Entities.Carritos
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
-        public long ClienteId { get; set; }
+        public long? ClienteId { get; set; }
         public List<ItemCarrito> Items { get; set; } = new();
         
     }

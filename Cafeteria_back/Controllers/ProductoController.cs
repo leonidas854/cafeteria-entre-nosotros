@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Cafeteria_back.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     [ApiController]
     public class ProductoController : Controller
     {
@@ -110,8 +110,9 @@ namespace Cafeteria_back.Controllers
 
             var resultado = productos.Select(p =>
             {
-                var dto = new ProductoDTO
+                var dto = new ProductoDTO_
                 {
+                    id = p.Id_producto,
                     Tipo = p.Tipo,
                     Categoria = p.Categoria,
                     Sub_categoria = p.Sub_categoria,

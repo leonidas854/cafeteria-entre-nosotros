@@ -92,34 +92,50 @@ namespace Cafeteria_back.Controllers
         }
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login(LoginDTO objeto)
+        public async Task<IActionResult> Login([FromBody] LoginDTO objeto)
         {
-            var usuarioEncontrado = await _context.Clientes
-                .Where(u =>
-                    u.Usuari == objeto.usuario &&
-                    u.Password == _utilidades.EncriptarSHA256(objeto.password)
-                ).FirstOrDefaultAsync();
+            try
+            {
+                var usuarioEncontrado = await _context.Clientes
+                    .Where(u =>
+                        u.Usuari == objeto.usuario &&
+                        u.Password == _utilidades.EncriptarSHA256(objeto.password)
+                    ).FirstOrDefaultAsync();
 
-            if (usuarioEncontrado == null)
-            {
-                return StatusCode(StatusCodes.Status200OK, new { isSuccess = false, token = "" });
-            }
-            else
-            {
-                Response.Cookies.Append("jwt", _utilidades.GenerarJWT(usuarioEncontrado), new CookieOptions
+                if (usuarioEncontrado == null)
+                {
+                    return Ok(new { isSuccess = false, message = "Credenciales inválidas", token = "" });
+                }
+
+                var token = _utilidades.GenerarJWT(usuarioEncontrado);
+
+                Response.Cookies.Append("jwt", token, new CookieOptions
                 {
                     HttpOnly = true,
-                    Secure = true, 
-                    SameSite = SameSiteMode.Strict, 
+                    Secure = false, 
+                    SameSite = SameSiteMode.Strict,
                     Expires = DateTimeOffset.UtcNow.AddHours(5)
                 });
-                return StatusCode(StatusCodes.Status200OK, new
+
+                return Ok(new
                 {
-                    isSuccess = true
+                    isSuccess = true,
+                    message = "Inicio de sesión exitoso",
                    
                 });
             }
+            catch (Exception ex)
+            {
+                
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    isSuccess = false,
+                    message = "Ocurrió un error interno.",
+                    
+                });
+            }
         }
+
         [Authorize]
         [HttpPost]
         [Route("Logout")]
@@ -154,7 +170,7 @@ namespace Cafeteria_back.Controllers
                 Response.Cookies.Append("jwt", _utilidades.GenerarJWT(usuarioEncontrado), new CookieOptions
                 {
                     HttpOnly = true,
-                    Secure = true,
+                    Secure = false,
                     SameSite = SameSiteMode.Strict,
                     Expires = DateTimeOffset.UtcNow.AddHours(5)
                 });

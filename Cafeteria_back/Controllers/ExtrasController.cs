@@ -34,6 +34,7 @@ namespace Cafeteria_back.Controllers
             var extras = await _context.Extras
                 .Select(e => new ExtraDTO
                 {
+                    id = e.Id_extra,
                     Nombre = e.Name,
                     precio = e.Precio
                 })
@@ -57,6 +58,7 @@ namespace Cafeteria_back.Controllers
             }
             var dtoextra = new ExtraDTO
             {
+                id = extra.Id_extra,
                 Nombre = extra.Name,
                 precio = extra.Precio
             };

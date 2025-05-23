@@ -18,7 +18,8 @@ namespace Cafeteria_back.Entities.Carritos
     public class ItemCarrito
     {
         public long ProductoId { get; set; }
-        public string Nombre { get; set; }          
+        public string? Nombre { get; set; }      
+        public string? Categoria { get; set; }
         public float PrecioUnitario { get; set; }    
         public int Cantidad { get; set; }
         public List<ExtraCarrito> Extras { get; set; } = new();

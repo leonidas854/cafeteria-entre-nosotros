@@ -58,7 +58,7 @@ namespace Cafeteria_back.Repositorio
                 .HasKey(de => new { de.Detalle_pedido_id, de.Extra_id });
 
             modelBuilder.Entity<Detalle_extra>()
-                .HasKey(de => new { de.Detalle_pedido_id, de.Extra_id }); // clave compuesta
+                .HasKey(de => new { de.Detalle_pedido_id, de.Extra_id }); 
 
             modelBuilder.Entity<Detalle_extra>()
                 .HasOne(de => de.Detalle_pedido)

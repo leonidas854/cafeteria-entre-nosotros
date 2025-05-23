@@ -34,6 +34,56 @@ namespace Cafeteria_back.Controllers
                 throw new UnauthorizedAccessException("No se pudo obtener el ID del cliente desde el token.");
             return clienteId;
         }
+        [HttpGet("mis-pedidos")]
+        public async Task<IActionResult> ObtenerMisPedidos()
+        {
+            long clienteId;
+            try
+            {
+                clienteId = ObtenerClienteIdDesdeToken();
+            }
+            catch
+            {
+                return Unauthorized("Token inválido o faltan claims.");
+            }
+
+            var pedidos = await _context.Pedidos
+                .Where(p => p.Cliente_id == clienteId)
+                .Include(p => p.Detalle_pedido)!
+                    .ThenInclude(dp => dp.Producto)
+                .Include(p => p.Detalle_pedido)!
+                    .ThenInclude(dp => dp.Detalle_extras)!
+                        .ThenInclude(de => de.Extra)
+                .ToListAsync();
+
+            if (pedidos == null || !pedidos.Any())
+                return NotFound("No se encontraron pedidos para este cliente.");
+
+            var resultado = pedidos.Select(p => new
+            {
+                p.Id_pedido,
+                p.Total_estimado,
+                p.Total_descuento,
+                TipoEntrega = p.Tipo_Entrega.ToString(),
+                Estado = p.estado.ToString(),
+                Detalles = p.Detalle_pedido!.Select(dp => new
+                {
+                    dp.Producto_id,
+                    ProductoNombre = dp.Producto?.Nombre,
+                    dp.Cantidad,
+                    dp.Precio_unitario,
+                    Extras = dp.Detalle_extras!.Select(de => new
+                    {
+                        de.Extra_id,
+                        ExtraNombre = de.Extra?.Name,
+                        de.Extra?.Precio
+                    })
+                })
+            });
+
+            return Ok(resultado);
+        }
+
 
         [HttpPost("confirmar")]
         public async Task<IActionResult> ConfirmarPedido([FromQuery] string carritoId, [FromQuery] string tipoEntrega)
@@ -76,14 +126,20 @@ namespace Cafeteria_back.Controllers
                 }
 
                 float precioFinal = baseProd.Precio();
-                var promo = await ObtenerPromocionVigentePorProducto(item.ProductoId);
-
+                //var promo = await ObtenerPromocionVigentePorProducto(item.ProductoId);
                 float descuento = 0;
-                if (promo != null)
+                var promoAplicable = await ObtenerPromocionAplicableAlCarrito(carrito);
+                if (promoAplicable != null &&
+                    promoAplicable.Producto_promocion!.Any(pp => pp.Producto_id == item.ProductoId))
                 {
                     descuento = _descuentoContext.AplicarDescuento(
-                        promo.Strategykey!, precioFinal, promo.Descuento, item.Cantidad);
+                        promoAplicable.Strategykey!, precioFinal, promoAplicable.Descuento, item.Cantidad);
                 }
+                //if (promo != null)
+                //{
+                //    descuento = _descuentoContext.AplicarDescuento(
+                //        promo.Strategykey!, precioFinal, promo.Descuento, item.Cantidad);
+                //}
 
                 float precioConDescuento = precioFinal - descuento;
 
@@ -115,7 +171,7 @@ namespace Cafeteria_back.Controllers
             pedido.Total_descuento = totalDescuento;
 
             await _context.SaveChangesAsync();
-            await _carritoService.Eliminar(carrito.Id);
+            await _carritoService.Eliminar(carrito.Id!);
 
             return Ok(new
             {
@@ -134,5 +190,30 @@ namespace Cafeteria_back.Controllers
                 .Select(pp => pp.Promocion)
                 .FirstOrDefaultAsync();
         }
+        private async Task<Promocion?> ObtenerPromocionAplicableAlCarrito(Carrito carrito)
+        {
+            var promociones = await _context.Promociones
+                .Include(p => p.Producto_promocion)
+                .Where(p => p.Fech_ini <= DateTime.UtcNow && p.Fecha_final >= DateTime.UtcNow)
+                .ToListAsync();
+
+            foreach (var promo in promociones)
+            {
+                var productosRequeridos = promo.Producto_promocion!.Select(pp => pp.Producto_id).ToList();
+
+              
+                bool todosPresentes = productosRequeridos.All(productoId =>
+                    carrito.Items.Any(item => item.ProductoId == productoId)
+                );
+
+                if (todosPresentes)
+                {
+                    return promo;
+                }
+            }
+
+            return null;
+        }
+
     }
 }

@@ -60,16 +60,16 @@ namespace Cafeteria_back.Controllers
                 return NotFound();
 
 
-            foreach (var item in carrito.Items)
-            {
-                var promocion = await ObtenerPromocionVigentePorProducto(item.ProductoId);
-                if (promocion != null)
-                {
-                    item.TienePromocion = true;
-                    item.PrecioPromocional = item.PrecioUnitario * (1 - promocion.Descuento);
-                    item.DescripcionPromocion = promocion.Descripcion;
-                }
-            }
+            //foreach (var item in carrito.Items)
+            //{
+            //    var promocion = await ObtenerPromocionVigentePorProducto(item.ProductoId);
+            //    if (promocion != null)
+            //    {
+            //        item.TienePromocion = true;
+            //        item.PrecioPromocional = item.PrecioUnitario * (1 - promocion.Descuento);
+            //        item.DescripcionPromocion = promocion.Descripcion;
+            //    }
+            //}
 
             return Ok(carrito);
         }

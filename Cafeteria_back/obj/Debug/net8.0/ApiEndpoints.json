@@ -284,6 +284,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafeteria_back.Controllers.PedidoController",
+    "Method": "ObtenerMisPedidos",
+    "RelativePath": "api/Pedido/mis-pedidos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafeteria_back.Controllers.ProductoController",
     "Method": "CrearProducto",
     "RelativePath": "api/Producto",

@@ -19,7 +19,6 @@ namespace Cafeteria_back.Controllers
         public PromocionesController(MiDbContext context)
         {
             _context = context;
-           
         }
         [HttpPost]
         [Authorize]

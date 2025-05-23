@@ -466,6 +466,18 @@
         }
       }
     },
+    "/api/Pedido/mis-pedidos": {
+      "get": {
+        "tags": [
+          "Pedido"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Pedido/confirmar": {
       "post": {
         "tags": [
@@ -1429,6 +1441,10 @@
             "format": "int64"
           },
           "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoria": {
             "type": "string",
             "nullable": true
           },

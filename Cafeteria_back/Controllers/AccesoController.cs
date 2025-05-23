@@ -30,7 +30,6 @@ namespace Cafeteria_back.Controllers
         }
 
         [HttpPost]
-        
         [Route("Registrarse_Cliente")]
         public async Task<IActionResult> Registrarse(UsuarioPruebaDTO prueba)
         {
@@ -124,7 +123,7 @@ namespace Cafeteria_back.Controllers
                    
                 });
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 
                 return StatusCode(StatusCodes.Status500InternalServerError, new
@@ -141,9 +140,7 @@ namespace Cafeteria_back.Controllers
         [Route("Logout")]
         public IActionResult Logout()
         {
-           
             Response.Cookies.Delete("jwt");
-
             return Ok(new
             {
                 isSuccess = true,
@@ -181,6 +178,7 @@ namespace Cafeteria_back.Controllers
                 });
             }
         }
+       
 
     }
 }

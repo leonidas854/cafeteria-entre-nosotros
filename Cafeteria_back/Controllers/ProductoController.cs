@@ -19,6 +19,7 @@ namespace Cafeteria_back.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Consumes("multipart/form-data")]
         public async Task<IActionResult> CrearProducto([FromForm] ProductoDTO dto)
         {
@@ -138,6 +139,7 @@ namespace Cafeteria_back.Controllers
 
         [HttpPut("nombre/{nombre}")]
         [Consumes("multipart/form-data")]
+        [Authorize]
         public async Task<IActionResult> ActualizarProducto(string nombre, [FromForm] ProductoDTO dto)
         {
             if (string.IsNullOrWhiteSpace(nombre))
@@ -197,6 +199,7 @@ namespace Cafeteria_back.Controllers
         }
 
         [HttpDelete("nombre/{nombre}")]
+        [Authorize]
         public async Task<IActionResult> EliminarProducto(string nombre)
         {
             if (string.IsNullOrWhiteSpace(nombre))

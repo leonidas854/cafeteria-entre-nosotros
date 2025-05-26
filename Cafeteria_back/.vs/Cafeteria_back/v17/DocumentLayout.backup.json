@@ -3,72 +3,20 @@
   "WorkspaceRootPath": "D:\\Cafeteria\\Cafeteria_back\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\carritos\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\carritos\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\extrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\extrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\extradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\extradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\iproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\iproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\extradecorador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\extradecorador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\idescuentostrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,8 +27,52 @@
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\descuentostrategycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\extradecoradorgenerico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\extradecoradorgenerico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\extrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\extrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\carritos\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\carritos\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\carritos\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\carritos\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\promociondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\promociondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\extradecorador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\extradecorador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\pedidofactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,20 +87,44 @@
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\googlemapsadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\carritos\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\carritos\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\extradecoradorgenerico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\extradecoradorgenerico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\20250525222006_addcampo_anadido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250525222006_addcampo_anadido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\usuarios\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\extradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\extradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\iproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\iproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\usuarios\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\usuariopruebadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -127,20 +143,12 @@
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\ipedidoobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\empleadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\empleadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -153,10 +161,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\promociondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\promociondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -206,7 +210,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 33,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Bookmark",
@@ -222,31 +226,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 22,
+              "Title": "20250525222006_addCampo_anadido.cs",
+              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250525222006_addCampo_anadido.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20250525222006_addCampo_anadido.cs",
+              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250525222006_addCampo_anadido.cs",
+              "RelativeToolTip": "Data\\Migrations\\20250525222006_addCampo_anadido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T22:20:06.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PedidoController.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PedidoController.cs",
               "RelativeDocumentMoniker": "Controllers\\PedidoController.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PedidoController.cs",
               "RelativeToolTip": "Controllers\\PedidoController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAuwFQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAANAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T05:12:14.742Z"
+              "WhenOpened": "2025-05-19T05:12:14.742Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 5,
               "Title": "DescuentoStrategyContext.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\DescuentoStrategyContext.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\DescuentoStrategyContext.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\DescuentoStrategyContext.cs",
               "RelativeToolTip": "Repositories\\Implementations\\DescuentoStrategyContext.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBUAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAuwBUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T04:56:34.056Z"
+              "WhenOpened": "2025-05-19T04:56:34.056Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "ExtraDecoradorGenerico.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecoradorGenerico.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\ExtraDecoradorGenerico.cs",
@@ -254,35 +273,38 @@
               "RelativeToolTip": "Repositories\\Implementations\\ExtraDecoradorGenerico.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T02:51:32.138Z"
+              "WhenOpened": "2025-05-19T02:51:32.138Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "CarritoController.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\CarritoController.cs",
               "RelativeDocumentMoniker": "Controllers\\CarritoController.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\CarritoController.cs",
               "RelativeToolTip": "Controllers\\CarritoController.cs",
-              "ViewState": "AgIAALAAAAAAAAAAAAAgwMkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAALcAAAAAAAAAAAAiwMcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T02:27:02.091Z"
+              "WhenOpened": "2025-05-19T02:27:02.091Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 11,
               "Title": "CarritoService.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\CarritoService.cs",
               "RelativeDocumentMoniker": "Entities\\Carritos\\CarritoService.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\CarritoService.cs",
               "RelativeToolTip": "Entities\\Carritos\\CarritoService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAIA0wBwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAIwEgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T02:25:49.026Z"
+              "WhenOpened": "2025-05-19T02:25:49.026Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "MongoDbSettings.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\MongoDbSettings.cs",
               "RelativeDocumentMoniker": "Data\\MongoDbSettings.cs",
@@ -294,31 +316,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Carrito.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\Carrito.cs",
               "RelativeDocumentMoniker": "Entities\\Carritos\\Carrito.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\Carrito.cs",
               "RelativeToolTip": "Entities\\Carritos\\Carrito.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAADQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAnwBoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T02:23:44.832Z"
+              "WhenOpened": "2025-05-19T02:23:44.832Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 4,
               "Title": "IDescuentoStrategy.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IDescuentoStrategy.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IDescuentoStrategy.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IDescuentoStrategy.cs",
               "RelativeToolTip": "Repositories\\Interfaces\\IDescuentoStrategy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T02:00:55.648Z"
+              "WhenOpened": "2025-05-19T02:00:55.648Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 18,
               "Title": "PedidoFactory.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\PedidoFactory.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\PedidoFactory.cs",
@@ -326,11 +350,12 @@
               "RelativeToolTip": "Repositories\\Implementations\\PedidoFactory.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAwwCEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T01:58:02.774Z"
+              "WhenOpened": "2025-05-19T01:58:02.774Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "IPedidoObserver.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IPedidoObserver.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IPedidoObserver.cs",
@@ -342,19 +367,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "ExtraDecorador.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecorador.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\ExtraDecorador.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecorador.cs",
               "RelativeToolTip": "Repositories\\Implementations\\ExtraDecorador.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwAYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T23:13:02.686Z"
+              "WhenOpened": "2025-05-18T23:13:02.686Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 29,
               "Title": "IProducto.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IProducto.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProducto.cs",
@@ -366,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "20250518065037_AddArreglo.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250518065037_AddArreglo.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250518065037_AddArreglo.cs",
@@ -378,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 23,
               "Title": "MiDbContextModelSnapshot.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\MiDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\MiDbContextModelSnapshot.cs",
@@ -386,7 +412,8 @@
               "RelativeToolTip": "Data\\Migrations\\MiDbContextModelSnapshot.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T06:45:56.721Z"
+              "WhenOpened": "2025-05-18T06:45:56.721Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -396,61 +423,66 @@
               "RelativeDocumentMoniker": "Entities\\DTOs\\ProductoDTO.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ProductoDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\ProductoDTO.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAowBcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T06:05:09.265Z"
+              "WhenOpened": "2025-05-18T06:05:09.265Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
               "Title": "ProductoController.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\ProductoController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductoController.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\ProductoController.cs",
               "RelativeToolTip": "Controllers\\ProductoController.cs",
-              "ViewState": "AgIAAMgAAAAAAAAAAAAIwMkAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAANEAAAAAAAAAAAAQwPwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T06:01:20.685Z"
+              "WhenOpened": "2025-05-18T06:01:20.685Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 13,
               "Title": "PromocionDTO.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\PromocionDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\PromocionDTO.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\PromocionDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\PromocionDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T05:04:23.775Z"
+              "WhenOpened": "2025-05-18T05:04:23.775Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "PromocionesController.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PromocionesController.cs",
               "RelativeDocumentMoniker": "Controllers\\PromocionesController.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PromocionesController.cs",
               "RelativeToolTip": "Controllers\\PromocionesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAQwLQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T05:00:21.236Z"
+              "WhenOpened": "2025-05-18T05:00:21.236Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 0,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAkwCIAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T04:09:32.593Z"
+              "WhenOpened": "2025-05-18T04:09:32.593Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 28,
               "Title": "ExtraDTO.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ExtraDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\ExtraDTO.cs",
@@ -462,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "20250516041238_MiNuevaMigracion.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Migrations\\20250516041238_MiNuevaMigracion.cs",
               "RelativeDocumentMoniker": "Migrations\\20250516041238_MiNuevaMigracion.cs",
@@ -474,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Bebida.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Bebida.cs",
               "RelativeDocumentMoniker": "Entities\\Productos\\Bebida.cs",
@@ -486,7 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "Comida.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Comida.cs",
               "RelativeDocumentMoniker": "Entities\\Productos\\Comida.cs",
@@ -498,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "EmpleadoDTO.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\EmpleadoDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\EmpleadoDTO.cs",
@@ -510,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ExtrasController.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\ExtrasController.cs",
               "RelativeDocumentMoniker": "Controllers\\ExtrasController.cs",
@@ -518,11 +550,12 @@
               "RelativeToolTip": "Controllers\\ExtrasController.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAowBIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T03:02:18.228Z"
+              "WhenOpened": "2025-05-15T03:02:18.228Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "Cliente.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Cliente.cs",
               "RelativeDocumentMoniker": "Entities\\Usuarios\\Cliente.cs",
@@ -534,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Cafeteria_back.http",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.http",
               "RelativeDocumentMoniker": "Cafeteria_back.http",
@@ -542,11 +575,12 @@
               "RelativeToolTip": "Cafeteria_back.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-05-14T03:38:53.146Z"
+              "WhenOpened": "2025-05-14T03:38:53.146Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 20,
               "Title": "GoogleMapsAdapter.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsAdapter.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\GoogleMapsAdapter.cs",
@@ -554,23 +588,25 @@
               "RelativeToolTip": "Repositories\\Implementations\\GoogleMapsAdapter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T03:30:48.38Z"
+              "WhenOpened": "2025-05-14T03:30:48.38Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 19,
               "Title": "GoogleMapsApi.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\GoogleMapsApi.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
               "RelativeToolTip": "Repositories\\Implementations\\GoogleMapsApi.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAIA6wDoAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAjwDoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T03:28:36.015Z"
+              "WhenOpened": "2025-05-14T03:28:36.015Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 17,
               "Title": "IGeolocalizador.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IGeolocalizador.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IGeolocalizador.cs",
@@ -578,24 +614,25 @@
               "RelativeToolTip": "Repositories\\Interfaces\\IGeolocalizador.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T03:25:36.105Z"
+              "WhenOpened": "2025-05-14T03:25:36.105Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AccesoController.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccesoController.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
               "RelativeToolTip": "Controllers\\AccesoController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAYwDwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAIwLAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-08T15:27:44.397Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "UsuarioPruebaDTO.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\UsuarioPruebaDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\UsuarioPruebaDTO.cs",
@@ -607,7 +644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\LoginDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\LoginDTO.cs",
@@ -619,19 +656,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "Utilidades.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
               "RelativeDocumentMoniker": "Custom\\Utilidades.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
               "RelativeToolTip": "Custom\\Utilidades.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwAwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T14:31:32.015Z"
+              "WhenOpened": "2025-05-08T14:31:32.015Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "WeatherForecast.cs",
@@ -643,7 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "Cafeteria_back.csproj",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
               "RelativeDocumentMoniker": "Cafeteria_back.csproj",
@@ -655,7 +693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "Producto_Promocion.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Producto_Promocion.cs",
               "RelativeDocumentMoniker": "Entities\\Tablas_intermedias\\Producto_Promocion.cs",
@@ -667,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "Detalle_extra.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_extra.cs",
               "RelativeDocumentMoniker": "Entities\\Tablas_intermedias\\Detalle_extra.cs",
@@ -679,7 +717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "Detalle_pedido.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_pedido.cs",
               "RelativeDocumentMoniker": "Entities\\Tablas_intermedias\\Detalle_pedido.cs",
@@ -691,7 +729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "Extra.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Extras\\Extra.cs",
               "RelativeDocumentMoniker": "Entities\\Extras\\Extra.cs",
@@ -703,19 +741,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Promocion.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
               "RelativeDocumentMoniker": "Entities\\Promociones\\Promocion.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
               "RelativeToolTip": "Entities\\Promociones\\Promocion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T02:34:33.877Z"
+              "WhenOpened": "2025-05-08T02:34:33.877Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "Producto.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Producto.cs",
               "RelativeDocumentMoniker": "Entities\\Productos\\Producto.cs",
@@ -727,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "Venta.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Venta.cs",
               "RelativeDocumentMoniker": "Entities\\Pedidos\\Venta.cs",
@@ -739,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 25,
               "Title": "Pedido.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Pedido.cs",
               "RelativeDocumentMoniker": "Entities\\Pedidos\\Pedido.cs",
@@ -751,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "Empleado.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Empleado.cs",
               "RelativeDocumentMoniker": "Entities\\Usuarios\\Empleado.cs",
@@ -763,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 27,
               "Title": "MiDbContext.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\MiDbContext.cs",
               "RelativeDocumentMoniker": "Data\\MiDbContext.cs",
@@ -775,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 26,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -787,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -795,11 +834,12 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-08T00:29:18.377Z"
+              "WhenOpened": "2025-05-08T00:29:18.377Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "Usuario.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Usuario.cs",
               "RelativeDocumentMoniker": "Entities\\Usuarios\\Usuario.cs",

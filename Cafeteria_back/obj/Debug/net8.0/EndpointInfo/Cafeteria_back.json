@@ -770,6 +770,46 @@
         }
       }
     },
+    "/api/Producto/{id}": {
+      "get": {
+        "tags": [
+          "Producto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoDTO_"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoDTO_"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoDTO_"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Promociones": {
       "post": {
         "tags": [
@@ -777,19 +817,76 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/PromocionDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PromocionDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PromocionDTO"
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Descuento": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "Fech_ini": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Fecha_final": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Descripcion": {
+                    "type": "string"
+                  },
+                  "Strategykey": {
+                    "type": "string"
+                  },
+                  "Url_imagen": {
+                    "type": "string"
+                  },
+                  "Imagen": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "Productos": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "id": {
+                  "style": "form"
+                },
+                "Descuento": {
+                  "style": "form"
+                },
+                "Fech_ini": {
+                  "style": "form"
+                },
+                "Fecha_final": {
+                  "style": "form"
+                },
+                "Descripcion": {
+                  "style": "form"
+                },
+                "Strategykey": {
+                  "style": "form"
+                },
+                "Url_imagen": {
+                  "style": "form"
+                },
+                "Imagen": {
+                  "style": "form"
+                },
+                "Productos": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -1687,6 +1784,64 @@
         },
         "additionalProperties": false
       },
+      "ProductoDTO_": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "sub_categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "precio": {
+            "type": "number",
+            "format": "float"
+          },
+          "estado": {
+            "type": "boolean"
+          },
+          "sabores": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagen": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "proporcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "tamanio": {
+            "type": "string",
+            "nullable": true
+          },
+          "image_url": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Producto_Promocion": {
         "type": "object",
         "properties": {
@@ -1734,6 +1889,10 @@
             "type": "string",
             "nullable": true
           },
+          "url_imagen": {
+            "type": "string",
+            "nullable": true
+          },
           "producto_promocion": {
             "type": "array",
             "items": {
@@ -1747,6 +1906,11 @@
       "PromocionDTO": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
           "descuento": {
             "type": "number",
             "format": "float"
@@ -1767,10 +1931,20 @@
             "type": "string",
             "nullable": true
           },
+          "url_imagen": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagen": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
           "productos": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "integer",
+              "format": "int64"
             },
             "nullable": true
           }

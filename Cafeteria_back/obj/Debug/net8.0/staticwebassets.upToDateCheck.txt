@@ -61,3 +61,4 @@ wwwroot\imagenes\eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg
 wwwroot\imagenes\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png
 wwwroot\imagenes\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg
 wwwroot\imagenes\fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg
+wwwroot\Promociones\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg

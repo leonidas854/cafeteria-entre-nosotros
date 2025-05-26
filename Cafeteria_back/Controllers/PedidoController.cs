@@ -115,10 +115,10 @@ namespace Cafeteria_back.Controllers
 
             float totalEstimado = 0;
             float totalDescuento = 0;
-
+            var promoAplicable = await ObtenerPromocionAplicableAlCarrito(carrito);
             foreach (var item in carrito.Items)
             {
-                IProducto baseProd = new ProductoBase(item.Nombre, item.PrecioUnitario, "café");
+                IProducto baseProd = new ProductoBase(item.Nombre!, item.PrecioUnitario, "café");
                 foreach (var extra in item.Extras)
                 {
                     var extraObj = new Extra { Precio = extra.Precio, Name = extra.Nombre };
@@ -126,20 +126,19 @@ namespace Cafeteria_back.Controllers
                 }
 
                 float precioFinal = baseProd.Precio();
-                //var promo = await ObtenerPromocionVigentePorProducto(item.ProductoId);
+               
                 float descuento = 0;
-                var promoAplicable = await ObtenerPromocionAplicableAlCarrito(carrito);
+                
                 if (promoAplicable != null &&
                     promoAplicable.Producto_promocion!.Any(pp => pp.Producto_id == item.ProductoId))
                 {
                     descuento = _descuentoContext.AplicarDescuento(
-                        promoAplicable.Strategykey!, precioFinal, promoAplicable.Descuento, item.Cantidad);
+                        "porcentaje", precioFinal, promoAplicable.Descuento);
+
                 }
-                //if (promo != null)
-                //{
-                //    descuento = _descuentoContext.AplicarDescuento(
-                //        promo.Strategykey!, precioFinal, promo.Descuento, item.Cantidad);
-                //}
+             
+
+
 
                 float precioConDescuento = precioFinal - descuento;
 
@@ -147,7 +146,7 @@ namespace Cafeteria_back.Controllers
                 {
                     Producto_id = item.ProductoId,
                     Cantidad = item.Cantidad,
-                    Precio_unitario = item.PrecioUnitario
+                    Precio_unitario = precioConDescuento
                 };
 
                 totalEstimado += precioFinal * item.Cantidad;
@@ -190,6 +189,7 @@ namespace Cafeteria_back.Controllers
                 .Select(pp => pp.Promocion)
                 .FirstOrDefaultAsync();
         }
+        [NonAction]
         private async Task<Promocion?> ObtenerPromocionAplicableAlCarrito(Carrito carrito)
         {
             var promociones = await _context.Promociones
@@ -201,10 +201,11 @@ namespace Cafeteria_back.Controllers
             {
                 var productosRequeridos = promo.Producto_promocion!.Select(pp => pp.Producto_id).ToList();
 
-              
+
                 bool todosPresentes = productosRequeridos.All(productoId =>
-                    carrito.Items.Any(item => item.ProductoId == productoId)
-                );
+                            carrito.Items.Any(item => item.ProductoId == productoId && item.Cantidad >= 1)
+                        );
+
 
                 if (todosPresentes)
                 {

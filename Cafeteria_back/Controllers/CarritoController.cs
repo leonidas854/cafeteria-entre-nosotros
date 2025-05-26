@@ -20,16 +20,8 @@ namespace Cafeteria_back.Controllers
             _carritoService = carritoService;
             _miDbContext = miDbContext;
         }
-        [NonAction]
-        public async Task<Promocion?> ObtenerPromocionVigentePorProducto(long productoId)
-        {
-            return await _miDbContext.ProductopPromocion
-                .Where(pp => pp.Producto_id == productoId &&
-                             pp.Promocion!.Fech_ini <= DateTime.UtcNow &&
-                             pp.Promocion.Fecha_final >= DateTime.UtcNow)
-                .Select(pp => pp.Promocion)
-                .FirstOrDefaultAsync();
-        }
+        
+
 
 
         private long ObtenerClienteIdDesdeToken()
@@ -60,16 +52,8 @@ namespace Cafeteria_back.Controllers
                 return NotFound();
 
 
-            //foreach (var item in carrito.Items)
-            //{
-            //    var promocion = await ObtenerPromocionVigentePorProducto(item.ProductoId);
-            //    if (promocion != null)
-            //    {
-            //        item.TienePromocion = true;
-            //        item.PrecioPromocional = item.PrecioUnitario * (1 - promocion.Descuento);
-            //        item.DescripcionPromocion = promocion.Descripcion;
-            //    }
-            //}
+            await ActualizarEstadoPromocionesCarrito(carrito);
+
 
             return Ok(carrito);
         }
@@ -94,7 +78,10 @@ namespace Cafeteria_back.Controllers
 
             if (carritoExistente == null)
             {
+
+                await ActualizarEstadoPromocionesCarrito(carrito);
                 await _carritoService.Crear(carrito);
+
             }
             else
             {
@@ -114,6 +101,8 @@ namespace Cafeteria_back.Controllers
                         carritoExistente.Items.Add(item);
                     }
                 }
+                await ActualizarEstadoPromocionesCarrito(carritoExistente);
+
 
                 await _carritoService.Actualizar(carritoExistente.Id!, carritoExistente);
             }
@@ -140,13 +129,13 @@ namespace Cafeteria_back.Controllers
 
             var item = carrito.Items.FirstOrDefault(i =>
                 i.ProductoId == dto.ProductoId &&
-                i.Extras.Count == dto.ExtraIds.Count &&
+                i.Extras.Count == dto.ExtraIds!.Count &&
                 !i.Extras.Select(e => e.ExtraId).Except(dto.ExtraIds).Any());
 
             if (item == null) return NotFound("Ítem no encontrado.");
 
             item.Cantidad = dto.NuevaCantidad;
-
+            await ActualizarEstadoPromocionesCarrito(carrito);
             await _carritoService.Actualizar(carrito.Id!, carrito);
             return Ok(carrito);
         }
@@ -171,6 +160,7 @@ namespace Cafeteria_back.Controllers
             if (item == null) return NotFound("Producto no encontrado en el carrito.");
 
             item.Extras = dto.NuevosExtras;
+            await ActualizarEstadoPromocionesCarrito(carrito);
 
             await _carritoService.Actualizar(carrito.Id!, carrito);
             return Ok(carrito);
@@ -196,6 +186,7 @@ namespace Cafeteria_back.Controllers
                 i.ProductoId == dto.ProductoId &&
                 i.Extras.Select(e => e.ExtraId).OrderBy(x => x)
                     .SequenceEqual(dto.ExtraIds.OrderBy(x => x)));
+            await ActualizarEstadoPromocionesCarrito(carrito);
 
             await _carritoService.Actualizar(carrito.Id!, carrito);
             return Ok(carrito);
@@ -207,5 +198,66 @@ namespace Cafeteria_back.Controllers
             await _carritoService.Eliminar(id);
             return Ok();
         }
+
+        [NonAction]
+        public async Task<Promocion?> ObtenerPromocionVigentePorProducto(long productoId)
+        {
+            return await _miDbContext.ProductopPromocion
+                .Where(pp => pp.Producto_id == productoId &&
+                             pp.Promocion!.Fech_ini <= DateTime.UtcNow &&
+                             pp.Promocion.Fecha_final >= DateTime.UtcNow)
+                .Select(pp => pp.Promocion)
+                .FirstOrDefaultAsync();
+        }
+        [NonAction]
+        private async Task ActualizarEstadoPromocionesCarrito(Carrito carrito)
+        {
+            
+            var promocionesVigentes = await _miDbContext.ProductopPromocion
+                .Include(pp => pp.Promocion)
+                .Where(pp =>
+                    pp.Promocion!.Fech_ini <= DateTime.UtcNow &&
+                    pp.Promocion.Fecha_final >= DateTime.UtcNow)
+                .ToListAsync();
+
+            
+            var promocionesPorProducto = promocionesVigentes
+                .GroupBy(pp => pp.Promocion_id)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+            foreach (var grupo in promocionesPorProducto)
+            {
+                var promocionId = grupo.Key;
+                var productosRequeridos = grupo.Value.Select(pp => pp.Producto_id).ToHashSet();
+
+
+                bool seCumplePromocion = productosRequeridos.All(promoProdId =>
+    carrito.Items.Any(item => item.ProductoId == promoProdId && item.Cantidad == 1));
+
+
+                foreach (var item in carrito.Items)
+                {
+                    if (productosRequeridos.Contains(item.ProductoId))
+                    {
+                        if (seCumplePromocion)
+                        {
+                            var promocion = grupo.Value.Select(pp => pp.Promocion).FirstOrDefault(p => p != null);
+                            if (promocion == null) continue;
+
+                            item.TienePromocion = true;
+                            item.PrecioPromocional = item.PrecioUnitario * (1 - (promocion.Descuento / 100f));
+                            item.DescripcionPromocion = promocion.Strategykey;
+                        }
+                        else
+                        {
+                            item.TienePromocion = false;
+                            item.PrecioPromocional = null;
+                            item.DescripcionPromocion = null;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

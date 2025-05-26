@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg",
+      "PackagePath": "staticwebassets\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg"
+    },
+    {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
       "PackagePath": "staticwebassets\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png"
     },

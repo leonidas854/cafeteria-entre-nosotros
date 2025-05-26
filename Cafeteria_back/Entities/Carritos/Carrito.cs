@@ -32,14 +32,14 @@ namespace Cafeteria_back.Entities.Carritos
     public class ExtraCarrito
     {
         public long ExtraId { get; set; }
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
         public float Precio { get; set; }
     }
     public class ModificarCantidadDto
     {
         public long ProductoId { get; set; }
         public int NuevaCantidad { get; set; }
-        public List<long> ExtraIds { get; set; }
+        public List<long>? ExtraIds { get; set; }
     }
     public class ModificarExtrasDto
     {

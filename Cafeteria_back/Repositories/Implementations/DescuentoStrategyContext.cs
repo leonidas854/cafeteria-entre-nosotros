@@ -15,7 +15,7 @@ namespace Cafeteria_back.Repositories.Implementations
         };
         }
 
-        public float AplicarDescuento(string strategyKey, float precioBase, float valorDescuento, int cantidad)
+        public float AplicarDescuento(string strategyKey, float precioBase, float valorDescuento)
         {
             if (_estrategias.TryGetValue(strategyKey, out var estrategia))
             {

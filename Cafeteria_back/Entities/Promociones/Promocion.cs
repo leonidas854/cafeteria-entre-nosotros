@@ -16,6 +16,7 @@ namespace Cafeteria_back.Entities.Promociones
         public string? Descripcion { get; set; }
 
         public string? Strategykey { get; set; }
+        public string? Url_imagen { get; set; }
 
         public List<Producto_Promocion>? Producto_promocion { get; set; }
 

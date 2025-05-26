@@ -216,5 +216,37 @@ namespace Cafeteria_back.Controllers
 
             return NoContent();
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProductoDTO_>> ObtenerProductoPorId(long id)
+        {
+            var producto = await _context.Productos.FindAsync(id);
+
+            if (producto == null)
+                return NotFound("Producto no encontrado.");
+
+            var dto = new ProductoDTO_
+            {
+                id = producto.Id_producto,
+                Tipo = producto.Tipo,
+                Categoria = producto.Categoria,
+                Sub_categoria = producto.Sub_categoria,
+                Descripcion = producto.Descripcion,
+                Nombre = producto.Nombre,
+                Precio = producto.Precio,
+                Estado = producto.Estado,
+                Sabores = producto.Sabores,
+                Image_url = producto.Image_url
+            };
+
+            if (producto is Bebida bebida)
+                dto.Tamanio = bebida.Tamanio;
+
+            if (producto is Comida comida)
+                dto.Proporcion = comida.Proporcion;
+
+            return Ok(dto);
+        }
+
     }
 }

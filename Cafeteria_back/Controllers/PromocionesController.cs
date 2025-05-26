@@ -22,22 +22,35 @@ namespace Cafeteria_back.Controllers
         }
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> CrearPromocion([FromBody] PromocionDTO dto)
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> CrearPromocion([FromForm] PromocionDTO dto)
         {
-            bool strategyExiste = await _context.Promociones
-                .AnyAsync(p => p.Strategykey!.ToLower() == dto.Strategykey.ToLower());
-
-            if (strategyExiste)
+            if (await _context.Promociones.AnyAsync(p => p.Strategykey!.ToLower() == dto.Strategykey.ToLower()))
                 return Conflict("Ya existe una promoción con ese Strategykey.");
 
+            if (dto.Productos == null || !dto.Productos.Any())
+                return BadRequest("Debe asociar al menos un producto válido.");
+
             var productosEncontrados = await _context.Productos
-                .Where(p => dto.Productos
-                    .Select(np => np.ToLower())
-                    .Contains(p.Nombre!.ToLower()))
+                .Where(p => dto.Productos.Contains(p.Id_producto))
                 .ToListAsync();
 
-            if (productosEncontrados.Count == 0)
-                return BadRequest("La promoción debe estar asociada al menos a un producto válido.");
+            if (!productosEncontrados.Any())
+                return BadRequest("No se encontraron productos con los IDs proporcionados.");
+
+            string imagenURL = null!;
+            if (dto.Imagen != null && dto.Imagen.Length > 0)
+            {
+                var folderpath = Path.Combine("wwwroot", "Promociones");
+                Directory.CreateDirectory(folderpath);
+                var filename = Guid.NewGuid().ToString() + Path.GetExtension(dto.Imagen.FileName);
+                var filepath = Path.Combine(folderpath, filename);
+                using (var stream = new FileStream(filepath, FileMode.Create))
+                {
+                    await dto.Imagen.CopyToAsync(stream);
+                }
+                imagenURL = $"/promociones/{filename}";
+            }
 
             var promocion = new Promocion
             {
@@ -45,23 +58,20 @@ namespace Cafeteria_back.Controllers
                 Fech_ini = dto.Fech_ini.ToUniversalTime(),
                 Fecha_final = dto.Fecha_final.ToUniversalTime(),
                 Descripcion = dto.Descripcion,
-                Strategykey = dto.Strategykey
+                Strategykey = dto.Strategykey,
+                Url_imagen = imagenURL,
+                Producto_promocion = productosEncontrados.Select(p => new Producto_Promocion
+                {
+                    Producto_id = p.Id_producto
+                }).ToList()
             };
 
-            promocion.Producto_promocion = new List<Producto_Promocion>();
-
-            foreach (var producto in productosEncontrados)
-            {
-                promocion.Producto_promocion.Add(new Producto_Promocion
-                {
-                    Producto_id = producto.Id_producto
-                });
-            }
             _context.Promociones.Add(promocion);
             await _context.SaveChangesAsync();
 
             return Ok(new { isSuccess = true, strategykey = promocion.Strategykey });
         }
+
 
 
         [HttpGet]
@@ -74,18 +84,22 @@ namespace Cafeteria_back.Controllers
 
             var resultado = promociones.Select(p => new PromocionDTO
             {
+                id = p.Id_promocion,
                 Strategykey = p.Strategykey!,
                 Descuento = p.Descuento!,
                 Fech_ini = p.Fech_ini,
                 Fecha_final = p.Fecha_final,
                 Descripcion = p.Descripcion!,
                 Productos = p.Producto_promocion!
-                    .Select(pp => pp.Producto!.Nombre!)
-                    .ToList()
+                        .Select(pp => pp.Producto!.Id_producto)
+                        .ToList(),
+
+                Url_imagen = p.Url_imagen,
             });
 
             return Ok(resultado);
         }
+
 
 
 
@@ -109,17 +123,17 @@ namespace Cafeteria_back.Controllers
                     return Conflict("Ya existe otra promoción con ese Strategykey.");
             }
 
-            
+            if (dto.Productos == null || !dto.Productos.Any())
+                return BadRequest("Debe asociarse al menos un producto válido.");
+
             var productos = await _context.Productos
-                .Where(p => dto.Productos
-                    .Select(n => n.ToLower())
-                    .Contains(p.Nombre!.ToLower()))
+                .Where(p => dto.Productos.Contains(p.Id_producto))
                 .ToListAsync();
 
             if (productos.Count == 0)
-                return BadRequest("Debe asociarse al menos un producto válido.");
+                return BadRequest("No se encontraron productos válidos.");
 
-          
+
             promocion.Descuento = dto.Descuento;
             promocion.Fech_ini = dto.Fech_ini.ToUniversalTime();
             promocion.Fecha_final = dto.Fecha_final.ToUniversalTime();
@@ -139,6 +153,7 @@ namespace Cafeteria_back.Controllers
             await _context.SaveChangesAsync();
             return NoContent();
         }
+
 
         [HttpDelete("{strategykey}")]
         [Authorize]

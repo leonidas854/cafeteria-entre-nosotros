@@ -22,4 +22,6 @@ namespace Cafeteria_back.Entities.Usuarios
         [Required]
         public string? Password { get; set; }
     }
+
+
 }

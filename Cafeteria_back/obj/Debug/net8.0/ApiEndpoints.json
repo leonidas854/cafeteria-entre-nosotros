@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "Cafeteria_back.Controllers.AccesoController",
+    "Method": "ObtenerMisDatos",
+    "RelativePath": "Acceso/Datos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.AccesoController",
     "Method": "Login",
     "RelativePath": "Acceso/Login",
     "HttpMethod": "POST",

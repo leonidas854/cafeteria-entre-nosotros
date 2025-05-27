@@ -141,6 +141,18 @@
         }
       }
     },
+    "/Acceso/Datos": {
+      "get": {
+        "tags": [
+          "Acceso"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Carrito": {
       "get": {
         "tags": [

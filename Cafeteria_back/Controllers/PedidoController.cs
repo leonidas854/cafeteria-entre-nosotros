@@ -86,7 +86,18 @@ namespace Cafeteria_back.Controllers
 
 
         [HttpPost("confirmar")]
-        public async Task<IActionResult> ConfirmarPedido([FromQuery] string carritoId, [FromQuery] string tipoEntrega)
+        //string metodo de pago, 
+        //y tambien para que guarde a la tabla de ventas,
+        //fecha de la vent es utcnow, el total final, y finalmente su ven estado sera siempre en esta caso
+        //pagada
+        //recien se le asignara un empleado cuando un empleado acepta el pedido
+        //y el estado del pedido se vuelve preparando
+        //tambien otro boton que diga entregar pedido
+        //y entregado al delivery
+        //de la misma manera con carrito cambiar todos esos detalles
+        //si el cliente o el cajero estan usando la web como tal
+        public async Task<IActionResult> ConfirmarPedido([FromQuery] string carritoId, 
+            [FromQuery] string tipoEntrega)
         {
             long clienteId;
             try

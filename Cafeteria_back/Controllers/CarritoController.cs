@@ -4,6 +4,7 @@ using Cafeteria_back.Repositorio;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Cafeteria_back.Controllers
 {
@@ -34,26 +35,43 @@ namespace Cafeteria_back.Controllers
 
 
 
+
+
         [HttpGet]
         public async Task<IActionResult> Obtener()
         {
-            long clienteId;
+            long usuarioId;
+            string? rol;
+
             try
             {
-                clienteId = ObtenerClienteIdDesdeToken();
+                usuarioId = ObtenerClienteIdDesdeToken();
+                rol = User.FindFirst(ClaimTypes.Role)?.Value;
             }
             catch
             {
                 return Unauthorized("Token inválido o faltan claims.");
             }
 
-            var carrito = await _carritoService.ObtenerPorCliente(clienteId);
+            Carrito? carrito = null;
+
+            if (rol == "Cliente")
+            {
+                carrito = await _carritoService.ObtenerPorCliente(usuarioId);
+            }
+            else if (rol == "Empleado")
+            {
+                carrito = await _carritoService.ObtenerPorEmpleado(usuarioId);
+            }
+            else
+            {
+                return Unauthorized("Rol no reconocido.");
+            }
+
             if (carrito == null)
                 return NotFound();
 
-
             await ActualizarEstadoPromocionesCarrito(carrito);
-
 
             return Ok(carrito);
         }
@@ -62,26 +80,40 @@ namespace Cafeteria_back.Controllers
         [HttpPost("agregar")]
         public async Task<IActionResult> Agregar([FromBody] Carrito carrito)
         {
-            long clienteId;
+            long usuarioId;
+            string? rol;
+
             try
             {
-                clienteId = ObtenerClienteIdDesdeToken();
+                usuarioId = ObtenerClienteIdDesdeToken();
+                rol = User.FindFirst(ClaimTypes.Role)?.Value;
             }
             catch
             {
                 return Unauthorized("Token inválido o faltan claims.");
             }
 
-            carrito.ClienteId = clienteId;
+            Carrito? carritoExistente = null;
 
-            var carritoExistente = await _carritoService.ObtenerPorCliente(clienteId);
+            if (rol == "Cliente")
+            {
+                carrito.ClienteId = carrito.ClienteId?? usuarioId;
+                carritoExistente = await _carritoService.ObtenerPorCliente(usuarioId);
+            }
+            else if (rol == "Empleado")
+            {
+                carrito.EmpleadoId = usuarioId;
+                carritoExistente = await _carritoService.ObtenerPorEmpleado(usuarioId);
+            }
+            else
+            {
+                return Unauthorized("Rol no reconocido.");
+            }
 
             if (carritoExistente == null)
             {
-
                 await ActualizarEstadoPromocionesCarrito(carrito);
                 await _carritoService.Crear(carrito);
-
             }
             else
             {
@@ -101,30 +133,37 @@ namespace Cafeteria_back.Controllers
                         carritoExistente.Items.Add(item);
                     }
                 }
+
                 await ActualizarEstadoPromocionesCarrito(carritoExistente);
-
-
                 await _carritoService.Actualizar(carritoExistente.Id!, carritoExistente);
             }
 
             return Ok();
         }
 
-
         [HttpPut("modificar-cantidad")]
         public async Task<IActionResult> ModificarCantidad([FromBody] ModificarCantidadDto dto)
         {
-            long clienteId;
+            long usuarioId;
+            string? rol;
+
             try
             {
-                clienteId = ObtenerClienteIdDesdeToken();
+                usuarioId = ObtenerClienteIdDesdeToken();
+                rol = User.FindFirst(ClaimTypes.Role)?.Value;
             }
             catch
             {
                 return Unauthorized("Token inválido o faltan claims.");
             }
 
-            var carrito = await _carritoService.ObtenerPorCliente(clienteId);
+            Carrito? carrito = rol switch
+            {
+                "Cliente" => await _carritoService.ObtenerPorCliente(usuarioId),
+                "Empleado" => await _carritoService.ObtenerPorEmpleado(usuarioId),
+                _ => null
+            };
+
             if (carrito == null) return NotFound();
 
             var item = carrito.Items.FirstOrDefault(i =>
@@ -135,60 +174,82 @@ namespace Cafeteria_back.Controllers
             if (item == null) return NotFound("Ítem no encontrado.");
 
             item.Cantidad = dto.NuevaCantidad;
+
             await ActualizarEstadoPromocionesCarrito(carrito);
             await _carritoService.Actualizar(carrito.Id!, carrito);
+
             return Ok(carrito);
         }
 
         [HttpPut("modificar-extras")]
         public async Task<IActionResult> ModificarExtras([FromBody] ModificarExtrasDto dto)
         {
-            long clienteId;
+            long usuarioId;
+            string? rol;
+
             try
             {
-                clienteId = ObtenerClienteIdDesdeToken();
+                usuarioId = ObtenerClienteIdDesdeToken();
+                rol = User.FindFirst(ClaimTypes.Role)?.Value;
             }
             catch
             {
                 return Unauthorized("Token inválido o faltan claims.");
             }
 
-            var carrito = await _carritoService.ObtenerPorCliente(clienteId);
+            Carrito? carrito = rol switch
+            {
+                "Cliente" => await _carritoService.ObtenerPorCliente(usuarioId),
+                "Empleado" => await _carritoService.ObtenerPorEmpleado(usuarioId),
+                _ => null
+            };
+
             if (carrito == null) return NotFound();
 
             var item = carrito.Items.FirstOrDefault(i => i.ProductoId == dto.ProductoId);
             if (item == null) return NotFound("Producto no encontrado en el carrito.");
 
             item.Extras = dto.NuevosExtras;
-            await ActualizarEstadoPromocionesCarrito(carrito);
 
+            await ActualizarEstadoPromocionesCarrito(carrito);
             await _carritoService.Actualizar(carrito.Id!, carrito);
+
             return Ok(carrito);
         }
 
         [HttpDelete("quitar-producto")]
         public async Task<IActionResult> QuitarProducto([FromBody] QuitarProductoDto dto)
         {
-            long clienteId;
+            long usuarioId;
+            string? rol;
+
             try
             {
-                clienteId = ObtenerClienteIdDesdeToken();
+                usuarioId = ObtenerClienteIdDesdeToken();
+                rol = User.FindFirst(ClaimTypes.Role)?.Value;
             }
             catch
             {
                 return Unauthorized("Token inválido o faltan claims.");
             }
 
-            var carrito = await _carritoService.ObtenerPorCliente(clienteId);
+            Carrito? carrito = rol switch
+            {
+                "Cliente" => await _carritoService.ObtenerPorCliente(usuarioId),
+                "Empleado" => await _carritoService.ObtenerPorEmpleado(usuarioId),
+                _ => null
+            };
+
             if (carrito == null) return NotFound();
 
             carrito.Items.RemoveAll(i =>
                 i.ProductoId == dto.ProductoId &&
                 i.Extras.Select(e => e.ExtraId).OrderBy(x => x)
                     .SequenceEqual(dto.ExtraIds.OrderBy(x => x)));
-            await ActualizarEstadoPromocionesCarrito(carrito);
 
+            await ActualizarEstadoPromocionesCarrito(carrito);
             await _carritoService.Actualizar(carrito.Id!, carrito);
+
             return Ok(carrito);
         }
 
@@ -198,6 +259,24 @@ namespace Cafeteria_back.Controllers
             await _carritoService.Eliminar(id);
             return Ok();
         }
+        [HttpPut("asignar-a-cliente/{carritoId}")]
+        public async Task<IActionResult> AsignarCarritoACliente(string carritoId, [FromQuery] long clienteId)
+        {
+            var carrito = await _carritoService.ObtenerPorId(carritoId);
+
+            if (carrito == null)
+                return NotFound();
+
+            carrito.ClienteId = clienteId;
+
+            await _carritoService.Actualizar(carritoId, carrito);
+
+            return Ok();
+        }
+
+
+
+
 
         [NonAction]
         public async Task<Promocion?> ObtenerPromocionVigentePorProducto(long productoId)

@@ -86,34 +86,19 @@ namespace Cafeteria_back.Controllers
 
 
         [HttpPost("confirmar")]
-        //string metodo de pago, 
-        //y tambien para que guarde a la tabla de ventas,
-        //fecha de la vent es utcnow, el total final, y finalmente su ven estado sera siempre en esta caso
-        //pagada
-        //recien se le asignara un empleado cuando un empleado acepta el pedido
-        //y el estado del pedido se vuelve preparando
-        //tambien otro boton que diga entregar pedido
-        //y entregado al delivery
-        //de la misma manera con carrito cambiar todos esos detalles
-        //si el cliente o el cajero estan usando la web como tal
+       
+
         public async Task<IActionResult> ConfirmarPedido([FromQuery] string carritoId, 
-            [FromQuery] string tipoEntrega)
+            [FromQuery] string tipoEntrega, [FromQuery] string Tipo_pago)
         {
-            long clienteId;
-            try
-            {
-                clienteId = ObtenerClienteIdDesdeToken();
-            }
-            catch
-            {
-                return Unauthorized("Token inválido o faltan claims.");
-            }
+          
+            
             var carrito = await _carritoService.ObtenerPorId(carritoId);
             if (carrito == null) return NotFound("Carrito no encontrado");
 
             var pedido = new Pedido
             {
-                Cliente_id = clienteId,
+                Cliente_id = carrito.ClienteId,
                 Tipo_Entrega = Enum.Parse<Tipo_entrega>(tipoEntrega),
                 estado = Estado_pedido.En_espera,
                 Total_estimado = 0,
@@ -147,9 +132,6 @@ namespace Cafeteria_back.Controllers
                         "porcentaje", precioFinal, promoAplicable.Descuento);
 
                 }
-             
-
-
 
                 float precioConDescuento = precioFinal - descuento;
 
@@ -177,9 +159,21 @@ namespace Cafeteria_back.Controllers
                 }
             }
 
+          
+
             pedido.Total_estimado = totalEstimado;
             pedido.Total_descuento = totalDescuento;
+            var venta = new Venta
+            {
+                Empleado_id = carrito.EmpleadoId,
+                Pedido_id = pedido.Id_pedido,
+                Total_final = totalEstimado-totalDescuento,
+                Ven_fecha = DateTime.UtcNow,
+                Tipo_de_Pago = Tipo_pago
+            };
 
+
+            _context.Ventas.Add(venta);
             await _context.SaveChangesAsync();
             await _carritoService.Eliminar(carrito.Id!);
 

@@ -16,4 +16,14 @@ namespace Cafeteria_back.Entities.DTOs
         public string usuario { get; set; }
         public string password { get; set; }
     }
+    public class UsuarioNit
+    {
+        public long id { get; set; }
+        public string apell_paterno { get; set; }
+
+        public int NIT { get; set; }
+        public string usuario { get; set; }
+        public string password { get; set; }
+
+    }
 }

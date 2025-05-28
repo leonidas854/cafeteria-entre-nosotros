@@ -12,6 +12,7 @@ namespace Cafeteria_back.Entities.Carritos
         public string? Id { get; set; }
 
         public long? ClienteId { get; set; }
+        public long? EmpleadoId { get; set; }
         public List<ItemCarrito> Items { get; set; } = new();
         
     }

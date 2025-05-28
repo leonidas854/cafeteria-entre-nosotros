@@ -153,6 +153,60 @@
         }
       }
     },
+    "/api/Cajero/nit/{nit}": {
+      "get": {
+        "tags": [
+          "Cajero"
+        ],
+        "parameters": [
+          {
+            "name": "nit",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cajero/Registrar": {
+      "post": {
+        "tags": [
+          "Cajero"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioNit"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioNit"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioNit"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Carrito": {
       "get": {
         "tags": [
@@ -301,6 +355,36 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Carrito/asignar-a-cliente/{carritoId}": {
+      "put": {
+        "tags": [
+          "Carrito"
+        ],
+        "parameters": [
+          {
+            "name": "carritoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "clienteId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
             }
           }
         ],
@@ -505,6 +589,13 @@
           },
           {
             "name": "tipoEntrega",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tipo_pago",
             "in": "query",
             "schema": {
               "type": "string"
@@ -1242,6 +1333,11 @@
             "format": "int64",
             "nullable": true
           },
+          "empleadoId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
           "items": {
             "type": "array",
             "items": {
@@ -1649,7 +1745,8 @@
           },
           "cliente_id": {
             "type": "integer",
-            "format": "int64"
+            "format": "int64",
+            "nullable": true
           },
           "cliente": {
             "$ref": "#/components/schemas/Cliente"
@@ -1990,6 +2087,32 @@
         "type": "integer",
         "format": "int32"
       },
+      "UsuarioNit": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "apell_paterno": {
+            "type": "string",
+            "nullable": true
+          },
+          "nit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UsuarioPruebaDTO": {
         "type": "object",
         "properties": {
@@ -2045,7 +2168,8 @@
           },
           "empleado_id": {
             "type": "integer",
-            "format": "int64"
+            "format": "int64",
+            "nullable": true
           },
           "empleado": {
             "$ref": "#/components/schemas/Empleado"

@@ -25,6 +25,7 @@ namespace Cafeteria_back.Controllers
             var Clientes = await _context.Clientes.Select(
                 e => new UsuarioPruebaDTO
                 {
+                   
                     nombre = e.Nombre!,
                     apell_paterno = e.ApellidoPaterno!,
                     apell_materno = e.ApellidoMaterno!,
@@ -194,6 +195,9 @@ namespace Cafeteria_back.Controllers
 
             return NoContent();
         }
+
+        
+  
 
 
 

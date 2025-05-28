@@ -26,6 +26,11 @@ namespace Cafeteria_back.Entities.Carritos
         {
             return await _carritos.Find(c => c.ClienteId == clienteId).FirstOrDefaultAsync();
         }
+        // Obtener carrito de un cliente
+        public async Task<Carrito?> ObtenerPorEmpleado(long Empleadoid)
+        {
+            return await _carritos.Find(c => c.EmpleadoId == Empleadoid).FirstOrDefaultAsync();
+        }
 
         // Crear nuevo carrito
         public async Task Crear(Carrito carrito)

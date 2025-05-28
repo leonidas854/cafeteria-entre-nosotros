@@ -12,7 +12,7 @@ namespace Cafeteria_back.Entities.Pedidos
         public long Id_pedido { get; set; }
 
 
-        public long Cliente_id { get; set; }
+        public long? Cliente_id { get; set; }
 
         [ForeignKey("Cliente_id")]
         public Cliente? Cliente { get; set; }

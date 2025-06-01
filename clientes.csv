@@ -1,0 +1,10 @@
+Id_user,Ubicacion,Nit,Latitud,Longitud,Nombre,ApellidoPaterno,ApellidoMaterno,Telefono,Usuari,Password
+1,"Calama 0477, Cochabamba, Bolivia",6555086,-17.39567703668103,-66.1542216213663,Thiago,Sossa,Chugar,73902650,leonidas,61c0fdcca631a16690676edcaedb73c1b7912b9b30455ab6d1110b53a93b3f4f
+2,Dirección no encontrada,0,0,0,string,string,string,0,string,473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8
+3,"Suarez de Figeroa 35, Santa Cruz de la Sierra, Bolivia",34343,-17.785473991215568,-63.18187684230544,dsfa,dsdfasdf,sdfasdf,234324,user,e606e38b0d8c19b24cf0ee3808183162ea7cd63ff7912dbb22b5e803286b4446
+4,"Sta. Barbara 249, Santa Cruz de la Sierra, Bolivia",3423424,-17.781550976742423,-63.18634003810622,Sharaid,Cruz,Serrano,452334234,mortreve,e606e38b0d8c19b24cf0ee3808183162ea7cd63ff7912dbb22b5e803286b4446
+5,,3423424,0,0,,fadsfasd,,0,rgsgs,febc6b3a81f178246d7ba9f3eef962c1027821aeff2e96e7185df72fc707e338
+6,,8776,0,0,,fadsGHDfasd,,0,rgsgGHDs,ebaa79be23753d4b4b5a7aff494fc1fc99ce1d509e80b590787a57a4c26a55e5
+7,,453453,0,0,,chura,,0,chura_1748399028652,8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+8,,223423,0,0,,lopez,,0,lopez_1748399539171,8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+9,,0,0,0,,cura,,0,cura_1748399563500,8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92

@@ -21,10 +21,6 @@ namespace Cafeteria_back.Controllers
             _carritoService = carritoService;
             _miDbContext = miDbContext;
         }
-        
-
-
-
         private long ObtenerClienteIdDesdeToken()
         {
             var claim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
@@ -32,11 +28,6 @@ namespace Cafeteria_back.Controllers
                 throw new UnauthorizedAccessException("No se pudo obtener el ID del cliente desde el token.");
             return clienteId;
         }
-
-
-
-
-
         [HttpGet]
         public async Task<IActionResult> Obtener()
         {
@@ -273,10 +264,6 @@ namespace Cafeteria_back.Controllers
 
             return Ok();
         }
-
-
-
-
 
         [NonAction]
         public async Task<Promocion?> ObtenerPromocionVigentePorProducto(long productoId)

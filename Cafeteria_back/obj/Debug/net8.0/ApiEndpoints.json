@@ -84,6 +84,138 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafeteria_back.Controllers.AgregacionController",
+    "Method": "Confirmar",
+    "RelativePath": "api/Agregacion/Confirmar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contra",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.AgregacionController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Agregacion/Empleado/Roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.AgregacionController",
+    "Method": "GetCategorias",
+    "RelativePath": "api/Agregacion/Producto/Categorias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.AgregacionController",
+    "Method": "GetProductos",
+    "RelativePath": "api/Agregacion/Producto/Productos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.Entities.DTOs.ProductoDTO__, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.AgregacionController",
+    "Method": "GetSabores",
+    "RelativePath": "api/Agregacion/Producto/Sabores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.AgregacionController",
+    "Method": "GetSubcategorias",
+    "RelativePath": "api/Agregacion/Producto/Subcategorias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoria",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Cafeteria_back.Controllers.CajeroController",
     "Method": "BuscarClientePorNIT",
     "RelativePath": "api/Cajero/nit/{nit}",
@@ -480,6 +612,27 @@
   },
   {
     "ContainingType": "Cafeteria_back.Controllers.ProductoController",
+    "Method": "CambiarEstadoProducto",
+    "RelativePath": "api/Producto/estado/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "nuevoEstado",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.ProductoController",
     "Method": "ActualizarProducto",
     "RelativePath": "api/Producto/nombre/{nombre}",
     "HttpMethod": "PUT",
@@ -569,6 +722,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.ProductoController",
+    "Method": "ObtenerTodosProductos",
+    "RelativePath": "api/Producto/TodosProductos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.Entities.DTOs.ProductoDTO, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Cafeteria_back.Controllers.PromocionesController",
@@ -692,8 +865,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Cafeteria_back.Entities.DTOs.LoginDTO",
+        "Name": "body",
+        "Type": "System.Collections.Generic.Dictionary\u00602[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": true
       }
     ],
@@ -749,8 +922,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Cafeteria_back.Entities.DTOs.LoginDTO",
+        "Name": "body",
+        "Type": "System.Collections.Generic.Dictionary\u00602[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": true
       }
     ],

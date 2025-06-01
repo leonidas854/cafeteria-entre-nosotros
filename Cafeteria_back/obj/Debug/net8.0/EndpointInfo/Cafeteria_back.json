@@ -153,6 +153,253 @@
         }
       }
     },
+    "/api/Agregacion/Producto/Categorias": {
+      "get": {
+        "tags": [
+          "Agregacion"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Agregacion/Producto/Subcategorias": {
+      "get": {
+        "tags": [
+          "Agregacion"
+        ],
+        "parameters": [
+          {
+            "name": "categoria",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Agregacion/Producto/Sabores": {
+      "get": {
+        "tags": [
+          "Agregacion"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Agregacion/Empleado/Roles": {
+      "get": {
+        "tags": [
+          "Agregacion"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Agregacion/Producto/Productos": {
+      "get": {
+        "tags": [
+          "Agregacion"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductoDTO__"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductoDTO__"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductoDTO__"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Agregacion/Confirmar": {
+      "post": {
+        "tags": [
+          "Agregacion"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Cajero/nit/{nit}": {
       "get": {
         "tags": [
@@ -913,6 +1160,86 @@
         }
       }
     },
+    "/api/Producto/TodosProductos": {
+      "get": {
+        "tags": [
+          "Producto"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductoDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductoDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductoDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Producto/estado/{id}": {
+      "patch": {
+        "tags": [
+          "Producto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Promociones": {
       "post": {
         "tags": [
@@ -1265,17 +1592,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginDTO"
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginDTO"
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginDTO"
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -1296,17 +1632,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginDTO"
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginDTO"
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginDTO"
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -1945,6 +2290,20 @@
             "nullable": true
           },
           "image_url": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductoDTO__": {
+        "type": "object",
+        "properties": {
+          "id_producto": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nombre": {
             "type": "string",
             "nullable": true
           }

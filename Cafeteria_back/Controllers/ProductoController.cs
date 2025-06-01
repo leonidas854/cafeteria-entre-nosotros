@@ -61,7 +61,7 @@ namespace Cafeteria_back.Controllers
                     Descripcion = dto.Descripcion,
                     Nombre = dto.Nombre,
                     Precio = dto.Precio,
-                    Estado = true,
+                    Estado = dto.Estado,
                     Sabores = dto.Sabores,
                     Image_url = imageUrl
                 };
@@ -77,7 +77,7 @@ namespace Cafeteria_back.Controllers
                     Descripcion = dto.Descripcion,
                     Nombre = dto.Nombre,
                     Precio = dto.Precio,
-                    Estado = true,
+                    Estado = dto.Estado,
                     Sabores = dto.Sabores,
                     Image_url = imageUrl
                 };
@@ -92,7 +92,7 @@ namespace Cafeteria_back.Controllers
                     Descripcion = dto.Descripcion,
                     Nombre = dto.Nombre,
                     Precio = dto.Precio,
-                    Estado = true,
+                    Estado = dto.Estado,
                     Sabores = dto.Sabores,
                     Image_url = imageUrl
                 };
@@ -109,7 +109,9 @@ namespace Cafeteria_back.Controllers
         {
             var productos = await _context.Productos.ToListAsync();
 
-            var resultado = productos.Select(p =>
+            var resultado = productos
+                .Where(p=>p.Estado==true)
+                .Select(p =>
             {
                 var dto = new ProductoDTO_
                 {
@@ -247,6 +249,60 @@ namespace Cafeteria_back.Controllers
 
             return Ok(dto);
         }
+
+        [HttpGet("TodosProductos")]
+        public async Task<ActionResult<IEnumerable<ProductoDTO>>> ObtenerTodosProductos()
+        {
+            var productos = await _context.Productos.ToListAsync();
+
+            var resultado = productos
+                .Select(p =>
+                {
+                    var dto = new ProductoDTO_
+                    {
+                        id = p.Id_producto,
+                        Tipo = p.Tipo,
+                        Categoria = p.Categoria,
+                        Sub_categoria = p.Sub_categoria,
+                        Descripcion = p.Descripcion,
+                        Nombre = p.Nombre,
+                        Precio = p.Precio,
+                        Estado = p.Estado,
+                        Sabores = p.Sabores,
+                        Image_url = p.Image_url
+                    };
+
+                    if (p is Bebida bebida)
+                        dto.Tamanio = bebida.Tamanio;
+
+                    if (p is Comida comida)
+                        dto.Proporcion = comida.Proporcion;
+
+                    return dto;
+                });
+
+            return Ok(resultado);
+        }
+        [HttpPatch("estado/{id}")]
+        [Authorize]
+        public async Task<IActionResult> CambiarEstadoProducto(long id, [FromBody] bool nuevoEstado)
+        {
+            var producto = await _context.Productos.FindAsync(id);
+
+            if (producto == null)
+                return NotFound("Producto no encontrado.");
+
+            producto.Estado = nuevoEstado;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                mensaje = $"Estado del producto '{producto.Nombre}' actualizado correctamente.",
+                nuevoEstado = producto.Estado
+            });
+        }
+
 
     }
 }

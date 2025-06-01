@@ -97,8 +97,5 @@ namespace Cafeteria_back.Controllers
                 return Ok(new { isSuccess = false });
             }
         }
-
-
-
     }
 }

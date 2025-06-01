@@ -39,4 +39,10 @@
         public string? Tamanio { get; set; }
         public string? Image_url { get; set; }
     }
+    public class ProductoDTO__
+    {
+        public long Id_producto { get; set; }
+        public string Nombre { get; set; }
+    }
+
 }

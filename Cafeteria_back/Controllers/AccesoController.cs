@@ -20,6 +20,10 @@ namespace Cafeteria_back.Controllers
     [ApiController]
     public class AccesoController : ControllerBase
     {
+
+        private bool segurity = false;
+        //debe ir falso en caso usar http
+        //ir true en caso usar https
         private readonly MiDbContext _context;
         private readonly Utilidades _utilidades;
         private readonly IGeolocalizador _geolocalizador;
@@ -113,7 +117,7 @@ namespace Cafeteria_back.Controllers
                 Response.Cookies.Append("jwt", token, new CookieOptions
                 {
                     HttpOnly = true,
-                    Secure = false,
+                    Secure = segurity,
                     SameSite = SameSiteMode.Strict,
                     Expires = DateTimeOffset.UtcNow.AddHours(5)
                 });
@@ -169,7 +173,7 @@ namespace Cafeteria_back.Controllers
                 Response.Cookies.Append("jwt", _utilidades.GenerarJWT(usuarioEncontrado), new CookieOptions
                 {
                     HttpOnly = true,
-                    Secure = false,
+                    Secure = segurity,
                     SameSite = SameSiteMode.Strict,
                     Expires = DateTimeOffset.UtcNow.AddHours(5)
                 });

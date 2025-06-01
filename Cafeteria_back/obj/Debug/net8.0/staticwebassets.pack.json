@@ -5,8 +5,16 @@
       "PackagePath": "staticwebassets\\Promociones\\1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg"
     },
     {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
+      "PackagePath": "staticwebassets\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg"
+    },
+    {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg",
       "PackagePath": "staticwebassets\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg"
+    },
+    {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg"
     },
     {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
@@ -15,6 +23,10 @@
     {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
       "PackagePath": "staticwebassets\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png"
+    },
+    {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg"
     },
     {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
@@ -35,6 +47,10 @@
     {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\23a861a6-fea9-41ce-a701-99d6d0674c21.jpg",
       "PackagePath": "staticwebassets\\imagenes\\23a861a6-fea9-41ce-a701-99d6d0674c21.jpg"
+    },
+    {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg"
     },
     {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\30bf2f02-008b-4c03-9711-1fcc32d90bab.jpg",
@@ -95,6 +111,10 @@
     {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg",
       "PackagePath": "staticwebassets\\imagenes\\62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg"
+    },
+    {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg"
     },
     {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6af8ab89-413a-4a44-9f1a-13ae1f177b55.jpg",
@@ -249,8 +269,16 @@
       "PackagePath": "staticwebassets\\imagenes\\eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg"
     },
     {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\f3369cdf-e49a-4336-8933-22c189599646.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\f3369cdf-e49a-4336-8933-22c189599646.jpg"
+    },
+    {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png",
       "PackagePath": "staticwebassets\\imagenes\\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png"
+    },
+    {
+      "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fa3496fe-cc19-4847-b31c-8a474d714d97.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\fa3496fe-cc19-4847-b31c-8a474d714d97.jpg"
     },
     {
       "Id": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg",

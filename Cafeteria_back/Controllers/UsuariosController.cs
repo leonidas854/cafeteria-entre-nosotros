@@ -26,7 +26,7 @@ namespace Cafeteria_back.Controllers
                 e => new UsuarioPruebaDTO
                 {
                    
-                    nombre = e.Nombre!,
+                    nombre = e.Nombre,
                     apell_paterno = e.ApellidoPaterno!,
                     apell_materno = e.ApellidoMaterno!,
                     Ubicacion = e.Ubicacion,
@@ -143,24 +143,19 @@ namespace Cafeteria_back.Controllers
             return NoContent();
         }
         [HttpDelete("cliente/usuario")]
-        public async Task<IActionResult> DeleteCliente([FromBody] LoginDTO request)
+        public async Task<IActionResult> DeleteCliente([FromBody] Dictionary<string, string> body)
         {
-            if (string.IsNullOrWhiteSpace(request.usuario))
+            if (!body.TryGetValue("usuario", out string? usuario) || string.IsNullOrWhiteSpace(usuario))
             {
                 return BadRequest("El nombre de usuario no puede estar vacío.");
             }
+
             var cliente = await _context.Clientes
-                .FirstOrDefaultAsync(c => c.Usuari!.ToLower() == request.usuario.ToLower());
+                .FirstOrDefaultAsync(c => c.Usuari!.ToLower() == usuario.ToLower());
 
             if (cliente == null)
             {
                 return NotFound("Cliente no encontrado.");
-            }
-
-            string passwordEncriptada = _utilidades.EncriptarSHA256(request.password);
-            if (!string.Equals(cliente.Password, passwordEncriptada, StringComparison.Ordinal))
-            {
-                return Unauthorized("Contraseña incorrecta. No se puede eliminar el cliente.");
             }
 
             _context.Clientes.Remove(cliente);
@@ -168,26 +163,22 @@ namespace Cafeteria_back.Controllers
 
             return NoContent();
         }
+
+
         [HttpDelete("empleado/usuario")]
-        public async Task<IActionResult> DeleteEmpleado([FromBody] LoginDTO request)
+        public async Task<IActionResult> DeleteEmpleado([FromBody] Dictionary<string, string> body)
         {
-            if (string.IsNullOrWhiteSpace(request.usuario))
+            if (!body.TryGetValue("usuario", out string? usuario) || string.IsNullOrWhiteSpace(usuario))
             {
                 return BadRequest("El nombre de usuario no puede estar vacío.");
             }
 
             var empleado = await _context.Empleados
-                .FirstOrDefaultAsync(e => e.Usuari!.ToLower() == request.usuario.ToLower());
+                .FirstOrDefaultAsync(e => e.Usuari!.ToLower() == usuario.ToLower());
 
             if (empleado == null)
             {
                 return NotFound("Empleado no encontrado.");
-            }
-
-            string passwordEncriptada = _utilidades.EncriptarSHA256(request.password);
-            if (!string.Equals(empleado.Password, passwordEncriptada, StringComparison.Ordinal))
-            {
-                return Unauthorized("Contraseña incorrecta. No se puede eliminar el empleado.");
             }
 
             _context.Empleados.Remove(empleado);
@@ -196,8 +187,10 @@ namespace Cafeteria_back.Controllers
             return NoContent();
         }
 
-        
-  
+
+
+
+
 
 
 

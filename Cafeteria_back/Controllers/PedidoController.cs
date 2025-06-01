@@ -185,15 +185,7 @@ namespace Cafeteria_back.Controllers
             });
         }
 
-        private async Task<Promocion?> ObtenerPromocionVigentePorProducto(long productoId)
-        {
-            return await _context.ProductopPromocion
-                .Where(pp => pp.Producto_id == productoId &&
-                             pp.Promocion!.Fech_ini <= DateTime.UtcNow &&
-                             pp.Promocion.Fecha_final >= DateTime.UtcNow)
-                .Select(pp => pp.Promocion)
-                .FirstOrDefaultAsync();
-        }
+       
         [NonAction]
         private async Task<Promocion?> ObtenerPromocionAplicableAlCarrito(Carrito carrito)
         {

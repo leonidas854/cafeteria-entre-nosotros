@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|solutionrelative:controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -242,8 +242,7 @@
               "RelativeToolTip": "Controllers\\AgregacionController.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAqwIEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T20:38:06.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T20:38:06.595Z"
             },
             {
               "$type": "Document",
@@ -255,8 +254,7 @@
               "RelativeToolTip": "Controllers\\CajeroController.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAqwFMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T01:25:54.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T01:25:54.644Z"
             },
             {
               "$type": "Document",
@@ -278,7 +276,7 @@
               "RelativeDocumentMoniker": "Controllers\\PedidoController.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PedidoController.cs",
               "RelativeToolTip": "Controllers\\PedidoController.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAiwF0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAiwF0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T05:12:14.742Z",
               "EditorCaption": ""
@@ -317,8 +315,7 @@
               "RelativeToolTip": "Controllers\\CarritoController.cs",
               "ViewState": "AgIAACQBAAAAAAAAAAAAAEkBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T02:27:02.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T02:27:02.091Z"
             },
             {
               "$type": "Document",
@@ -462,8 +459,7 @@
               "RelativeToolTip": "Controllers\\ProductoController.cs",
               "ViewState": "AgIAAA8BAAAAAAAAAAAqwDQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T06:01:20.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T06:01:20.685Z"
             },
             {
               "$type": "Document",
@@ -479,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PromocionesController.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PromocionesController.cs",
               "RelativeDocumentMoniker": "Controllers\\PromocionesController.cs",
@@ -487,8 +483,7 @@
               "RelativeToolTip": "Controllers\\PromocionesController.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAYwEUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T05:00:21.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T05:00:21.236Z"
             },
             {
               "$type": "Document",
@@ -500,8 +495,7 @@
               "RelativeToolTip": "Controllers\\UsuariosController.cs",
               "ViewState": "AgIAAKIAAAAAAAAAAAAqwMcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T04:09:32.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T04:09:32.593Z"
             },
             {
               "$type": "Document",
@@ -573,8 +567,7 @@
               "RelativeToolTip": "Controllers\\ExtrasController.cs",
               "ViewState": "AgIAAHoAAAAAAAAAAAAqwJ8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T03:02:18.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T03:02:18.228Z"
             },
             {
               "$type": "Document",
@@ -638,13 +631,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AccesoController.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccesoController.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
               "RelativeToolTip": "Controllers\\AccesoController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAmwEEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwEEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-08T15:27:44.397Z",
               "EditorCaption": ""
@@ -827,8 +820,7 @@
               "RelativeToolTip": "Data\\MiDbContext.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAADwv2sAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T00:36:51.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T00:36:51.069Z"
             },
             {
               "$type": "Document",

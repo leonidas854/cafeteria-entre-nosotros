@@ -1,0 +1,108 @@
+.card {
+    font-family: 'URWClassico-Bold', serif;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    text-align: center;
+  }
+  
+  .card:hover {
+    transform: rotateY(180deg);
+  }
+  
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.9);
+  }
+  
+  .face.front {
+    background: #D5A313;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .face.back {
+    background: #A4811C;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card h1{
+    font-family: 'URWClassico-Bold', serif;
+    top: 45px;
+     font-size: 8rem; 
+  }
+  
+  .clientes {
+    background-color: #7E634E;
+  }
+
+.clientes-container {
+    background-color: #3F3127;
+    font-family: 'URWClassico-Bold', serif;
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    position: relative;
+    height: 85vh;
+    width: 85vw;
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 16px 14px 20px #2C2C2C;
+    overflow: hidden;
+    z-index: 1; /* Aumentado a 1 */
+}
+
+.clientes-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg 70deg,
+        #c7b69f 100deg,
+        transparent 130deg 360deg
+    );
+    animation: rotar 6s linear infinite;
+    z-index: -1;
+}
+
+.clientes-container::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    background: #3F3127;
+    border-radius: 15px; 
+    z-index: -1;
+}
+
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+  
+  @font-face {
+    font-family: 'URWClassico-Bold'; 
+    src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal; 
+  }

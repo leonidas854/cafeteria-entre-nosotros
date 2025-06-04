@@ -1,0 +1,137 @@
+/* app/admin/styles/employee-section.css */
+
+.Emple {
+  background-color: #fff9e1;
+  padding: 0; /* O el padding que necesites */
+  font-family: 'URWClassico-Bold', serif;
+  position: relative;
+  overflow: hidden;
+   border-radius: 40px;
+}
+
+.Emple .container {
+  position: relative;
+  /* height: 90vh; */ /* Tailwind */
+  /* width: 90vw; */ /* Tailwind */
+  /* max-width: 1400px; */ /* Tailwind */
+  /* margin: auto; */ /* Tailwind */
+  /* display: flex; */ /* Tailwind */
+  background-color: #e3d7bf;
+  border-radius: 20px;
+  box-shadow: 16px 14px 20px #e3d7bf; /* Sombra con el mismo color que el fondo? Considerar un color más oscuro para la sombra. */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.Emple .container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 70deg,
+    #101010 100deg, /* Color del borde animado */
+    transparent 130deg 360deg
+  );
+  animation: rotar 6s linear infinite; /* Asegúrate que @keyframes rotar esté definido globalmente o aquí */
+  z-index: -1;
+}
+
+.Emple .container::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  background: #e3d7bf; /* Mismo color que .Emple .container */
+  border-radius: 18px;
+  z-index: -1;
+}
+
+.CONIZ_EMPLE { /* Contenedor izquierdo con imagen de fondo */
+  position: relative;
+  background-image: url('/img7.jpg'); /* Asegúrate que la ruta sea correcta desde /public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1; /* Para estar por encima del efecto de borde si es necesario */
+}
+
+.CONIZ_EMPLE::before { /* Overlay de color */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Encima de la imagen de fondo, debajo del texto */
+}
+
+/* Si CONIZ_EMPLE también tuviera el efecto de rotación individual, sería: */
+/* .CONIZ_EMPLE::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    animation: rotar 6s linear infinite;
+    z-index: 1; // OJO: Este z-index podría necesitar ajuste.
+} */
+/* Pero el diseño original sugiere que el ::after era para el overlay, que ahora es ::before */
+
+
+.CONDER_EMPLE { /* Contenedor derecho del formulario de empleado */
+  /* background-color: transparent; */ /* Default */
+  position: relative;
+  /* padding: 80px; */ /* Tailwind */
+  overflow: hidden; /* Si hay contenido que se desborde */
+}
+
+.Emple h2 { /* Título "AGREGAR EMPLEADO" */
+  font-family: 'URWClassico-Bold', serif;
+  font-weight: bold;
+  text-align: center;
+  color: #000000; /* Color del título del formulario */
+  font-size: 2rem;
+  position: relative;
+  /* top: 15px; */ /* Tailwind */
+  z-index: 1;
+}
+
+/* El texto dentro de CONIZ_EMPLE (h1, p) necesitará z-index: 3 para estar sobre el overlay ::before */
+.CONIZ_EMPLE h1, .CONIZ_EMPLE p {
+    position: relative; /* Necesario para que z-index funcione */
+    z-index: 3;
+    color: #fff; /* O el color que desees para el texto sobre la imagen */
+}
+
+
+.emple-button {
+  width: 100%;
+  padding: 1rem; /* Tailwind ya maneja py-2 px-4, esto podría ser redundante o para ajustar */
+  background-image: linear-gradient(to right, #030201, #52370a);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-image 0.3s ease;
+}
+
+.emple-button:hover {
+  background-image: linear-gradient(to right, #000000, #3e2a07); /* Ligeramente diferente para el hover */
+}
+
+/* Si @keyframes rotar no está en admin-global.css, añádelo aquí */
+/* @keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

@@ -1,0 +1,19 @@
+.digital-clock {
+font-family: 'URWClassico-Bold', serif;
+  font-size: 1.2rem;
+  background-color: #FAEFD3;
+  color: #2F200C;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #543F1D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@font-face {
+  font-family: 'URWClassico-Bold'; 
+  src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+}

@@ -1,0 +1,183 @@
+/* app/admin/styles/promotion-section.css */
+
+.Prom {
+  background-color: #6e3e14;
+  padding: 0;
+  font-family: 'URWClassico-Bold', serif;
+  position: relative;
+  overflow: hidden;
+   border-radius: 40px;
+}
+
+.Prom .container {
+  position: relative;
+  background-color: #E8E8E8;
+  border-radius: 20px;
+  box-shadow: 16px 14px 20px #bb7640; /* Color de la sombra */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.Prom .container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 70deg,
+    #F7BA56 100deg, /* Color del borde animado */
+    transparent 130deg 360deg
+  );
+  animation: rotar 6s linear infinite; /* Asegúrate que @keyframes rotar esté definido globalmente o aquí */
+  z-index: -1;
+}
+
+.Prom .container::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  background: #E8E8E8; /* Mismo color que .Prom .container */
+  border-radius: 18px;
+  z-index: -1;
+}
+
+.CONIZ_PROM { /* Contenedor izquierdo del formulario de promoción */
+  /* background-color: transparent; */ /* Default */
+  position: relative;
+  /* padding: 80px; */ /* Tailwind */
+  overflow: hidden;
+}
+
+.CONDER_PROM { /* Contenedor derecho con imagen de fondo */
+  position: relative;
+  background-image: url('/img11.jpg'); /* Asegúrate que la ruta sea correcta desde /public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.CONDER_PROM::before { /* Overlay de color */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+/* El texto dentro de CONDER_PROM (clases .promosi, .promos) necesitará z-index: 3 */
+.promosi, .promos {
+    position: relative;
+    z-index: 3;
+    font-family: 'URWClassico-Bold', serif;
+    font-weight: bold;
+    text-align: center;
+    color: #ddd; /* Color original */
+    /* top: px; -> Eliminar, usar Tailwind para espaciado */
+}
+
+.promosi {
+  font-size: 2.5rem;
+}
+
+.promos {
+  font-size: 1.3rem;
+}
+
+
+.Prom h2 { /* Título "AGREGAR PROMOCIONES" */
+  font-family: 'URWClassico-Bold', serif;
+  font-weight: bold;
+  text-align: center;
+  color: #38100e; /* Color del título del formulario */
+  font-size: 2rem;
+  position: relative;
+  /* top: px; */ /* Tailwind */
+  z-index: 1;
+}
+
+.Prom .label { /* Estilo específico para labels en el form de promociones */
+  color: #603732;
+  /* Hereda de .form-label si está definido globalmente, aquí puedes sobrescribir */
+}
+
+.Prom .cuadrado { /* Estilo para inputs en el form de promociones */
+  background-color: #A4811C; /* Color de fondo original */
+  opacity: 0.9; /* Considera si esta opacidad es deseada, puede afectar legibilidad del texto */
+  outline: none;
+  /* Hereda de .form-input si está definido globalmente, aquí puedes sobrescribir */
+  color: #000000; /* Color del texto dentro del input */
+  border: 1px solid #8a6d16; /* Borde que combine con el fondo del input */
+}
+
+.Prom .cuadrado:focus {
+  /* color: #000000; Ya definido arriba */
+  border-color: #ddd; /* Borde al enfocar */
+  opacity: 1; /* Quitar opacidad al enfocar para mejor legibilidad */
+}
+
+.Prom .cuadrado::placeholder {
+  color: #ddd;
+  opacity: 1; /* Asegurar que el placeholder sea visible */
+}
+
+.prom-button {
+  width: 100%;
+  /* padding: 1rem; py-6 px-4 en Tailwind, esto puede ser redundante */
+  background-image: linear-gradient(to right, #BDC3C9, #ceb66d);
+  color: white; /* Texto del botón */
+  border: none;
+  border-radius: 50px;
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-image 0.3s ease;
+}
+
+.prom-button:hover {
+  background-image: linear-gradient(to right, #a1a8af, #bfa956); /* Ligeramente diferente para el hover */
+}
+
+/* Si @keyframes rotar no está en admin-global.css, añádelo aquí */
+/* @keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+
+.producto-lista {
+  background-color: #fff4e6; /* fondo claro para disponibles */
+  border: 1px solid #8d6e63;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #333333;
+}
+
+.producto-seleccionado {
+  background-color: #d1e7dd; /* fondo para seleccionados */
+  border: 1px solid #8d6e63;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #333333;
+}
+
+.producto-item {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.producto-item:hover {
+  background-color: #fdd9a0; /* efecto hover */
+}

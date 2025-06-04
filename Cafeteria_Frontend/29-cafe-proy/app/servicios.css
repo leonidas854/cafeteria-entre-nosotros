@@ -1,0 +1,156 @@
+.servicios {
+    background-image: url('/fondo4.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'URWClassico-Bold', serif;
+    padding: 4rem 0;
+}
+
+.servicios h2 {
+     font-family: 'URWClassico-Bold', serif;
+  font-weight: bold;
+  text-align: center;
+  color: #fff9e1;
+   font-size: 5rem;
+   position: relative;
+  top: 15px;
+  z-index: 1;
+}
+
+@font-face {
+    font-family: 'URWClassico-Bold'; 
+    src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.service-item {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #000; /* Cambié a negro para mejor contraste con fondo claro */
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.service-item:hover {
+    transform: scale(1.5);
+}
+
+.service-item .circle {
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    /* Elimina completamente box-shadow si existe */
+    isolation: isolate;
+    /* Añade esto para eliminar bordes blancos residuales: */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Añade estos nuevos estilos para el efecto de borde animado */
+.service-item .circle::before {
+    content: "";
+    position: absolute;
+    top: -9px; /* Ajustado para que coincida con el grosor del borde */
+    left: -9px;
+    right: -9px;
+    bottom: -9px;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg 90deg,
+        #FBC017 80deg 100deg, /* Segmento de color más ancho */
+        #FAEFD3 120deg 140deg, /* Puedes añadir más colores */
+        transparent 130deg 360deg
+    );
+    animation: rotar 6s linear infinite;
+    z-index: 1; /* Cambiado a 1 para que esté sobre el fondo */
+    border-radius: 50%;
+}
+
+
+.service-item .circle::after {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 2; /* Aseguramos que esté sobre el borde animado */
+}
+
+/* Reutiliza la misma animación */
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.service-item .circle img {
+    width: calc(100% - 8px); /* Restamos el grosor del borde */
+    height: calc(100% - 8px);
+    object-fit: cover;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 3; /* Encima de todo */
+    border-radius: 50%;
+}
+
+.service-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #ddd; /* Color más oscuro para mejor legibilidad */
+}
+/* Responsive adjustments */
+@media (min-width: 640px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center; /* Centrado horizontal */
+        align-items: center; /* Centrado vertical opcional */
+    }
+    
+    .service-item {
+        width: 60%; /* Tamaño perfecto que mencionas */
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        justify-items: center; /* Para mantener la coherencia en móvil */
+    }
+    
+    .service-item .circle {
+        width: 80%;
+    }
+    
+    .service-title {
+        font-size: 12px;
+    }
+}

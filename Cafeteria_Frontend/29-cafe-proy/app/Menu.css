@@ -1,0 +1,121 @@
+.menu-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    z-index: 2000;
+    background: #553d2a; 
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  }
+
+   .menu-container {
+    font-family: 'URWClassico-Bold', serif;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+    background: #553d2a;
+    height: 80px;
+  }
+
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu-item:hover {
+  background-color: #c7b69f;
+}
+
+.menu-item.active {
+  background-color: #007bff;
+  color: #c7b69f;
+}
+
+.menu-icon {
+  font-size: 1.2rem;
+}
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .menu-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .menu-item.active {
+    background-color: #ab9680;
+    color: white;
+  }
+  
+  .menu-icon {
+    font-size: 1.2rem;
+  }
+
+ 
+  
+  .logo-container {
+    margin-right: auto; 
+  }
+  
+  .logo {
+    height: 80px; /* Ajusta según necesidad */
+    width: auto;
+  }
+
+  .logo-brand-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-right: auto; 
+  }
+  .cafe-name {
+    font-family: 'URWClassico-Bold', serif; 
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff; /* Color del texto */
+    letter-spacing: 1px;
+    order: -1;
+  }
+
+
+  .promociones{
+    background-color: #C4B59E; 
+  padding: 0; 
+  font-family: 'URWClassico-Bold', serif;
+  position: static;
+  overflow: hidden; 
+  }
+
+  @font-face {
+    font-family: 'URWClassico-Bold'; 
+    src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal; 
+  }

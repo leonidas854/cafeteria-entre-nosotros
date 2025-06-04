@@ -1,0 +1,40 @@
+body {
+  font-family: 'URWClassico-Bold', serif; 
+  background-color: #000000; /* Fondo negro */
+  margin: 0;
+  padding: 0;
+  color: white; /* Color de texto general (opcional) */
+}
+
+/* Opcional: si quieres que el contenedor principal también tenga fondo negro */
+.main-container {
+  background-color: #000000;
+}
+
+/* En tu CSS */
+.bienvenida-message {
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.5);
+}
+
+.bienvenida-debug {
+  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: red !important;
+  color: white !important;
+  z-index: 9999 !important;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  border: 5px dashed yellow;
+}
+
+@font-face {
+  font-family: 'URWClassico-Bold'; 
+  src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+}

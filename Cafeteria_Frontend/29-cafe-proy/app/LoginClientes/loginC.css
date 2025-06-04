@@ -1,0 +1,155 @@
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9); 
+  position: relative;
+  z-index: 1;
+
+}
+.error-message{
+  color: #744949;
+}
+
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/img4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-label {
+  font-family: 'URWClassico-Bold', serif;
+  color: #333;
+  font-size: 1rem;
+}
+
+.form-input {
+  color: #e8cb9a;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #613e3e;
+}
+
+.form-input::placeholder {
+  color: #e8cb9a;
+}
+
+.login-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #333;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Aumenté de 1.5rem a 2rem para más espacio general */
+}
+
+.login-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 1.5rem; /* Espacio adicional entre botones */
+}
+
+/* Elimina el margen inferior del último botón para evitar espacio extra */
+.login-button:last-child {
+  margin-bottom: 0;
+}
+
+/* Si usas enlaces como botones (para "Crear Cuenta" y "Cerrar Sesión") */
+.button-link {
+  display: block;
+  width: 100%;
+  margin-bottom: 1.5rem; /* Mismo espacio que los botones */
+  text-decoration: none;
+}
+
+/* Estilo para botones secundarios */
+.secondary-button {
+  background-color: #444 !important; /* Color diferente para botones secundarios */
+}
+
+.secondary-button:hover {
+  background-color: #555 !important;
+}
+
+@font-face {
+  font-family: 'URWClassico-Bold'; 
+  src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+}

@@ -1,0 +1,205 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { crearPromocion, NuevaPromocion } from '@/app/api/Promociones';
+import { getProductos, Productos } from '@/app/api/Admin';
+import toast from 'react-hot-toast';
+
+interface PromotionFormData {
+  descripcion: string;
+  descuento: string;
+  fechaInicial: string;
+  fechaFinal: string;
+  strategykey: string;
+  imagen: File | null;
+  productos: number[];
+}
+
+const initialPromotionFormState: PromotionFormData = {
+  descripcion: '',
+  descuento: '',
+  fechaInicial: '',
+  fechaFinal: '',
+  strategykey: '',
+  imagen: null,
+  productos: []
+};
+
+export default function PromotionForm() {
+  const [formData, setFormData] = useState<PromotionFormData>(initialPromotionFormState);
+  const [productosDisponibles, setProductosDisponibles] = useState<Productos[]>([]);
+  const [productosSeleccionados, setProductosSeleccionados] = useState<Productos[]>([]);
+
+  useEffect(() => {
+    const cargarProductos = async () => {
+      try {
+        const productos = await getProductos();
+        setProductosDisponibles(productos);
+      } catch (error) {
+        toast.error('Error al cargar los productos');
+      }
+    };
+    cargarProductos();
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData(prev => ({ ...prev, imagen: e.target.files![0] }));
+    }
+  };
+
+  const moverProductoADerecha = (producto: Productos) => {
+    setProductosSeleccionados(prev => [...prev, producto]);
+    setProductosDisponibles(prev => prev.filter(p => p.id_producto !== producto.id_producto));
+    setFormData(prev => ({ ...prev, productos: [...prev.productos, producto.id_producto] }));
+  };
+
+  const moverProductoAIzquierda = (producto: Productos) => {
+    setProductosDisponibles(prev => [...prev, producto]);
+    setProductosSeleccionados(prev => prev.filter(p => p.id_producto !== producto.id_producto));
+    setFormData(prev => ({ ...prev, productos: prev.productos.filter(id => id !== producto.id_producto) }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.descripcion || !formData.descuento || !formData.fechaInicial || !formData.fechaFinal || formData.productos.length === 0) {
+      toast.error('Completa todos los campos requeridos');
+      return;
+    }
+
+    const promo: NuevaPromocion = {
+      descripcion: formData.descripcion,
+      descuento: parseFloat(formData.descuento),
+      fech_ini: formData.fechaInicial,
+      fecha_final: formData.fechaFinal,
+      strategykey: formData.strategykey,
+      imagen: formData.imagen || undefined,
+      productos: formData.productos
+    };
+
+    try {
+      await crearPromocion(promo);
+      setFormData(initialPromotionFormState);
+      setProductosSeleccionados([]);
+      const productos = await getProductos();
+      setProductosDisponibles(productos);
+    } catch (error) {
+      console.error("Error al crear promoción:", error);
+    }
+  };
+
+  return (
+    <form className="space-y-4" onSubmit={handleSubmit}>
+      <div className="grid grid-cols-2 gap-4">
+        <input
+          type="text"
+          name="descripcion"
+          placeholder="Descripción de la promoción"
+          className="form-input"
+          value={formData.descripcion}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="number"
+          name="descuento"
+          placeholder="Descuento (%)"
+          className="form-input"
+          value={formData.descuento}
+          onChange={handleInputChange}
+          required
+        />
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <input
+          type="date"
+          name="fechaInicial"
+          className="form-input"
+          value={formData.fechaInicial}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="date"
+          name="fechaFinal"
+          className="form-input"
+          value={formData.fechaFinal}
+          onChange={handleInputChange}
+          required
+        />
+      </div>
+
+      <input
+        type="text"
+        name="strategykey"
+        placeholder="Clave única de promoción"
+        className="form-input"
+        value={formData.strategykey}
+        onChange={handleInputChange}
+        required
+      />
+
+      <textarea
+        name="descripcion"
+        className="form-input"
+        placeholder="Descripción detallada"
+        value={formData.descripcion}
+        onChange={handleInputChange}
+        required
+      />
+
+      <input
+        type="file"
+        name="imagen"
+        className="form-input"
+        accept="image/*"
+        onChange={handleFileChange}
+      />
+
+      <div className="grid grid-cols-2 gap-6">
+        <div>
+          <h4 className="font-semibold mb-2 text-[#333]">Productos disponibles</h4>
+          <ul className="bg-[#fdf6e3] p-3 rounded-md shadow-md h-40 overflow-y-auto text-[#333]">
+
+            {productosDisponibles.map(prod => (
+              <li
+                key={`disp-${prod.id_producto}`}
+                className="cursor-pointer hover:bg-[#d6d6d6] px-2 py-1 rounded"
+                onClick={() => moverProductoADerecha(prod)}
+              >
+                {prod.nombre}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-semibold mb-2 text-[#333]">Productos seleccionados</h4>
+        <ul className="bg-[#d0ebff] p-3 rounded-md shadow-md h-40 overflow-y-auto text-[#000]">
+
+            {productosSeleccionados.map(prod => (
+              <li
+                key={`sel-${prod.id_producto}`}
+                className="cursor-pointer hover:bg-[#c7f7c7] px-2 py-1 rounded"
+                onClick={() => moverProductoAIzquierda(prod)}
+              >
+                {prod.nombre}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <button type="submit" className="prom-button w-full py-2 px-4 rounded">
+        AGREGAR PROMOCIÓN
+      </button>
+    </form>
+  );
+}

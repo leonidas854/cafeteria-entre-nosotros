@@ -1,0 +1,118 @@
+/* app/admin/styles/product-section.css */
+.prod {
+  background-color: #333333;
+  padding: 2rem 1rem; /* Espacio interno: 2rem vertical, 1rem horizontal */
+  font-family: 'URWClassico-Bold', serif;
+  position: relative;
+  overflow-x: hidden;
+  border-radius: 2rem; /* Solo oculta desbordes horizontales */
+}
+
+
+.prod .container { /* Estas clases son de Tailwind, aquí defines estilos adicionales si son necesarios */
+  position: relative;
+  /* height: 90vh; */ /* Esto ya está en Tailwind, considera si lo necesitas aquí */
+  /* width: 90vw; */
+  /* max-width: 1400px; */
+  /* margin: auto; */
+  /* display: flex; */
+  background-color: #101010;
+  border-radius: 20px;
+  box-shadow: 16px 14px 20px #0000008c;
+  overflow: hidden; /* Importante para el efecto de borde */
+  z-index: 0; /* Base para el apilamiento del pseudo-elemento */
+}
+
+.prod .container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 70deg,
+    #c7b69f 100deg,
+    transparent 130deg 360deg
+  );
+  animation: rotar 6s linear infinite;
+  z-index: -1; /* Detrás del contenido del .container pero encima de su bg (si ::after lo cubre) */
+}
+
+.prod .container::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  background: #101010; /* Mismo color que .prod .container para el efecto "cutout" */
+  border-radius: 18px;
+  z-index: -1; /* Coincide con ::before o justo encima para cubrir el gradiente del borde */
+}
+
+
+.CONIZ_PROD { /* Contenedor izquierdo del formulario de producto */
+  /* background-color: transparent; Ya es transparente por defecto */
+  position: relative; /* Para apilamiento interno si es necesario */
+  /* padding: 80px; Tailwind lo maneja con p- */
+  /* overflow: hidden; Si no hay contenido que se desborde, no es necesario */
+}
+
+.CONDER_PROD { /* Contenedor derecho de información de producto */
+  position: relative;
+  background-image: url('/img4.jpg'); /* Asegúrate que la ruta sea correcta desde /public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1; /* Para estar por encima del efecto de borde si es necesario */
+}
+
+/* Overlay para el contenedor derecho */
+.CONDER_PROD::before { /* Usar ::before para el overlay de color */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Encima de la imagen de fondo pero debajo del texto */
+}
+/* CONDER_PROD::after fue eliminado porque se usa para el borde animado en el original, lo que sería confuso.
+   Si el efecto de rotación también se quiere en CONDER_PROD individualmente, necesitaría su propia lógica,
+   pero el diseño actual parece tener el borde animado solo en el .container principal de la sección.
+   El texto dentro de CONDER_PROD necesitará un z-index: 3; para estar sobre el overlay.
+*/
+
+
+.prod h2 { /* Título "AGREGAR PRODUCTO" y "PRODUCTOS" */
+  font-family: 'URWClassico-Bold', serif;
+  font-weight: bold;
+  text-align: center;
+  color: #fff9e1; /* Color para el título del formulario */
+  font-size: 2rem;
+  position: relative; /* Para z-index si es necesario */
+  /* top: 15px; Usa padding/margin de Tailwind */
+  z-index: 1; /* O más alto si es necesario para estar sobre otros elementos */
+}
+
+/* Sobrescribir el .form-label para la sección de productos si es necesario */
+.prod .form-label {
+  color: #ddd;
+}
+
+.prod-button {
+  width: 100%;
+  padding: 1rem;
+  background-image: linear-gradient(to right, #78350f, #f59e0b);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-image 0.3s ease; /* Transicionar background-image */
+}
+
+.prod-button:hover {
+  background-image: linear-gradient(to right, #472d1d, #e9902b);
+}

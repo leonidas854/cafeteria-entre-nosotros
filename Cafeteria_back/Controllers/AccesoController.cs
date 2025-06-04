@@ -58,8 +58,16 @@ namespace Cafeteria_back.Controllers
                 Ubicacion = await _geolocalizador.ObtenerDireccion(prueba.latitud, prueba.longitud),
                 Password = _utilidades.EncriptarSHA256(prueba.password)
             };
-            await _context.Clientes.AddAsync(ModelCliente);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.Clientes.AddAsync(ModelCliente);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException ex)
+            {
+                return Conflict(new { mensaje = "El nombre de usuario ya está en uso (concurrencia)." });
+            }
+
             if (ModelCliente.Id_user != 0)
                 return StatusCode(StatusCodes.Status200OK, new { isSuccess = true });
             else

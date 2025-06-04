@@ -66,8 +66,18 @@ namespace Cafeteria_back.Controllers
                 }).ToList()
             };
 
-            _context.Promociones.Add(promocion);
-            await _context.SaveChangesAsync();
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                _context.Promociones.Add(promocion);
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                return StatusCode(500, "Error al crear promoción.");
+            }
 
             return Ok(new { isSuccess = true, strategykey = promocion.Strategykey });
         }

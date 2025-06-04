@@ -91,98 +91,105 @@ namespace Cafeteria_back.Controllers
         public async Task<IActionResult> ConfirmarPedido([FromQuery] string carritoId, 
             [FromQuery] string tipoEntrega, [FromQuery] string Tipo_pago)
         {
-          
-            
-            var carrito = await _carritoService.ObtenerPorId(carritoId);
-            if (carrito == null) return NotFound("Carrito no encontrado");
-
-            var pedido = new Pedido
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
             {
-                Cliente_id = carrito.ClienteId,
-                Tipo_Entrega = Enum.Parse<Tipo_entrega>(tipoEntrega),
-                estado = Estado_pedido.En_espera,
-                Total_estimado = 0,
-                Total_descuento = 0,
-                Detalle_pedido = new List<Detalle_pedido>()
-            };
 
-            _context.Pedidos.Add(pedido);
-            await _context.SaveChangesAsync();
+                var carrito = await _carritoService.ObtenerPorId(carritoId);
+                if (carrito == null) return NotFound("Carrito no encontrado");
 
-            float totalEstimado = 0;
-            float totalDescuento = 0;
-            var promoAplicable = await ObtenerPromocionAplicableAlCarrito(carrito);
-            foreach (var item in carrito.Items)
-            {
-                IProducto baseProd = new ProductoBase(item.Nombre!, item.PrecioUnitario, "café");
-                foreach (var extra in item.Extras)
+                var pedido = new Pedido
                 {
-                    var extraObj = new Extra { Precio = extra.Precio, Name = extra.Nombre };
-                    baseProd = new ExtraDecoradorGenerico(baseProd, extraObj);
-                }
-
-                float precioFinal = baseProd.Precio();
-               
-                float descuento = 0;
-                
-                if (promoAplicable != null &&
-                    promoAplicable.Producto_promocion!.Any(pp => pp.Producto_id == item.ProductoId))
-                {
-                    descuento = _descuentoContext.AplicarDescuento(
-                        "porcentaje", precioFinal, promoAplicable.Descuento);
-
-                }
-
-                float precioConDescuento = precioFinal - descuento;
-
-                var detalle = new Detalle_pedido
-                {
-                    Producto_id = item.ProductoId,
-                    Cantidad = item.Cantidad,
-                    Precio_unitario = precioConDescuento
+                    Cliente_id = carrito.ClienteId,
+                    Tipo_Entrega = Enum.Parse<Tipo_entrega>(tipoEntrega),
+                    estado = Estado_pedido.En_espera,
+                    Total_estimado = 0,
+                    Total_descuento = 0,
+                    Detalle_pedido = new List<Detalle_pedido>()
                 };
 
-                totalEstimado += precioFinal * item.Cantidad;
-                totalDescuento += descuento * item.Cantidad;
-
-                pedido.Detalle_pedido.Add(detalle);
+                _context.Pedidos.Add(pedido);
                 await _context.SaveChangesAsync();
 
-                foreach (var extra in item.Extras)
+                float totalEstimado = 0;
+                float totalDescuento = 0;
+                var promoAplicable = await ObtenerPromocionAplicableAlCarrito(carrito);
+                foreach (var item in carrito.Items)
                 {
-                    var detalleExtra = new Detalle_extra
+                    IProducto baseProd = new ProductoBase(item.Nombre!, item.PrecioUnitario, "café");
+                    foreach (var extra in item.Extras)
                     {
-                        Detalle_pedido_id = detalle.Id_detalle_pedido,
-                        Extra_id = extra.ExtraId
+                        var extraObj = new Extra { Precio = extra.Precio, Name = extra.Nombre };
+                        baseProd = new ExtraDecoradorGenerico(baseProd, extraObj);
+                    }
+
+                    float precioFinal = baseProd.Precio();
+
+                    float descuento = 0;
+
+                    if (promoAplicable != null &&
+                        promoAplicable.Producto_promocion!.Any(pp => pp.Producto_id == item.ProductoId))
+                    {
+                        descuento = _descuentoContext.AplicarDescuento(
+                            "porcentaje", precioFinal, promoAplicable.Descuento);
+
+                    }
+
+                    float precioConDescuento = precioFinal - descuento;
+
+                    var detalle = new Detalle_pedido
+                    {
+                        Producto_id = item.ProductoId,
+                        Cantidad = item.Cantidad,
+                        Precio_unitario = precioConDescuento
                     };
-                    _context.DetalleExtra.Add(detalleExtra);
+
+                    totalEstimado += precioFinal * item.Cantidad;
+                    totalDescuento += descuento * item.Cantidad;
+
+                    pedido.Detalle_pedido.Add(detalle);
+                    await _context.SaveChangesAsync();
+
+                    foreach (var extra in item.Extras)
+                    {
+                        var detalleExtra = new Detalle_extra
+                        {
+                            Detalle_pedido_id = detalle.Id_detalle_pedido,
+                            Extra_id = extra.ExtraId
+                        };
+                        _context.DetalleExtra.Add(detalleExtra);
+                    }
                 }
+
+
+
+                pedido.Total_estimado = totalEstimado;
+                pedido.Total_descuento = totalDescuento;
+                var venta = new Venta
+                {
+                    Empleado_id = carrito.EmpleadoId,
+                    Pedido_id = pedido.Id_pedido,
+                    Total_final = totalEstimado - totalDescuento,
+                    Ven_fecha = DateTime.UtcNow,
+                    Tipo_de_Pago = Tipo_pago
+                };
+
+
+                _context.Ventas.Add(venta);
+                await _context.SaveChangesAsync();
+                await _carritoService.Eliminar(carrito.Id!);
+
+                return Ok(new
+                {
+                    pedido_id = pedido.Id_pedido,
+                    total_estimado = pedido.Total_estimado,
+                    total_descuento = pedido.Total_descuento
+                });
+            }catch(Exception ex)
+            {
+                await transaction.RollbackAsync();
+                return StatusCode(500, $"Error al confirmar pedido: {ex.Message}");
             }
-
-          
-
-            pedido.Total_estimado = totalEstimado;
-            pedido.Total_descuento = totalDescuento;
-            var venta = new Venta
-            {
-                Empleado_id = carrito.EmpleadoId,
-                Pedido_id = pedido.Id_pedido,
-                Total_final = totalEstimado-totalDescuento,
-                Ven_fecha = DateTime.UtcNow,
-                Tipo_de_Pago = Tipo_pago
-            };
-
-
-            _context.Ventas.Add(venta);
-            await _context.SaveChangesAsync();
-            await _carritoService.Eliminar(carrito.Id!);
-
-            return Ok(new
-            {
-                pedido_id = pedido.Id_pedido,
-                total_estimado = pedido.Total_estimado,
-                total_descuento = pedido.Total_descuento
-            });
         }
 
        

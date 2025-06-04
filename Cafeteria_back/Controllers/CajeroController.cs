@@ -72,8 +72,16 @@ namespace Cafeteria_back.Controllers
                 Password = _utilidades.EncriptarSHA256(prueba.password)
             };
 
-            await _context.Clientes.AddAsync(ModelCliente);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.Clientes.AddAsync(ModelCliente);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                return Conflict(new { mensaje = "El nombre de usuario ya está en uso (concurrencia)." });
+            }
+
 
             if (ModelCliente.Id_user != 0)
             {

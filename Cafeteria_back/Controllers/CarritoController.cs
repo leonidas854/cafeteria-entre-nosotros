@@ -13,14 +13,15 @@ namespace Cafeteria_back.Controllers
     [Authorize]
     public class CarritoController : Controller
     {
-        private readonly CarritoService _carritoService;
+        private readonly ICarritoService _carritoService;
         private readonly MiDbContext _miDbContext;
 
-        public CarritoController(CarritoService carritoService, MiDbContext miDbContext)
+        public CarritoController(ICarritoService carritoService, MiDbContext context)
         {
             _carritoService = carritoService;
-            _miDbContext = miDbContext;
+            _miDbContext = context;
         }
+
         private long ObtenerClienteIdDesdeToken()
         {
             var claim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
@@ -298,7 +299,7 @@ namespace Cafeteria_back.Controllers
 
 
                 bool seCumplePromocion = productosRequeridos.All(promoProdId =>
-    carrito.Items.Any(item => item.ProductoId == promoProdId && item.Cantidad == 1));
+                            carrito.Items.Any(item => item.ProductoId == promoProdId && item.Cantidad == 1));
 
 
                 foreach (var item in carrito.Items)

@@ -7,7 +7,14 @@ using Cafeteria_back.Entities.Usuarios;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 namespace Cafeteria_back.Custom
 {
-    public class Utilidades
+
+    public interface IUtilidades
+    {
+        string EncriptarSHA256(string texto);
+        string GenerarJWT(Usuario usuario);
+    }
+
+    public class Utilidades : IUtilidades
     {
         public readonly IConfiguration Configuration;
         public Utilidades(IConfiguration configuration)

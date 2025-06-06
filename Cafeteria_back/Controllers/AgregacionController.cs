@@ -9,7 +9,7 @@ namespace Cafeteria_back.Controllers
 {
 
     [ApiController]
-    [AllowAnonymous]
+    
     [Route("api/[controller]")]
     [Authorize]
     public class AgregacionController : Controller

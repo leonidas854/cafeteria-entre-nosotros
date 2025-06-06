@@ -17,11 +17,11 @@ namespace Cafeteria_back.Controllers
     [Authorize]
     public class PedidoController : Controller
     {
-        private readonly CarritoService _carritoService;
+        private readonly ICarritoService _carritoService;
         private readonly MiDbContext _context;
         private readonly DescuentoStrategyContext _descuentoContext;
 
-        public PedidoController(CarritoService carritoService, MiDbContext context, DescuentoStrategyContext descuentoContext)
+        public PedidoController(ICarritoService carritoService, MiDbContext context, DescuentoStrategyContext descuentoContext)
         {
             _carritoService = carritoService;
             _context = context;
@@ -86,22 +86,31 @@ namespace Cafeteria_back.Controllers
 
 
         [HttpPost("confirmar")]
-       
-
-        public async Task<IActionResult> ConfirmarPedido([FromQuery] string carritoId, 
-            [FromQuery] string tipoEntrega, [FromQuery] string Tipo_pago)
+        public async Task<IActionResult> ConfirmarPedido(
+     [FromQuery] string carritoId,
+     [FromQuery] string tipoEntrega,
+     [FromQuery] string Tipo_pago)
         {
             using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
-
                 var carrito = await _carritoService.ObtenerPorId(carritoId);
-                if (carrito == null) return NotFound("Carrito no encontrado");
+                if (carrito == null)
+                    return NotFound("Carrito no encontrado.");
+
+                if (carrito.Items == null || !carrito.Items.Any())
+                    return BadRequest("El carrito no tiene productos.");
+
+               
+                if (!Enum.TryParse<Tipo_entrega>(tipoEntrega, out var tipoEntregaParsed))
+                    return BadRequest("Tipo de entrega inválido.");
+
+               
 
                 var pedido = new Pedido
                 {
                     Cliente_id = carrito.ClienteId,
-                    Tipo_Entrega = Enum.Parse<Tipo_entrega>(tipoEntrega),
+                    Tipo_Entrega = tipoEntregaParsed,
                     estado = Estado_pedido.En_espera,
                     Total_estimado = 0,
                     Total_descuento = 0,
@@ -109,30 +118,40 @@ namespace Cafeteria_back.Controllers
                 };
 
                 _context.Pedidos.Add(pedido);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(); 
 
                 float totalEstimado = 0;
                 float totalDescuento = 0;
+
                 var promoAplicable = await ObtenerPromocionAplicableAlCarrito(carrito);
+
                 foreach (var item in carrito.Items)
                 {
+                  
+                    var productoExiste = await _context.Productos.AnyAsync(p => p.Id_producto == item.ProductoId);
+                    if (!productoExiste)
+                        return BadRequest($"El producto con ID {item.ProductoId} no existe.");
+
                     IProducto baseProd = new ProductoBase(item.Nombre!, item.PrecioUnitario, "café");
+
                     foreach (var extra in item.Extras)
                     {
+                       
+                        var extraExiste = await _context.Extras.AnyAsync(e => e.Id_extra == extra.ExtraId);
+                        if (!extraExiste)
+                            return BadRequest($"El extra con ID {extra.ExtraId} no existe.");
+
                         var extraObj = new Extra { Precio = extra.Precio, Name = extra.Nombre };
                         baseProd = new ExtraDecoradorGenerico(baseProd, extraObj);
                     }
 
                     float precioFinal = baseProd.Precio();
-
                     float descuento = 0;
 
                     if (promoAplicable != null &&
                         promoAplicable.Producto_promocion!.Any(pp => pp.Producto_id == item.ProductoId))
                     {
-                        descuento = _descuentoContext.AplicarDescuento(
-                            "porcentaje", precioFinal, promoAplicable.Descuento);
-
+                        descuento = _descuentoContext.AplicarDescuento("porcentaje", precioFinal, promoAplicable.Descuento);
                     }
 
                     float precioConDescuento = precioFinal - descuento;
@@ -148,7 +167,8 @@ namespace Cafeteria_back.Controllers
                     totalDescuento += descuento * item.Cantidad;
 
                     pedido.Detalle_pedido.Add(detalle);
-                    await _context.SaveChangesAsync();
+                    _context.DetallesPedido.Add(detalle);
+                    await _context.SaveChangesAsync(); 
 
                     foreach (var extra in item.Extras)
                     {
@@ -161,23 +181,24 @@ namespace Cafeteria_back.Controllers
                     }
                 }
 
-
-
                 pedido.Total_estimado = totalEstimado;
                 pedido.Total_descuento = totalDescuento;
+                await _context.SaveChangesAsync(); // Guardar totales y extras
+
                 var venta = new Venta
                 {
                     Empleado_id = carrito.EmpleadoId,
                     Pedido_id = pedido.Id_pedido,
                     Total_final = totalEstimado - totalDescuento,
                     Ven_fecha = DateTime.UtcNow,
-                    Tipo_de_Pago = Tipo_pago
+                    Tipo_de_Pago = Tipo_pago // ← Si es enum, cambia a tipoPagoParsed
                 };
-
 
                 _context.Ventas.Add(venta);
                 await _context.SaveChangesAsync();
+
                 await _carritoService.Eliminar(carrito.Id!);
+                await transaction.CommitAsync();
 
                 return Ok(new
                 {
@@ -185,14 +206,18 @@ namespace Cafeteria_back.Controllers
                     total_estimado = pedido.Total_estimado,
                     total_descuento = pedido.Total_descuento
                 });
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 await transaction.RollbackAsync();
+                Console.WriteLine(ex.ToString());
                 return StatusCode(500, $"Error al confirmar pedido: {ex.Message}");
             }
         }
 
-       
+
+
+
         [NonAction]
         private async Task<Promocion?> ObtenerPromocionAplicableAlCarrito(Carrito carrito)
         {

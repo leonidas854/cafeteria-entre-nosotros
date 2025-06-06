@@ -23,14 +23,18 @@ namespace Cafeteria_back.Controllers
         [HttpPost]
         [Authorize]
         [Consumes("multipart/form-data")]
+       
         public async Task<IActionResult> CrearPromocion([FromForm] PromocionDTO dto)
         {
+           
             if (await _context.Promociones.AnyAsync(p => p.Strategykey!.ToLower() == dto.Strategykey.ToLower()))
                 return Conflict("Ya existe una promoción con ese Strategykey.");
 
+          
             if (dto.Productos == null || !dto.Productos.Any())
                 return BadRequest("Debe asociar al menos un producto válido.");
 
+        
             var productosEncontrados = await _context.Productos
                 .Where(p => dto.Productos.Contains(p.Id_producto))
                 .ToListAsync();
@@ -38,20 +42,26 @@ namespace Cafeteria_back.Controllers
             if (!productosEncontrados.Any())
                 return BadRequest("No se encontraron productos con los IDs proporcionados.");
 
-            string imagenURL = null!;
+           
+            string? imagenURL = null;
             if (dto.Imagen != null && dto.Imagen.Length > 0)
             {
-                var folderpath = Path.Combine("wwwroot", "Promociones");
-                Directory.CreateDirectory(folderpath);
-                var filename = Guid.NewGuid().ToString() + Path.GetExtension(dto.Imagen.FileName);
-                var filepath = Path.Combine(folderpath, filename);
-                using (var stream = new FileStream(filepath, FileMode.Create))
+                var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Promociones");
+                Directory.CreateDirectory(folderPath);
+
+                var extension = Path.GetExtension(dto.Imagen.FileName);
+                var safeFileName = $"{Guid.NewGuid()}{extension}";
+                var filePath = Path.Combine(folderPath, safeFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     await dto.Imagen.CopyToAsync(stream);
                 }
-                imagenURL = $"/promociones/{filename}";
+
+                imagenURL = $"/Promociones/{safeFileName}";
             }
 
+          
             var promocion = new Promocion
             {
                 Descuento = dto.Descuento,
@@ -66,6 +76,7 @@ namespace Cafeteria_back.Controllers
                 }).ToList()
             };
 
+         
             using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
@@ -73,10 +84,10 @@ namespace Cafeteria_back.Controllers
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
             }
-            catch
+            catch (Exception ex)
             {
                 await transaction.RollbackAsync();
-                return StatusCode(500, "Error al crear promoción.");
+                return StatusCode(500, $"Error al crear promoción. Detalle: {ex.Message}");
             }
 
             return Ok(new { isSuccess = true, strategykey = promocion.Strategykey });

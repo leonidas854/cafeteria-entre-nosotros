@@ -32,7 +32,8 @@ builder.Services.AddHttpClient<GoogleMapsApi>();
 builder.Services.AddScoped<IGeolocalizador, GoogleMapsAdapter>();
 
 //jwt
-builder.Services.AddSingleton<Utilidades>();
+builder.Services.AddSingleton<IUtilidades, Utilidades>();
+
 builder.Services.AddAuthentication(config =>
 {
     config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -73,7 +74,9 @@ builder.Services.AddScoped<DescuentoStrategyContext>();
 //mongodb
 builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("MongoDbSettings"));
-builder.Services.AddSingleton<CarritoService>();
+builder.Services.AddScoped<ICarritoService, CarritoService>();
+
+
 
 
 //habilitar cors

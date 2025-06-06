@@ -7,7 +7,6 @@ namespace Cafeteria_back.Entities.Usuarios
         [Key]
         public long Id_user { get; set; }
 
-        [Required]
         public string? Nombre { get; set; }
 
         public string? ApellidoPaterno { get; set; }

@@ -4,9 +4,22 @@ using MongoDB.Driver;
 
 namespace Cafeteria_back.Entities.Carritos
 {
-    public class CarritoService
+    public interface ICarritoService
     {
-        private readonly IMongoCollection<Carrito> _carritos;
+        Task<Carrito?> ObtenerPorId(string id);
+        Task<Carrito?> ObtenerPorCliente(long clienteId);
+        Task<Carrito?> ObtenerPorEmpleado(long empleadoId);
+        Task Crear(Carrito carrito);
+        Task Actualizar(string id, Carrito carrito);
+        Task Eliminar(string id);
+        Task AgregarProducto(long clienteId, ItemCarrito item);
+        Task ModificarCantidad(long clienteId, long productoId, int nuevaCantidad);
+        Task QuitarProducto(long clienteId, long productoId);
+    }
+
+    public class CarritoService : ICarritoService
+    {
+        protected readonly IMongoCollection<Carrito> _carritos;
 
         public CarritoService(IOptions<MongoDbSettings> settings)
         {
@@ -15,43 +28,25 @@ namespace Cafeteria_back.Entities.Carritos
             _carritos = database.GetCollection<Carrito>(settings.Value.CarritosCollection);
         }
 
-        // Obtener carrito por ID (para confirmar)
-        public async Task<Carrito?> ObtenerPorId(string id)
-        {
-            return await _carritos.Find(c => c.Id == id).FirstOrDefaultAsync();
-        }
+        public virtual async Task<Carrito?> ObtenerPorId(string id)
+            => await _carritos.Find(c => c.Id == id).FirstOrDefaultAsync();
 
-        // Obtener carrito de un cliente
-        public async Task<Carrito?> ObtenerPorCliente(long clienteId)
-        {
-            return await _carritos.Find(c => c.ClienteId == clienteId).FirstOrDefaultAsync();
-        }
-        // Obtener carrito de un cliente
-        public async Task<Carrito?> ObtenerPorEmpleado(long Empleadoid)
-        {
-            return await _carritos.Find(c => c.EmpleadoId == Empleadoid).FirstOrDefaultAsync();
-        }
+        public virtual async Task<Carrito?> ObtenerPorCliente(long clienteId)
+            => await _carritos.Find(c => c.ClienteId == clienteId).FirstOrDefaultAsync();
 
-        // Crear nuevo carrito
-        public async Task Crear(Carrito carrito)
-        {
-            await _carritos.InsertOneAsync(carrito);
-        }
+        public virtual async Task<Carrito?> ObtenerPorEmpleado(long empleadoId)
+            => await _carritos.Find(c => c.EmpleadoId == empleadoId).FirstOrDefaultAsync();
 
-        // Actualizar carrito completo (reemplaza)
-        public async Task Actualizar(string id, Carrito carrito)
-        {
-            await _carritos.ReplaceOneAsync(c => c.Id == id, carrito);
-        }
+        public virtual async Task Crear(Carrito carrito)
+            => await _carritos.InsertOneAsync(carrito);
 
-        // Eliminar carrito (tras confirmar pedido)
-        public async Task Eliminar(string id)
-        {
-            await _carritos.DeleteOneAsync(c => c.Id == id);
-        }
+        public virtual async Task Actualizar(string id, Carrito carrito)
+            => await _carritos.ReplaceOneAsync(c => c.Id == id, carrito);
 
-        // Agregar producto al carrito (versión servicio)
-        public async Task AgregarProducto(long clienteId, ItemCarrito item)
+        public virtual async Task Eliminar(string id)
+            => await _carritos.DeleteOneAsync(c => c.Id == id);
+
+        public virtual async Task AgregarProducto(long clienteId, ItemCarrito item)
         {
             var carrito = await ObtenerPorCliente(clienteId);
             if (carrito == null)
@@ -67,24 +62,17 @@ namespace Cafeteria_back.Entities.Carritos
             {
                 var existente = carrito.Items.FirstOrDefault(i => i.ProductoId == item.ProductoId);
                 if (existente != null)
-                {
                     existente.Cantidad += item.Cantidad;
-                }
                 else
-                {
                     carrito.Items.Add(item);
-                }
-
                 await Actualizar(carrito.Id, carrito);
             }
         }
 
-        // Modificar cantidad de un producto
-        public async Task ModificarCantidad(long clienteId, long productoId, int nuevaCantidad)
+        public virtual async Task ModificarCantidad(long clienteId, long productoId, int nuevaCantidad)
         {
             var carrito = await ObtenerPorCliente(clienteId);
             if (carrito == null) return;
-
             var item = carrito.Items.FirstOrDefault(i => i.ProductoId == productoId);
             if (item != null)
             {
@@ -93,12 +81,10 @@ namespace Cafeteria_back.Entities.Carritos
             }
         }
 
-        // Quitar producto
-        public async Task QuitarProducto(long clienteId, long productoId)
+        public virtual async Task QuitarProducto(long clienteId, long productoId)
         {
             var carrito = await ObtenerPorCliente(clienteId);
             if (carrito == null) return;
-
             carrito.Items.RemoveAll(i => i.ProductoId == productoId);
             await Actualizar(carrito.Id, carrito);
         }

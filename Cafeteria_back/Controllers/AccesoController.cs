@@ -16,7 +16,7 @@ namespace Cafeteria_back.Controllers
 {
 
     [Route("/[controller]")]
-    [AllowAnonymous]
+    
     [ApiController]
     public class AccesoController : ControllerBase
     {
@@ -25,17 +25,20 @@ namespace Cafeteria_back.Controllers
         //debe ir falso en caso usar http
         //ir true en caso usar https
         private readonly MiDbContext _context;
-        private readonly Utilidades _utilidades;
+        private readonly IUtilidades _utilidades;
         private readonly IGeolocalizador _geolocalizador;
-        public AccesoController(MiDbContext context, Utilidades utilidades, IGeolocalizador geoLocalizador)
+
+        public AccesoController(MiDbContext context, IUtilidades utilidades, IGeolocalizador geolocalizador)
         {
             _context = context;
             _utilidades = utilidades;
-            _geolocalizador = geoLocalizador;
+            _geolocalizador = geolocalizador;
         }
+
 
         [HttpPost]
         [Route("Registrarse_Cliente")]
+        [AllowAnonymous]
         public async Task<IActionResult> Registrarse(UsuarioPruebaDTO prueba)
         {
             bool usuarioExiste = await _context.Clientes
@@ -63,7 +66,7 @@ namespace Cafeteria_back.Controllers
                 await _context.Clientes.AddAsync(ModelCliente);
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateException ex)
+            catch (DbUpdateException )
             {
                 return Conflict(new { mensaje = "El nombre de usuario ya está en uso (concurrencia)." });
             }
@@ -75,6 +78,7 @@ namespace Cafeteria_back.Controllers
         }
         [HttpPost]
         [Route("Registrar_Empleado")]
+        [AllowAnonymous]
         public async Task<IActionResult> Registrar_E(EmpleadoDTO empleado)
         {
             bool usuarioExiste = await _context.Empleados
@@ -105,6 +109,7 @@ namespace Cafeteria_back.Controllers
         }
         [HttpPost]
         [Route("Login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginDTO objeto)
         {
             try
@@ -149,9 +154,10 @@ namespace Cafeteria_back.Controllers
             }
         }
 
-        [Authorize]
+       
         [HttpPost]
         [Route("Logout")]
+        [Authorize]
         public IActionResult Logout()
         {
             Response.Cookies.Delete("jwt");

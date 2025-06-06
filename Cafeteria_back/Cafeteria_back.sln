@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafeteria_back", "Cafeteria_back.csproj", "{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafeteria.Tests", "..\Cafeteria.Tests\Cafeteria.Tests.csproj", "{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15FF0DD9-7C75-48C9-9151-4A17BB38C1BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

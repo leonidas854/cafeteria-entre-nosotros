@@ -87,9 +87,9 @@ namespace Cafeteria_back.Controllers
 
         [HttpPost("confirmar")]
         public async Task<IActionResult> ConfirmarPedido(
-     [FromQuery] string carritoId,
-     [FromQuery] string tipoEntrega,
-     [FromQuery] string Tipo_pago)
+                                                         [FromQuery] string carritoId,
+                                                         [FromQuery] string tipoEntrega,
+                                                         [FromQuery] string Tipo_pago)
         {
             using var transaction = await _context.Database.BeginTransactionAsync();
             try
@@ -101,12 +101,8 @@ namespace Cafeteria_back.Controllers
                 if (carrito.Items == null || !carrito.Items.Any())
                     return BadRequest("El carrito no tiene productos.");
 
-               
                 if (!Enum.TryParse<Tipo_entrega>(tipoEntrega, out var tipoEntregaParsed))
                     return BadRequest("Tipo de entrega inválido.");
-
-               
-
                 var pedido = new Pedido
                 {
                     Cliente_id = carrito.ClienteId,
@@ -183,7 +179,7 @@ namespace Cafeteria_back.Controllers
 
                 pedido.Total_estimado = totalEstimado;
                 pedido.Total_descuento = totalDescuento;
-                await _context.SaveChangesAsync(); // Guardar totales y extras
+                await _context.SaveChangesAsync(); 
 
                 var venta = new Venta
                 {
@@ -191,7 +187,7 @@ namespace Cafeteria_back.Controllers
                     Pedido_id = pedido.Id_pedido,
                     Total_final = totalEstimado - totalDescuento,
                     Ven_fecha = DateTime.UtcNow,
-                    Tipo_de_Pago = Tipo_pago // ← Si es enum, cambia a tipoPagoParsed
+                    Tipo_de_Pago = Tipo_pago 
                 };
 
                 _context.Ventas.Add(venta);

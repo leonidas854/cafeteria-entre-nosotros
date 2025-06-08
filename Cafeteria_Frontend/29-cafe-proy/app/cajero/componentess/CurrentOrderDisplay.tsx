@@ -171,7 +171,7 @@ const handleConfirmarPedido = async () => {
     );
 
     toast.success(`Pedido confirmado. Total: Bs. ${(resultado.total_estimado - resultado.total_descuento).toFixed(2)}`);
-    
+    onClearOrder();
   } catch (error: any) {
     toast.error(error.message || "Error al confirmar el pedido");
   }
@@ -487,6 +487,34 @@ const handleConfirmarPedido = async () => {
           >
             Buscar
           </button>
+
+
+         <button
+  onClick={async () => {
+    try {
+      const nit = '7777777';
+      const cliente = await buscarClienteApi(nit);
+
+      if (!cliente?.id ) {
+        toast.error("No se pudo obtener cliente o carrito");
+        return;
+      }
+      setCliente(cliente);
+      toast.success("Cliente LOCAL asignado correctamente");
+      setMostrarModalNIT(false);
+      setClienteNoEncontrado(false);
+    } catch (error) {
+      console.error("Error al asignar cliente LOCAL:", error);
+      toast.error("No se pudo asignar el cliente LOCAL");
+    }
+  }}
+  className="w-full bg-gray-600 hover:bg-gray-700 text-white py-1.5 rounded"
+>
+  Usar Cliente LOCAL
+</button>
+
+
+
         </div>
       ) : (
         // Si no encontró cliente
@@ -515,12 +543,7 @@ const handleConfirmarPedido = async () => {
                   >
                     Editar
                   </button>
-            <button
-              onClick={() => registrarClienteManual(true)}
-              className="w-full bg-gray-600 hover:bg-gray-700 text-white py-1.5 rounded"
-            >
-              Registrar sin NIT
-            </button>
+            
             <button
               onClick={() => setMostrarModalNIT(false)}
               className="px-4 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
@@ -533,12 +556,6 @@ const handleConfirmarPedido = async () => {
     </div>
   </div>
 )}
-
-
-
-
-
-
 
 
       {/* Total y acciones */}

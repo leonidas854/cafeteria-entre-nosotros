@@ -18,9 +18,9 @@ namespace Cafeteria_back.Controllers
     {
 
         private readonly MiDbContext _context;
-        private readonly Utilidades _utilidades;
+        private readonly IUtilidades _utilidades;
 
-        public CajeroController( MiDbContext miDbContext, Utilidades utilidades)
+        public CajeroController( MiDbContext miDbContext, IUtilidades utilidades)
         {
           
             _context = miDbContext;
@@ -30,8 +30,6 @@ namespace Cafeteria_back.Controllers
         [HttpGet("nit/{nit}")]
         public async Task<IActionResult> BuscarClientePorNIT(int nit)
         {
-
-
             var cliente = await _context.Clientes
                 .Where(c => c.Nit == nit)
                 .Select(c => new UsuarioNit

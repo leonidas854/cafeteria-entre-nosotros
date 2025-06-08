@@ -13,8 +13,8 @@ namespace Cafeteria_back.Controllers
     public class UsuariosController : Controller
     {
      private readonly MiDbContext _context;
-        private readonly Utilidades _utilidades;
-        public UsuariosController(MiDbContext context, Utilidades utilidades)
+        private readonly IUtilidades _utilidades;
+        public UsuariosController(MiDbContext context, IUtilidades utilidades)
         {
             _context = context;
             _utilidades = utilidades;
@@ -26,7 +26,7 @@ namespace Cafeteria_back.Controllers
                 e => new UsuarioPruebaDTO
                 {
                    
-                    nombre = e.Nombre,
+                    nombre = e.Nombre!,
                     apell_paterno = e.ApellidoPaterno!,
                     apell_materno = e.ApellidoMaterno!,
                     Ubicacion = e.Ubicacion,

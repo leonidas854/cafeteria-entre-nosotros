@@ -15,8 +15,8 @@ namespace Cafeteria_back.Controllers
     public class AgregacionController : Controller
     {
         private readonly MiDbContext _context;
-        private readonly Utilidades _utilidades;
-        public AgregacionController(MiDbContext context,Utilidades utilidades)
+        private readonly IUtilidades _utilidades;
+        public AgregacionController(MiDbContext context,IUtilidades utilidades)
         {
             _context = context;
             _utilidades = utilidades;

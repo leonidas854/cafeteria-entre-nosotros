@@ -116,3 +116,8 @@
 .prod-button:hover {
   background-image: linear-gradient(to right, #472d1d, #e9902b);
 }
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -32,6 +32,7 @@ export default function EmployeeForm() {
   const [roles, setRoles] = useState<string[]>([]);
   const [mostrarNuevoRol, setMostrarNuevoRol] = useState(false);
   const [nuevoRol, setNuevoRol] = useState('');
+  const soloLetrasRegex = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*$/;
 
   useEffect(() => {
     const cargarRoles = async () => {
@@ -45,29 +46,47 @@ export default function EmployeeForm() {
     cargarRoles();
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement| HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    if (name === 'nombre' || name === 'apellidoPaterno' || name === 'apellidoMaterno'  ) {
+    const regex = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*$/;
+    if (regex.test(value) || value === '') {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
+  } else {
+    
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  }
   };
 
-  const agregarNuevoRol = () => {
-    const nuevo = nuevoRol.trim();
-    if (!nuevo) {
-      toast.error("⚠️ El nombre del nuevo rol no puede estar vacío");
-      return;
-    }
-    if (roles.includes(nuevo)) {
-      toast.error("⚠️ El rol ya existe");
-      return;
-    }
+ const handleInputTelefono = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const { name, value } = e.target;  
+  const soloNumeros = value.replace(/\D/g, '');
+  
+  if (soloNumeros.length > 0 && !/^[67]/.test(soloNumeros)) {
+    return;
+  }
+  
 
-    // Agregar el rol a la lista y seleccionarlo
-    setRoles(prev => [...prev, nuevo]);
-    setFormData(prev => ({ ...prev, rol: nuevo }));
-    toast.success("✅ Rol agregado");
-    setMostrarNuevoRol(false);
-    setNuevoRol('');
-  };
+  const numerosLimitados = soloNumeros.slice(0, 8);
+  
+  // 4. Aplicar formato
+  let telefonoFormateado = numerosLimitados;
+  if (numerosLimitados.length > 0) {
+    telefonoFormateado = `(${numerosLimitados.slice(0, 3)}) ${numerosLimitados.slice(3, 6)}-${numerosLimitados.slice(6)}`;
+  }
+  
+  setFormData({
+    ...formData,
+    [name]: telefonoFormateado
+  });
+};
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -148,22 +167,6 @@ export default function EmployeeForm() {
             */}
           
         </select>
-
-        {mostrarNuevoRol && (
-          <div className="mt-2 flex gap-2">
-            <input
-              type="text"
-              placeholder="Nuevo rol"
-              value={nuevoRol}
-              onChange={(e) => setNuevoRol(e.target.value)}
-              className="form-input flex-1"
-              required
-            />
-            <button type="button" onClick={agregarNuevoRol} className="btn bg-green-600 text-white px-4 rounded">
-              Guardar rol
-            </button>
-          </div>
-        )}
     
       </div>
 
@@ -186,8 +189,8 @@ export default function EmployeeForm() {
           <input type="date" name="fechaContratacion" value={formData.fechaContratacion} onChange={handleInputChange} required className="form-input w-full" />
         </div>
         <div>
-          <label className="block mb-2">Teléfono</label>
-          <input type="tel" name="telefono" value={formData.telefono} onChange={handleInputChange} className="form-input w-full" />
+          <label className="block mb-2">Celular</label>
+          <input type="tel" name="telefono" placeholder="('7 o 6'XX)-XXX-XXXX" value={formData.telefono} onChange={handleInputTelefono} className="form-input w-full" />
         </div>
       </div>
 

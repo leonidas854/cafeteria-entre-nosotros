@@ -6,31 +6,36 @@
   import "@/app/Menu.css"
   import "@/app/servicios.css"
   import "@/app/Tarjetas.css"
-  
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-
-  import { useEffect, useState } from 'react';
+  import Script from 'next/script';
+  import Spline from '@splinetool/react-spline';
+  import "slick-carousel/slick/slick.css";
+  import "slick-carousel/slick/slick-theme.css";
+  import { useEffect, useState, useRef } from 'react';
   import Slider from 'react-slick';
-
   import { Promocion, getPromociones } from '@/app/api/Promociones';
   import { agregarProductoAlCarrito } from '@/app/api/Carrito';
   import { getProductos,getProductoPorId, Producto } from '@/app/api/productos';
-import toast,{Toaster} from 'react-hot-toast';
-
-
-
+  import toast,{Toaster} from 'react-hot-toast';
   import { ParallaxProvider, ParallaxBanner, BannerLayer, Parallax } from 'react-scroll-parallax';
 
+  declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'spline-viewer': any;
+      }
+     }
+  }
+
   const HomePage = () => {
-
-
-
-
   const [promociones, setPromociones] = useState<(Promocion & { productosDetallados: Producto[] })[]>([]);
   const [loadingPromo, setLoadingPromo] = useState(true);
+   const [showOverlay, setShowOverlay] = useState(true);
+  const splineRef = useRef(null);
+  const handleSplineInteraction = () => {
+    setShowOverlay(false);
+  };
 
+   {/* PROMOCIONES */} 
   useEffect(() => {
     const fetchPromos = async () => {
       try {
@@ -112,75 +117,46 @@ import toast,{Toaster} from 'react-hot-toast';
   };
 
    
+{/* PROMOCIONES */}
 
-    
-    const background: BannerLayer = {
-      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/105988/banner-background.jpg',
-      translateY: [0, 50],
-      opacity: [1, 0.3],
-      scale: [1.05, 1, 'easeOutCubic'],
-      shouldAlwaysCompleteAnimation: true,
-    };
-
-
-    //promociones
-
-    const headline: BannerLayer = {
-      translateY: [0, 30],
-      scale: [1, 1.05, 'easeOutCubic'],
-      shouldAlwaysCompleteAnimation: true,
-      expanded: false,
-      children: (
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <h1 className="text-6xl md:text-8xl text-white font-urwclassico">
-            ENTRE AMIGOS
-          </h1>
-          <h2 className="text-2xl md:text-xl text-white font-urwclassico mt-4"> - cafeteria - </h2>
-
-          
-          <Link href="./MENU/Menu_prod.tsx" passHref>
-          <button className="
-          bg-white text-[#5D4037] font-urwclassico 
-          py-3 px-8 rounded-full text-lg 
-          hover:bg-[#5D4037] hover:text-white 
-          transition-all duration-300 shadow-lg 
-          hover:scale-105 z-10 relative
-          ">
-              Ver Menú
-          </button>
-          </Link>
-          </div> 
-        ),
-    };
-
-    const foreground: BannerLayer = {
-      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/105988/banner-foreground.png',
-      translateY: [0, 15],
-      scale: [1, 1.1, 'easeOutCubic'],
-      shouldAlwaysCompleteAnimation: true,
-    };
-
-    const gradientOverlay: BannerLayer = {
-      opacity: [0, 0.9],
-      shouldAlwaysCompleteAnimation: true,
-      expanded: false,
-      children: (
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-blue-900" />
-      ),
-    };
 
     return (
       <div className="min-h-screen">
         <Toaster position="top-right" />
         {/* MENU */}
         <Menu />
-
-        {/* HOLA MUNCO*/}
         <ParallaxProvider>
-          <ParallaxBanner
-            layers={[background, headline, foreground, gradientOverlay]}
-            className="h-[100vh] w-full"
+{/* ENTRE NOSOTROS */}
+        <div className="min-h-screen relative">
+          <Script 
+            src="https://unpkg.com/@splinetool/viewer@1.9.98/build/spline-viewer.js" 
+            type="module"
           />
+
+          {/* Fondo 3D */}
+          <div className="absolute inset-0 z-0">
+            <Spline
+              scene="https://prod.spline.design/adOLA3RXlsJ3jYdl/scene.splinecode"
+              className="w-full h-full"
+            />
+          </div>
+
+          {/* Overlay frontal */}
+          {showOverlay && (
+              <div className="cafe-container">
+              <h1 className="text-6xl font-bold font-urwclassico">ENTRE AMIGOS</h1>
+              <h2 className="text-2xl mt-4 font-urwclassico">- cafetería -</h2>
+              <Link href="./menu" passHref>
+                <button className="mt-6 bg-white text-[#5D4037] py-3 px-8 rounded-full hover:bg-[#5D4037] hover:text-white transition-all duration-300 shadow-lg hover:scale-105">
+                  Ver Menú
+                </button>
+              </Link>
+            </div>
+          )}
+          
+        </div>
+{/* ENTRE NOSOTROS */}       
+          
         {/* GRANOS*/}
         <ParallaxBanner
           layers={[

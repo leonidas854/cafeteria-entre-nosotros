@@ -11,7 +11,7 @@ import Link from "next/link";
 import "./menu.css";
 import "./catalogo.css";
 import { useRouter } from 'next/navigation';
-import BotonVerPedidos from"./BotonVerPedidos"
+
 
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -270,7 +270,7 @@ const renderProducts = () => {
 
          <div className="fixed right-8 bottom-8 z-50 compra-btn">
          
-          <BotonVerPedidos />
+        
 </div>
 
         </div>
@@ -319,11 +319,11 @@ export function ProductCard({ product,cargarCarrito }: { product: Producto ,carg
 
   return (
     <div
-      className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+      className="product-card bg-[#F2EEEB] rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
       onMouseEnter={() => setShowDescription(true)}
       onMouseLeave={() => setShowDescription(false)}
     >
-      <div className="relative h-48 bg-gray-200">
+      <div className="relative h-68 bg-gray-200 overflow-hidden">
         {product.image_url && (
           <img
             src={
@@ -333,6 +333,12 @@ export function ProductCard({ product,cargarCarrito }: { product: Producto ,carg
             }
             alt={product.nombre}
             className="w-full h-full object-cover"
+            style={{
+            objectFit: 'fill', 
+            objectPosition: 'center', 
+            maxHeight: '600px',
+            width: '400%' 
+      }}
           />
         )}
         <div className="absolute top-2 left-2 flex gap-2">
@@ -362,6 +368,30 @@ export function ProductCard({ product,cargarCarrito }: { product: Producto ,carg
           </button>
         </div>
       </div>
+
+
+
+      
+        <div className="fixed right-8 bottom-8 z-50 compra-btn">
+          <Link href="/EstadoPedido">
+            <button className="bg-slate-600 bg-gradient-to-r from-slate-600 to-blue-600 hover:from-slate-700 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-100 flex items-center gap-2">
+              <svg  xmlns="http://www.w3.org/2000/svg" 
+              className="h-6 w-6 text-amber-700" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor">
+                
+                <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+               d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+              HISTORIAL DE PEDIDOS
+            </button>
+          </Link>
+        </div>
+
     </div>
   );
 }

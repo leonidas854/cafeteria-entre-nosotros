@@ -1,0 +1,18 @@
+.spline-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Altura fija que prefieras */
+  background: #FAEFD3;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}
+
+
+/* Ajuste para el modelo Spline */
+spline-viewer, .spline-react {
+  width: 200%;
+  height: 200%;
+  transform: scale(1.5); /* Ajusta este valor para el zoom */
+  transform-origin: center center;
+}

@@ -1,25 +1,19 @@
 // app/cajero/page.tsx
 'use client';
-
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import toast, { Toaster } from 'react-hot-toast';
-
 import { getProductos, Producto, getProductoPorId} from '@/app/api/productos';
 import { logout} from '@/app/api/CerrarSesC';
 import { getUsuarioAutenticado} from '@/app/api/LoginEmpleado';
 import { getPromociones, Promocion } from '@/app/api/Promociones';
 import { ItemPedido, GroupedProducts } from './type';
-
 import CajeroHeader from './componentess/CajeroHeader';
 import ProductCardCajero from './componentess/ProductCardCajero';
 import CurrentOrderDisplay from './componentess/CurrentOrderDisplay';
 import CategoryFilterPanel from './componentess/CategoryFilterPanel';
-
 import { UsuarioNit } from './componentess/CurrentOrderDisplay';
-
 import { agregarProductoAlCarrito } from '@/app/api/Carrito';
-
 import { obtenerCarrito } from '@/app/api/Carrito';
 
 
@@ -227,7 +221,7 @@ const handleAgregarPromo = async (productoIds: number[]) => {
        ClienteId
     );
 
-    toast.success(`${product.nombre} añadido al carrito`);
+    /*toast.success(`${product.nombre} añadido al carrito`);*/
      await refrescarCarrito();
   } catch (error) {
     toast.error('Error al agregar producto al carrito.');

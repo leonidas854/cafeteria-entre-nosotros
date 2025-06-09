@@ -3,10 +3,13 @@
 
 import { useState, useEffect } from 'react';
 import {crearProducto,Producto} from "@/app/api/productos";
+
 import { getCategorias,
   getSaboresPorCategoria,
   getSubcategorias
 } from "@/app/api/Admin";
+
+
 type ProductType = 'comida' | 'bebida';
 import toast,{Toaster} from 'react-hot-toast';
 
@@ -41,17 +44,18 @@ const initialProductFormState: ProductFormData = {
 export default function ProductForm() {
   const [productType, setProductType] = useState<ProductType>('comida');
   const [formData, setFormData] = useState<ProductFormData>(initialProductFormState);
-const [saboresPorCategoria, setSaboresPorCategoria] = useState<SaboresPorCategoria>({});
+  const [saboresPorCategoria, setSaboresPorCategoria] = useState<SaboresPorCategoria>({});
   const [nuevoSabor, setNuevoSabor] = useState('');
   const [categoriaParaNuevoSabor, setCategoriaParaNuevoSabor] = useState('');
   const [categorias, setCategorias] = useState<string[]>([]);
-const [mostrarNuevaCategoria, setMostrarNuevaCategoria] = useState(false);
-const [nuevaCategoria, setNuevaCategoria] = useState('');
-const [subcategorias, setSubcategorias] = useState<string[]>([]);
-const [mostrarNuevaSubcategoria, setMostrarNuevaSubcategoria] = useState(false);
-const [nuevaSubcategoria, setNuevaSubcategoria] = useState('');
-const [estadoActivo, setEstadoActivo] = useState(true);
-
+  const [mostrarNuevaCategoria, setMostrarNuevaCategoria] = useState(false);
+  const [nuevaCategoria, setNuevaCategoria] = useState('');
+  const [subcategorias, setSubcategorias] = useState<string[]>([]);
+  const [mostrarNuevaSubcategoria, setMostrarNuevaSubcategoria] = useState(false);
+  const [nuevaSubcategoria, setNuevaSubcategoria] = useState('');
+  const [estadoActivo, setEstadoActivo] = useState(true);
+  const soloLetrasRegex = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*$/;
+  const [errorArchivo, setErrorArchivo] = useState('');
 
 useEffect(() => {
   const cargarTodo = async () => {
@@ -91,14 +95,47 @@ setCategorias(prev => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    if (name === 'nombre') {
+    // Validación solo para letras y espacios
+    const regex = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*$/;
+    if (regex.test(value) || value === '') {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
+  } else {
+    
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFormData(prev => ({ ...prev, imagen: e.target.files![0] }));
+  const file = e.target.files?.[0];
+  
+  if (file) {
+    if (!file.type.match('image.*')) {
+      setErrorArchivo('Por favor, sube solo archivos de imagen (JPEG, PNG, GIF, etc.)');
+      e.target.value = ''; 
+      setFormData(prev => ({ ...prev, imagen: null }));
+      return;
     }
-  };
+    
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    if (file.size > maxSize) {
+      setErrorArchivo('La imagen es demasiado grande (máximo 5MB)');
+      e.target.value = '';
+      setFormData(prev => ({ ...prev, imagen: null }));
+      return;
+    }
+    
+    setErrorArchivo('');
+    setFormData(prev => ({ ...prev, imagen: file }));
+  }
+};
 
   const handleSizeToggle = (size: string) => {
     setFormData(prev => {
@@ -108,6 +145,8 @@ setCategorias(prev => {
       return { ...prev, bebidaSizes: newSizes };
     });
   };
+
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -191,32 +230,32 @@ if (productType === 'comida') {
       </div>
 
       <div className="grid grid-cols-2 gap-4">
-  {/* Categoría */}
-  <div>
-    <label className="form-label block mb-2">Categoría</label>
-   <select
-  className="form-input bg-neutral-900 text-white"
-  value={formData.categoria}
-  onChange={(e) => {
-    const value = e.target.value;
-    if (value === '__nueva__') {
-      setMostrarNuevaCategoria(true);
-    } else {
-      setFormData(prev => ({ ...prev, categoria: value, sabores: '' }));
-      setMostrarNuevaCategoria(false);
-    }
-  }}
-  required
->
-  <option value="">Seleccione una categoría</option>
-  {categorias.map((cat) => (
-    <option key={cat} value={cat}>{cat}</option>
-  ))}
-  <option value="__nueva__">+ Agregar nueva categoría</option>
-</select>
-
-
-    {mostrarNuevaCategoria && (
+      {/* Categoría */}
+  
+       <div>
+    
+       <label className="form-label block mb-2">Categoría</label>
+          <select
+            className="form-input bg-neutral-900 text-white"
+            value={formData.categoria}
+            onChange={(e) => {
+            const value = e.target.value;
+            if (value === '__nueva__') {
+             setMostrarNuevaCategoria(true);
+            } else {
+            setFormData(prev => ({ ...prev, categoria: value, sabores: '' }));
+            setMostrarNuevaCategoria(false);
+            }
+          }}
+                required
+              >
+              <option value="">Seleccione una categoría</option>
+                  {categorias.map((cat) => (
+              <option key={cat} value={cat}>{cat}</option>
+                ))}
+              <option value="__nueva__">+ Agregar nueva categoría</option>
+          </select>
+      {mostrarNuevaCategoria && (
       <>
         <input
           type="text"
@@ -224,49 +263,44 @@ if (productType === 'comida') {
           value={nuevaCategoria}
           onChange={(e) => setNuevaCategoria(e.target.value)}
           className="form-input mt-2"
+          pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+"
         />
        <button
-  type="button"
-  className="mt-2 btn"
- onClick={() => {
-  if (!nuevaCategoria.trim()) return;
-  const nueva = nuevaCategoria.trim();
+        type="button"
+        className="mt-2 btn"
+        onClick={() => {
+        if (!nuevaCategoria.trim()  || !soloLetrasRegex.test(nuevaCategoria)  ) return;
+        const nueva = nuevaCategoria.trim();
 
-  // Establecerla como la categoría seleccionada inmediatamente
-  setFormData(prev => ({
-    ...prev,
-    categoria: nueva,
-    sub_categoria: 'S/D'
-  }));
+        // Establecerla como la categoría seleccionada inmediatamente
+        setFormData(prev => ({
+        ...prev,
+        categoria: nueva,
+         sub_categoria: 'S/D'
+         }));
 
-  // Asegurar que se agregue la nueva categoría en el combo, si no existe
-  setCategorias(prev => {
-    if (!prev.includes(nueva)) {
-      return [...prev, nueva];
-    }
-    return prev;
-  });
+          // Asegurar que se agregue la nueva categoría en el combo, si no existe
+        setCategorias(prev => {
+          if (!prev.includes(nueva)) {
+          return [...prev, nueva];
+          }
+          return prev;
+          });
 
   // Opcional: Inicializar sabores vacíos si decides usar esta categoría
-  setSaboresPorCategoria(prev => ({
-    ...prev,
-    [nueva]: []
-  }));
+         setSaboresPorCategoria(prev => ({
+          ...prev,
+          [nueva]: []
+          }));
 
   // Ocultar input y limpiar campo
-  setMostrarNuevaCategoria(false);
-  setNuevaCategoria('');
+          setMostrarNuevaCategoria(false);
+          setNuevaCategoria('');
 }}
-
-
+disabled={!nuevaCategoria.trim() || !soloLetrasRegex.test(nuevaCategoria)}
 >
-  Guardar nueva categoría
+    Guardar nueva categoría
 </button>
-
-
-
-
-
       </>
     )}
   </div>
@@ -304,17 +338,19 @@ if (productType === 'comida') {
           value={nuevaSubcategoria}
           onChange={(e) => setNuevaSubcategoria(e.target.value)}
           className="form-input mt-2"
+          pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+"
         />
         <button
           type="button"
           className="btn mt-2"
           onClick={() => {
-            if (!nuevaSubcategoria.trim()) return;
+            if (!nuevaSubcategoria.trim() || !soloLetrasRegex.test(nuevaSubcategoria) ) return;
             setSubcategorias(prev => [...prev, nuevaSubcategoria.trim()]);
             setFormData(prev => ({ ...prev, sub_categoria: nuevaSubcategoria.trim() }));
             setNuevaSubcategoria('');
             setMostrarNuevaSubcategoria(false);
           }}
+           disabled={!nuevaSubcategoria.trim() || !soloLetrasRegex.test(nuevaSubcategoria)}
         >
           Guardar
         </button>
@@ -369,9 +405,9 @@ if (productType === 'comida') {
       />
       <button
         type="button"
-        className="ml-2 btn"
+        className={`ml-2 btn ${ formData.sabores === 'S/D' ? 'opacity-50 cursor-not-allowed' : '' }`}
         onClick={() => {
-          if (!nuevoSabor.trim()) return;
+          if (formData.sabores === 'S/D' || !nuevoSabor.trim() || !soloLetrasRegex.test(nuevoSabor)) return;
           setSaboresPorCategoria(prev => ({
             ...prev,
             [formData.categoria]: Array.from(new Set([...(prev[formData.categoria] || []), nuevoSabor.trim()]))
@@ -382,6 +418,7 @@ if (productType === 'comida') {
           }));
           setNuevoSabor('');
         }}
+         disabled={formData.sabores === 'S/D' || !nuevoSabor.trim() || !soloLetrasRegex.test(nuevoSabor)}
       >
         Agregar
       </button>
@@ -393,28 +430,44 @@ if (productType === 'comida') {
         {/* Checkbox S/D */}
         <label className="inline-flex items-center">
           <input
-            type="checkbox"
+            type="checkbox"            
             checked={formData.sabores === 'S/D'}
-            onChange={(e) =>
+            onChange={(e) => {
+              const isChecked = e.target.checked;
               setFormData(prev => ({
                 ...prev,
                 sabores: e.target.checked ? 'S/D' : ''
-              }))
-            }
+              }));
+              if (isChecked) setNuevoSabor('');
+            }}    
           />
           <span className="ml-2">Sin sabor (S/D)</span>
         </label>
       </div>
 
-      {/* Imagen */}
-      <input
-        type="file"
-        id="product-imagen"
-        name="imagen"
-        className="form-input w-full p-2 border rounded"
-        accept="image/*"
-        onChange={handleFileChange}
-      />
+      <div className="mb-4">
+  <label htmlFor="product-imagen" className="form-label block mb-2">
+    Imagen del producto
+  </label>
+  <input
+    type="file"
+    id="product-imagen"
+    name="imagen"
+    className={`form-input w-full p-2 border rounded ${
+      errorArchivo ? 'border-red-500' : 'border-gray-300'
+    }`}
+    accept="image/*"
+    onChange={handleFileChange}
+  />
+  {errorArchivo && (
+    <p className="text-red-500 text-sm mt-1">{errorArchivo}</p>
+  )}
+  {formData.imagen && !errorArchivo && (
+    <p className="text-green-600 text-sm mt-1">
+      Archivo válido: {formData.imagen.name}
+    </p>
+  )}
+</div>
 
       {/* Comida / Bebida opciones */}
       {productType === 'comida' && (

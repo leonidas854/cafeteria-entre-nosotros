@@ -387,7 +387,7 @@ export default function ReportsSection() {
   };
 
   return (
-    <section className="h-full w-full flex flex-col items-center bg-gray-100 py-8 px-4 min-h-screen">
+    <section id="Repor" className="h-full w-full flex flex-col items-center bg-gray-100 py-8 px-4 min-h-screen">
       <h2 className="text-3xl font-bold text-gray-800 mb-6">Reportes</h2>
 
       <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4 bg-white rounded-lg px-4 py-3 shadow-md">

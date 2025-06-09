@@ -38,3 +38,21 @@ body {
   font-weight: normal;
   font-style: normal; 
 }
+
+.product-card {
+  background: #F2EEEB;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 2px 4px rgba(255, 255, 255, 0.74),
+    0 4px 6px rgba(255, 255, 255, 0.699),
+    inset 0 -3px 6px rgba(255, 255, 255, 0.719); 
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 
+    0 4px 8px rgb(255, 136, 1),
+    0 6px 8px rgb(255, 136, 1),
+    inset 0 -4px 8px rgba(255, 136, 1);
+}

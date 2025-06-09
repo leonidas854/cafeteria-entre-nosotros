@@ -1,258 +1,285 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Cafeteria\\Cafeteria_back\\",
+  "WorkspaceRootPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\agregacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\agregacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\cajerocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\cajerocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\usuarios\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}|..\\Cafeteria.Tests\\Cafeteria.Tests.csproj|d:\\cafeteria\\cafeteria.tests\\cafeteria.tests.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\carritos\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\carritos\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}|..\\Cafeteria.Tests\\Cafeteria.Tests.csproj|d:\\cafeteria\\cafeteria.tests\\carritocontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}|..\\Cafeteria.Tests\\Cafeteria.Tests.csproj|d:\\cafeteria\\cafeteria.tests\\pedidocontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}|..\\Cafeteria.Tests\\Cafeteria.Tests.csproj|d:\\cafeteria\\cafeteria.tests\\accesocontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}|..\\Cafeteria.Tests\\Cafeteria.Tests.csproj|d:\\cafeteria\\cafeteria.tests\\fakecarritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{078E8FDD-FBE8-4DDF-A22E-D8D650DE8C84}|..\\Cafeteria.Tests\\Cafeteria.Tests.csproj|d:\\cafeteria\\cafeteria.tests\\cafeteria.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Cafeteria\\Cafeteria_back\\Migrations\\20250516041238_MiNuevaMigracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250516041238_MiNuevaMigracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Cafeteria\\Cafeteria_back\\Migrations\\20250516041238_MiNuevaMigracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Cafeteria\\Cafeteria.Tests\\FakeCarritoService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Cafeteria\\Cafeteria.Tests\\CarritoControllerTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Cafeteria\\Cafeteria.Tests\\PedidoControllerTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Cafeteria\\Cafeteria.Tests\\AccesoControllerTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\20250525222006_addcampo_anadido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250525222006_addcampo_anadido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\descuentostrategycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\descuentostrategycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\extradecoradorgenerico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\extradecoradorgenerico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\carritos\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\carritos\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\idescuentostrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\idescuentostrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\pedidofactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\pedidofactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\ipedidoobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\ipedidoobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\extradecorador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\extradecorador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\iproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\iproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\20250518065037_addarreglo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250518065037_addarreglo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\promociondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\promociondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\extradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\extradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\productos\\bebida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\productos\\bebida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\productos\\comida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\productos\\comida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\empleadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\empleadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\controllers\\extrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\extrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\googlemapsadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\googlemapsadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\implementations\\googlemapsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\googlemapsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\usuariopruebadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\usuariopruebadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\detalle_extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\detalle_extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\pedidos\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\pedidos\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\usuarios\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\entities\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\cafeteria_back.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\cafeteria_back.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:cafeteria_back.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|d:\\cafeteria\\cafeteria_back\\cafeteria_back.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\controllers\\agregacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\agregacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\controllers\\cajerocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\cajerocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\data\\migrations\\20250525222006_addcampo_anadido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250525222006_addcampo_anadido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\implementations\\descuentostrategycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\descuentostrategycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\implementations\\extradecoradorgenerico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\extradecoradorgenerico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\carritos\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\carritos\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\data\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\carritos\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\carritos\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\interfaces\\idescuentostrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\idescuentostrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\implementations\\pedidofactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\pedidofactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\interfaces\\ipedidoobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\ipedidoobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\implementations\\extradecorador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\extradecorador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\interfaces\\iproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\iproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\data\\migrations\\20250518065037_addarreglo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\20250518065037_addarreglo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\migrations\\midbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\dtos\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\dtos\\promociondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\promociondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\promocionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\dtos\\extradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\extradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\productos\\bebida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\productos\\bebida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\productos\\comida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\productos\\comida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\dtos\\empleadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\empleadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\controllers\\extrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\extrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\usuarios\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:cafeteria_back.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\implementations\\googlemapsadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\googlemapsadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\implementations\\googlemapsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\implementations\\googlemapsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:repositories\\interfaces\\igeolocalizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\dtos\\usuariopruebadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\usuariopruebadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\cafeteria_back.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:cafeteria_back.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\producto_promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\detalle_extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\detalle_extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\tablas_intermedias\\detalle_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\extras\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\promociones\\promocion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\pedidos\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\pedidos\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\usuarios\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:data\\midbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|c:\\users\\foonky\\onedrive\\documentos\\cafeteria\\cafeteria_back\\entities\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DD13CC-4619-95A6-AFAF-131B5E28521E}|Cafeteria_back.csproj|solutionrelative:entities\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 196,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 24,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -271,11 +298,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
+              "RelativeToolTip": "wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-06-09T01:55:49.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
+              "RelativeToolTip": "wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-06-09T01:53:29.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "1589500f-5cd5-4496-b57c-091786e1e871.png",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
+              "RelativeDocumentMoniker": "wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
+              "RelativeToolTip": "wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-06-09T01:53:26.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
+              "RelativeDocumentMoniker": "wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
+              "RelativeToolTip": "wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-06-09T01:53:24.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "03160dea-502f-438e-82c9-1b45577748d1.jpg",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
+              "RelativeToolTip": "wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-06-09T01:53:21.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "CarritoService.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Services\\CarritoService.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Services\\CarritoService.cs",
               "RelativeDocumentMoniker": "Repositories\\Services\\CarritoService.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Services\\CarritoService.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Services\\CarritoService.cs",
               "RelativeToolTip": "Repositories\\Services\\CarritoService.cs",
               "ViewState": "AgIAAF8AAAAAAAAAAAAAAHUAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -283,11 +365,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -295,129 +377,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 9,
               "Title": "Cafeteria.Tests.csproj",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
-              "RelativeDocumentMoniker": "..\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
               "ToolTip": "D:\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
-              "RelativeToolTip": "..\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-06-06T16:41:52.231Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Cafeteria.Tests",
+              "DocumentIndex": 10,
+              "Title": "Cafeteria.Tests.csproj",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
-              "RelativeDocumentMoniker": "..\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
               "ToolTip": "D:\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
-              "RelativeToolTip": "..\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-06-06T16:36:57.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 17,
               "Title": "Cafeteria_back",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
               "RelativeDocumentMoniker": "Cafeteria_back.csproj",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
               "RelativeToolTip": "Cafeteria_back.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-06-06T16:36:36.388Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 7,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AgIAAKIAAAAAAAAAAAAAAHcJAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
               "WhenOpened": "2025-06-06T15:46:34.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 11,
               "Title": "FakeCarritoService.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria.Tests\\FakeCarritoService.cs",
-              "RelativeDocumentMoniker": "..\\Cafeteria.Tests\\FakeCarritoService.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria.Tests\\FakeCarritoService.cs",
-              "RelativeToolTip": "..\\Cafeteria.Tests\\FakeCarritoService.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAA5wC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T15:45:12.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CarritoControllerTests.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria.Tests\\CarritoControllerTests.cs",
-              "RelativeDocumentMoniker": "..\\Cafeteria.Tests\\CarritoControllerTests.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria.Tests\\CarritoControllerTests.cs",
-              "RelativeToolTip": "..\\Cafeteria.Tests\\CarritoControllerTests.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T15:43:13.81Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "PedidoControllerTests.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria.Tests\\PedidoControllerTests.cs",
-              "RelativeDocumentMoniker": "..\\Cafeteria.Tests\\PedidoControllerTests.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria.Tests\\PedidoControllerTests.cs",
-              "RelativeToolTip": "..\\Cafeteria.Tests\\PedidoControllerTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAQwAsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T15:37:10.986Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "AccesoControllerTests.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria.Tests\\AccesoControllerTests.cs",
-              "RelativeDocumentMoniker": "..\\Cafeteria.Tests\\AccesoControllerTests.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria.Tests\\AccesoControllerTests.cs",
-              "RelativeToolTip": "..\\Cafeteria.Tests\\AccesoControllerTests.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAwwG0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T15:33:28.681Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 18,
               "Title": "AgregacionController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AgregacionController.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\AgregacionController.cs",
               "RelativeDocumentMoniker": "Controllers\\AgregacionController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AgregacionController.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\AgregacionController.cs",
               "RelativeToolTip": "Controllers\\AgregacionController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T20:38:06.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T20:38:06.595Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 19,
               "Title": "CajeroController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\CajeroController.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\CajeroController.cs",
               "RelativeDocumentMoniker": "Controllers\\CajeroController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\CajeroController.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\CajeroController.cs",
               "RelativeToolTip": "Controllers\\CajeroController.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAAABoAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T01:25:54.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T01:25:54.644Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "20250525222006_addCampo_anadido.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250525222006_addCampo_anadido.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250525222006_addCampo_anadido.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250525222006_addCampo_anadido.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250525222006_addCampo_anadido.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250525222006_addCampo_anadido.cs",
               "RelativeToolTip": "Data\\Migrations\\20250525222006_addCampo_anadido.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -425,23 +495,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 0,
               "Title": "PedidoController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PedidoController.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\PedidoController.cs",
               "RelativeDocumentMoniker": "Controllers\\PedidoController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\PedidoController.cs",
               "RelativeToolTip": "Controllers\\PedidoController.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAIwGwAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAiwGwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T05:12:14.742Z"
+              "WhenOpened": "2025-05-19T05:12:14.742Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "DescuentoStrategyContext.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\DescuentoStrategyContext.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\DescuentoStrategyContext.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\DescuentoStrategyContext.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\DescuentoStrategyContext.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\DescuentoStrategyContext.cs",
               "RelativeToolTip": "Repositories\\Implementations\\DescuentoStrategyContext.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAuwBUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -449,11 +520,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ExtraDecoradorGenerico.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecoradorGenerico.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecoradorGenerico.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\ExtraDecoradorGenerico.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecoradorGenerico.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecoradorGenerico.cs",
               "RelativeToolTip": "Repositories\\Implementations\\ExtraDecoradorGenerico.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -461,24 +532,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 23,
               "Title": "CarritoController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\CarritoController.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\CarritoController.cs",
               "RelativeDocumentMoniker": "Controllers\\CarritoController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\CarritoController.cs",
               "RelativeToolTip": "Controllers\\CarritoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYBAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T02:27:02.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T02:27:02.091Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 24,
               "Title": "CarritoService.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\CarritoService.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\CarritoService.cs",
               "RelativeDocumentMoniker": "Entities\\Carritos\\CarritoService.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\CarritoService.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\CarritoService.cs",
               "RelativeToolTip": "Entities\\Carritos\\CarritoService.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAgwFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -486,11 +556,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "MongoDbSettings.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\MongoDbSettings.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\MongoDbSettings.cs",
               "RelativeDocumentMoniker": "Data\\MongoDbSettings.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\MongoDbSettings.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\MongoDbSettings.cs",
               "RelativeToolTip": "Data\\MongoDbSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -498,11 +568,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "Carrito.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\Carrito.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\Carrito.cs",
               "RelativeDocumentMoniker": "Entities\\Carritos\\Carrito.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\Carrito.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Carritos\\Carrito.cs",
               "RelativeToolTip": "Entities\\Carritos\\Carrito.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAjwA8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -510,11 +580,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "IDescuentoStrategy.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IDescuentoStrategy.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IDescuentoStrategy.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IDescuentoStrategy.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IDescuentoStrategy.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IDescuentoStrategy.cs",
               "RelativeToolTip": "Repositories\\Interfaces\\IDescuentoStrategy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -522,11 +592,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "PedidoFactory.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\PedidoFactory.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\PedidoFactory.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\PedidoFactory.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\PedidoFactory.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\PedidoFactory.cs",
               "RelativeToolTip": "Repositories\\Implementations\\PedidoFactory.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAwwCEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -534,11 +604,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "IPedidoObserver.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IPedidoObserver.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IPedidoObserver.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IPedidoObserver.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IPedidoObserver.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IPedidoObserver.cs",
               "RelativeToolTip": "Repositories\\Interfaces\\IPedidoObserver.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -546,11 +616,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "ExtraDecorador.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecorador.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecorador.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\ExtraDecorador.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecorador.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\ExtraDecorador.cs",
               "RelativeToolTip": "Repositories\\Implementations\\ExtraDecorador.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAA6wAYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -558,11 +628,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "IProducto.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IProducto.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IProducto.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProducto.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IProducto.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IProducto.cs",
               "RelativeToolTip": "Repositories\\Interfaces\\IProducto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -570,11 +640,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "20250518065037_AddArreglo.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250518065037_AddArreglo.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250518065037_AddArreglo.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250518065037_AddArreglo.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250518065037_AddArreglo.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\20250518065037_AddArreglo.cs",
               "RelativeToolTip": "Data\\Migrations\\20250518065037_AddArreglo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -582,11 +652,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "MiDbContextModelSnapshot.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\MiDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\MiDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\MiDbContextModelSnapshot.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\MiDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\Migrations\\MiDbContextModelSnapshot.cs",
               "RelativeToolTip": "Data\\Migrations\\MiDbContextModelSnapshot.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -594,11 +664,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "ProductoDTO.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ProductoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ProductoDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\ProductoDTO.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ProductoDTO.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ProductoDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\ProductoDTO.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAIwCcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -606,11 +676,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "ProductoController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\ProductoController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductoController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\ProductoController.cs",
               "RelativeToolTip": "Controllers\\ProductoController.cs",
               "ViewState": "AgIAAA8BAAAAAAAAAAAqwDQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -618,11 +688,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "PromocionDTO.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\PromocionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\PromocionDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\PromocionDTO.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\PromocionDTO.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\PromocionDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\PromocionDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -630,11 +700,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 37,
               "Title": "PromocionesController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PromocionesController.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\PromocionesController.cs",
               "RelativeDocumentMoniker": "Controllers\\PromocionesController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\PromocionesController.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\PromocionesController.cs",
               "RelativeToolTip": "Controllers\\PromocionesController.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAAwGMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -642,24 +712,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 38,
               "Title": "UsuariosController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "Controllers\\UsuariosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T04:09:32.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T04:09:32.593Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 39,
               "Title": "ExtraDTO.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ExtraDTO.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ExtraDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\ExtraDTO.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ExtraDTO.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\ExtraDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\ExtraDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -667,22 +736,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 8,
               "Title": "20250516041238_MiNuevaMigracion.cs",
               "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Migrations\\20250516041238_MiNuevaMigracion.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250516041238_MiNuevaMigracion.cs",
               "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Migrations\\20250516041238_MiNuevaMigracion.cs",
-              "RelativeToolTip": "Migrations\\20250516041238_MiNuevaMigracion.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-16T04:12:38.593Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 40,
               "Title": "Bebida.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Bebida.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Bebida.cs",
               "RelativeDocumentMoniker": "Entities\\Productos\\Bebida.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Bebida.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Bebida.cs",
               "RelativeToolTip": "Entities\\Productos\\Bebida.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -690,11 +757,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 41,
               "Title": "Comida.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Comida.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Comida.cs",
               "RelativeDocumentMoniker": "Entities\\Productos\\Comida.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Comida.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Comida.cs",
               "RelativeToolTip": "Entities\\Productos\\Comida.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -702,11 +769,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 42,
               "Title": "EmpleadoDTO.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\EmpleadoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\EmpleadoDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\EmpleadoDTO.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\EmpleadoDTO.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\EmpleadoDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\EmpleadoDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -714,11 +781,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 43,
               "Title": "ExtrasController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\ExtrasController.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\ExtrasController.cs",
               "RelativeDocumentMoniker": "Controllers\\ExtrasController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\ExtrasController.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\ExtrasController.cs",
               "RelativeToolTip": "Controllers\\ExtrasController.cs",
               "ViewState": "AgIAACYAAAAAAAAAAADwv58AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -726,11 +793,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 44,
               "Title": "Cliente.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Cliente.cs",
               "RelativeDocumentMoniker": "Entities\\Usuarios\\Cliente.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Cliente.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Cliente.cs",
               "RelativeToolTip": "Entities\\Usuarios\\Cliente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -738,11 +805,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 45,
               "Title": "Cafeteria_back.http",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.http",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.http",
               "RelativeDocumentMoniker": "Cafeteria_back.http",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.http",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.http",
               "RelativeToolTip": "Cafeteria_back.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
@@ -750,11 +817,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 46,
               "Title": "GoogleMapsAdapter.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsAdapter.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsAdapter.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\GoogleMapsAdapter.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsAdapter.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsAdapter.cs",
               "RelativeToolTip": "Repositories\\Implementations\\GoogleMapsAdapter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -762,11 +829,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 47,
               "Title": "GoogleMapsApi.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\GoogleMapsApi.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Implementations\\GoogleMapsApi.cs",
               "RelativeToolTip": "Repositories\\Implementations\\GoogleMapsApi.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAjwDoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -774,11 +841,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 48,
               "Title": "IGeolocalizador.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IGeolocalizador.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IGeolocalizador.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IGeolocalizador.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IGeolocalizador.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Repositories\\Interfaces\\IGeolocalizador.cs",
               "RelativeToolTip": "Repositories\\Interfaces\\IGeolocalizador.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -786,11 +853,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 49,
               "Title": "AccesoController.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccesoController.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Controllers\\AccesoController.cs",
               "RelativeToolTip": "Controllers\\AccesoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -798,11 +865,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 50,
               "Title": "UsuarioPruebaDTO.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\UsuarioPruebaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\UsuarioPruebaDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\UsuarioPruebaDTO.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\UsuarioPruebaDTO.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\UsuarioPruebaDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\UsuarioPruebaDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -810,11 +877,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 51,
               "Title": "LoginDTO.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\LoginDTO.cs",
               "RelativeDocumentMoniker": "Entities\\DTOs\\LoginDTO.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\DTOs\\LoginDTO.cs",
               "RelativeToolTip": "Entities\\DTOs\\LoginDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -822,11 +889,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 52,
               "Title": "Utilidades.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
               "RelativeDocumentMoniker": "Custom\\Utilidades.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Custom\\Utilidades.cs",
               "RelativeToolTip": "Custom\\Utilidades.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAowD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -834,11 +901,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 53,
               "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "WeatherForecast.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\WeatherForecast.cs",
               "RelativeToolTip": "WeatherForecast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -846,22 +913,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 54,
               "Title": "Cafeteria_back.csproj",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
               "RelativeDocumentMoniker": "Cafeteria_back.csproj",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
               "RelativeToolTip": "Cafeteria_back.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-05-08T12:35:31.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 55,
               "Title": "Producto_Promocion.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Producto_Promocion.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Producto_Promocion.cs",
               "RelativeDocumentMoniker": "Entities\\Tablas_intermedias\\Producto_Promocion.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Producto_Promocion.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Producto_Promocion.cs",
               "RelativeToolTip": "Entities\\Tablas_intermedias\\Producto_Promocion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -869,11 +936,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 56,
               "Title": "Detalle_extra.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_extra.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_extra.cs",
               "RelativeDocumentMoniker": "Entities\\Tablas_intermedias\\Detalle_extra.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_extra.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_extra.cs",
               "RelativeToolTip": "Entities\\Tablas_intermedias\\Detalle_extra.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -881,11 +948,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 57,
               "Title": "Detalle_pedido.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_pedido.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_pedido.cs",
               "RelativeDocumentMoniker": "Entities\\Tablas_intermedias\\Detalle_pedido.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_pedido.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Tablas_intermedias\\Detalle_pedido.cs",
               "RelativeToolTip": "Entities\\Tablas_intermedias\\Detalle_pedido.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAABYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -893,11 +960,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 58,
               "Title": "Extra.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Extras\\Extra.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Extras\\Extra.cs",
               "RelativeDocumentMoniker": "Entities\\Extras\\Extra.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Extras\\Extra.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Extras\\Extra.cs",
               "RelativeToolTip": "Entities\\Extras\\Extra.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -905,11 +972,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 59,
               "Title": "Promocion.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
               "RelativeDocumentMoniker": "Entities\\Promociones\\Promocion.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Promociones\\Promocion.cs",
               "RelativeToolTip": "Entities\\Promociones\\Promocion.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -917,11 +984,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 60,
               "Title": "Producto.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Producto.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Producto.cs",
               "RelativeDocumentMoniker": "Entities\\Productos\\Producto.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Producto.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Productos\\Producto.cs",
               "RelativeToolTip": "Entities\\Productos\\Producto.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAxwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -929,11 +996,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 61,
               "Title": "Venta.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Venta.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Venta.cs",
               "RelativeDocumentMoniker": "Entities\\Pedidos\\Venta.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Venta.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Venta.cs",
               "RelativeToolTip": "Entities\\Pedidos\\Venta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -941,11 +1008,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 62,
               "Title": "Pedido.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Pedido.cs",
               "RelativeDocumentMoniker": "Entities\\Pedidos\\Pedido.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Pedido.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Pedidos\\Pedido.cs",
               "RelativeToolTip": "Entities\\Pedidos\\Pedido.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAwwD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -953,11 +1020,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 63,
               "Title": "Empleado.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Empleado.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Empleado.cs",
               "RelativeDocumentMoniker": "Entities\\Usuarios\\Empleado.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Empleado.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Empleado.cs",
               "RelativeToolTip": "Entities\\Usuarios\\Empleado.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -965,11 +1032,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 64,
               "Title": "MiDbContext.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Data\\MiDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\MiDbContext.cs",
               "RelativeDocumentMoniker": "Data\\MiDbContext.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Data\\MiDbContext.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Data\\MiDbContext.cs",
               "RelativeToolTip": "Data\\MiDbContext.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAswGsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -977,11 +1044,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 65,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Program.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAABQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -989,23 +1056,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\appsettings.json",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-05-08T00:29:18.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 66,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Usuario.cs",
               "RelativeDocumentMoniker": "Entities\\Usuarios\\Usuario.cs",
-              "ToolTip": "D:\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Usuario.cs",
+              "ToolTip": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Entities\\Usuarios\\Usuario.cs",
               "RelativeToolTip": "Entities\\Usuarios\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1019,7 +1086,23 @@
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

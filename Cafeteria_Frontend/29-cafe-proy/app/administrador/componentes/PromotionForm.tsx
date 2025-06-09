@@ -29,6 +29,7 @@ export default function PromotionForm() {
   const [formData, setFormData] = useState<PromotionFormData>(initialPromotionFormState);
   const [productosDisponibles, setProductosDisponibles] = useState<Productos[]>([]);
   const [productosSeleccionados, setProductosSeleccionados] = useState<Productos[]>([]);
+  const [errorArchivo, setErrorArchivo] = useState('');
 
   useEffect(() => {
     const cargarProductos = async () => {
@@ -43,15 +44,47 @@ export default function PromotionForm() {
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+     const { name, value } = e.target;
+    if (name === 'strategykey' || name === 'descripcion') {
+    const regex = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*$/;
+    if (regex.test(value) || value === '') {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
+  } else {
+    
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFormData(prev => ({ ...prev, imagen: e.target.files![0] }));
+  const file = e.target.files?.[0];
+  
+  if (file) {
+    if (!file.type.match('image.*')) {
+      setErrorArchivo('Por favor, sube solo archivos de imagen (JPEG, PNG, GIF, etc.)');
+      e.target.value = ''; 
+      setFormData(prev => ({ ...prev, imagen: null }));
+      return;
     }
-  };
+    
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    if (file.size > maxSize) {
+      setErrorArchivo('La imagen es demasiado grande (máximo 5MB)');
+      e.target.value = '';
+      setFormData(prev => ({ ...prev, imagen: null }));
+      return;
+    }
+    
+    setErrorArchivo('');
+    setFormData(prev => ({ ...prev, imagen: file }));
+  }
+};
 
   const moverProductoADerecha = (producto: Productos) => {
     setProductosSeleccionados(prev => [...prev, producto]);
@@ -97,15 +130,17 @@ export default function PromotionForm() {
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
       <div className="grid grid-cols-2 gap-4">
+        
         <input
-          type="text"
-          name="descripcion"
-          placeholder="Descripción de la promoción"
-          className="form-input"
-          value={formData.descripcion}
-          onChange={handleInputChange}
-          required
+        type="text"
+        name="strategykey"
+        placeholder="Nombre de la Promo"
+        className="form-input"
+        value={formData.strategykey}
+        onChange={handleInputChange}
+        required
         />
+        
         <input
           type="number"
           name="descuento"
@@ -118,33 +153,38 @@ export default function PromotionForm() {
       </div>
 
       <div className="grid grid-cols-2 gap-4">
-        <input
-          type="date"
-          name="fechaInicial"
-          className="form-input"
-          value={formData.fechaInicial}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="date"
-          name="fechaFinal"
-          className="form-input"
-          value={formData.fechaFinal}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
+  {/* Fecha Inicial */}
+  <div className="flex flex-col">
+    <label htmlFor="fechaInicial" className="form-label mb-1">
+      Fecha Inicial
+    </label>
+    <input
+      type="date"
+      id="fechaInicial"
+      name="fechaInicial"
+      className="form-input"
+      value={formData.fechaInicial}
+      onChange={handleInputChange}
+      required
+    />
+  </div>
 
-      <input
-        type="text"
-        name="strategykey"
-        placeholder="Clave única de promoción"
-        className="form-input"
-        value={formData.strategykey}
-        onChange={handleInputChange}
-        required
-      />
+  {/* Fecha Final */}
+  <div className="flex flex-col">
+    <label htmlFor="fechaFinal" className="form-label mb-1">
+      Fecha Final
+    </label>
+    <input
+      type="date"
+      id="fechaFinal"
+      name="fechaFinal"
+      className="form-input"
+      value={formData.fechaFinal}
+      onChange={handleInputChange}
+      required
+    />
+  </div>
+</div>
 
       <textarea
         name="descripcion"
@@ -155,13 +195,29 @@ export default function PromotionForm() {
         required
       />
 
-      <input
-        type="file"
-        name="imagen"
-        className="form-input"
-        accept="image/*"
-        onChange={handleFileChange}
-      />
+      <div className="mb-4">
+          <label htmlFor="product-imagen" className="form-label block mb-2">
+          Imagen del producto
+          </label>
+         <input
+          type="file"
+          id="product-imagen"
+          name="imagen"
+          className={`form-input w-full p-2 border rounded ${
+             errorArchivo ? 'border-red-500' : 'border-gray-300'
+          }`}
+          accept="image/*"
+          onChange={handleFileChange}
+          />
+        {errorArchivo && (
+        <p className="text-red-500 text-sm mt-1">{errorArchivo}</p>
+        )}
+        {formData.imagen && !errorArchivo && (
+        <p className="text-green-600 text-sm mt-1">
+          Archivo válido: {formData.imagen.name}
+          </p>
+        )}
+      </div>
 
       <div className="grid grid-cols-2 gap-6">
         <div>

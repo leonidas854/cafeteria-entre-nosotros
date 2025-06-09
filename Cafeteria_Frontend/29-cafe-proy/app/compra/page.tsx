@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import {QRCodeSVG} from 'qrcode.react';
 import Link from 'next/link';
 import Menu from './../components/Menu.jsx';
+import TipoPago from '../components/TipoPago';
+import PantallaPreparando from '../components/PantallaPreprando';
 import axios from 'axios';
 import { useRouter } from 'next/navigation'; 
 import toast, { Toaster } from 'react-hot-toast';
@@ -79,14 +81,23 @@ const esCafe = (nombre: string) => {
 
 
 export default function HomePage() {
+
   const [extrasDisponibles, setExtrasDisponibles] = useState<ExtraCarrito[]>([]);
   const [carrito, setCarrito] = useState<Carrito | null>(null);
   const [loading, setLoading] = useState(true);
 
 const [tipoEntrega, setTipoEntrega] = useState('');
-const [metodoPago, setMetodoPago] = useState('Tarjeta de crédito/débito');
+const [showPreparando, setShowPreparando] = useState(false);
 const [tarjeta, setTarjeta] = useState('');
 const [tarjetaValida, setTarjetaValida] = useState(true);
+const [metodoPagoSeleccionado, setMetodoPagoSeleccionado] = useState('');
+const [isModalOpen, setIsModalOpen] = useState(false);
+const handleGenerarFactura = () => {
+    // Lógica para generar la factura
+    console.log("Generando factura...");
+    // Puedes implementar la generación de PDF aquí
+  };
+
 
 const validarTarjeta = (numero: string) => {
   return /^\d{16}$/.test(numero);
@@ -97,17 +108,17 @@ const router = useRouter();
   const confirmarPedido = async () => {
     if (!tipoEntrega) {
     toast.error("⚠️ Debes seleccionar un tipo de entrega.");
-    return;
+    return false;
   }
 
-  if (metodoPago === 'Tarjeta de crédito/débito' && !validarTarjeta(tarjeta)) {
+  if (metodoPagoSeleccionado === 'Tarjeta de crédito/débito' && !validarTarjeta(tarjeta)) {
     toast.error("⚠️ Número de tarjeta inválido.");
-    return;
+    return false;
   }
 
   if (!carrito || !carrito.id) {
     toast.error("⚠️ Carrito no disponible. Por favor, actualiza la página.");
-    return;
+    return false;
   }
 
   try {
@@ -120,19 +131,15 @@ const router = useRouter();
         params: {
           carritoId: carrito.id,
           tipoEntrega: tipoEntrega,
-          Tipo_pago:metodoPago
+          Tipo_pago:metodoPagoSeleccionado
         },
         withCredentials: true
       }
-    );
-
+    ); 
     const { pedido_id, total_estimado, total_descuento } = response.data;
-
     console.log("Pedido confirmado:", { pedido_id, total_estimado, total_descuento });
-
-    // Redirigir o mostrar un mensaje
-    window.location.href = "/EstadoPedido"; 
-
+    setShowPreparando(true);
+    return true;
   } catch (error: any) {
     console.error("Error al confirmar el pedido:", error);
     toast.error("No se pudo confirmar el pedido. Intenta de nuevo.");
@@ -145,7 +152,7 @@ const router = useRouter();
 
       if (!data || 'error' in data) {
         if (data && data.error === 'NO_AUTORIZADO') {
-          router.push('/registro');
+          router.push('/menu');
         }
         return; 
       }
@@ -170,7 +177,7 @@ const fetchCarrito = async () => {
 
     if (!data || 'error' in data) {
       console.warn('Usuario no autorizado. Redirigiendo a registro...');
-      router.push('/registro'); 
+      router.push('/menu'); 
       return;
     }
 
@@ -205,7 +212,7 @@ const fetchCarrito = async () => {
     const actualizado = await obtenerCarrito();
 
     if (!actualizado || 'error' in actualizado) {
-      router.push('/registro');
+      router.push('/menu');
       return;
     }
 
@@ -224,7 +231,7 @@ const fetchCarrito = async () => {
     const actualizado = await obtenerCarrito();
 
     if (!actualizado || 'error' in actualizado) {
-      router.push('/registro');
+      router.push('/menu');
       return;
     }
 
@@ -243,7 +250,7 @@ const fetchCarrito = async () => {
     const actualizado = await obtenerCarrito();
 
     if (!actualizado || 'error' in actualizado) {
-      router.push('/registro');
+      router.push('/menu');
       return;
     }
 
@@ -368,7 +375,7 @@ const fetchCarrito = async () => {
       const actualizado = await obtenerCarrito();
 
 if (!actualizado || 'error' in actualizado) {
-  router.push('/registro');
+  router.push('/menu');
   return;
 }
 
@@ -415,63 +422,26 @@ setCarrito(actualizado);
 </div>
 
 {/* Método de pago */}
-<div className="border-t pt-6 space-y-3">
-  <h3 className="text-xl font-semibold mb-4">Método de pago</h3>
-  {["Tarjeta de crédito/débito", "Transferencia bancaria", "Generar QR"].map((label, idx) => (
-    <label key={idx} className="flex items-center space-x-3">
-      <input
-        type="radio"
-        name="payment"
-        value={label}
-        checked={metodoPago === label}
-        onChange={() => {
-          setMetodoPago(label);
-          setTarjeta('');
-          setTarjetaValida(true);
-        }}
-        className="h-4 w-4 text-amber-600 focus:ring-amber-500"
+<div className="border-t pt-6">
+        <h3 className="text-xl font-semibold mb-4">Método de pago</h3>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="w-full py-2 px-4 border border-gray-300 rounded-md text-left hover:bg-gray-50"
+        >
+          {metodoPagoSeleccionado || "Seleccionar método de pago..."}
+        </button>
+        
+        {/* Muestra información resumida del método seleccionado */}
+        
+        
+      </div>
+
+      {/* Modal de tipo de pago */}
+      <TipoPago
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onPaymentSelect={(metodo) => setMetodoPagoSeleccionado(metodo)}
       />
-      <span>{label}</span>
-    </label>
-  ))}
-
-  {/* Campos condicionales */}
-  <div className="mt-4 space-y-2">
-    {metodoPago === "Tarjeta de crédito/débito" && (
-      <div>
-        <label className="block text-sm font-medium text-gray-700">Número de tarjeta</label>
-        <input
-          type="text"
-          value={tarjeta}
-          onChange={(e) => {
-            const val = e.target.value;
-            setTarjeta(val);
-            setTarjetaValida(validarTarjeta(val));
-          }}
-          maxLength={16}
-          className={`mt-1 block w-full border rounded-md px-3 py-2 ${tarjetaValida ? 'border-gray-300' : 'border-red-500'}`}
-          placeholder="Ej: 1234567812345678"
-        />
-        {!tarjetaValida && <p className="text-red-500 text-sm mt-1">Tarjeta inválida (deben ser 16 dígitos)</p>}
-      </div>
-    )}
-
-    {metodoPago === "Transferencia bancaria" && (
-      <div>
-        <p className="text-gray-700">Banco: Banco Union</p>
-        <p className="text-gray-700">Cuenta N°: <strong>1234567890123456</strong></p>
-      </div>
-    )}
-
-    {metodoPago === "Generar QR" && (
-      <div className="bg-white p-4 inline-block rounded shadow-md">
-        <img src="/shonow.jpg" alt="Código QR" className="mx-auto w-32 h-32" />
-        <p className="text-center mt-2 text-sm text-gray-900">Escanea para pagar</p>
-      </div>
-    )}
-  </div>
-</div>
-
 
         {/* Total final */}
         <div className="flex justify-between items-center py-4 border-t border-b mt-6">
@@ -504,11 +474,21 @@ setCarrito(actualizado);
     
           <button
               type="button"
-              onClick={confirmarPedido}
+              onClick={async () => {
+              await confirmarPedido(); // Primero confirmar el pedido
+              setShowPreparando(true); // Luego mostrar el modal si todo salió bien
+              }}
               className="w-full mt-6 bg-gradient-to-r from-amber-700 to-amber-500 hover:from-amber-800 hover:to-amber-600 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-all duration-300 transform hover:scale-[1.02]"
             >
-              Confirmar compra/venta
+              CONFIRMAR COMPRA
             </button>
+
+            <PantallaPreparando
+            isOpen={showPreparando}
+            onClose={() => setShowPreparando(false)}
+            onGenerarFactura={handleGenerarFactura}
+            />
+
 
      
 

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { ItemPedido } from '../type';
-
 import toast from 'react-hot-toast';
 
 import {
@@ -403,7 +402,7 @@ const handleConfirmarPedido = async () => {
     {mostrarModalNIT && (
   <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
     <div className="bg-white p-6 rounded-lg shadow-lg text-gray-800 w-80">
-      <h3 className="text-lg font-bold mb-3">Buscar Cliente por NIT</h3>
+      <h3 className="text-lg font-bold mb-3">Buscar cliente por NIT</h3>
 
       <label className="text-sm font-medium block mb-1">NIT:</label>
       <div className="flex items-center space-x-2 mb-3">
@@ -490,35 +489,43 @@ const handleConfirmarPedido = async () => {
 
 
          <button
-  onClick={async () => {
-    try {
-      const nit = '7777777';
-      const cliente = await buscarClienteApi(nit);
+            onClick={async () => {
+              try {
+              const nit = '7777777';
+              const cliente = await buscarClienteApi(nit);
 
-      if (!cliente?.id ) {
-        toast.error("No se pudo obtener cliente o carrito");
-        return;
-      }
-      setCliente(cliente);
-      toast.success("Cliente LOCAL asignado correctamente");
-      setMostrarModalNIT(false);
-      setClienteNoEncontrado(false);
-    } catch (error) {
-      console.error("Error al asignar cliente LOCAL:", error);
-      toast.error("No se pudo asignar el cliente LOCAL");
-    }
-  }}
-  className="w-full bg-gray-600 hover:bg-gray-700 text-white py-1.5 rounded"
->
-  Usar Cliente LOCAL
-</button>
+              if (!cliente?.id ) {
+              toast.error("No se pudo obtener cliente o carrito");
+               return;
+              }
+
+              const carrito = await obtenerCarrito();
+              if (carrito?.id) {
+              await asignarCarritoACliente(carrito.id, cliente.id);
+              }
+
+              setCliente(cliente);
+              toast.success("Cliente LOCAL asignado correctamente");
+              setMostrarModalNIT(false);
+              setClienteNoEncontrado(false);
+              } catch (error) {
+              console.error("Error al asignar cliente LOCAL:", error);
+              toast.error("No se pudo asignar el cliente LOCAL");
+              }
+                 }}
+              className="w-full bg-gray-600 hover:bg-gray-700 text-white py-1.5 rounded"
+          >
+              Usar Cliente LOCAL
+          </button>
 
 
 
         </div>
       ) : (
         // Si no encontró cliente
+        
         <>
+          <label className="text-sm font-medium block mb-1 mt-3">No se encontro su NIT, por favor registrese con un apellido</label>
           <label className="text-sm font-medium block mb-1 mt-3">Apellido Paterno:</label>
           <input
             type="text"
@@ -530,7 +537,7 @@ const handleConfirmarPedido = async () => {
           <div className="flex flex-col space-y-2">
             <button
               onClick={() => registrarClienteManual(false)}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-1.5 rounded"
+              className="w-full bg-[#543F1D] hover:bg-amber-700 text-white py-1.5 rounded"
             >
               Registrar con este NIT
             </button>
@@ -539,7 +546,7 @@ const handleConfirmarPedido = async () => {
                       setClienteNit(null);
                       setClienteNoEncontrado(false);
                     }}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-1.5 rounded"
+                    className="w-full bg-[#FE9A00] hover:bg-amber-700 text-white py-1.5 rounded"
                   >
                     Editar
                   </button>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from "next/link";
 import "./login.css";
 import "./menu.css";
+import Menu from "../components/Menu.jsx";
 import { loginEmpleado } from '@/app/api/LoginEmpleado'; 
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -42,6 +43,7 @@ export default function LoginPage() {
 
   return (
     <div className="login-page">
+      <Menu/>
       <Toaster position="top-right" />
       <div className="login-container">
         

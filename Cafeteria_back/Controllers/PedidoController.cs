@@ -210,6 +210,231 @@ namespace Cafeteria_back.Controllers
                 return StatusCode(500, $"Error al confirmar pedido: {ex.Message}");
             }
         }
+        [HttpGet("mis-ventas")]
+        public async Task<IActionResult> ObtenerMisVentas()
+        {
+            long clienteId;
+            try
+            {
+                clienteId = ObtenerClienteIdDesdeToken();
+            }
+            catch
+            {
+                return Unauthorized("Token inválido o faltan claims.");
+            }
+
+            var ventas = await _context.Ventas
+                .Include(v => v.Pedido)
+                .Where(v => v.Pedido!.Cliente_id == clienteId)
+                .OrderByDescending(v => v.Ven_fecha)
+                .ToListAsync();
+
+            if (ventas == null || ventas.Count == 0)
+                return NotFound("No se encontraron ventas para este cliente.");
+
+            var resultado = ventas.Select(v => new
+            {
+                v.Id_venta,
+                v.Total_final,
+                Fecha = v.Ven_fecha,
+                v.Tipo_de_Pago,
+                PedidoId = v.Pedido_id,
+                TipoEntrega = v.Pedido!.Tipo_Entrega.ToString(),
+                EstadoPedido = v.Pedido.estado.ToString()
+            });
+
+            return Ok(resultado);
+        }
+
+
+        [HttpGet("Todas-las-ventas")]
+        public async Task<IActionResult> TodaslasVentas()
+        {
+           
+
+            var ventas = await _context.Ventas
+                .Include(v => v.Pedido)
+                .OrderByDescending(v => v.Ven_fecha)
+                .ToListAsync();
+
+            if (ventas == null || ventas.Count == 0)
+                return NotFound("No se encontraron ventas para este cliente.");
+
+            var resultado = ventas.Select(v => new
+            {
+                v.Id_venta,
+                v.Total_final,
+                Fecha = v.Ven_fecha,
+                v.Tipo_de_Pago,
+                PedidoId = v.Pedido_id,
+                TipoEntrega = v.Pedido!.Tipo_Entrega.ToString(),
+                EstadoPedido = v.Pedido.estado.ToString()
+            });
+
+            return Ok(resultado);
+        }
+
+        [HttpGet("todos-pedidos")]
+        public async Task<IActionResult> ObtenerTodosLosPedidos()
+        {
+            var pedidos = await _context.Pedidos
+                .Where(p => p.estado != Estado_pedido.Entregado && p.estado!=Estado_pedido.Delivery)
+                .Include(p => p.Detalle_pedido)!
+                    .ThenInclude(dp => dp.Producto)
+                .Include(p => p.Detalle_pedido)!
+                    .ThenInclude(dp => dp.Detalle_extras)!
+                        .ThenInclude(de => de.Extra)
+                .ToListAsync();
+
+            var resultado = pedidos.Select(p => new
+            {
+                p.Id_pedido,
+                p.Total_estimado,
+                p.Total_descuento,
+                TipoEntrega = p.Tipo_Entrega.ToString(),
+                Estado = p.estado.ToString(),
+                Detalles = p.Detalle_pedido!.Select(dp => new
+                {
+                    dp.Producto_id,
+                    ProductoNombre = dp.Producto?.Nombre,
+                    dp.Cantidad,
+                    dp.Precio_unitario,
+                    Extras = dp.Detalle_extras!.Select(de => new
+                    {
+                        de.Extra_id,
+                        ExtraNombre = de.Extra?.Name,
+                        de.Extra?.Precio
+                    })
+                })
+            });
+
+            return Ok(resultado);
+        }
+
+        [HttpPut("cambiar-estado/{pedidoId}")]
+        public async Task<IActionResult> CambiarEstadoPedido(long pedidoId, [FromQuery] string nuevoEstado)
+        {
+            if (!Enum.TryParse<Estado_pedido>(nuevoEstado, out var estadoParseado))
+            {
+                return BadRequest("Estado no válido.");
+            }
+
+            var pedido = await _context.Pedidos.FindAsync(pedidoId);
+            if (pedido == null)
+            {
+                return NotFound("Pedido no encontrado.");
+            }
+
+            var tipoEntrega = pedido.Tipo_Entrega;
+
+            var transicionesValidas = tipoEntrega switch
+            {
+                Tipo_entrega.Mesa => new[] { Estado_pedido.Preparando,
+                    Estado_pedido.Listo, Estado_pedido.Entregado },
+                Tipo_entrega.Llevar => new[] { Estado_pedido.Preparando, 
+                    Estado_pedido.Listo, Estado_pedido.Entregado },
+                Tipo_entrega.Delivery => new[] { Estado_pedido.Preparando,
+                    Estado_pedido.Listo, Estado_pedido.Delivery },
+                _ => Array.Empty<Estado_pedido>()
+            };
+
+            if (!transicionesValidas.Contains(estadoParseado))
+            {
+                return BadRequest("Transición de estado no válida para el tipo de entrega.");
+            }
+            var empleadoIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (pedido.Venta == null && empleadoIdClaim != null && long.TryParse(empleadoIdClaim.Value, out long empleadoId))
+            {
+                var venta = await _context.Ventas.FirstOrDefaultAsync(v => v.Pedido_id == pedido.Id_pedido);
+                if (venta != null && venta.Empleado_id == null)
+                {
+                    venta.Empleado_id = empleadoId;
+                    await _context.SaveChangesAsync();
+                }
+            }
+
+            pedido.estado = estadoParseado;
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                mensaje = "Estado actualizado correctamente.",
+                nuevo_estado = pedido.estado.ToString()
+            });
+        }
+        [HttpGet("info-completa-todos")]
+        public async Task<IActionResult> ObtenerInformacionCompletaDeTodosLosPedidos()
+        {
+            var pedidos = await _context.Pedidos
+                .Include(p => p.Cliente)
+                .Include(p => p.Detalle_pedido)!
+                    .ThenInclude(dp => dp.Producto)
+                .Include(p => p.Detalle_pedido)!
+                    .ThenInclude(dp => dp.Detalle_extras)!
+                        .ThenInclude(de => de.Extra)
+                .Include(p => p.Venta)!
+                    .ThenInclude(v => v!.Empleado)
+                .OrderByDescending(p => p.Id_pedido)
+                .ToListAsync();
+
+            if (!pedidos.Any())
+                return NotFound("No hay pedidos registrados.");
+
+            var resultado = pedidos.Select(p => new
+            {
+                Pedido = new
+                {
+                    p.Id_pedido,
+                    TipoEntrega = p.Tipo_Entrega?.ToString(),
+                    Estado = p.estado?.ToString(),
+                    p.Total_estimado,
+                    p.Total_descuento
+                },
+                Cliente = p.Cliente == null ? null : new
+                {
+                    Nombre = p.Cliente.Nombre,
+                    ApellidoPaterno = p.Cliente.ApellidoPaterno,
+                    ApellidoMaterno = p.Cliente.ApellidoMaterno,
+                    Telefono = p.Cliente.Telefono,
+                    NIT = p.Cliente.Nit,
+                    Ubicacion = p.Cliente.Ubicacion
+                },
+                Venta = p.Venta == null ? null : new
+                {
+                    p.Venta.Id_venta,
+                    p.Venta.Total_final,
+                    Fecha = p.Venta.Ven_fecha,
+                    TipoPago = p.Venta.Tipo_de_Pago,
+                    Empleado = p.Venta.Empleado == null ? null : new
+                    {
+                        p.Venta.Empleado.Nombre,
+                        ApellidoPaterno = p.Venta.Empleado.ApellidoPaterno,
+                        ApellidoMaterno = p.Venta.Empleado.ApellidoMaterno,
+                        Rol = p.Venta.Empleado.Rol
+                    }
+                },
+                Detalles = p.Detalle_pedido!.Select(dp => new
+                {
+                    dp.Producto_id,
+                    ProductoNombre = dp.Producto?.Nombre,
+                    dp.Cantidad,
+                    dp.Precio_unitario,
+                    Extras = dp.Detalle_extras!.Select(de => new
+                    {
+                        de.Extra_id,
+                        Nombre = de.Extra?.Name,
+                        Precio = de.Extra?.Precio
+                    })
+                })
+            });
+
+            return Ok(resultado);
+        }
+
+
+
+
+
 
 
 

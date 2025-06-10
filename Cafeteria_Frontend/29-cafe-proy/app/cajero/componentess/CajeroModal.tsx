@@ -1,7 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
+import {
+  fetchTodosPedidos,
+  cambiarEstadoPedido,
+  fetchTodasVentas
+} from '@/app/api/Pedido';
 
 interface Extra {
   extra_id: number;
@@ -17,6 +21,13 @@ interface DetallePedido {
   extras: Extra[];
 }
 
+interface VentaRelacionada {
+  pedidoId: number;
+  total_final: number;
+  tipo_de_Pago: string;
+  fecha: string;
+}
+
 interface Pedido {
   id_pedido: number;
   total_estimado: number;
@@ -24,6 +35,7 @@ interface Pedido {
   tipoEntrega: string;
   estado: string;
   detalles: DetallePedido[];
+  venta?: VentaRelacionada;
 }
 
 interface EstadoModalProps {
@@ -33,36 +45,79 @@ interface EstadoModalProps {
 
 const EstadoModal: React.FC<EstadoModalProps> = ({ isOpen, onClose }) => {
   const [pedidos, setPedidos] = useState<Pedido[]>([]);
+  const [ventas, setVentas] = useState<VentaRelacionada[]>([]);
   const [loading, setLoading] = useState(true);
   const [sinPedidos, setSinPedidos] = useState(false);
 
+const cargarDatos = async () => {
+  try {
+    setLoading(true);
+
+    const pedidosList: Pedido[] = await new Promise((resolve) =>
+      fetchTodosPedidos(resolve, setSinPedidos, () => {})
+    );
+
+   const ventasRaw: any[] = await new Promise((resolve) =>
+   fetchTodasVentas(resolve, () => {}, () => {})
+);
+
+const ventasData: VentaRelacionada[] = ventasRaw.map((v) => ({
+  pedidoId: v.pedidoId ?? v.PedidoId ?? v.pedido_id,
+  total_final: v.total_final ?? v.Total_final,
+  tipo_de_Pago: v.tipo_de_Pago ?? v.Tipo_de_Pago,
+  fecha: v.fecha ?? v.Fecha,
+}));
+
+const ventasOrdenadas = ventasData.sort(
+  (a, b) => new Date(a.fecha).getTime() - new Date(b.fecha).getTime()
+);
+
+
+    const pedidosOrdenados = pedidosList.sort((a, b) => a.id_pedido - b.id_pedido); // <-- ASCENDENTE
+
+    const pedidosConVentas = pedidosOrdenados.map((pedido) => {
+      const venta = ventasOrdenadas.find((v) => v.pedidoId === pedido.id_pedido);
+      return { ...pedido, venta };
+    });
+
+    setPedidos(pedidosConVentas);
+    setVentas(ventasOrdenadas);
+
+
+    console.log('Pedidos:', pedidosList);
+console.log('Ventas:', ventasData);
+
+  } catch (error) {
+    toast.error("Ocurrió un error al cargar los datos");
+  } finally {
+    setLoading(false);
+  }
+};
+
+
+
   useEffect(() => {
-    if (!isOpen) return;
-
-    const fetchTodosPedidos = async () => {
-      try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Pedido/todos-pedidos`, {
-          withCredentials: true
-        });
-
-        if (res.data.length === 0) {
-          setSinPedidos(true);
-        } else {
-          setPedidos(res.data);
-        }
-      } catch (error: any) {
-        if (error.response?.status === 404) {
-          setSinPedidos(true);
-        } else {
-          toast.error("No se pudieron cargar los pedidos.");
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTodosPedidos();
+    if (isOpen) {
+      cargarDatos();
+    }
   }, [isOpen]);
+
+  const getTransicionesValidas = (tipoEntrega: string): string[] => {
+    switch (tipoEntrega) {
+      case 'Mesa':
+      case 'Llevar':
+        return ['Preparando', 'Listo', 'Entregado'];
+      case 'Delivery':
+        return ['Preparando', 'Listo', 'Delivery'];
+      default:
+        return [];
+    }
+  };
+
+  const handleEstadoChange = async (pedidoId: number, nuevoEstado: string) => {
+    await cambiarEstadoPedido(pedidoId, nuevoEstado);
+    cargarDatos(); // <-- Se recarga automáticamente luego del cambio
+  };
 
   if (!isOpen) return null;
 
@@ -72,7 +127,7 @@ const EstadoModal: React.FC<EstadoModalProps> = ({ isOpen, onClose }) => {
         <div className="border-b border-gray-700 px-6 py-4 sticky top-0 bg-gray-800 z-10">
           <h2 className="text-xl font-semibold text-white">Cambio de Estados - Todos los Pedidos</h2>
         </div>
-        
+
         <div className="p-6">
           {loading ? (
             <p className="text-gray-400 text-center py-8">Cargando pedidos...</p>
@@ -81,52 +136,37 @@ const EstadoModal: React.FC<EstadoModalProps> = ({ isOpen, onClose }) => {
           ) : (
             <div className="space-y-4">
               {pedidos.map((pedido) => (
-                <div
-                  key={pedido.id_pedido}
-                  className="border border-gray-700 rounded-lg p-4 bg-gray-700"
-                >
+                <div key={pedido.id_pedido} className="border border-gray-700 rounded-lg p-4 bg-gray-700">
                   <div className="flex justify-between items-center mb-3">
-                    <div>
-                      <h3 className="text-lg font-medium text-white">
-                        Pedido #{pedido.id_pedido}
-                        }
-                      </h3>
-                    </div>
+                    <h3 className="text-lg font-medium text-white">Pedido #{pedido.id_pedido}</h3>
                     <select
                       value={pedido.estado}
-                      onChange={(e) => {
-                        // Aquí la lógica para actualizar el estado 
-                        const nuevosPedidos = pedidos.map(p => 
-                          p.id_pedido === pedido.id_pedido ? {...p, estado: e.target.value} : p
-                        );
-                        setPedidos(nuevosPedidos);
-                      }}
+                      onChange={(e) => handleEstadoChange(pedido.id_pedido, e.target.value)}
                       className="bg-gray-600 text-white text-sm rounded px-2 py-1"
                     >
-                      <option value="Pendiente">Pendiente</option>
-                      <option value="Confirmado">Confirmado</option>
-                      <option value="En_preparacion">En preparación</option>
-                      <option value="Listo">Listo</option>
-                      <option value="Entregado">Entregado</option>
-                      <option value="Cancelado">Cancelado</option>
+                      {getTransicionesValidas(pedido.tipoEntrega).map((estado) => (
+                        <option key={estado} value={estado}>
+                          {estado === 'Preparando' ? 'En preparación' : estado}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                     <div>
                       <p className="text-gray-300">Tipo entrega: <span className="text-white">{pedido.tipoEntrega}</span></p>
-                      <p className="text-gray-300">Total: <span className="text-white">{pedido.total_estimado?.toFixed(2)} Bs</span></p>
+                      <p className="text-gray-300">Total estimado: <span className="text-white">{pedido.total_estimado?.toFixed(2)} Bs</span></p>
                     </div>
                     <div>
                       <p className="text-gray-300">Descuento: <span className="text-white">{pedido.total_descuento?.toFixed(2)} Bs</span></p>
                     </div>
-                    <div className="md:col-span-1">
-                      <p className="text-gray-300">Estado actual: 
+                    <div>
+                      <p className="text-gray-300">Estado actual:
                         <span className={`ml-2 px-2 py-1 rounded text-xs ${
-                          pedido.estado === 'Confirmado' ? 'bg-green-600' :
-                          pedido.estado === 'Cancelado' ? 'bg-red-600' :
+                          pedido.estado === 'Listo' ? 'bg-green-600' :
                           pedido.estado === 'Entregado' ? 'bg-blue-600' :
-                          'bg-yellow-600'
+                          pedido.estado === 'En_preparacion' ? 'bg-yellow-600' :
+                          'bg-gray-500'
                         }`}>
                           {pedido.estado.replaceAll('_', ' ')}
                         </span>
@@ -135,7 +175,7 @@ const EstadoModal: React.FC<EstadoModalProps> = ({ isOpen, onClose }) => {
                   </div>
 
                   <div className="mt-4 space-y-3">
-                    {pedido.detalles?.map((detalle, index) => (
+                    {pedido.detalles.map((detalle, index) => (
                       <div key={`${pedido.id_pedido}-${detalle.producto_id}-${index}`} className="border-t border-gray-600 pt-3">
                         <p className="text-white">
                           {detalle.productoNombre} x{detalle.cantidad}
@@ -153,12 +193,20 @@ const EstadoModal: React.FC<EstadoModalProps> = ({ isOpen, onClose }) => {
                       </div>
                     ))}
                   </div>
+
+                  {pedido.venta && (
+                    <div className="mt-4 border-t border-gray-500 pt-3 text-sm text-gray-300">
+                      <p><strong>Fecha de venta:</strong> {new Date(pedido.venta.fecha).toLocaleString()}</p>
+                      <p><strong>Tipo de pago:</strong> {pedido.venta.tipo_de_Pago}</p>
+                      <p><strong>Total final:</strong> {pedido.venta.total_final.toFixed(2)} Bs</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           )}
         </div>
-        
+
         <div className="border-t border-gray-700 px-6 py-4 flex justify-end sticky bottom-0 bg-gray-800">
           <button
             onClick={onClose}

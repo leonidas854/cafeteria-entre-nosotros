@@ -100,9 +100,12 @@ namespace Cafeteria_back.Controllers
 
             return NoContent();
         }
+      
+
         [HttpPut("empleado/usuario/{usuarioActual}")]
-        public async Task<IActionResult> PutEmpleado(string usuarioActual, EmpleadoDTO empleado)
+        public async Task<IActionResult> PutEmpleado(string usuarioActual, EmpleadoUpdateDTO empleadoUpdate)
         {
+           
             var empleadoExistente = await _context.Empleados
                 .FirstOrDefaultAsync(e => e.Usuari!.ToLower() == usuarioActual.ToLower());
 
@@ -111,25 +114,19 @@ namespace Cafeteria_back.Controllers
                 return NotFound("Empleado no encontrado.");
             }
 
-            if (!string.Equals(empleadoExistente.Usuari, empleado.usuario, StringComparison.OrdinalIgnoreCase))
+       
+            empleadoExistente.Nombre = empleadoUpdate.nombre;
+            empleadoExistente.ApellidoPaterno = empleadoUpdate.apell_paterno;
+            empleadoExistente.ApellidoMaterno = empleadoUpdate.apell_materno;
+            empleadoExistente.Telefono = empleadoUpdate.telefono;
+            empleadoExistente.Rol = empleadoUpdate.Empleado_rol;
+       
+
+        
+            if (!string.IsNullOrEmpty(empleadoUpdate.password))
             {
-                bool usuarioYaExiste = await _context.Empleados
-                    .AnyAsync(e => e.Usuari!.ToLower() == empleado.usuario.ToLower());
-
-                if (usuarioYaExiste)
-                {
-                    return Conflict("Ya existe un empleado con ese nombre de usuario.");
-                }
+                empleadoExistente.Password = _utilidades.EncriptarSHA256(empleadoUpdate.password);
             }
-
-            empleadoExistente.Nombre = empleado.nombre;
-            empleadoExistente.ApellidoPaterno = empleado.apell_paterno;
-            empleadoExistente.ApellidoMaterno = empleado.apell_materno;
-            empleadoExistente.Rol = empleado.Empleado_rol;
-            empleadoExistente.FechaContrato = empleado.fecha_contrato;
-            empleadoExistente.Telefono = empleado.telefono;
-            empleadoExistente.Usuari = empleado.usuario;
-            empleadoExistente.Password = _utilidades.EncriptarSHA256(empleado.password);
 
             try
             {
@@ -137,10 +134,16 @@ namespace Cafeteria_back.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                return StatusCode(500, "Error al guardar los cambios del empleado.");
+               
+                return StatusCode(500, "Error de concurrencia al guardar los cambios del empleado.");
+            }
+            catch (Exception ex)
+            {
+              
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
 
-            return NoContent();
+            return NoContent(); 
         }
         [HttpDelete("cliente/usuario")]
         public async Task<IActionResult> DeleteCliente([FromBody] Dictionary<string, string> body)

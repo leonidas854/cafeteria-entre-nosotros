@@ -50,3 +50,20 @@ export const registrarClienteManual = async (
 
   return response.data.cliente;
 };
+
+
+export const actualizarApellidoPorNIT = async (
+  nit: number,
+  nuevoApellido: string
+): Promise<UsuarioNit> => {
+  const response = await axios.put(
+    `${API_URL_}/actualizar-apellido/${nit}`,
+    JSON.stringify(nuevoApellido),
+    {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true
+    }
+  );
+
+  return response.data.cliente;
+};

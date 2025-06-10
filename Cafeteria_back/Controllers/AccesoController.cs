@@ -82,7 +82,7 @@ namespace Cafeteria_back.Controllers
         public async Task<IActionResult> Registrar_E(EmpleadoDTO empleado)
         {
             bool usuarioExiste = await _context.Empleados
-        .AnyAsync(c => c.Usuari!.ToLower() == empleado.usuario.ToLower());
+        .AnyAsync(c => c.Usuari!.ToLower() == empleado.usuario!.ToLower());
 
             if (usuarioExiste)
             {
@@ -95,7 +95,7 @@ namespace Cafeteria_back.Controllers
                 ApellidoMaterno = empleado.apell_materno,
                 Telefono = empleado.telefono,
                 Usuari = empleado.usuario,
-                Password = _utilidades.EncriptarSHA256(empleado.password),
+                Password = _utilidades.EncriptarSHA256(empleado.password!),
                 FechaContrato = DateTime.UtcNow,
                 Rol = empleado.Empleado_rol
             };

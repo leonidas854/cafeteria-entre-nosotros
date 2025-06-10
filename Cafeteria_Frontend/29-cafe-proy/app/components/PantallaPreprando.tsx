@@ -56,25 +56,30 @@ export default function PantallaPreparando({
   
         <div className="flex flex-col space-y-3 w-full max-w-xs"> 
 
-            <Link href="https://siatinfo.impuestos.gob.bo/index.php/facturacion-en-linea/factura-electronica">
-            <button
-            className="px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors w-full">
-             Generar Factura
-            </button>
-            </Link>
-
-            <Link href="/EstadoPedido">
+           <Link href="/EstadoPedido">
             <button className="px-6 py-3 bg-amber-400 text-white rounded-lg hover:bg-amber-700 transition-colors w-full">
             Ver Historial
             </button>
             </Link>
+                    <a
+                      href="https://siatinfo.impuestos.gob.bo/index.php/facturacion-en-linea/factura-electronica"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors w-full">
+                        Generar Factura
+                      </button>
+                    </a>
+
     
-            <button
+            {/*<button
               onClick={onClose}
                 className="px-6 py-3 border border-gray-900 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors w-full"
              >
                  Cerrar
-                </button>
+                </button>*/}
+
+
             </div>
         </div>
       </div>

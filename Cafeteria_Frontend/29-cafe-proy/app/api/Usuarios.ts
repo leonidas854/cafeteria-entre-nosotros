@@ -6,6 +6,10 @@ const api = axios.create({
   withCredentials: true, // ✅ clave para manejar cookies/sesiones
 });
 
+
+
+
+
 // 1. Obtener clientes
 export const getClientes = async () => {
   try {

@@ -217,6 +217,27 @@
   },
   {
     "ContainingType": "Cafeteria_back.Controllers.CajeroController",
+    "Method": "ActualizarApellidoPorNIT",
+    "RelativePath": "api/Cajero/actualizar-apellido/{nit}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nit",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "nuevoApellido",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.CajeroController",
     "Method": "BuscarClientePorNIT",
     "RelativePath": "api/Cajero/nit/{nit}",
     "HttpMethod": "GET",
@@ -459,6 +480,27 @@
   },
   {
     "ContainingType": "Cafeteria_back.Controllers.PedidoController",
+    "Method": "CambiarEstadoPedido",
+    "RelativePath": "api/Pedido/cambiar-estado/{pedidoId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pedidoId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "nuevoEstado",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.PedidoController",
     "Method": "ConfirmarPedido",
     "RelativePath": "api/Pedido/confirmar",
     "HttpMethod": "POST",
@@ -485,8 +527,48 @@
   },
   {
     "ContainingType": "Cafeteria_back.Controllers.PedidoController",
+    "Method": "ObtenerInformacionCompletaDeTodosLosPedidos",
+    "RelativePath": "api/Pedido/info-completa-todos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.PedidoController",
     "Method": "ObtenerMisPedidos",
     "RelativePath": "api/Pedido/mis-pedidos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.PedidoController",
+    "Method": "ObtenerMisVentas",
+    "RelativePath": "api/Pedido/mis-ventas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.PedidoController",
+    "Method": "TodaslasVentas",
+    "RelativePath": "api/Pedido/Todas-las-ventas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafeteria_back.Controllers.PedidoController",
+    "Method": "ObtenerTodosLosPedidos",
+    "RelativePath": "api/Pedido/todos-pedidos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -943,8 +1025,8 @@
         "IsRequired": true
       },
       {
-        "Name": "empleado",
-        "Type": "Cafeteria_back.Entities.DTOs.EmpleadoDTO",
+        "Name": "empleadoUpdate",
+        "Type": "Cafeteria_back.Entities.DTOs.EmpleadoUpdateDTO",
         "IsRequired": true
       }
     ],

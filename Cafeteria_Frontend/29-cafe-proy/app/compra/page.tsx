@@ -93,8 +93,6 @@ const [tarjetaValida, setTarjetaValida] = useState(true);
 const [metodoPagoSeleccionado, setMetodoPagoSeleccionado] = useState('');
 const [isModalOpen, setIsModalOpen] = useState(false);
 const handleGenerarFactura = () => {
-    // Lógica para generar la factura
-    console.log("Generando factura...");
     // Puedes implementar la generación de PDF aquí
   };
 
@@ -106,6 +104,12 @@ const validarTarjeta = (numero: string) => {
   
 const router = useRouter();
   const confirmarPedido = async () => {
+
+    if (!metodoPagoSeleccionado) {
+  toast.error("⚠️ Debes seleccionar un método de pago.");
+  return false;
+}
+
     if (!tipoEntrega) {
     toast.error("⚠️ Debes seleccionar un tipo de entrega.");
     return false;
@@ -122,7 +126,6 @@ const router = useRouter();
   }
 
   try {
-    //const tipoEntrega = "Mesa"; 
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/Pedido/confirmar`,
       
@@ -403,23 +406,27 @@ setCarrito(actualizado);
           )}
         </div>
 
-        {/* Tipo de entrega */}
+      {/* Tipo de entrega */}
 <div className="border-t pt-6 space-y-3 mb-6">
   <h3 className="text-xl font-semibold mb-4">Tipo de entrega</h3>
-  {['Delivery', 'Llevar'].map((tipo) => (
-    <label key={tipo} className="flex items-center space-x-3">
+  {[
+    { label: 'Delivery', value: 'Delivery' },
+    { label: 'Para Llevar', value: 'Llevar' },
+  ].map(({ label, value }) => (
+    <label key={value} className="flex items-center space-x-3">
       <input
         type="radio"
         name="entrega"
-        value={tipo}
-        checked={tipoEntrega === tipo}
-        onChange={() => setTipoEntrega(tipo)}
+        value={value}
+        checked={tipoEntrega === value}
+        onChange={() => setTipoEntrega(value)}
         className="h-4 w-4 text-amber-600 focus:ring-amber-500"
       />
-      <span>{tipo}</span>
+      <span>{label}</span>
     </label>
   ))}
 </div>
+
 
 {/* Método de pago */}
 <div className="border-t pt-6">
@@ -430,9 +437,6 @@ setCarrito(actualizado);
         >
           {metodoPagoSeleccionado || "Seleccionar método de pago..."}
         </button>
-        
-        {/* Muestra información resumida del método seleccionado */}
-        
         
       </div>
 
@@ -475,8 +479,11 @@ setCarrito(actualizado);
           <button
               type="button"
               onClick={async () => {
-              await confirmarPedido(); // Primero confirmar el pedido
-              setShowPreparando(true); // Luego mostrar el modal si todo salió bien
+              const ok = await confirmarPedido(); 
+              if(ok){
+              setShowPreparando(true); 
+              }
+              
               }}
               className="w-full mt-6 bg-gradient-to-r from-amber-700 to-amber-500 hover:from-amber-800 hover:to-amber-600 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-all duration-300 transform hover:scale-[1.02]"
             >
@@ -484,10 +491,11 @@ setCarrito(actualizado);
             </button>
 
             <PantallaPreparando
-            isOpen={showPreparando}
-            onClose={() => setShowPreparando(false)}
-            onGenerarFactura={handleGenerarFactura}
-            />
+                isOpen={showPreparando}
+                onClose={() => setShowPreparando(false)}
+                onGenerarFactura={handleGenerarFactura}
+              />
+
 
 
      

@@ -58,6 +58,7 @@ namespace Cafeteria_back.Entities.Pedidos
         En_espera,
         Preparando,
         Entregado,
-        Delivery_en_Camino
+        Delivery,
+        Listo
     }
 }

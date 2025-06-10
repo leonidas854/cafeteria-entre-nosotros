@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import {crearProducto,Producto} from "@/app/api/productos";
+import { crearProducto, actualizarProducto, Producto } from "@/app/api/productos";
 
 import { getCategorias,
   getSaboresPorCategoria,
@@ -28,6 +28,12 @@ export interface SaboresPorCategoria {
   [categoria: string]: string[];
 }
 
+interface ProductFormProps {
+  productToEdit?: Producto | null;
+  onUpdateComplete?: () => void;
+  onCancelEdit?: () => void;
+}
+
 
 const initialProductFormState: ProductFormData = {
   categoria: '',
@@ -41,7 +47,9 @@ const initialProductFormState: ProductFormData = {
   imagen: null,
 };
 
-export default function ProductForm() {
+export default function ProductForm({ productToEdit, onUpdateComplete, onCancelEdit }: ProductFormProps) {
+
+  const isEditMode = !!productToEdit;
   const [productType, setProductType] = useState<ProductType>('comida');
   const [formData, setFormData] = useState<ProductFormData>(initialProductFormState);
   const [saboresPorCategoria, setSaboresPorCategoria] = useState<SaboresPorCategoria>({});
@@ -57,6 +65,35 @@ export default function ProductForm() {
   const soloLetrasRegex = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*$/;
   const [errorArchivo, setErrorArchivo] = useState('');
 
+
+  useEffect(() => {
+    if (isEditMode && productToEdit) {
+      // Lógica para poblar el formulario desde productToEdit
+      let baseName = productToEdit.nombre;
+      if (productToEdit.tipo === 'comida') baseName = baseName.replace(/\s\((P|E)\)$/, '').trim();
+      else if (productToEdit.tipo === 'bebida') baseName = baseName.replace(/\s\((M|G)\)$/, '').trim();
+      
+      setProductType(productToEdit.tipo as ProductType);
+      setEstadoActivo(productToEdit.estado);
+      setFormData({
+        categoria: productToEdit.categoria,
+        sub_categoria: productToEdit.sub_categoria,
+        nombre: baseName,
+        descripcion: productToEdit.descripcion,
+        precio: productToEdit.precio.toString(),
+        sabores: productToEdit.sabores,
+        comidaOption: (productToEdit.proporcion as 'entero' | 'porcion') || 'entero',
+        bebidaSizes: productToEdit.tamanio?.split(',') || [],
+        imagen: null, 
+      });
+    } else {
+      
+      setFormData(initialProductFormState);
+      setProductType('comida');
+      setEstadoActivo(true);
+      setErrorArchivo('');
+    }
+  }, [productToEdit, isEditMode]);
 useEffect(() => {
   const cargarTodo = async () => {
     const categoriasServidor = await getCategorias();
@@ -190,15 +227,28 @@ if (productType === 'comida') {
         return;
       }
 
-      const response = await crearProducto(producto);
-      toast.success('Producto agregado correctamente');
-     
-      setFormData(initialProductFormState);
-      setProductType('comida');
+      if (isEditMode && productToEdit) {
+
+        await actualizarProducto(productToEdit.nombre, producto as Producto);
+        onUpdateComplete?.(); 
+      } else {
+      
+        await crearProducto(producto as Producto);
+        toast.success('Producto agregado correctamente');
+        setFormData(initialProductFormState);
+        setProductType('comida');
+      }
+
+
     } catch (error) {
       console.error("Error al agregar producto:", error);
       toast.error('Error al agregar el producto.');
+      toast.error(isEditMode ? 'Error al actualizar el producto.' : 'Error al agregar el producto.');
+
+
     }
+
+    
   };
 
   return (
@@ -517,9 +567,27 @@ disabled={!nuevaCategoria.trim() || !soloLetrasRegex.test(nuevaCategoria)}
 </div>
 
 
-      <button type="submit" className="prod-button">
-        AGREGAR PRODUCTO
-      </button>
+
+
+
+     {isEditMode ? (
+        <div className="flex space-x-4 mt-6">
+          <button type="submit" className="prod-button flex-1">
+            ACTUALIZAR PRODUCTO
+          </button>
+          <button
+            type="button"
+            onClick={onCancelEdit}
+            className="w-full py-2 px-4 rounded bg-gray-500 text-white hover:bg-gray-600 flex-1"
+          >
+            CANCELAR
+          </button>
+        </div>
+      ) : (
+        <button type="submit" className="prod-button">
+          AGREGAR PRODUCTO
+        </button>
+      )}
     </form>
   );
 }

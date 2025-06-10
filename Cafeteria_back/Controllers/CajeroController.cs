@@ -49,6 +49,38 @@ namespace Cafeteria_back.Controllers
 
             return Ok(cliente);
         }
+        [HttpPut("actualizar-apellido/{nit}")]
+        public async Task<IActionResult> ActualizarApellidoPorNIT(int nit, [FromBody] string nuevoApellido)
+        {
+            var cliente = await _context.Clientes.FirstOrDefaultAsync(c => c.Nit == nit);
+
+            if (cliente == null)
+            {
+                return NotFound(new { mensaje = "Cliente no encontrado con ese NIT." });
+            }
+
+            cliente.ApellidoPaterno = nuevoApellido;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                return Ok(new
+                {
+                    mensaje = "Apellido actualizado correctamente.",
+                    cliente = new
+                    {
+                        cliente.Id_user,
+                        cliente.Nit,
+                        cliente.ApellidoPaterno
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { mensaje = "Error al actualizar el apellido.", error = ex.Message });
+            }
+        }
+
 
         [HttpPost]
         [Route("Registrar")]

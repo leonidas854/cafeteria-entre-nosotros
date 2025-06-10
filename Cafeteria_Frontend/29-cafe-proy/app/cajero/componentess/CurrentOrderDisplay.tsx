@@ -8,6 +8,7 @@ import {
   buscarClientePorNIT as buscarClienteApi,
   registrarClienteManual as registrarClienteApi,
   buscarClientePorId as buscarClientePorIdApi,
+  actualizarApellidoPorNIT
 } from '@/app/api/Cajerro';
 
 import {
@@ -131,8 +132,8 @@ export default function CurrentOrderDisplay({
       const data = await buscarClienteApi(nitInput);
       setClienteNit(data);
       toast.success(`Cliente encontrado: ${data.usuario}`);
-      setCliente(null);
-      setClienteNoEncontrado(false);
+      setCliente(data); // asignar también el cliente
+setClienteNoEncontrado(false);
     } catch {
       toast.error("NIT no encontrado");
       setClienteNit(null);
@@ -158,7 +159,11 @@ const handleConfirmarPedido = async () => {
       toast.error("Carrito no encontrado");
       return;
     }
-
+    
+    if (!carrito.clienteId) {
+  toast.error("Debe asignar un cliente antes de confirmar el pedido");
+  return;
+}
     // Transformar los valores seleccionados de los radio buttons
     const tipoEntregaBack = tipoOrden.charAt(0).toUpperCase() + tipoOrden.slice(1); 
     const metodoPagoBack = metodoPago.charAt(0).toUpperCase() + metodoPago.slice(1);
@@ -171,6 +176,11 @@ const handleConfirmarPedido = async () => {
 
     toast.success(`Pedido confirmado. Total: Bs. ${(resultado.total_estimado - resultado.total_descuento).toFixed(2)}`);
     onClearOrder();
+
+   setNitInput('');
+      setClienteNit(null);
+      setClienteNoEncontrado(false);
+      setCliente(null);
   } catch (error: any) {
     toast.error(error.message || "Error al confirmar el pedido");
   }
@@ -215,6 +225,10 @@ const handleConfirmarPedido = async () => {
       await eliminarCarrito(carrito.id);
       onClearOrder();
       toast.success("Pedido limpiado correctamente");
+      setNitInput('');
+      setClienteNit(null);
+      setClienteNoEncontrado(false);
+      setCliente(null);
     } catch (error) {
       console.error("Error al eliminar el carrito:", error);
       toast.error("No se pudo limpiar el pedido");
@@ -223,8 +237,20 @@ const handleConfirmarPedido = async () => {
 
   const registrarClienteManual = async (sinNit = false) => {
     try {
+       if (!apellidoManual.trim()) {
+  toast.error("Debe ingresar un apellido válido");
+  return;
+}
       const nuevoCliente = await registrarClienteApi(apellidoManual, nitInput, sinNit);
       setCliente(nuevoCliente);
+
+      const carrito = await obtenerCarrito();
+        if (carrito?.id) {
+          await asignarCarritoACliente(carrito.id, nuevoCliente.id);
+        }
+       
+
+
       toast.success("Cliente registrado con éxito");
       setMostrarModalNIT(false);
       setClienteNoEncontrado(false);
@@ -385,17 +411,26 @@ const handleConfirmarPedido = async () => {
       </div>
 
       {/* Botón NIT */}
-      <div className="mb-3">
-        <button
-          onClick={() => setMostrarModalNIT(true)}
-          className="w-full text-sm bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded"
-        >
-          Buscar por NIT
-        </button>
-      </div>
-
-
-
+      <div className="mb-3 flex gap-3">
+  <button
+    onClick={() => setMostrarModalNIT(true)}
+    className="flex-1 text-sm bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded"
+  >
+    Buscar por NIT
+  </button>
+  <button
+    onClick={() => {
+      setNitInput('');
+      setClienteNit(null);
+      setClienteNoEncontrado(false);
+      setCliente(null);
+      toast.success("NIT borrado");
+    }}
+    className="flex-1 text-sm bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded"
+  >
+    Borrar NIT
+  </button>
+</div>
 
       {/* Modal NIT */}
 
@@ -447,9 +482,16 @@ const handleConfirmarPedido = async () => {
               Cancelar
             </button>
             <button
-              onClick={async () => {
+             onClick={async () => {
   try {
     if (!clienteNit?.id) return;
+
+    if (!clienteNit.apell_paterno.trim()) {
+      toast.error("Debe ingresar un apellido válido");
+      return;
+    }
+
+    await actualizarApellidoPorNIT(clienteNit.nit, clienteNit.apell_paterno);
 
     const carrito = await obtenerCarrito();
     if (carrito?.id) {
@@ -465,6 +507,7 @@ const handleConfirmarPedido = async () => {
     toast.error("No se pudo asignar el carrito al cliente.");
   }
 }}
+
               className="px-4 py-1 bg-green-600 text-white rounded hover:bg-green-700"
             >
               Confirmar
@@ -573,7 +616,9 @@ const handleConfirmarPedido = async () => {
         </p>
         <div className="flex flex-col space-y-2">
           <button
-            onClick={handleConfirmarPedido}
+            onClick={
+              handleConfirmarPedido
+            }
             disabled={isSubmitting || items.length === 0}
             className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg transition disabled:opacity-50 text-sm"
           >
@@ -582,7 +627,11 @@ const handleConfirmarPedido = async () => {
 
 
           <button
-            onClick={handleEliminarCarrito}
+          
+            onClick={
+              
+handleEliminarCarrito
+            }
             disabled={items.length === 0}
             className="w-full bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-4 rounded-lg transition disabled:opacity-50 text-sm"
           >

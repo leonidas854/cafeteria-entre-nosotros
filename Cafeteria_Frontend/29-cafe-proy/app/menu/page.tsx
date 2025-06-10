@@ -11,8 +11,7 @@ import Link from "next/link";
 import "./menu.css";
 import "./catalogo.css";
 import { useRouter } from 'next/navigation';
-
-
+import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 
 
@@ -71,6 +70,9 @@ const totalAmount = carrito?.items.reduce((sum, item) => {
 }, 0) || 0;
 
 
+const [mostrarBotonHistorial, setMostrarBotonHistorial] = useState(false);
+
+
 
 
 const cargarCarrito = async () => {
@@ -88,6 +90,25 @@ const cargarCarrito = async () => {
       setCarritoCargando(false);
     }
   };
+  const verificarPedidos = async () => {
+  try {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Pedido/mis-pedidos`, {
+      withCredentials: true
+    });
+    if (Array.isArray(res.data) && res.data.length > 0) {
+      setMostrarBotonHistorial(true);
+    } else {
+      setMostrarBotonHistorial(false);
+    }
+  } catch (error: any) {
+    if (error.response?.status === 401) {
+      setMostrarBotonHistorial(false);
+    } else {
+      console.error("Error al verificar pedidos:", error);
+    }
+  }
+};
+
 
 
   useEffect(() => {
@@ -113,7 +134,7 @@ const cargarCarrito = async () => {
 
     
   cargarCarrito();
-
+verificarPedidos();
     fetchProductos();
   }, []);
 const agruparPorCategoria = (productos: Producto[]): GroupedProducts => {
@@ -169,7 +190,13 @@ const renderProducts = () => {
       {grupo.sinSubcategoria && grupo.sinSubcategoria.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {grupo.sinSubcategoria.map((product) => (
-            <ProductCard key={`${product.nombre}-${product.precio}`} product={product} cargarCarrito={cargarCarrito}  />
+           <ProductCard
+  key={`${product.nombre}-${product.precio}`}
+  product={product}
+  cargarCarrito={cargarCarrito}
+  mostrarBotonHistorial={mostrarBotonHistorial}
+/>
+
           ))}
         </div>
       )}
@@ -180,7 +207,13 @@ const renderProducts = () => {
             <h2 className="text-2xl font-semibold text-amber-600 mb-4">{sub}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {productos.map((product) => (
-                <ProductCard key={`${product.nombre}-${product.precio}`} product={product}  cargarCarrito={cargarCarrito} />
+                <ProductCard
+  key={`${product.nombre}-${product.precio}`}
+  product={product}
+  cargarCarrito={cargarCarrito}
+  mostrarBotonHistorial={mostrarBotonHistorial}
+/>
+
               ))}
             </div>
           </div>
@@ -203,7 +236,13 @@ const renderProducts = () => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {productos.map((product) => (
-            <ProductCard key={`${product.nombre}-${product.precio}`} product={product} cargarCarrito={cargarCarrito}  />
+           <ProductCard
+  key={`${product.nombre}-${product.precio}`}
+  product={product}
+  cargarCarrito={cargarCarrito}
+  mostrarBotonHistorial={mostrarBotonHistorial}
+/>
+
           ))}
         </div>
       </div>
@@ -217,7 +256,13 @@ const renderProducts = () => {
         <h1 className="text-3xl font-bold text-amber-800 mb-6">{activeCategory}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categoriaData.sinSubcategoria.map((product) => (
-            <ProductCard key={`${product.nombre}-${product.precio}`} product={product}  cargarCarrito={cargarCarrito} />
+           <ProductCard
+  key={`${product.nombre}-${product.precio}`}
+  product={product}
+  cargarCarrito={cargarCarrito}
+  mostrarBotonHistorial={mostrarBotonHistorial}
+/>
+
           ))}
         </div>
       </div>
@@ -227,6 +272,8 @@ const renderProducts = () => {
   if (Object.keys(groupedProducts).length === 0) {
   return <p>No hay productos disponibles.</p>;
 }
+
+
 };
 
 
@@ -248,8 +295,6 @@ const renderProducts = () => {
         actualizarCarrito={cargarCarrito}
       />
       <Bienvenida/>
-
-
       <div className="flex flex-1 pt-32 relative">
         <div className="fixed left-0 top-32 bottom-0 w-64 z-10">
           <MenuLateral 
@@ -275,14 +320,41 @@ const renderProducts = () => {
 
         </div>
       </div>
+
+
+      {mostrarBotonHistorial && (
+      <div className="fixed right-8 bottom-8 z-50 compra-btn">
+        <Link href="/EstadoPedido">
+          <button className="bg-slate-600 bg-gradient-to-r from-slate-600 to-blue-600 hover:from-slate-700 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-100 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            HISTORIAL DE PEDIDOS
+          </button>
+        </Link>
+      </div>
+    )}
     </div>
+
   );
 }
 
 
-export function ProductCard({ product,cargarCarrito }: { product: Producto ,cargarCarrito: ()=>void}) {
+export function ProductCard({
+  product,
+  cargarCarrito,
+  mostrarBotonHistorial
+}: {
+  product: Producto;
+  cargarCarrito: () => void;
+  mostrarBotonHistorial: boolean;
+}) {
+
   const [showDescription, setShowDescription] = useState(false);
   const [loading, setLoading] = useState(false);
+
+
+
 
   const handleAddToCart = async () => {
     setLoading(true);
@@ -372,25 +444,7 @@ export function ProductCard({ product,cargarCarrito }: { product: Producto ,carg
 
 
       
-        <div className="fixed right-8 bottom-8 z-50 compra-btn">
-          <Link href="/EstadoPedido">
-            <button className="bg-slate-600 bg-gradient-to-r from-slate-600 to-blue-600 hover:from-slate-700 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-100 flex items-center gap-2">
-              <svg  xmlns="http://www.w3.org/2000/svg" 
-              className="h-6 w-6 text-amber-700" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor">
-                
-                <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-               d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-              </svg>
-              HISTORIAL DE PEDIDOS
-            </button>
-          </Link>
-        </div>
+
 
     </div>
   );

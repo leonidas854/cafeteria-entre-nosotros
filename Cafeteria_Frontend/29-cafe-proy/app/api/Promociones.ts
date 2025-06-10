@@ -29,6 +29,29 @@ export interface NuevaPromocion {
 }
 
 
+export interface Producto {
+  id: number;
+  nombre: string;
+  precio: number;
+  categoria?: string;
+  imageUrl?: string;
+}
+
+
+export interface Promocion2 {
+  id: number;
+  descripcion: string;
+  descuento: number;
+  fech_ini: string;       
+  fecha_final: string;
+  strategykey: string;
+  url_imagen: string;
+  productos: Producto[]; 
+  full_image_url?: string;
+
+}
+
+
 export const getPromociones = async (): Promise<Promocion[]> => {
   try {
     const response = await axios.get<Promocion[]>(API_PROMOCIONES_URL, {
@@ -87,22 +110,37 @@ export const crearPromocion = async (promo: NuevaPromocion) => {
 
 
 export const editarPromocion = async (
-  strategykey: string,
-  data: Omit<Promocion, 'id' | 'full_image_url' | 'url_imagen'>
+  originalStrategyKey: string,
+  data: NuevaPromocion
 ) => {
+   const payload = {
+    descripcion: data.descripcion,
+    descuento: data.descuento,
+    fech_ini: data.fech_ini,
+    fecha_final: data.fecha_final,
+    strategykey: data.strategykey,
+    productos: data.productos,
+   
+  };
+
   try {
-    await axios.put(`${API_PROMOCIONES_URL}/${strategykey}`, data, {
-      withCredentials: true,
-    });
+    const response = await axios.put(
+      `${API_PROMOCIONES_URL}/${originalStrategyKey}`,
+      payload, 
+      {
+        withCredentials: true,
+     
+      }
+    );
 
     toast.success("Promoción actualizada correctamente.");
+    return response.data;
   } catch (error: any) {
-    const msg = error.response?.data?.message || 'Error al editar promoción.';
+    const msg = error.response?.data || 'Error al editar promoción.';
     toast.error(msg);
-    throw new Error(msg);
+    throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg));
   }
 };
-
 
 export const eliminarPromocion = async (strategykey: string) => {
   try {
@@ -112,8 +150,31 @@ export const eliminarPromocion = async (strategykey: string) => {
 
     toast.success("Promoción eliminada.");
   } catch (error: any) {
-    const msg = error.response?.data?.message || 'Error al eliminar promoción.';
+    const msg = error.response?.data || 'Error al eliminar promoción.';
     toast.error(msg);
-    throw new Error(msg);
+    throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg));
   }
 };
+
+export const Todas_las_Promociones = async (): Promise<Promocion2[]> => {
+  try {
+
+    const response = await axios.get<Promocion2[]>(`${API_PROMOCIONES_URL}/todas`, {
+      withCredentials: true,
+    });
+
+    return response.data.map((promo) => ({
+      ...promo,
+      full_image_url: promo.url_imagen
+        ? `${BASE_BACKEND_URL}${promo.url_imagen}`
+        : undefined,
+    }));
+  } catch (error: any) {
+    toast.error("Error al cargar las promociones.");
+    throw new Error(
+      "Error al cargar las promociones: " +
+        (error.response?.data?.message || error.message)
+    );
+  }
+};
+

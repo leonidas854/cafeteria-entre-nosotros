@@ -2,16 +2,36 @@
 'use client';
 
 import PromotionForm from './PromotionForm';
+import { Promocion2 } from '@/app/api/Promociones';
 
-export default function PromotionManagementSection() {
+interface PromotionManagementSectionProps {
+  promotionToEdit: Promocion2 | null;
+  onUpdateComplete: () => void;
+  onCancelEdit: () => void;
+}
+
+export default function PromotionManagementSection({
+  promotionToEdit,
+  onUpdateComplete,
+  onCancelEdit
+}: PromotionManagementSectionProps) {
+
+  const isEditMode = !!promotionToEdit;
   return (
     <section id="Prom" className="Prom min-h-screen w-full flex items-center justify-center py-20">
       <div className="container mx-auto my-10 flex flex-col lg:flex-row overflow-hidden rounded-[40px] shadow-2xl relative">
 
         {/* Contenedor IZQUIERDO - FORMULARIO */}
-        <div className="CONIZ_PROM w-full lg:w-1/2 p-10 flex flex-col justify-center z-10">
-          <h2 className="text-3xl mb-6 text-center font-bold text-[#38100e]">AGREGAR PROMOCIONES</h2>
-          <PromotionForm />
+         <div className="CONIZ_PROM w-full lg:w-1/2 p-10 flex flex-col justify-center z-10">
+          <h2 className="text-3xl mb-6 text-center font-bold text-[#38100e]">
+            {isEditMode ? 'MODIFICAR PROMOCIÓN' : 'AGREGAR PROMOCIÓN'}
+          </h2>
+          {/* --- MODIFICADO: Pasar las props al formulario --- */}
+          <PromotionForm 
+            promotionToEdit={promotionToEdit}
+            onUpdateComplete={onUpdateComplete}
+            onCancelEdit={onCancelEdit}
+          />
         </div>
 
         {/* Contenedor DERECHO - FOTO/INFO */}
@@ -19,7 +39,10 @@ export default function PromotionManagementSection() {
           <div className="z-10">
             <h3 className="promosi mb-4">PROMOCIONES</h3>
             <p className="promos max-w-md">
-              Usted puede agregar nuevas promociones al catálogo de promociones y asignarles múltiples productos fácilmente.
+              {isEditMode 
+                ? 'Modifique los detalles de la promoción seleccionada.' 
+                : 'Usted puede agregar nuevas promociones al catálogo y asignarles productos.'
+              }
             </p>
           </div>
         </div>

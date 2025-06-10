@@ -1278,6 +1278,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Promociones\227f5e98-0d51-4e33-8ef5-2d4280138e49.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Promociones\3418a149-c281-488b-a246-d7b80d8d64f1.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Cafeteria_back</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Cafeteria_back</BasePath>
+      <RelativePath>Promociones/3418a149-c281-488b-a246-d7b80d8d64f1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6dega66b00</Fingerprint>
+      <Integrity>RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Promociones\3418a149-c281-488b-a246-d7b80d8d64f1.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Promociones\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Cafeteria_back</SourceId>
@@ -1313,6 +1331,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Promociones\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Promociones\45578a04-c985-4efd-8628-a7712e719e9a.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Cafeteria_back</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Cafeteria_back</BasePath>
+      <RelativePath>Promociones/45578a04-c985-4efd-8628-a7712e719e9a.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6dega66b00</Fingerprint>
+      <Integrity>RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Promociones\45578a04-c985-4efd-8628-a7712e719e9a.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Promociones\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png'))">
       <SourceType>Package</SourceType>

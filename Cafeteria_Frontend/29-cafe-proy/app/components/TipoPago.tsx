@@ -28,7 +28,7 @@ export default function TipoPago({ isOpen, onClose, onPaymentSelect }: TipoPagoP
         </div>
 
         <div className="space-y-3">
-          {[/*"Tarjeta de crédito/débito",*/ "Transferencia bancaria", "QR"].map((label, idx) => (
+          {["Tarjeta de crédito/débito", /*"Transferencia bancaria",*/ "QR"].map((label, idx) => (
             <label key={idx} className="flex items-center space-x-3">
               <input
                 type="radio"
@@ -81,7 +81,7 @@ export default function TipoPago({ isOpen, onClose, onPaymentSelect }: TipoPagoP
             </div>
           )}*/}
 
-          {metodoPago === "Generar QR" && (
+          {metodoPago === "QR" && (
             <div className="bg-white p-4 inline-block rounded shadow-md">
               <img src="/shonow.jpg" alt="Código QR" className="mx-auto w-32 h-32" />
               <p className="text-center mt-2 text-sm text-gray-900">Escanea para pagar</p>

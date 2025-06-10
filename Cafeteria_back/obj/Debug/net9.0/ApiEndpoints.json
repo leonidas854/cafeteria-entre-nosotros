@@ -939,6 +939,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafeteria_back.Controllers.PromocionesController",
+    "Method": "ObtenerTodasLasPromociones",
+    "RelativePath": "api/Promociones/todas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cafeteria_back.Entities.DTOs.PromocionTodoDTO, Cafeteria_back, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Cafeteria_back.Controllers.UsuariosController",
     "Method": "DeleteCliente",
     "RelativePath": "api/Usuarios/cliente/usuario",

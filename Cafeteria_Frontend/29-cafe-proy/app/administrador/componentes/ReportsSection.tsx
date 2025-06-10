@@ -3,13 +3,18 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { toast } from 'react-hot-toast';
 
-// --- API Imports ---
 import {
   Producto,
   getTodosProductos,
   cambiarEstadoProducto,
   eliminarProducto as eliminarProductoAPI,
 } from '@/app/api/productos';
+
+import {
+  Promocion2,
+  Todas_las_Promociones,
+  eliminarPromocion,
+} from '@/app/api/Promociones';
 
 import {
   getClientes,
@@ -50,7 +55,7 @@ export interface ReportItem {
   imageUrl?: string;
   estado?: 'activo' | 'inactivo';
   usuario?: string;
-  originalData: Producto | ClienteAPIResponse | EmpleadoAPIResponse;
+  originalData: Producto | ClienteAPIResponse | EmpleadoAPIResponse | Promocion2;
 }
 
 export interface VentaReportItem {
@@ -142,6 +147,7 @@ const filterOptions: Record<string, string[]> = {
   ventas: ['ID Pedido', 'Fecha (YYYY-MM-DD)', 'Nombre Cliente', 'Nombre Empleado', 'Tipo de Entrega', 'Tipo de Pago', 'Estado', 'Producto'],
   empleados: ['Nombre', 'Apellido Paterno', 'Apellido Materno', 'Teléfono', 'Usuario', 'Rol', 'Fecha de contrato'],
   productos: ['Tipo', 'Categoría', 'Subcategoría', 'Nombre', 'Precio', 'Estado', 'Descripción', 'Sabores'],
+   promociones: ['Nombre', 'Descripción', 'Fecha de inicio', 'Fecha de fin', 'Entre Fechas', 'Activa'],
 };
 
 interface ReportsSectionProps {
@@ -151,16 +157,24 @@ interface ReportsSectionProps {
 
 export default function ReportsSection({ onEditRequest, refreshKey }: ReportsSectionProps) {
   const [searchType, setSearchType] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
   const [filterField, setFilterField] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  
+
   const [isLoading, setIsLoading] = useState(false);
 
   const [productReports, setProductReports] = useState<ReportItem[]>([]);
   const [clientReports, setClientReports] = useState<ReportItem[]>([]);
   const [employeeReports, setEmployeeReports] = useState<ReportItem[]>([]);
-  
+   const [appliedFilterField, setAppliedFilterField] = useState('');
+  const [appliedSearchTerm, setAppliedSearchTerm] = useState('');
+  const [appliedStartDate, setAppliedStartDate] = useState('');
+  const [appliedEndDate, setAppliedEndDate] = useState('');
   const [rawSalesData, setRawSalesData] = useState<any[]>([]);
   const [noSales, setNoSales] = useState(false);
+  const [promotionReports, setPromotionReports] = useState<ReportItem[]>([]);
 
   const fetchAndSetData = useCallback(async (type: string) => {
     if (type === 'ventas') return;
@@ -183,6 +197,42 @@ export default function ReportsSection({ onEditRequest, refreshKey }: ReportsSec
             id: e.usuario, name: `${e.nombre} ${e.apell_paterno || ''} ${e.apell_materno || ''}`.trim(), details: [`Usuario: ${e.usuario}`, `Teléfono: ${e.telefono}`, `Rol: ${e.empleado_rol}`], usuario: e.usuario, originalData: e,
         })));
       }
+      else if (type === 'promociones') {
+        const data: Promocion2[] = await Todas_las_Promociones();
+        setPromotionReports(data.map((promo) => {
+          const hoy = new Date();
+          const inicio = new Date(promo.fech_ini);
+          const fin = new Date(promo.fecha_final);
+          fin.setHours(23, 59, 59, 999); 
+          const estado = hoy >= inicio && hoy <= fin ? 'activo' : 'inactivo';
+
+          const fechaInicioFormateada = inicio.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+          const fechaFinFormateada = fin.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+          let productosText = 'Productos: No asignados';
+          if (promo.productos && promo.productos.length > 0) {
+            const productNames = promo.productos.map(p => p.nombre).slice(0, 3);
+            productosText = `Productos: ${productNames.join(', ')}`;
+            if (promo.productos.length > 3) {
+              productosText += `, y ${promo.productos.length - 3} más...`;
+            }
+          }
+
+          return {
+            id: promo.id.toString(),
+            name: promo.strategykey,
+            details: [
+              `Descripción: ${promo.descripcion.substring(0, 70)}...`,
+              `Vigencia: ${fechaInicioFormateada} al ${fechaFinFormateada}`,
+              `Estado: ${estado}`,
+              productosText, 
+            ],
+            imageUrl: promo.full_image_url,
+            estado: estado,
+            originalData: promo
+          };
+        }));
+      }
     } catch (error: any) {
       console.error(`Error al cargar datos para ${type}:`, error);
       toast.error(error.response?.data?.message || `Error al cargar datos de ${type}.`);
@@ -204,6 +254,7 @@ export default function ReportsSection({ onEditRequest, refreshKey }: ReportsSec
       setProductReports([]);
       setClientReports([]);
       setEmployeeReports([]);
+       setPromotionReports([]);
       setRawSalesData([]);
       setNoSales(false);
     }
@@ -237,77 +288,114 @@ const salesReports = useMemo((): VentaReportItem[] => {
 }, [rawSalesData]);
 
   const filteredReports = useMemo(() => {
-    let reportsToFilter: any[] = [];
+    let baseReports: (ReportItem | VentaReportItem)[] = [];
     switch (searchType) {
-      case 'clientes': reportsToFilter = clientReports; break;
-      case 'ventas': reportsToFilter = salesReports; break;
-      case 'empleados': reportsToFilter = employeeReports; break;
-      case 'productos': reportsToFilter = productReports; break;
+      case 'clientes': baseReports = clientReports; break;
+      case 'ventas': baseReports = salesReports; break;
+      case 'empleados': baseReports = employeeReports; break;
+      case 'productos': baseReports = productReports; break;
+      case 'promociones': baseReports = promotionReports; break;
       default: return [];
     }
 
-    if (!searchTerm.trim() && !filterField) {
-        return reportsToFilter;
-    }
-    
-    const lowerSearchTerm = searchTerm.toLowerCase();
+    const lowerSearchTerm = searchTerm.toLowerCase().trim();
 
-    if (searchType === 'ventas') {
-      return (reportsToFilter as VentaReportItem[]).filter(item => {
-        if (!filterField) {
-            return item.id.includes(lowerSearchTerm) ||
-                   item.cliente.toLowerCase().includes(lowerSearchTerm) ||
-                   item.empleado.toLowerCase().includes(lowerSearchTerm) ||
-                   item.detalles.some(d => d.productoNombre.toLowerCase().includes(lowerSearchTerm));
-        }
-        switch (filterField) {
-            case 'id pedido': return item.id.includes(lowerSearchTerm);
-            case 'fecha (yyyy-mm-dd)': return item.originalData.Venta?.Fecha.substring(0, 10).includes(lowerSearchTerm);
-            case 'nombre cliente': return item.cliente.toLowerCase().includes(lowerSearchTerm);
-            case 'nombre empleado': return item.empleado.toLowerCase().includes(lowerSearchTerm);
-            case 'tipo de entrega': return item.tipoEntrega.toLowerCase().includes(lowerSearchTerm);
-            case 'tipo de pago': return item.tipoPago.toLowerCase().includes(lowerSearchTerm);
-            case 'estado': return item.estado.toLowerCase().includes(lowerSearchTerm);
-            case 'producto': return item.detalles.some(d => d.productoNombre.toLowerCase().includes(lowerSearchTerm));
-            default: return true;
-        }
-      });
-    }
+    return baseReports.filter(item => {
+      // Caso 1: Filtro por rango de fechas
+      if (filterField === 'entre fechas') {
+        if (!startDate || !endDate) return true; // Mostrar todo si falta una fecha
+        const startFilter = new Date(startDate);
+        startFilter.setUTCHours(0, 0, 0, 0);
+        const endFilter = new Date(endDate);
+        endFilter.setUTCHours(23, 59, 59, 999);
 
-    return (reportsToFilter as ReportItem[]).filter(item => {
-      const { originalData } = item;
-      if (!filterField) { 
-        if (item.name.toLowerCase().includes(lowerSearchTerm)) return true;
-        if (item.details.some(detail => detail.toLowerCase().includes(lowerSearchTerm))) return true;
-        if (searchType === 'productos') {
-            const p = originalData as Producto;
-            return p.descripcion.toLowerCase().includes(lowerSearchTerm) || p.sabores.toLowerCase().includes(lowerSearchTerm) || p.tipo.toLowerCase().includes(lowerSearchTerm) || p.categoria.toLowerCase().includes(lowerSearchTerm) || p.sub_categoria.toLowerCase().includes(lowerSearchTerm);
+        if (searchType === 'ventas') {
+          const ventaDateStr = (item as VentaReportItem).originalData.venta?.fecha;
+          if (!ventaDateStr) return false;
+          const ventaDate = new Date(ventaDateStr);
+          return ventaDate >= startFilter && ventaDate <= endFilter;
+        }
+        if (searchType === 'promociones') {
+          const promo = (item as ReportItem).originalData as Promocion2;
+          const promoStart = new Date(promo.fech_ini);
+          const promoEnd = new Date(promo.fecha_final);
+          return promoStart <= endFilter && promoEnd >= startFilter;
         }
         return false;
       }
       
-      let valueToTest: any;
+    
+      if (!lowerSearchTerm) return true;
+
+      if (!filterField) {
+        if (item.id.toLowerCase().includes(lowerSearchTerm)) return true;
+        if ((item as ReportItem).details?.some(detail => detail.toLowerCase().includes(lowerSearchTerm))) return true;
+
+        if (searchType === 'productos') {
+          const p = (item as ReportItem).originalData as Producto;
+          return p.descripcion.toLowerCase().includes(lowerSearchTerm) || (p.sabores && p.sabores.toLowerCase().includes(lowerSearchTerm)) || p.tipo.toLowerCase().includes(lowerSearchTerm) || p.categoria.toLowerCase().includes(lowerSearchTerm) || p.sub_categoria.toLowerCase().includes(lowerSearchTerm);
+        }
+        if (searchType === 'ventas') {
+          const v = item as VentaReportItem;
+          return v.detalles.some(d => d.productoNombre.toLowerCase().includes(lowerSearchTerm));
+        }
+        return false;
+      }
+
+      // Caso 3: Búsqueda por campo específico
+      let valueToTest: any = '';
+      const originalData = item.originalData as any;
+
       switch (searchType) {
         case 'productos':
-          const p = originalData as Producto;
-          if (filterField === 'tipo') valueToTest = p.tipo;
-          else if (filterField === 'categoría') valueToTest = p.categoria;
-          // ... (otros filtros de producto)
+          if (filterField === 'tipo') valueToTest = originalData.tipo;
+          else if (filterField === 'categoría') valueToTest = originalData.categoria;
+          else if (filterField === 'subcategoría') valueToTest = originalData.sub_categoria;
+          else if (filterField === 'nombre') valueToTest = originalData.nombre;
+          else if (filterField === 'precio') valueToTest = originalData.precio;
+          else if (filterField === 'estado') valueToTest = originalData.estado ? 'activo' : 'inactivo';
+          else if (filterField === 'descripción') valueToTest = originalData.descripcion;
+          else if (filterField === 'sabores') valueToTest = originalData.sabores;
           break;
         case 'clientes':
-          const c = originalData as ClienteAPIResponse;
-          if (filterField === 'nit') valueToTest = c.nit;
-          // ... (otros filtros de cliente)
+          if (filterField === 'nit') valueToTest = originalData.nit;
+          else if (filterField === 'nombre') valueToTest = originalData.nombre;
+          else if (filterField === 'apellido paterno') valueToTest = originalData.apell_paterno;
+          else if (filterField === 'apellido materno') valueToTest = originalData.apell_materno;
+          else if (filterField === 'teléfono') valueToTest = originalData.telefono;
+          else if (filterField === 'usuario') valueToTest = originalData.usuario;
           break;
         case 'empleados':
-          const e = originalData as EmpleadoAPIResponse;
-          if (filterField === 'rol') valueToTest = e.empleado_rol;
-          // ... (otros filtros de empleado)
+          if (filterField === 'rol') valueToTest = originalData.empleado_rol;
+          else if (filterField === 'nombre') valueToTest = originalData.nombre;
+          else if (filterField === 'apellido paterno') valueToTest = originalData.apell_paterno;
+          else if (filterField === 'apellido materno') valueToTest = originalData.apell_materno;
+          else if (filterField === 'teléfono') valueToTest = originalData.telefono;
+          else if (filterField === 'usuario') valueToTest = originalData.usuario;
+          else if (filterField === 'fecha de contrato') return originalData.fecha_contrato ? originalData.fecha_contrato.toString().substring(0, 10) === lowerSearchTerm : false;
+          break;
+        case 'promociones':
+          if (filterField === 'nombre') valueToTest = originalData.strategykey;
+          else if (filterField === 'descripción') valueToTest = originalData.descripcion;
+          else if (filterField === 'fecha de inicio') return originalData.fech_ini.substring(0, 10) === lowerSearchTerm;
+          else if (filterField === 'fecha de fin') return originalData.fecha_final.substring(0, 10) === lowerSearchTerm;
+          else if (filterField === 'activa') valueToTest = item.estado;
+          break;
+        case 'ventas':
+          const venta = item as VentaReportItem;
+          if (filterField === 'id pedido') valueToTest = venta.id;
+          else if (filterField === 'fecha (yyyy-mm-dd)') return venta.originalData.venta?.fecha?.substring(0, 10) === lowerSearchTerm;
+          else if (filterField === 'nombre cliente') valueToTest = venta.cliente;
+          else if (filterField === 'nombre empleado') valueToTest = venta.empleado;
+          else if (filterField === 'tipo de entrega') valueToTest = venta.tipoEntrega;
+          else if (filterField === 'tipo de pago') valueToTest = venta.tipoPago;
+          else if (filterField === 'estado') valueToTest = venta.estado;
+          else if (filterField === 'producto') return venta.detalles.some(d => d.productoNombre.toLowerCase().includes(lowerSearchTerm));
           break;
       }
       return valueToTest?.toString().toLowerCase().includes(lowerSearchTerm);
     });
-  }, [searchType, clientReports, employeeReports, productReports, salesReports, searchTerm, filterField]);
+  }, [searchType, clientReports, employeeReports, productReports, promotionReports, salesReports, searchTerm, filterField, startDate, endDate]);
   
   const handleToggleEstado = async (productId: string, currentEstado: 'activo' | 'inactivo') => {
     const productIndex = productReports.findIndex(p => p.id === productId);
@@ -332,6 +420,7 @@ const salesReports = useMemo((): VentaReportItem[] => {
         if (searchType === 'clientes' && item.usuario) await eliminarCliente(item.usuario);
         else if (searchType === 'empleados' && item.usuario) await eliminarEmpleado(item.usuario);
         else if (searchType === 'productos') await eliminarProductoAPI(item.name);
+        else if (searchType === 'promociones') await eliminarPromocion(item.name);
         toast.success(`"${item.name}" eliminado exitosamente.`);
         fetchAndSetData(searchType);
     } catch (error: any) {
@@ -341,7 +430,13 @@ const salesReports = useMemo((): VentaReportItem[] => {
     }
   };
   
-  const handleSearchSubmit = (e: React.FormEvent) => { e.preventDefault(); };
+   const handleSearchSubmit = (e: React.FormEvent) => { 
+    e.preventDefault(); 
+    setAppliedFilterField(filterField);
+    setAppliedSearchTerm(searchTerm);
+    setAppliedStartDate(startDate);
+    setAppliedEndDate(endDate);
+  };
 
   const renderReportCards = () => {
     const items = filteredReports;
@@ -381,7 +476,7 @@ const salesReports = useMemo((): VentaReportItem[] => {
                         {item.estado === 'activo' ? 'Inactivar' : 'Activar'}
                     </button>
                     )}
-                    {(searchType === 'productos' || searchType === 'empleados') && (
+                    {(searchType === 'productos' || searchType === 'empleados'|| searchType === 'promociones') && (
                     <button className="text-sm bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded whitespace-nowrap" onClick={() => onEditRequest(item)} disabled={isLoading}>
                         Modificar
                     </button>
@@ -398,6 +493,22 @@ const salesReports = useMemo((): VentaReportItem[] => {
     );
   };
 
+  const showSingleDatePicker = 
+    (searchType === 'ventas' && filterField === 'fecha (yyyy-mm-dd)') ||
+    (searchType === 'empleados' && filterField === 'fecha de contrato') ||
+    (searchType === 'promociones' && (filterField === 'fecha de inicio' || filterField === 'fecha de fin'));
+
+  const showDateRangePicker = filterField === 'entre fechas';
+
+   const clearAllFilters = () => {
+    setSearchTerm('');
+    setStartDate('');
+    setEndDate('');
+    setAppliedSearchTerm('');
+    setAppliedStartDate('');
+    setAppliedEndDate('');
+    setAppliedFilterField('');
+  };
   return (
     <section id="Repor" className="h-full w-full flex flex-col items-center bg-gray-100 py-8 px-4 min-h-screen">
       <h2 className="text-3xl font-bold text-gray-800 mb-6">Reportes</h2>
@@ -427,7 +538,10 @@ const salesReports = useMemo((): VentaReportItem[] => {
         <form onSubmit={handleSearchSubmit} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 mb-6 w-full max-w-4xl bg-white p-4 rounded shadow">
           <select
             value={filterField}
-            onChange={(e) => setFilterField(e.target.value)}
+            onChange={(e) => {
+              setFilterField(e.target.value);
+              clearAllFilters();
+            }}
             className="border border-gray-300 bg-white text-gray-800 font-medium rounded px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:w-auto disabled:opacity-50"
             disabled={isLoading || filterOptions[searchType]?.length === 0}
           >
@@ -436,14 +550,48 @@ const salesReports = useMemo((): VentaReportItem[] => {
               <option key={opt} value={opt.toLowerCase().replace(/\s+/g, ' ').trim()}>{opt}</option>
             ))}
           </select>
-          <input
-            type="text"
-            placeholder="Buscar..."
-            className="border border-gray-300 bg-white text-gray-800 font-medium rounded px-4 py-2 flex-grow shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:flex-1 disabled:opacity-50"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            disabled={isLoading}
-          />
+
+
+          
+          {showDateRangePicker ? (
+            <div className="flex flex-col md:flex-row md:items-center gap-2 flex-grow w-full">
+              <input
+                type="date"
+                className="border border-gray-300 bg-white text-gray-800 font-medium rounded px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:flex-1 disabled:opacity-50"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                disabled={isLoading}
+              />
+              <span className="text-gray-500 font-medium hidden md:block">a</span>
+              <input
+                type="date"
+                className="border border-gray-300 bg-white text-gray-800 font-medium rounded px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:flex-1 disabled:opacity-50"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+                disabled={isLoading}
+              />
+            </div>
+          ) : showSingleDatePicker? (
+            <input
+              type="date"
+              className="border border-gray-300 bg-white text-gray-800 font-medium rounded px-4 py-2 flex-grow shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:flex-1 disabled:opacity-50"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              disabled={isLoading}
+            />
+          ) : (
+            <input
+              type="text"
+              placeholder="Buscar..."
+              className="border border-gray-300 bg-white text-gray-800 font-medium rounded px-4 py-2 flex-grow shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:flex-1 disabled:opacity-50"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              //disabled={isLoading}
+              
+              disabled={isLoading || (filterField === 'entre fechas')}
+            />
+          )}
+
           <button
             type="submit"
             className="bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow hover:bg-blue-700 transition w-full md:w-auto disabled:opacity-50"
@@ -461,6 +609,7 @@ const salesReports = useMemo((): VentaReportItem[] => {
   searchType === 'empleados' ? 'bg-[#E8F5E9]' :
   searchType === 'productos' ? 'bg-[#F3E5F5]' :
   searchType === 'ventas' ? 'bg-orange-50' :
+  searchType === 'promociones' ? 'bg-teal-50' :
   'bg-white'
 } text-gray-800`}>
 
@@ -469,6 +618,7 @@ const salesReports = useMemo((): VentaReportItem[] => {
               searchType === 'empleados' ? 'text-[#43A047]' :
               searchType === 'productos' ? 'text-[#8E24AA]' :
               searchType === 'ventas' ? 'text-orange-600' :
+              searchType === 'promociones' ? 'text-teal-700' :
               'text-gray-700'
             }`}>
               Reportes de {searchType}

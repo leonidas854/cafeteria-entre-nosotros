@@ -1,4 +1,6 @@
-
+body, html {
+  overflow-x: hidden;
+}
 .card {
     position: relative;
     width: 100%;
@@ -7,7 +9,9 @@
     transform-style: preserve-3d;
     transition: all 0.8s ease;
     text-align: center;
-    margin-bottom: 0;
+    transform-origin: center center; /* Evita desplazamiento durante la rotación */
+    margin-bottom: 0 !important;
+
 }
   .card:hover {
     transform: rotateY(180deg);
@@ -15,16 +19,17 @@
   
 
 .clientes-container {
+    min-height: auto !important; /* Elimina el 100vh forzado */
+    height: auto;
+    padding-bottom: 0 !important;
     background-color: #3F3127;
     font-family: 'URWClassico-Bold', serif;
     backdrop-filter: blur(5px);
     padding: 2rem;
     position: relative;
-    height: auto;
-    min-height: 100vh;
     width: 85vw;
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: auto;
     border-radius: 20px;
     box-shadow: 16px 14px 20px #2C2C2C;
     overflow: hidden;
@@ -32,6 +37,8 @@
 }
 
 .cards-container {
+     margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,7 +127,9 @@ h1.text-4xl.md\:text-5xl {
 }
 
 .clientes {
-    background-color: #7E634E;
+    background-color: #BFA977;
+     padding: 0 !important; /* Elimina padding heredado */
+    margin: 0 !important;
 }
 
 /*.clientes-container * {
@@ -130,7 +139,7 @@ h1.text-4xl.md\:text-5xl {
 
 .clientes-container::before {
     content: "";
-    position: absolute;
+    position: relative;
     top: -50%;
     left: -50%;
     width: 200%;
@@ -226,3 +235,4 @@ spline-viewer {
   width: 100%;
   height: 100vh;
 }
+

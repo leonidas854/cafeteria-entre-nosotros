@@ -69,8 +69,10 @@ wwwroot\imagenes\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg
 wwwroot\imagenes\fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg
 wwwroot\Promociones\1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg
 wwwroot\Promociones\227f5e98-0d51-4e33-8ef5-2d4280138e49.png
+wwwroot\Promociones\3418a149-c281-488b-a246-d7b80d8d64f1.jpg
 wwwroot\Promociones\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg
 wwwroot\Promociones\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png
+wwwroot\Promociones\45578a04-c985-4efd-8628-a7712e719e9a.jpg
 wwwroot\Promociones\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png
 wwwroot\Promociones\6ff8d76d-bac9-4853-8578-7fa32b6040c2.jpg
 wwwroot\Promociones\825b384e-a601-4b5e-be7e-9caf1cd34007.png

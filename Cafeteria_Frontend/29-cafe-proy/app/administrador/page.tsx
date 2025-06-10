@@ -20,9 +20,11 @@ import './styles/reports-section.css';
 
 import type { Producto } from '@/app/api/productos';
 
+import type { Promocion2 } from '@/app/api/Promociones';
+
 export default function AdminDashboardPage() {
   const [currentUser, setCurrentUser] = useState('');
-  const [itemToEdit, setItemToEdit] = useState<Producto | EmpleadoAPIResponse | null>(null);
+  const [itemToEdit, setItemToEdit] = useState<Producto | EmpleadoAPIResponse |  Promocion2 |null>(null);
   const [refreshReportsKey, setRefreshReportsKey] = useState(0);
   const router = useRouter();
 
@@ -47,6 +49,9 @@ export default function AdminDashboardPage() {
     } else if ('categoria' in item.originalData) {
       setItemToEdit(item.originalData as Producto);
       document.getElementById('prod')?.scrollIntoView({ behavior: 'smooth' });
+    } else if ('strategykey' in item.originalData) { // Clave para identificar una promoción
+      setItemToEdit(item.originalData as Promocion2);
+      document.getElementById('Prom')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -65,6 +70,7 @@ export default function AdminDashboardPage() {
 
   const productToEdit = itemToEdit && 'categoria' in itemToEdit ? itemToEdit : null;
   const employeeToEdit = itemToEdit && 'empleado_rol' in itemToEdit ? itemToEdit : null;
+   const promotionToEdit = itemToEdit && 'strategykey' in itemToEdit ? itemToEdit : null;
 
   return (
     <div className="admin-dashboard">
@@ -89,8 +95,11 @@ export default function AdminDashboardPage() {
 
      
 
-      <PromotionManagementSection />
-
+      <PromotionManagementSection
+        promotionToEdit={promotionToEdit}
+        onUpdateComplete={handleUpdateComplete}
+        onCancelEdit={handleCancelEdit}
+      />
     
       <ReportsSection
         onEditRequest={handleEditRequest}

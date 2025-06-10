@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { crearPromocion, NuevaPromocion } from '@/app/api/Promociones';
+import { crearPromocion, editarPromocion, NuevaPromocion, Promocion2 } from '@/app/api/Promociones';
 import { getProductos, Productos } from '@/app/api/Admin';
 import toast from 'react-hot-toast';
 
@@ -25,23 +25,56 @@ const initialPromotionFormState: PromotionFormData = {
   productos: []
 };
 
-export default function PromotionForm() {
+
+interface PromotionFormProps {
+  promotionToEdit?: Promocion2 | null;
+  onUpdateComplete?: () => void;
+  onCancelEdit?: () => void;
+}
+
+export default function PromotionForm({ promotionToEdit, onUpdateComplete, onCancelEdit }: PromotionFormProps) {
+  const isEditMode = !!promotionToEdit;
   const [formData, setFormData] = useState<PromotionFormData>(initialPromotionFormState);
   const [productosDisponibles, setProductosDisponibles] = useState<Productos[]>([]);
   const [productosSeleccionados, setProductosSeleccionados] = useState<Productos[]>([]);
   const [errorArchivo, setErrorArchivo] = useState('');
-
+const [originalStrategyKey, setOriginalStrategyKey] = useState<string>('');
   useEffect(() => {
     const cargarProductos = async () => {
       try {
-        const productos = await getProductos();
-        setProductosDisponibles(productos);
+        const todosLosProductos = await getProductos();
+
+        if (isEditMode && promotionToEdit) {
+      
+          setFormData({
+            descripcion: promotionToEdit.descripcion,
+            descuento: promotionToEdit.descuento.toString(),
+      
+            fechaInicial: promotionToEdit.fech_ini.substring(0, 10),
+            fechaFinal: promotionToEdit.fecha_final.substring(0, 10),
+            strategykey: promotionToEdit.strategykey,
+            imagen: null,
+            productos: promotionToEdit.productos.map(p => p.id)
+          });
+          
+          setOriginalStrategyKey(promotionToEdit.strategykey);
+          setProductosSeleccionados(promotionToEdit.productos.map(p => ({ id_producto: p.id, nombre: p.nombre })));
+          
+          const idsSeleccionados = new Set(promotionToEdit.productos.map(p => p.id));
+          setProductosDisponibles(todosLosProductos.filter(p => !idsSeleccionados.has(p.id_producto)));
+        
+        } else {
+          
+          setProductosDisponibles(todosLosProductos);
+          setProductosSeleccionados([]);
+          setFormData(initialPromotionFormState);
+        }
       } catch (error) {
         toast.error('Error al cargar los productos');
       }
     };
     cargarProductos();
-  }, []);
+  }, [promotionToEdit, isEditMode]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
      const { name, value } = e.target;
@@ -106,7 +139,7 @@ export default function PromotionForm() {
       return;
     }
 
-    const promo: NuevaPromocion = {
+    const promoData: NuevaPromocion = {
       descripcion: formData.descripcion,
       descuento: parseFloat(formData.descuento),
       fech_ini: formData.fechaInicial,
@@ -117,13 +150,19 @@ export default function PromotionForm() {
     };
 
     try {
-      await crearPromocion(promo);
-      setFormData(initialPromotionFormState);
-      setProductosSeleccionados([]);
-      const productos = await getProductos();
-      setProductosDisponibles(productos);
+      if (isEditMode) {
+        await editarPromocion(originalStrategyKey, promoData);
+        onUpdateComplete?.(); 
+      } else {
+        await crearPromocion(promoData);
+      
+        setFormData(initialPromotionFormState);
+        setProductosSeleccionados([]);
+        const productos = await getProductos();
+        setProductosDisponibles(productos);
+      }
     } catch (error) {
-      console.error("Error al crear promoción:", error);
+      console.error(isEditMode ? "Error al editar promoción:" : "Error al crear promoción:", error);
     }
   };
 
@@ -201,7 +240,7 @@ export default function PromotionForm() {
           </label>
          <input
           type="file"
-          id="product-imagen"
+          id="promotion-form-imagen" 
           name="imagen"
           className={`form-input w-full p-2 border rounded ${
              errorArchivo ? 'border-red-500' : 'border-gray-300'
@@ -253,9 +292,24 @@ export default function PromotionForm() {
         </div>
       </div>
 
-      <button type="submit" className="prom-button w-full py-2 px-4 rounded">
-        AGREGAR PROMOCIÓN
-      </button>
+       {isEditMode ? (
+        <div className="flex space-x-4 mt-6">
+          <button type="submit" className="prom-button flex-1">
+            ACTUALIZAR PROMOCIÓN
+          </button>
+          <button
+            type="button"
+            onClick={onCancelEdit}
+            className="w-full py-2 px-4 rounded bg-gray-500 text-white hover:bg-gray-600 flex-1"
+          >
+            CANCELAR
+          </button>
+        </div>
+      ) : (
+        <button type="submit" className="prom-button w-full py-2 px-4 rounded">
+          AGREGAR PROMOCIÓN
+        </button>
+      )}
     </form>
   );
 }

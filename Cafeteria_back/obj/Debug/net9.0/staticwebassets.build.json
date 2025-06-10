@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d/qM3cw0itMlUzJa1010fdwa98Df+xWiyrsjqn2DNsw=",
+  "Hash": "X9L2/cpQ9Y1ozo5V0x9oIuUmi4JBy0aXiQzEa7j2MQc=",
   "Source": "Cafeteria_back",
   "BasePath": "_content/Cafeteria_back",
   "Mode": "Default",
@@ -1508,6 +1508,27 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\227f5e98-0d51-4e33-8ef5-2d4280138e49.png"
     },
     {
+      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
+      "SourceId": "Cafeteria_back",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "BasePath": "_content/Cafeteria_back",
+      "RelativePath": "Promociones/3418a149-c281-488b-a246-d7b80d8d64f1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6dega66b00",
+      "Integrity": "RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg"
+    },
+    {
       "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
@@ -1548,6 +1569,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Promociones\\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png"
+    },
+    {
+      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg",
+      "SourceId": "Cafeteria_back",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "BasePath": "_content/Cafeteria_back",
+      "RelativePath": "Promociones/45578a04-c985-4efd-8628-a7712e719e9a#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6dega66b00",
+      "Integrity": "RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg"
     },
     {
       "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png",
@@ -7500,6 +7542,88 @@
       ]
     },
     {
+      "Route": "Promociones/3418a149-c281-488b-a246-d7b80d8d64f1.6dega66b00.jpg",
+      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "78911"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Jun 2025 19:17:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6dega66b00"
+        },
+        {
+          "Name": "label",
+          "Value": "Promociones/3418a149-c281-488b-a246-d7b80d8d64f1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404="
+        }
+      ]
+    },
+    {
+      "Route": "Promociones/3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
+      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "78911"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Jun 2025 19:17:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404="
+        }
+      ]
+    },
+    {
       "Route": "Promociones/3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.b5ltcwhidv.jpg",
       "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
       "Selectors": [],
@@ -7660,6 +7784,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-n2gQH35VjjM68kRSBxGeyks6QaOpUtBnMk2SP+qdyL4="
+        }
+      ]
+    },
+    {
+      "Route": "Promociones/45578a04-c985-4efd-8628-a7712e719e9a.6dega66b00.jpg",
+      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "78911"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Jun 2025 16:05:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6dega66b00"
+        },
+        {
+          "Name": "label",
+          "Value": "Promociones/45578a04-c985-4efd-8628-a7712e719e9a.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404="
+        }
+      ]
+    },
+    {
+      "Route": "Promociones/45578a04-c985-4efd-8628-a7712e719e9a.jpg",
+      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "78911"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Jun 2025 16:05:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RhG9WR3zQbaPccYUwYeXbLRaWefpFacJNOqwJsEi404="
         }
       ]
     },

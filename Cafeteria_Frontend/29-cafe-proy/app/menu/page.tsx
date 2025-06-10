@@ -92,6 +92,7 @@ const cargarCarrito = async () => {
   };
   const verificarPedidos = async () => {
   try {
+    
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Pedido/mis-pedidos`, {
       withCredentials: true
     });
@@ -101,20 +102,16 @@ const cargarCarrito = async () => {
       setMostrarBotonHistorial(false);
     }
   } catch (error: any) {
-    if (error.response?.status === 401) {
+    if (error.response?.status === 401|| error.response?.status === 404) {
       setMostrarBotonHistorial(false);
+      
     } else {
       console.error("Error al verificar pedidos:", error);
     }
   }
 };
 
-
-
   useEffect(() => {
-
-    
- 
     const fetchProductos = async () => {
       try {
         const data = await getProductos();
@@ -160,7 +157,7 @@ const agruparPorCategoria = (productos: Producto[]): GroupedProducts => {
       }
       agrupado[categoria].subcategorias![subcategoria].push(producto);
     } else {
-      // Productos sin subcategoría
+
       if (!agrupado[categoria].sinSubcategoria) {
         agrupado[categoria].sinSubcategoria = [];
       }

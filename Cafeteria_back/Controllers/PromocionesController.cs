@@ -121,11 +121,52 @@ namespace Cafeteria_back.Controllers
             return Ok(resultado);
         }
 
+        [HttpGet("todas")]
+        public async Task<ActionResult<IEnumerable<PromocionTodoDTO>>> ObtenerTodasLasPromociones()
+        {
+            var promociones = await _context.Promociones
+             
+               .Include(p => p.Producto_promocion!)
+                   .ThenInclude(pp => pp.Producto)
+               .ToListAsync();
+
+          
+            var resultado = promociones.Select(p => new PromocionTodoDTO
+            {
+                id = p.Id_promocion,
+                Strategykey = p.Strategykey!,
+                Descuento = p.Descuento,
+                Fech_ini = p.Fech_ini,
+                Fecha_final = p.Fecha_final,
+                Descripcion = p.Descripcion!,
+                Url_imagen = p.Url_imagen,
+
+               
+                Productos = p.Producto_promocion!
+                    .Select(pp => new ProductoDto
+                    {
+                        Id = pp.Producto!.Id_producto,
+                        Nombre = pp.Producto.Nombre!,
+                        Precio = pp.Producto.Precio,
+                        Categoria = pp.Producto.Categoria,
+                        ImageUrl = pp.Producto.Image_url
+                    })
+                    .ToList()
+            });
+
+           
+            return Ok(resultado);
+        }
+
+
+
+
 
 
 
         [HttpPut("{strategykey}")]
         [Authorize]
+        [Consumes("application/json")]
         public async Task<IActionResult> EditarPromocion(string strategykey, [FromBody] PromocionDTO dto)
         {
             var promocion = await _context.Promociones
@@ -137,43 +178,52 @@ namespace Cafeteria_back.Controllers
 
             if (!string.Equals(promocion.Strategykey, dto.Strategykey, StringComparison.OrdinalIgnoreCase))
             {
-                bool claveRepetida = await _context.Promociones
-                    .AnyAsync(p => p.Strategykey!.ToLower() == dto.Strategykey.ToLower());
-
-                if (claveRepetida)
+                var existe = await _context.Promociones.AnyAsync(p => p.Strategykey!.ToLower() == dto.Strategykey.ToLower());
+                if (existe)
                     return Conflict("Ya existe otra promoción con ese Strategykey.");
             }
 
             if (dto.Productos == null || !dto.Productos.Any())
                 return BadRequest("Debe asociarse al menos un producto válido.");
 
-            var productos = await _context.Productos
+            var productosValidos = await _context.Productos
                 .Where(p => dto.Productos.Contains(p.Id_producto))
                 .ToListAsync();
 
-            if (productos.Count == 0)
+            if (!productosValidos.Any())
                 return BadRequest("No se encontraron productos válidos.");
 
-
-            promocion.Descuento = dto.Descuento;
-            promocion.Fech_ini = dto.Fech_ini.ToUniversalTime();
-            promocion.Fecha_final = dto.Fecha_final.ToUniversalTime();
-            promocion.Descripcion = dto.Descripcion;
-            promocion.Strategykey = dto.Strategykey;
-
-            promocion.Producto_promocion!.Clear();
-            foreach (var producto in productos)
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
             {
-                promocion.Producto_promocion.Add(new Producto_Promocion
+                promocion.Descuento = dto.Descuento;
+                promocion.Fech_ini = dto.Fech_ini.ToUniversalTime();
+                promocion.Fecha_final = dto.Fecha_final.ToUniversalTime();
+                promocion.Descripcion = dto.Descripcion;
+                promocion.Strategykey = dto.Strategykey;
+
+                promocion.Producto_promocion!.Clear();
+                foreach (var prod in productosValidos)
                 {
-                    Producto_id = producto.Id_producto,
-                    Promocion_id = promocion.Id_promocion
-                });
+                    promocion.Producto_promocion.Add(new Producto_Promocion
+                    {
+                        Producto_id = prod.Id_producto,
+                        Promocion_id = promocion.Id_promocion
+                    });
+                }
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                return StatusCode(500, $"Error al editar la promoción. Detalle: {ex.Message}");
             }
 
-            await _context.SaveChangesAsync();
-            return NoContent();
+            return Ok(new { isSuccess = true, strategykey = promocion.Strategykey });
         }
+
 
 
         [HttpDelete("{strategykey}")]
@@ -187,11 +237,22 @@ namespace Cafeteria_back.Controllers
             if (promocion == null)
                 return NotFound("Promoción no encontrada.");
 
-            _context.Promociones.Remove(promocion);
-            await _context.SaveChangesAsync();
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                _context.Promociones.Remove(promocion);
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                return StatusCode(500, $"Error al eliminar la promoción. Detalle: {ex.Message}");
+            }
 
-            return NoContent();
+            return Ok(new { isSuccess = true, message = "Promoción eliminada correctamente." });
         }
+
 
 
 

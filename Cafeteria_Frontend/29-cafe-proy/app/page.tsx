@@ -221,11 +221,11 @@
             {
               children: (
 
-                <div className="clientes absolute inset-0 flex flex-col items-center justify-center">
+                <div className="clientes inset-0 flex flex-col items-center justify-center">
                   <div className="clientes-container w-full max-w-6xl px-4">
                     <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white"> ✧ ── ༻ CONOCENOS ༺ ── ✧ </h1>
                     
-                    <div className="cards-container flex flex-col md:flex-row justify-center gap-8">
+                    <div className="cards-container flex flex-wrap justify-center gap-4 p-0">
                       <div className="card">
                         <div className="face front">
                           <Image
@@ -233,7 +233,7 @@
                             alt="MISION"
                             width={800}
                             height={400}
-                            className="w-full h-full object-cover max-h-109"
+                            
                           />
                           <h3 className="text-2xl font-bold text-center p-4 text-white" >MISION</h3>
                         </div>
@@ -245,8 +245,6 @@
                           </div>
                         </div>
                       </div>
-
-                      {/* Tarjeta de Cliente Anterior */}
                       <div className="card">
                         <div className="face front">
                           <Image
@@ -272,7 +270,7 @@
               )
             }
           ]}
-          className="w-full h-screen"
+          className="w-full min-h-screen"
         />
 
         

@@ -250,8 +250,6 @@ namespace Cafeteria_back.Controllers
         [HttpGet("Todas-las-ventas")]
         public async Task<IActionResult> TodaslasVentas()
         {
-           
-
             var ventas = await _context.Ventas
                 .Include(v => v.Pedido)
                 .OrderByDescending(v => v.Ven_fecha)

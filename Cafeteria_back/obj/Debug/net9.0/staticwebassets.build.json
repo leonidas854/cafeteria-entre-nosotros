@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X9L2/cpQ9Y1ozo5V0x9oIuUmi4JBy0aXiQzEa7j2MQc=",
+  "Hash": "rcv53Y+GZMRL1XYWRFamKvy/ZLHnGbwp15Z+USsSvIY=",
   "Source": "Cafeteria_back",
   "BasePath": "_content/Cafeteria_back",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Cafeteria_back\\wwwroot",
       "Source": "Cafeteria_back",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/03160dea-502f-438e-82c9-1b45577748d1#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -59,10 +59,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/1589500f-5cd5-4496-b57c-091786e1e871#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/1822e8e2-2d04-4257-b9b6-1664cda85583#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/1f281248-f9f0-49d5-8d38-c6f59f699524#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f51417f-5e77-44f7-b05a-98f0d7dc67e8.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f51417f-5e77-44f7-b05a-98f0d7dc67e8.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/1f51417f-5e77-44f7-b05a-98f0d7dc67e8#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\1f51417f-5e77-44f7-b05a-98f0d7dc67e8.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2169fff8-7718-4c83-bbe2-ee6583f73f7f.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2169fff8-7718-4c83-bbe2-ee6583f73f7f.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/2169fff8-7718-4c83-bbe2-ee6583f73f7f#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -164,10 +164,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\2169fff8-7718-4c83-bbe2-ee6583f73f7f.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2274a660-85e8-4433-bca3-2a90bfb02fb0.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2274a660-85e8-4433-bca3-2a90bfb02fb0.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/2274a660-85e8-4433-bca3-2a90bfb02fb0#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -185,10 +185,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\2274a660-85e8-4433-bca3-2a90bfb02fb0.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\23a861a6-fea9-41ce-a701-99d6d0674c21.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\23a861a6-fea9-41ce-a701-99d6d0674c21.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/23a861a6-fea9-41ce-a701-99d6d0674c21#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -206,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\23a861a6-fea9-41ce-a701-99d6d0674c21.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/2fb47f55-df2e-4998-94ff-6e5ab4c3aac8#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -227,10 +227,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\30bf2f02-008b-4c03-9711-1fcc32d90bab.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\30bf2f02-008b-4c03-9711-1fcc32d90bab.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/30bf2f02-008b-4c03-9711-1fcc32d90bab#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -248,10 +248,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\30bf2f02-008b-4c03-9711-1fcc32d90bab.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\327ff9d4-5d3d-467a-9d87-d1c186792e76.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\327ff9d4-5d3d-467a-9d87-d1c186792e76.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/327ff9d4-5d3d-467a-9d87-d1c186792e76#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -269,10 +269,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\327ff9d4-5d3d-467a-9d87-d1c186792e76.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\32d705e3-f3ab-44da-ac2a-698503aab2c9.webp",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\32d705e3-f3ab-44da-ac2a-698503aab2c9.webp",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/32d705e3-f3ab-44da-ac2a-698503aab2c9#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -290,10 +290,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\32d705e3-f3ab-44da-ac2a-698503aab2c9.webp"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\3fb61376-366f-4ad1-b581-2dff16dfe696.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\3fb61376-366f-4ad1-b581-2dff16dfe696.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/3fb61376-366f-4ad1-b581-2dff16dfe696#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -311,10 +311,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\3fb61376-366f-4ad1-b581-2dff16dfe696.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\40263e75-bcf3-4b2f-a8a9-436cc7ca7a93.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\40263e75-bcf3-4b2f-a8a9-436cc7ca7a93.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/40263e75-bcf3-4b2f-a8a9-436cc7ca7a93#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -332,10 +332,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\40263e75-bcf3-4b2f-a8a9-436cc7ca7a93.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4035aee2-1c70-479c-834f-26bc4d977f43.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4035aee2-1c70-479c-834f-26bc4d977f43.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/4035aee2-1c70-479c-834f-26bc4d977f43#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -353,10 +353,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\4035aee2-1c70-479c-834f-26bc4d977f43.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\41cf12c8-bb1d-4908-9bd3-d86c066902c4.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\41cf12c8-bb1d-4908-9bd3-d86c066902c4.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/41cf12c8-bb1d-4908-9bd3-d86c066902c4#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\41cf12c8-bb1d-4908-9bd3-d86c066902c4.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\42db3889-00a9-498f-9787-e54facd827d4.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\42db3889-00a9-498f-9787-e54facd827d4.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/42db3889-00a9-498f-9787-e54facd827d4#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -395,10 +395,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\42db3889-00a9-498f-9787-e54facd827d4.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\49e8978b-3077-4b49-b426-7c97bae0b44a.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\49e8978b-3077-4b49-b426-7c97bae0b44a.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/49e8978b-3077-4b49-b426-7c97bae0b44a#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\49e8978b-3077-4b49-b426-7c97bae0b44a.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4d60bc3d-92a7-44b9-8c73-28f242890b20.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4d60bc3d-92a7-44b9-8c73-28f242890b20.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/4d60bc3d-92a7-44b9-8c73-28f242890b20#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -437,10 +437,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\4d60bc3d-92a7-44b9-8c73-28f242890b20.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\546717ea-30f5-4342-bb6b-848ccb12fc0c.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\546717ea-30f5-4342-bb6b-848ccb12fc0c.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/546717ea-30f5-4342-bb6b-848ccb12fc0c#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -458,10 +458,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\546717ea-30f5-4342-bb6b-848ccb12fc0c.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\56e57c11-8727-4971-988e-61a3edf7af80.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\56e57c11-8727-4971-988e-61a3edf7af80.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/56e57c11-8727-4971-988e-61a3edf7af80#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -479,10 +479,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\56e57c11-8727-4971-988e-61a3edf7af80.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5bd135a0-074c-437f-ac1e-fec74c0b5497.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5bd135a0-074c-437f-ac1e-fec74c0b5497.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/5bd135a0-074c-437f-ac1e-fec74c0b5497#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -500,10 +500,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\5bd135a0-074c-437f-ac1e-fec74c0b5497.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5d20704b-b147-44f6-8221-a4a1c57fa493.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5d20704b-b147-44f6-8221-a4a1c57fa493.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/5d20704b-b147-44f6-8221-a4a1c57fa493#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -521,10 +521,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\5d20704b-b147-44f6-8221-a4a1c57fa493.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5e1d496f-e033-42e9-a9d5-64ec66f4c580.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5e1d496f-e033-42e9-a9d5-64ec66f4c580.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/5e1d496f-e033-42e9-a9d5-64ec66f4c580#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -542,10 +542,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\5e1d496f-e033-42e9-a9d5-64ec66f4c580.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/62c3acb4-2542-44e1-abbb-94d9fc8f7ba7#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -563,10 +563,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/67ccfb9a-d615-47b4-aea6-d04a55bead63#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -584,10 +584,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6af8ab89-413a-4a44-9f1a-13ae1f177b55.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6af8ab89-413a-4a44-9f1a-13ae1f177b55.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/6af8ab89-413a-4a44-9f1a-13ae1f177b55#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -605,10 +605,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\6af8ab89-413a-4a44-9f1a-13ae1f177b55.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6be14fbf-8497-4db0-8af6-7b67d61cee7b.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6be14fbf-8497-4db0-8af6-7b67d61cee7b.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/6be14fbf-8497-4db0-8af6-7b67d61cee7b#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -626,10 +626,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\6be14fbf-8497-4db0-8af6-7b67d61cee7b.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6fc1ab8b-ed28-4135-843b-8048ea9fe5e4.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6fc1ab8b-ed28-4135-843b-8048ea9fe5e4.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/6fc1ab8b-ed28-4135-843b-8048ea9fe5e4#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -647,10 +647,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\6fc1ab8b-ed28-4135-843b-8048ea9fe5e4.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\70bbfe56-9b6b-40a6-9d28-9d38fbde0845.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\70bbfe56-9b6b-40a6-9d28-9d38fbde0845.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/70bbfe56-9b6b-40a6-9d28-9d38fbde0845#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -668,10 +668,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\70bbfe56-9b6b-40a6-9d28-9d38fbde0845.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\723b57f6-5de2-4985-b8b7-a0401eff8e3b.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\723b57f6-5de2-4985-b8b7-a0401eff8e3b.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/723b57f6-5de2-4985-b8b7-a0401eff8e3b#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -689,10 +689,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\723b57f6-5de2-4985-b8b7-a0401eff8e3b.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7749f7ee-c90b-4a52-a7e7-bcc9733b443b.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7749f7ee-c90b-4a52-a7e7-bcc9733b443b.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/7749f7ee-c90b-4a52-a7e7-bcc9733b443b#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -710,10 +710,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\7749f7ee-c90b-4a52-a7e7-bcc9733b443b.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\793b27c3-5196-4bd3-9104-8719cf01161d.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\793b27c3-5196-4bd3-9104-8719cf01161d.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/793b27c3-5196-4bd3-9104-8719cf01161d#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\793b27c3-5196-4bd3-9104-8719cf01161d.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7d6b8725-13e0-4236-a3a6-9c985e8856c0.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7d6b8725-13e0-4236-a3a6-9c985e8856c0.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/7d6b8725-13e0-4236-a3a6-9c985e8856c0#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -752,10 +752,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\7d6b8725-13e0-4236-a3a6-9c985e8856c0.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\82867cf2-3f97-4dec-9060-98e86ecbde13.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\82867cf2-3f97-4dec-9060-98e86ecbde13.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/82867cf2-3f97-4dec-9060-98e86ecbde13#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -773,10 +773,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\82867cf2-3f97-4dec-9060-98e86ecbde13.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\85dc3fcb-d0b7-488f-b7ef-4b61eab79611.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\85dc3fcb-d0b7-488f-b7ef-4b61eab79611.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/85dc3fcb-d0b7-488f-b7ef-4b61eab79611#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -794,10 +794,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\85dc3fcb-d0b7-488f-b7ef-4b61eab79611.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\87bfdf7d-d6dc-4137-b009-a2f9378431f7.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\87bfdf7d-d6dc-4137-b009-a2f9378431f7.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/87bfdf7d-d6dc-4137-b009-a2f9378431f7#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\87bfdf7d-d6dc-4137-b009-a2f9378431f7.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9133ca6f-44e4-4f53-966b-4d4dbc6d9305.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9133ca6f-44e4-4f53-966b-4d4dbc6d9305.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/9133ca6f-44e4-4f53-966b-4d4dbc6d9305#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -836,10 +836,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\9133ca6f-44e4-4f53-966b-4d4dbc6d9305.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9528c487-cf73-4b79-9aa6-1fdab89dc8f9.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9528c487-cf73-4b79-9aa6-1fdab89dc8f9.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/9528c487-cf73-4b79-9aa6-1fdab89dc8f9#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -857,10 +857,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\9528c487-cf73-4b79-9aa6-1fdab89dc8f9.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -878,10 +878,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9a53428c-23d4-4a74-8931-d83da550578f.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9a53428c-23d4-4a74-8931-d83da550578f.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/9a53428c-23d4-4a74-8931-d83da550578f#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -899,10 +899,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\9a53428c-23d4-4a74-8931-d83da550578f.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9e750308-8cc5-4aba-a238-1b4dc3edb281.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9e750308-8cc5-4aba-a238-1b4dc3edb281.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/9e750308-8cc5-4aba-a238-1b4dc3edb281#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -920,10 +920,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\9e750308-8cc5-4aba-a238-1b4dc3edb281.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9fab5733-7906-4965-b485-66b84ece1071.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9fab5733-7906-4965-b485-66b84ece1071.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/9fab5733-7906-4965-b485-66b84ece1071#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -941,10 +941,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\9fab5733-7906-4965-b485-66b84ece1071.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a5eba843-4b6b-4195-8548-a4ba1ab6a469.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a5eba843-4b6b-4195-8548-a4ba1ab6a469.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/a5eba843-4b6b-4195-8548-a4ba1ab6a469#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -962,10 +962,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\a5eba843-4b6b-4195-8548-a4ba1ab6a469.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a8d1e4f1-0d97-458c-b9bf-b4a7de24c514.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a8d1e4f1-0d97-458c-b9bf-b4a7de24c514.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/a8d1e4f1-0d97-458c-b9bf-b4a7de24c514#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -983,10 +983,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\a8d1e4f1-0d97-458c-b9bf-b4a7de24c514.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aa4b323e-126d-4d84-bf86-ccfa74ccdf61.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aa4b323e-126d-4d84-bf86-ccfa74ccdf61.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/aa4b323e-126d-4d84-bf86-ccfa74ccdf61#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1004,10 +1004,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\aa4b323e-126d-4d84-bf86-ccfa74ccdf61.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aace92f5-c9a6-49b7-9e31-503e4cd02665.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aace92f5-c9a6-49b7-9e31-503e4cd02665.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/aace92f5-c9a6-49b7-9e31-503e4cd02665#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1025,10 +1025,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\aace92f5-c9a6-49b7-9e31-503e4cd02665.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b4487e28-521f-43b8-9ef5-3c1523ec2856.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b4487e28-521f-43b8-9ef5-3c1523ec2856.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/b4487e28-521f-43b8-9ef5-3c1523ec2856#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1046,10 +1046,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\b4487e28-521f-43b8-9ef5-3c1523ec2856.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b62d155b-5cda-4241-b677-606b04a71adb.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b62d155b-5cda-4241-b677-606b04a71adb.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/b62d155b-5cda-4241-b677-606b04a71adb#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1067,10 +1067,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\b62d155b-5cda-4241-b677-606b04a71adb.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b6591bac-3167-426c-b122-376cdc9f8cc6.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b6591bac-3167-426c-b122-376cdc9f8cc6.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/b6591bac-3167-426c-b122-376cdc9f8cc6#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\b6591bac-3167-426c-b122-376cdc9f8cc6.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ba9cd221-02cf-4d17-9f95-c180d5aced8e.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ba9cd221-02cf-4d17-9f95-c180d5aced8e.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/ba9cd221-02cf-4d17-9f95-c180d5aced8e#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1109,10 +1109,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\ba9cd221-02cf-4d17-9f95-c180d5aced8e.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\bc977697-d7c8-4f45-bf54-dacd4f406eb5.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\bc977697-d7c8-4f45-bf54-dacd4f406eb5.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/bc977697-d7c8-4f45-bf54-dacd4f406eb5#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1130,10 +1130,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\bc977697-d7c8-4f45-bf54-dacd4f406eb5.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c05826da-9d51-4d8c-b69d-08b6a6f51696.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c05826da-9d51-4d8c-b69d-08b6a6f51696.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/c05826da-9d51-4d8c-b69d-08b6a6f51696#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1151,10 +1151,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\c05826da-9d51-4d8c-b69d-08b6a6f51696.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4a31abc-1815-463e-a36f-7660865b79df.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4a31abc-1815-463e-a36f-7660865b79df.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/c4a31abc-1815-463e-a36f-7660865b79df#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1172,10 +1172,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\c4a31abc-1815-463e-a36f-7660865b79df.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4de2c05-76a2-4ffa-9e33-64f16cafe75d.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4de2c05-76a2-4ffa-9e33-64f16cafe75d.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/c4de2c05-76a2-4ffa-9e33-64f16cafe75d#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1193,10 +1193,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\c4de2c05-76a2-4ffa-9e33-64f16cafe75d.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1235,10 +1235,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\d386d285-2d27-4ea5-94c6-1eb779c9d2da.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\d386d285-2d27-4ea5-94c6-1eb779c9d2da.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/d386d285-2d27-4ea5-94c6-1eb779c9d2da#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1256,10 +1256,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\d386d285-2d27-4ea5-94c6-1eb779c9d2da.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\dc9caa11-e544-4c43-abc0-acf6f7321dd5.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\dc9caa11-e544-4c43-abc0-acf6f7321dd5.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/dc9caa11-e544-4c43-abc0-acf6f7321dd5#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1277,10 +1277,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\dc9caa11-e544-4c43-abc0-acf6f7321dd5.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e0f00098-923d-4086-86e8-e0b204f2bc67.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e0f00098-923d-4086-86e8-e0b204f2bc67.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/e0f00098-923d-4086-86e8-e0b204f2bc67#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1298,10 +1298,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\e0f00098-923d-4086-86e8-e0b204f2bc67.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e4db1a92-fa0c-452b-822f-2100ad115fa8.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e4db1a92-fa0c-452b-822f-2100ad115fa8.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/e4db1a92-fa0c-452b-822f-2100ad115fa8#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1319,10 +1319,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\e4db1a92-fa0c-452b-822f-2100ad115fa8.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e7b9eaf9-042b-4b3c-9e85-66c23d0825ad.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e7b9eaf9-042b-4b3c-9e85-66c23d0825ad.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/e7b9eaf9-042b-4b3c-9e85-66c23d0825ad#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1340,10 +1340,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\e7b9eaf9-042b-4b3c-9e85-66c23d0825ad.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ea455ee8-cc49-48c4-b4af-04da0a13d718.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ea455ee8-cc49-48c4-b4af-04da0a13d718.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/ea455ee8-cc49-48c4-b4af-04da0a13d718#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1361,10 +1361,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\ea455ee8-cc49-48c4-b4af-04da0a13d718.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/eda885e3-94c5-4a4d-ac5f-7c98bf53c60e#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1382,10 +1382,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -1403,10 +1403,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fa3496fe-cc19-4847-b31c-8a474d714d97.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fa3496fe-cc19-4847-b31c-8a474d714d97.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/fa3496fe-cc19-4847-b31c-8a474d714d97#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1424,10 +1424,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\fa3496fe-cc19-4847-b31c-8a474d714d97.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "imagenes/fc4315e5-3e68-4968-8790-5ef9f9bb98d4#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1466,10 +1466,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/1f7cb359-3329-4f1f-a390-9ff9575864ba#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1487,10 +1487,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\227f5e98-0d51-4e33-8ef5-2d4280138e49.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\227f5e98-0d51-4e33-8ef5-2d4280138e49.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/227f5e98-0d51-4e33-8ef5-2d4280138e49#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -1508,10 +1508,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\227f5e98-0d51-4e33-8ef5-2d4280138e49.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/3418a149-c281-488b-a246-d7b80d8d64f1#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1529,10 +1529,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/3a66f6fc-543b-4025-ba17-dd2fa77a6ac8#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1550,10 +1550,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/43e2e478-0ad9-472d-98f2-fc106cf4c52a#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -1571,10 +1571,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/45578a04-c985-4efd-8628-a7712e719e9a#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1592,10 +1592,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/45dbb6cd-2cd4-481c-82a7-8ea538231cd9#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\6ff8d76d-bac9-4853-8578-7fa32b6040c2.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\6ff8d76d-bac9-4853-8578-7fa32b6040c2.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/6ff8d76d-bac9-4853-8578-7fa32b6040c2#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1634,10 +1634,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\6ff8d76d-bac9-4853-8578-7fa32b6040c2.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\825b384e-a601-4b5e-be7e-9caf1cd34007.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\825b384e-a601-4b5e-be7e-9caf1cd34007.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/825b384e-a601-4b5e-be7e-9caf1cd34007#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -1655,10 +1655,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\825b384e-a601-4b5e-be7e-9caf1cd34007.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\92d3dcfb-d46a-4073-a581-8a6200c2ad26.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\92d3dcfb-d46a-4073-a581-8a6200c2ad26.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/92d3dcfb-d46a-4073-a581-8a6200c2ad26#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -1676,10 +1676,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\92d3dcfb-d46a-4073-a581-8a6200c2ad26.png"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/cf3b6795-e8ca-4b61-ac00-34eced257817#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -1697,10 +1697,10 @@
       "OriginalItemSpec": "wwwroot\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg"
     },
     {
-      "Identity": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\f793797a-34b9-4d54-b0cb-b3a54b5c97c1.png",
+      "Identity": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\f793797a-34b9-4d54-b0cb-b3a54b5c97c1.png",
       "SourceId": "Cafeteria_back",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\",
       "BasePath": "_content/Cafeteria_back",
       "RelativePath": "Promociones/f793797a-34b9-4d54-b0cb-b3a54b5c97c1#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -1721,7 +1721,7 @@
   "Endpoints": [
     {
       "Route": "imagenes/03160dea-502f-438e-82c9-1b45577748d1.b5ltcwhidv.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1742,7 +1742,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:17:00 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1766,7 +1766,7 @@
     },
     {
       "Route": "imagenes/03160dea-502f-438e-82c9-1b45577748d1.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\03160dea-502f-438e-82c9-1b45577748d1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1787,7 +1787,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:17:00 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1803,7 +1803,7 @@
     },
     {
       "Route": "imagenes/0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.lvgqvpth6b.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1824,7 +1824,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 16:08:47 GMT"
+          "Value": "Mon, 19 May 2025 16:52:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1848,7 +1848,7 @@
     },
     {
       "Route": "imagenes/0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\0773241b-6e89-4f9e-81f3-d9b1f2dcb0c4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1869,7 +1869,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 16:08:47 GMT"
+          "Value": "Mon, 19 May 2025 16:52:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1885,7 +1885,7 @@
     },
     {
       "Route": "imagenes/1589500f-5cd5-4496-b57c-091786e1e871.gxy8nkibmo.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1906,7 +1906,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:31:13 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1930,7 +1930,7 @@
     },
     {
       "Route": "imagenes/1589500f-5cd5-4496-b57c-091786e1e871.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1589500f-5cd5-4496-b57c-091786e1e871.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1951,7 +1951,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:31:13 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1967,7 +1967,7 @@
     },
     {
       "Route": "imagenes/1822e8e2-2d04-4257-b9b6-1664cda85583.6dega66b00.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1988,7 +1988,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:39:36 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2012,7 +2012,7 @@
     },
     {
       "Route": "imagenes/1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1822e8e2-2d04-4257-b9b6-1664cda85583.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2033,7 +2033,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:39:36 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2049,7 +2049,7 @@
     },
     {
       "Route": "imagenes/1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2070,7 +2070,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:28:24 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2086,7 +2086,7 @@
     },
     {
       "Route": "imagenes/1f281248-f9f0-49d5-8d38-c6f59f699524.m22pouj6l9.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f281248-f9f0-49d5-8d38-c6f59f699524.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2107,7 +2107,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:28:24 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2131,7 +2131,7 @@
     },
     {
       "Route": "imagenes/1f51417f-5e77-44f7-b05a-98f0d7dc67e8.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f51417f-5e77-44f7-b05a-98f0d7dc67e8.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f51417f-5e77-44f7-b05a-98f0d7dc67e8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2152,7 +2152,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:34:45 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2168,7 +2168,7 @@
     },
     {
       "Route": "imagenes/1f51417f-5e77-44f7-b05a-98f0d7dc67e8.whhqj4w2d7.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f51417f-5e77-44f7-b05a-98f0d7dc67e8.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\1f51417f-5e77-44f7-b05a-98f0d7dc67e8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2189,7 +2189,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:34:45 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2213,7 +2213,7 @@
     },
     {
       "Route": "imagenes/2169fff8-7718-4c83-bbe2-ee6583f73f7f.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2169fff8-7718-4c83-bbe2-ee6583f73f7f.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2169fff8-7718-4c83-bbe2-ee6583f73f7f.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2234,7 +2234,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:56:30 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2250,7 +2250,7 @@
     },
     {
       "Route": "imagenes/2169fff8-7718-4c83-bbe2-ee6583f73f7f.nvhhwtlobu.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2169fff8-7718-4c83-bbe2-ee6583f73f7f.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2169fff8-7718-4c83-bbe2-ee6583f73f7f.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2271,7 +2271,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:56:30 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2295,7 +2295,7 @@
     },
     {
       "Route": "imagenes/2274a660-85e8-4433-bca3-2a90bfb02fb0.4s8kwzwjzu.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2274a660-85e8-4433-bca3-2a90bfb02fb0.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2274a660-85e8-4433-bca3-2a90bfb02fb0.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2316,7 +2316,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:02:03 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2340,7 +2340,7 @@
     },
     {
       "Route": "imagenes/2274a660-85e8-4433-bca3-2a90bfb02fb0.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2274a660-85e8-4433-bca3-2a90bfb02fb0.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2274a660-85e8-4433-bca3-2a90bfb02fb0.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2361,7 +2361,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:02:03 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2377,7 +2377,7 @@
     },
     {
       "Route": "imagenes/23a861a6-fea9-41ce-a701-99d6d0674c21.0lcryebtuo.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\23a861a6-fea9-41ce-a701-99d6d0674c21.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\23a861a6-fea9-41ce-a701-99d6d0674c21.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2398,7 +2398,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:41:36 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2422,7 +2422,7 @@
     },
     {
       "Route": "imagenes/23a861a6-fea9-41ce-a701-99d6d0674c21.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\23a861a6-fea9-41ce-a701-99d6d0674c21.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\23a861a6-fea9-41ce-a701-99d6d0674c21.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2443,7 +2443,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:41:36 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2459,7 +2459,7 @@
     },
     {
       "Route": "imagenes/2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.6dega66b00.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2480,7 +2480,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:18:26 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2504,7 +2504,7 @@
     },
     {
       "Route": "imagenes/2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\2fb47f55-df2e-4998-94ff-6e5ab4c3aac8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2525,7 +2525,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:18:26 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2541,7 +2541,7 @@
     },
     {
       "Route": "imagenes/30bf2f02-008b-4c03-9711-1fcc32d90bab.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\30bf2f02-008b-4c03-9711-1fcc32d90bab.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\30bf2f02-008b-4c03-9711-1fcc32d90bab.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2562,7 +2562,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:16:28 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2578,7 +2578,7 @@
     },
     {
       "Route": "imagenes/30bf2f02-008b-4c03-9711-1fcc32d90bab.k0ttrqynvw.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\30bf2f02-008b-4c03-9711-1fcc32d90bab.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\30bf2f02-008b-4c03-9711-1fcc32d90bab.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2599,7 +2599,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:16:28 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2623,7 +2623,7 @@
     },
     {
       "Route": "imagenes/327ff9d4-5d3d-467a-9d87-d1c186792e76.bc43b9eylm.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\327ff9d4-5d3d-467a-9d87-d1c186792e76.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\327ff9d4-5d3d-467a-9d87-d1c186792e76.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2644,7 +2644,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2668,7 +2668,7 @@
     },
     {
       "Route": "imagenes/327ff9d4-5d3d-467a-9d87-d1c186792e76.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\327ff9d4-5d3d-467a-9d87-d1c186792e76.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\327ff9d4-5d3d-467a-9d87-d1c186792e76.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2689,7 +2689,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2705,7 +2705,7 @@
     },
     {
       "Route": "imagenes/32d705e3-f3ab-44da-ac2a-698503aab2c9.2ar4qmxn5p.webp",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\32d705e3-f3ab-44da-ac2a-698503aab2c9.webp",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\32d705e3-f3ab-44da-ac2a-698503aab2c9.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2726,7 +2726,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2750,7 +2750,7 @@
     },
     {
       "Route": "imagenes/32d705e3-f3ab-44da-ac2a-698503aab2c9.webp",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\32d705e3-f3ab-44da-ac2a-698503aab2c9.webp",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\32d705e3-f3ab-44da-ac2a-698503aab2c9.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2771,7 +2771,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2787,7 +2787,7 @@
     },
     {
       "Route": "imagenes/3fb61376-366f-4ad1-b581-2dff16dfe696.gkl9g06myb.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\3fb61376-366f-4ad1-b581-2dff16dfe696.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\3fb61376-366f-4ad1-b581-2dff16dfe696.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2808,7 +2808,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:37:40 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2832,7 +2832,7 @@
     },
     {
       "Route": "imagenes/3fb61376-366f-4ad1-b581-2dff16dfe696.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\3fb61376-366f-4ad1-b581-2dff16dfe696.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\3fb61376-366f-4ad1-b581-2dff16dfe696.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2853,7 +2853,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:37:40 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2869,7 +2869,7 @@
     },
     {
       "Route": "imagenes/40263e75-bcf3-4b2f-a8a9-436cc7ca7a93.i9o52kbf52.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\40263e75-bcf3-4b2f-a8a9-436cc7ca7a93.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\40263e75-bcf3-4b2f-a8a9-436cc7ca7a93.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2890,7 +2890,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 16:52:06 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2914,7 +2914,7 @@
     },
     {
       "Route": "imagenes/40263e75-bcf3-4b2f-a8a9-436cc7ca7a93.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\40263e75-bcf3-4b2f-a8a9-436cc7ca7a93.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\40263e75-bcf3-4b2f-a8a9-436cc7ca7a93.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2935,7 +2935,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 16:52:06 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2951,7 +2951,7 @@
     },
     {
       "Route": "imagenes/4035aee2-1c70-479c-834f-26bc4d977f43.gxy8nkibmo.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4035aee2-1c70-479c-834f-26bc4d977f43.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4035aee2-1c70-479c-834f-26bc4d977f43.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2972,7 +2972,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:30:58 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2996,7 +2996,7 @@
     },
     {
       "Route": "imagenes/4035aee2-1c70-479c-834f-26bc4d977f43.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4035aee2-1c70-479c-834f-26bc4d977f43.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4035aee2-1c70-479c-834f-26bc4d977f43.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3017,7 +3017,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:30:58 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3033,7 +3033,7 @@
     },
     {
       "Route": "imagenes/41cf12c8-bb1d-4908-9bd3-d86c066902c4.6dega66b00.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\41cf12c8-bb1d-4908-9bd3-d86c066902c4.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\41cf12c8-bb1d-4908-9bd3-d86c066902c4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3054,7 +3054,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 06:16:40 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3078,7 +3078,7 @@
     },
     {
       "Route": "imagenes/41cf12c8-bb1d-4908-9bd3-d86c066902c4.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\41cf12c8-bb1d-4908-9bd3-d86c066902c4.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\41cf12c8-bb1d-4908-9bd3-d86c066902c4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3099,7 +3099,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 06:16:40 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3115,7 +3115,7 @@
     },
     {
       "Route": "imagenes/42db3889-00a9-498f-9787-e54facd827d4.6eunrbwatn.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\42db3889-00a9-498f-9787-e54facd827d4.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\42db3889-00a9-498f-9787-e54facd827d4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3136,7 +3136,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:23:21 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3160,7 +3160,7 @@
     },
     {
       "Route": "imagenes/42db3889-00a9-498f-9787-e54facd827d4.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\42db3889-00a9-498f-9787-e54facd827d4.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\42db3889-00a9-498f-9787-e54facd827d4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3181,7 +3181,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:23:21 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3197,7 +3197,7 @@
     },
     {
       "Route": "imagenes/49e8978b-3077-4b49-b426-7c97bae0b44a.byf1gg9okq.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\49e8978b-3077-4b49-b426-7c97bae0b44a.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\49e8978b-3077-4b49-b426-7c97bae0b44a.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3218,7 +3218,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3242,7 +3242,7 @@
     },
     {
       "Route": "imagenes/49e8978b-3077-4b49-b426-7c97bae0b44a.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\49e8978b-3077-4b49-b426-7c97bae0b44a.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\49e8978b-3077-4b49-b426-7c97bae0b44a.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3263,7 +3263,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3279,7 +3279,7 @@
     },
     {
       "Route": "imagenes/4d60bc3d-92a7-44b9-8c73-28f242890b20.cp34fuhm53.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4d60bc3d-92a7-44b9-8c73-28f242890b20.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4d60bc3d-92a7-44b9-8c73-28f242890b20.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3300,7 +3300,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 21:45:30 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3324,7 +3324,7 @@
     },
     {
       "Route": "imagenes/4d60bc3d-92a7-44b9-8c73-28f242890b20.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4d60bc3d-92a7-44b9-8c73-28f242890b20.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\4d60bc3d-92a7-44b9-8c73-28f242890b20.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3345,7 +3345,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 21:45:30 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3361,7 +3361,7 @@
     },
     {
       "Route": "imagenes/546717ea-30f5-4342-bb6b-848ccb12fc0c.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\546717ea-30f5-4342-bb6b-848ccb12fc0c.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\546717ea-30f5-4342-bb6b-848ccb12fc0c.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3382,7 +3382,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:11:41 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3398,7 +3398,7 @@
     },
     {
       "Route": "imagenes/546717ea-30f5-4342-bb6b-848ccb12fc0c.xfalmtl4ed.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\546717ea-30f5-4342-bb6b-848ccb12fc0c.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\546717ea-30f5-4342-bb6b-848ccb12fc0c.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3419,7 +3419,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:11:41 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3443,7 +3443,7 @@
     },
     {
       "Route": "imagenes/56e57c11-8727-4971-988e-61a3edf7af80.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\56e57c11-8727-4971-988e-61a3edf7af80.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\56e57c11-8727-4971-988e-61a3edf7af80.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3464,7 +3464,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3480,7 +3480,7 @@
     },
     {
       "Route": "imagenes/56e57c11-8727-4971-988e-61a3edf7af80.r4jbh2af55.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\56e57c11-8727-4971-988e-61a3edf7af80.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\56e57c11-8727-4971-988e-61a3edf7af80.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3501,7 +3501,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3525,7 +3525,7 @@
     },
     {
       "Route": "imagenes/5bd135a0-074c-437f-ac1e-fec74c0b5497.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5bd135a0-074c-437f-ac1e-fec74c0b5497.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5bd135a0-074c-437f-ac1e-fec74c0b5497.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3546,7 +3546,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:35:51 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3562,7 +3562,7 @@
     },
     {
       "Route": "imagenes/5bd135a0-074c-437f-ac1e-fec74c0b5497.t7got3w4xl.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5bd135a0-074c-437f-ac1e-fec74c0b5497.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5bd135a0-074c-437f-ac1e-fec74c0b5497.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3583,7 +3583,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:35:51 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3607,7 +3607,7 @@
     },
     {
       "Route": "imagenes/5d20704b-b147-44f6-8221-a4a1c57fa493.cp34fuhm53.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5d20704b-b147-44f6-8221-a4a1c57fa493.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5d20704b-b147-44f6-8221-a4a1c57fa493.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3628,7 +3628,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:10:12 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3652,7 +3652,7 @@
     },
     {
       "Route": "imagenes/5d20704b-b147-44f6-8221-a4a1c57fa493.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5d20704b-b147-44f6-8221-a4a1c57fa493.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5d20704b-b147-44f6-8221-a4a1c57fa493.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3673,7 +3673,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:10:12 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3689,7 +3689,7 @@
     },
     {
       "Route": "imagenes/5e1d496f-e033-42e9-a9d5-64ec66f4c580.90f28ko8da.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5e1d496f-e033-42e9-a9d5-64ec66f4c580.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5e1d496f-e033-42e9-a9d5-64ec66f4c580.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3710,7 +3710,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 16:59:31 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3734,7 +3734,7 @@
     },
     {
       "Route": "imagenes/5e1d496f-e033-42e9-a9d5-64ec66f4c580.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5e1d496f-e033-42e9-a9d5-64ec66f4c580.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\5e1d496f-e033-42e9-a9d5-64ec66f4c580.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3755,7 +3755,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 16:59:31 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3771,7 +3771,7 @@
     },
     {
       "Route": "imagenes/62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3792,7 +3792,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:17:17 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3808,7 +3808,7 @@
     },
     {
       "Route": "imagenes/62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.m0heble2rl.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\62c3acb4-2542-44e1-abbb-94d9fc8f7ba7.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3829,7 +3829,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:17:17 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3853,7 +3853,7 @@
     },
     {
       "Route": "imagenes/67ccfb9a-d615-47b4-aea6-d04a55bead63.b5ltcwhidv.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3874,7 +3874,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:15:41 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3898,7 +3898,7 @@
     },
     {
       "Route": "imagenes/67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\67ccfb9a-d615-47b4-aea6-d04a55bead63.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3919,7 +3919,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:15:41 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3935,7 +3935,7 @@
     },
     {
       "Route": "imagenes/6af8ab89-413a-4a44-9f1a-13ae1f177b55.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6af8ab89-413a-4a44-9f1a-13ae1f177b55.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6af8ab89-413a-4a44-9f1a-13ae1f177b55.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3956,7 +3956,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:56:42 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3972,7 +3972,7 @@
     },
     {
       "Route": "imagenes/6af8ab89-413a-4a44-9f1a-13ae1f177b55.nvhhwtlobu.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6af8ab89-413a-4a44-9f1a-13ae1f177b55.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6af8ab89-413a-4a44-9f1a-13ae1f177b55.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3993,7 +3993,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:56:42 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4017,7 +4017,7 @@
     },
     {
       "Route": "imagenes/6be14fbf-8497-4db0-8af6-7b67d61cee7b.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6be14fbf-8497-4db0-8af6-7b67d61cee7b.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6be14fbf-8497-4db0-8af6-7b67d61cee7b.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4038,7 +4038,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:57:49 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4054,7 +4054,7 @@
     },
     {
       "Route": "imagenes/6be14fbf-8497-4db0-8af6-7b67d61cee7b.z8pmdbl6ac.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6be14fbf-8497-4db0-8af6-7b67d61cee7b.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6be14fbf-8497-4db0-8af6-7b67d61cee7b.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4075,7 +4075,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:57:49 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4099,7 +4099,7 @@
     },
     {
       "Route": "imagenes/6fc1ab8b-ed28-4135-843b-8048ea9fe5e4.6eunrbwatn.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6fc1ab8b-ed28-4135-843b-8048ea9fe5e4.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6fc1ab8b-ed28-4135-843b-8048ea9fe5e4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4120,7 +4120,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:23:44 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4144,7 +4144,7 @@
     },
     {
       "Route": "imagenes/6fc1ab8b-ed28-4135-843b-8048ea9fe5e4.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6fc1ab8b-ed28-4135-843b-8048ea9fe5e4.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\6fc1ab8b-ed28-4135-843b-8048ea9fe5e4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4165,7 +4165,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:23:44 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4181,7 +4181,7 @@
     },
     {
       "Route": "imagenes/70bbfe56-9b6b-40a6-9d28-9d38fbde0845.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\70bbfe56-9b6b-40a6-9d28-9d38fbde0845.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\70bbfe56-9b6b-40a6-9d28-9d38fbde0845.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4202,7 +4202,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:34:13 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4218,7 +4218,7 @@
     },
     {
       "Route": "imagenes/70bbfe56-9b6b-40a6-9d28-9d38fbde0845.whhqj4w2d7.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\70bbfe56-9b6b-40a6-9d28-9d38fbde0845.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\70bbfe56-9b6b-40a6-9d28-9d38fbde0845.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4239,7 +4239,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:34:13 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4263,7 +4263,7 @@
     },
     {
       "Route": "imagenes/723b57f6-5de2-4985-b8b7-a0401eff8e3b.gk06lbbyzf.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\723b57f6-5de2-4985-b8b7-a0401eff8e3b.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\723b57f6-5de2-4985-b8b7-a0401eff8e3b.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4284,7 +4284,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:13:58 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4308,7 +4308,7 @@
     },
     {
       "Route": "imagenes/723b57f6-5de2-4985-b8b7-a0401eff8e3b.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\723b57f6-5de2-4985-b8b7-a0401eff8e3b.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\723b57f6-5de2-4985-b8b7-a0401eff8e3b.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4329,7 +4329,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:13:58 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4345,7 +4345,7 @@
     },
     {
       "Route": "imagenes/7749f7ee-c90b-4a52-a7e7-bcc9733b443b.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7749f7ee-c90b-4a52-a7e7-bcc9733b443b.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7749f7ee-c90b-4a52-a7e7-bcc9733b443b.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4366,7 +4366,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4382,7 +4382,7 @@
     },
     {
       "Route": "imagenes/7749f7ee-c90b-4a52-a7e7-bcc9733b443b.jtmf60rhyn.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7749f7ee-c90b-4a52-a7e7-bcc9733b443b.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7749f7ee-c90b-4a52-a7e7-bcc9733b443b.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4403,7 +4403,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4427,7 +4427,7 @@
     },
     {
       "Route": "imagenes/793b27c3-5196-4bd3-9104-8719cf01161d.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\793b27c3-5196-4bd3-9104-8719cf01161d.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\793b27c3-5196-4bd3-9104-8719cf01161d.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4448,7 +4448,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4464,7 +4464,7 @@
     },
     {
       "Route": "imagenes/793b27c3-5196-4bd3-9104-8719cf01161d.xvrpdcgbiu.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\793b27c3-5196-4bd3-9104-8719cf01161d.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\793b27c3-5196-4bd3-9104-8719cf01161d.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4485,7 +4485,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4509,7 +4509,7 @@
     },
     {
       "Route": "imagenes/7d6b8725-13e0-4236-a3a6-9c985e8856c0.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7d6b8725-13e0-4236-a3a6-9c985e8856c0.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7d6b8725-13e0-4236-a3a6-9c985e8856c0.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4530,7 +4530,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:05:53 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4546,7 +4546,7 @@
     },
     {
       "Route": "imagenes/7d6b8725-13e0-4236-a3a6-9c985e8856c0.ofgn20btmj.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7d6b8725-13e0-4236-a3a6-9c985e8856c0.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\7d6b8725-13e0-4236-a3a6-9c985e8856c0.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4567,7 +4567,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:05:53 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4591,7 +4591,7 @@
     },
     {
       "Route": "imagenes/82867cf2-3f97-4dec-9060-98e86ecbde13.ls0job1i4r.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\82867cf2-3f97-4dec-9060-98e86ecbde13.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\82867cf2-3f97-4dec-9060-98e86ecbde13.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4612,7 +4612,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:46:57 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4636,7 +4636,7 @@
     },
     {
       "Route": "imagenes/82867cf2-3f97-4dec-9060-98e86ecbde13.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\82867cf2-3f97-4dec-9060-98e86ecbde13.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\82867cf2-3f97-4dec-9060-98e86ecbde13.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4657,7 +4657,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:46:57 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4673,7 +4673,7 @@
     },
     {
       "Route": "imagenes/85dc3fcb-d0b7-488f-b7ef-4b61eab79611.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\85dc3fcb-d0b7-488f-b7ef-4b61eab79611.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\85dc3fcb-d0b7-488f-b7ef-4b61eab79611.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4694,7 +4694,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:15:47 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4710,7 +4710,7 @@
     },
     {
       "Route": "imagenes/85dc3fcb-d0b7-488f-b7ef-4b61eab79611.m0heble2rl.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\85dc3fcb-d0b7-488f-b7ef-4b61eab79611.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\85dc3fcb-d0b7-488f-b7ef-4b61eab79611.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4731,7 +4731,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:15:47 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4755,7 +4755,7 @@
     },
     {
       "Route": "imagenes/87bfdf7d-d6dc-4137-b009-a2f9378431f7.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\87bfdf7d-d6dc-4137-b009-a2f9378431f7.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\87bfdf7d-d6dc-4137-b009-a2f9378431f7.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4776,7 +4776,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:59:36 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4792,7 +4792,7 @@
     },
     {
       "Route": "imagenes/87bfdf7d-d6dc-4137-b009-a2f9378431f7.x6zelbc3fj.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\87bfdf7d-d6dc-4137-b009-a2f9378431f7.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\87bfdf7d-d6dc-4137-b009-a2f9378431f7.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4813,7 +4813,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:59:36 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4837,7 +4837,7 @@
     },
     {
       "Route": "imagenes/9133ca6f-44e4-4f53-966b-4d4dbc6d9305.62kt4zhvur.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9133ca6f-44e4-4f53-966b-4d4dbc6d9305.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9133ca6f-44e4-4f53-966b-4d4dbc6d9305.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4858,7 +4858,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:12:40 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4882,7 +4882,7 @@
     },
     {
       "Route": "imagenes/9133ca6f-44e4-4f53-966b-4d4dbc6d9305.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9133ca6f-44e4-4f53-966b-4d4dbc6d9305.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9133ca6f-44e4-4f53-966b-4d4dbc6d9305.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4903,7 +4903,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:12:40 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4919,7 +4919,7 @@
     },
     {
       "Route": "imagenes/9528c487-cf73-4b79-9aa6-1fdab89dc8f9.0lcryebtuo.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9528c487-cf73-4b79-9aa6-1fdab89dc8f9.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9528c487-cf73-4b79-9aa6-1fdab89dc8f9.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4940,7 +4940,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:41:50 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4964,7 +4964,7 @@
     },
     {
       "Route": "imagenes/9528c487-cf73-4b79-9aa6-1fdab89dc8f9.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9528c487-cf73-4b79-9aa6-1fdab89dc8f9.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9528c487-cf73-4b79-9aa6-1fdab89dc8f9.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4985,7 +4985,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:41:50 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5001,7 +5001,7 @@
     },
     {
       "Route": "imagenes/95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad.hqaljqng2p.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5022,7 +5022,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5046,7 +5046,7 @@
     },
     {
       "Route": "imagenes/95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\95b63e9d-e6ef-421d-92b8-ce5f0cb3c1ad.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5067,7 +5067,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5083,7 +5083,7 @@
     },
     {
       "Route": "imagenes/9a53428c-23d4-4a74-8931-d83da550578f.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9a53428c-23d4-4a74-8931-d83da550578f.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9a53428c-23d4-4a74-8931-d83da550578f.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5104,7 +5104,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:58:01 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5120,7 +5120,7 @@
     },
     {
       "Route": "imagenes/9a53428c-23d4-4a74-8931-d83da550578f.z8pmdbl6ac.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9a53428c-23d4-4a74-8931-d83da550578f.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9a53428c-23d4-4a74-8931-d83da550578f.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5141,7 +5141,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:58:01 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5165,7 +5165,7 @@
     },
     {
       "Route": "imagenes/9e750308-8cc5-4aba-a238-1b4dc3edb281.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9e750308-8cc5-4aba-a238-1b4dc3edb281.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9e750308-8cc5-4aba-a238-1b4dc3edb281.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5186,7 +5186,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5202,7 +5202,7 @@
     },
     {
       "Route": "imagenes/9e750308-8cc5-4aba-a238-1b4dc3edb281.zqvp3y0wqg.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9e750308-8cc5-4aba-a238-1b4dc3edb281.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9e750308-8cc5-4aba-a238-1b4dc3edb281.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5223,7 +5223,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5247,7 +5247,7 @@
     },
     {
       "Route": "imagenes/9fab5733-7906-4965-b485-66b84ece1071.4s8kwzwjzu.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9fab5733-7906-4965-b485-66b84ece1071.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9fab5733-7906-4965-b485-66b84ece1071.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5268,7 +5268,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:03:29 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5292,7 +5292,7 @@
     },
     {
       "Route": "imagenes/9fab5733-7906-4965-b485-66b84ece1071.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9fab5733-7906-4965-b485-66b84ece1071.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\9fab5733-7906-4965-b485-66b84ece1071.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5313,7 +5313,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:03:29 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5329,7 +5329,7 @@
     },
     {
       "Route": "imagenes/a5eba843-4b6b-4195-8548-a4ba1ab6a469.6dega66b00.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a5eba843-4b6b-4195-8548-a4ba1ab6a469.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a5eba843-4b6b-4195-8548-a4ba1ab6a469.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5350,7 +5350,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 05:23:43 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5374,7 +5374,7 @@
     },
     {
       "Route": "imagenes/a5eba843-4b6b-4195-8548-a4ba1ab6a469.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a5eba843-4b6b-4195-8548-a4ba1ab6a469.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a5eba843-4b6b-4195-8548-a4ba1ab6a469.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5395,7 +5395,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 05:23:43 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5411,7 +5411,7 @@
     },
     {
       "Route": "imagenes/a8d1e4f1-0d97-458c-b9bf-b4a7de24c514.gxz6btvohh.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a8d1e4f1-0d97-458c-b9bf-b4a7de24c514.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a8d1e4f1-0d97-458c-b9bf-b4a7de24c514.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5432,7 +5432,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:43:11 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5456,7 +5456,7 @@
     },
     {
       "Route": "imagenes/a8d1e4f1-0d97-458c-b9bf-b4a7de24c514.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a8d1e4f1-0d97-458c-b9bf-b4a7de24c514.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\a8d1e4f1-0d97-458c-b9bf-b4a7de24c514.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5477,7 +5477,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:43:11 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5493,7 +5493,7 @@
     },
     {
       "Route": "imagenes/aa4b323e-126d-4d84-bf86-ccfa74ccdf61.3zyzl23u9b.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aa4b323e-126d-4d84-bf86-ccfa74ccdf61.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aa4b323e-126d-4d84-bf86-ccfa74ccdf61.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5514,7 +5514,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:53:13 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5538,7 +5538,7 @@
     },
     {
       "Route": "imagenes/aa4b323e-126d-4d84-bf86-ccfa74ccdf61.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aa4b323e-126d-4d84-bf86-ccfa74ccdf61.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aa4b323e-126d-4d84-bf86-ccfa74ccdf61.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5559,7 +5559,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:53:13 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5575,7 +5575,7 @@
     },
     {
       "Route": "imagenes/aace92f5-c9a6-49b7-9e31-503e4cd02665.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aace92f5-c9a6-49b7-9e31-503e4cd02665.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aace92f5-c9a6-49b7-9e31-503e4cd02665.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5596,7 +5596,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:27:49 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5612,7 +5612,7 @@
     },
     {
       "Route": "imagenes/aace92f5-c9a6-49b7-9e31-503e4cd02665.m22pouj6l9.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aace92f5-c9a6-49b7-9e31-503e4cd02665.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\aace92f5-c9a6-49b7-9e31-503e4cd02665.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5633,7 +5633,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:27:49 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5657,7 +5657,7 @@
     },
     {
       "Route": "imagenes/b4487e28-521f-43b8-9ef5-3c1523ec2856.gk06lbbyzf.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b4487e28-521f-43b8-9ef5-3c1523ec2856.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b4487e28-521f-43b8-9ef5-3c1523ec2856.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5678,7 +5678,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:13:39 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5702,7 +5702,7 @@
     },
     {
       "Route": "imagenes/b4487e28-521f-43b8-9ef5-3c1523ec2856.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b4487e28-521f-43b8-9ef5-3c1523ec2856.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b4487e28-521f-43b8-9ef5-3c1523ec2856.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5723,7 +5723,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:13:39 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5739,7 +5739,7 @@
     },
     {
       "Route": "imagenes/b62d155b-5cda-4241-b677-606b04a71adb.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b62d155b-5cda-4241-b677-606b04a71adb.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b62d155b-5cda-4241-b677-606b04a71adb.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5760,7 +5760,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5776,7 +5776,7 @@
     },
     {
       "Route": "imagenes/b62d155b-5cda-4241-b677-606b04a71adb.zjdny10a4l.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b62d155b-5cda-4241-b677-606b04a71adb.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b62d155b-5cda-4241-b677-606b04a71adb.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5797,7 +5797,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5821,7 +5821,7 @@
     },
     {
       "Route": "imagenes/b6591bac-3167-426c-b122-376cdc9f8cc6.3zyzl23u9b.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b6591bac-3167-426c-b122-376cdc9f8cc6.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b6591bac-3167-426c-b122-376cdc9f8cc6.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5842,7 +5842,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:53:02 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5866,7 +5866,7 @@
     },
     {
       "Route": "imagenes/b6591bac-3167-426c-b122-376cdc9f8cc6.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b6591bac-3167-426c-b122-376cdc9f8cc6.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\b6591bac-3167-426c-b122-376cdc9f8cc6.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5887,7 +5887,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:53:02 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5903,7 +5903,7 @@
     },
     {
       "Route": "imagenes/ba9cd221-02cf-4d17-9f95-c180d5aced8e.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ba9cd221-02cf-4d17-9f95-c180d5aced8e.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ba9cd221-02cf-4d17-9f95-c180d5aced8e.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5924,7 +5924,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:07:33 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5940,7 +5940,7 @@
     },
     {
       "Route": "imagenes/ba9cd221-02cf-4d17-9f95-c180d5aced8e.x14gkrzhp5.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ba9cd221-02cf-4d17-9f95-c180d5aced8e.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ba9cd221-02cf-4d17-9f95-c180d5aced8e.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5961,7 +5961,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:07:33 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5985,7 +5985,7 @@
     },
     {
       "Route": "imagenes/bc977697-d7c8-4f45-bf54-dacd4f406eb5.269ktbmnq6.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\bc977697-d7c8-4f45-bf54-dacd4f406eb5.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\bc977697-d7c8-4f45-bf54-dacd4f406eb5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6006,7 +6006,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:29:28 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6030,7 +6030,7 @@
     },
     {
       "Route": "imagenes/bc977697-d7c8-4f45-bf54-dacd4f406eb5.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\bc977697-d7c8-4f45-bf54-dacd4f406eb5.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\bc977697-d7c8-4f45-bf54-dacd4f406eb5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6051,7 +6051,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:29:28 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6067,7 +6067,7 @@
     },
     {
       "Route": "imagenes/c05826da-9d51-4d8c-b69d-08b6a6f51696.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c05826da-9d51-4d8c-b69d-08b6a6f51696.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c05826da-9d51-4d8c-b69d-08b6a6f51696.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6088,7 +6088,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:05:38 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6104,7 +6104,7 @@
     },
     {
       "Route": "imagenes/c05826da-9d51-4d8c-b69d-08b6a6f51696.ofgn20btmj.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c05826da-9d51-4d8c-b69d-08b6a6f51696.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c05826da-9d51-4d8c-b69d-08b6a6f51696.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6125,7 +6125,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:05:38 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6149,7 +6149,7 @@
     },
     {
       "Route": "imagenes/c4a31abc-1815-463e-a36f-7660865b79df.269ktbmnq6.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4a31abc-1815-463e-a36f-7660865b79df.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4a31abc-1815-463e-a36f-7660865b79df.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6170,7 +6170,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:29:45 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6194,7 +6194,7 @@
     },
     {
       "Route": "imagenes/c4a31abc-1815-463e-a36f-7660865b79df.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4a31abc-1815-463e-a36f-7660865b79df.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4a31abc-1815-463e-a36f-7660865b79df.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6215,7 +6215,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:29:45 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6231,7 +6231,7 @@
     },
     {
       "Route": "imagenes/c4de2c05-76a2-4ffa-9e33-64f16cafe75d.90f28ko8da.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4de2c05-76a2-4ffa-9e33-64f16cafe75d.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4de2c05-76a2-4ffa-9e33-64f16cafe75d.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6252,7 +6252,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:20:37 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6276,7 +6276,7 @@
     },
     {
       "Route": "imagenes/c4de2c05-76a2-4ffa-9e33-64f16cafe75d.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4de2c05-76a2-4ffa-9e33-64f16cafe75d.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c4de2c05-76a2-4ffa-9e33-64f16cafe75d.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6297,7 +6297,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:20:37 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6313,7 +6313,7 @@
     },
     {
       "Route": "imagenes/c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd.62kt4zhvur.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6334,7 +6334,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:11:58 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6358,7 +6358,7 @@
     },
     {
       "Route": "imagenes/c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c882ecd0-0cbe-4939-aa29-2fb81ba9f4dd.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6379,7 +6379,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:11:58 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6395,7 +6395,7 @@
     },
     {
       "Route": "imagenes/c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f.90f28ko8da.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6416,7 +6416,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:20:22 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6440,7 +6440,7 @@
     },
     {
       "Route": "imagenes/c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\c9023dd7-f584-4e6a-a9e1-9dc8df4aa75f.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6461,7 +6461,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:20:22 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6477,7 +6477,7 @@
     },
     {
       "Route": "imagenes/d386d285-2d27-4ea5-94c6-1eb779c9d2da.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\d386d285-2d27-4ea5-94c6-1eb779c9d2da.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\d386d285-2d27-4ea5-94c6-1eb779c9d2da.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6498,7 +6498,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:59:20 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6514,7 +6514,7 @@
     },
     {
       "Route": "imagenes/d386d285-2d27-4ea5-94c6-1eb779c9d2da.x6zelbc3fj.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\d386d285-2d27-4ea5-94c6-1eb779c9d2da.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\d386d285-2d27-4ea5-94c6-1eb779c9d2da.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6535,7 +6535,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:59:20 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6559,7 +6559,7 @@
     },
     {
       "Route": "imagenes/dc9caa11-e544-4c43-abc0-acf6f7321dd5.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\dc9caa11-e544-4c43-abc0-acf6f7321dd5.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\dc9caa11-e544-4c43-abc0-acf6f7321dd5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6580,7 +6580,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:00:40 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6596,7 +6596,7 @@
     },
     {
       "Route": "imagenes/dc9caa11-e544-4c43-abc0-acf6f7321dd5.uhxuj4gh8v.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\dc9caa11-e544-4c43-abc0-acf6f7321dd5.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\dc9caa11-e544-4c43-abc0-acf6f7321dd5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6617,7 +6617,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:00:40 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6641,7 +6641,7 @@
     },
     {
       "Route": "imagenes/e0f00098-923d-4086-86e8-e0b204f2bc67.gxz6btvohh.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e0f00098-923d-4086-86e8-e0b204f2bc67.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e0f00098-923d-4086-86e8-e0b204f2bc67.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6662,7 +6662,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:42:56 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6686,7 +6686,7 @@
     },
     {
       "Route": "imagenes/e0f00098-923d-4086-86e8-e0b204f2bc67.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e0f00098-923d-4086-86e8-e0b204f2bc67.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e0f00098-923d-4086-86e8-e0b204f2bc67.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6707,7 +6707,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:42:56 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6723,7 +6723,7 @@
     },
     {
       "Route": "imagenes/e4db1a92-fa0c-452b-822f-2100ad115fa8.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e4db1a92-fa0c-452b-822f-2100ad115fa8.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e4db1a92-fa0c-452b-822f-2100ad115fa8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6744,7 +6744,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:11:27 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6760,7 +6760,7 @@
     },
     {
       "Route": "imagenes/e4db1a92-fa0c-452b-822f-2100ad115fa8.xfalmtl4ed.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e4db1a92-fa0c-452b-822f-2100ad115fa8.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e4db1a92-fa0c-452b-822f-2100ad115fa8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6781,7 +6781,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:11:27 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6805,7 +6805,7 @@
     },
     {
       "Route": "imagenes/e7b9eaf9-042b-4b3c-9e85-66c23d0825ad.4te3x927ys.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e7b9eaf9-042b-4b3c-9e85-66c23d0825ad.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e7b9eaf9-042b-4b3c-9e85-66c23d0825ad.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6826,7 +6826,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6850,7 +6850,7 @@
     },
     {
       "Route": "imagenes/e7b9eaf9-042b-4b3c-9e85-66c23d0825ad.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e7b9eaf9-042b-4b3c-9e85-66c23d0825ad.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\e7b9eaf9-042b-4b3c-9e85-66c23d0825ad.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6871,7 +6871,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6887,7 +6887,7 @@
     },
     {
       "Route": "imagenes/ea455ee8-cc49-48c4-b4af-04da0a13d718.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ea455ee8-cc49-48c4-b4af-04da0a13d718.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ea455ee8-cc49-48c4-b4af-04da0a13d718.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6908,7 +6908,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:07:16 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6924,7 +6924,7 @@
     },
     {
       "Route": "imagenes/ea455ee8-cc49-48c4-b4af-04da0a13d718.x14gkrzhp5.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ea455ee8-cc49-48c4-b4af-04da0a13d718.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\ea455ee8-cc49-48c4-b4af-04da0a13d718.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6945,7 +6945,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 23:07:16 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6969,7 +6969,7 @@
     },
     {
       "Route": "imagenes/eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6990,7 +6990,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:36:01 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7006,7 +7006,7 @@
     },
     {
       "Route": "imagenes/eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.t7got3w4xl.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\eda885e3-94c5-4a4d-ac5f-7c98bf53c60e.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7027,7 +7027,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:36:01 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7051,7 +7051,7 @@
     },
     {
       "Route": "imagenes/f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.ls0job1i4r.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7072,7 +7072,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:46:42 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7096,7 +7096,7 @@
     },
     {
       "Route": "imagenes/f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\f3b5b0b8-0dde-4faa-9879-c2e0ac5f0afa.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7117,7 +7117,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:46:42 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7133,7 +7133,7 @@
     },
     {
       "Route": "imagenes/fa3496fe-cc19-4847-b31c-8a474d714d97.b5ltcwhidv.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fa3496fe-cc19-4847-b31c-8a474d714d97.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fa3496fe-cc19-4847-b31c-8a474d714d97.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7154,7 +7154,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:46:08 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7178,7 +7178,7 @@
     },
     {
       "Route": "imagenes/fa3496fe-cc19-4847-b31c-8a474d714d97.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fa3496fe-cc19-4847-b31c-8a474d714d97.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fa3496fe-cc19-4847-b31c-8a474d714d97.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7199,7 +7199,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 23:46:08 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7215,7 +7215,7 @@
     },
     {
       "Route": "imagenes/fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.62kt4zhvur.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7236,7 +7236,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 21:49:11 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7260,7 +7260,7 @@
     },
     {
       "Route": "imagenes/fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fbb2da5c-ebd5-4f23-8a2b-967d9cd6fd67.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7281,7 +7281,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 21:49:11 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7297,7 +7297,7 @@
     },
     {
       "Route": "imagenes/fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7318,7 +7318,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:16:11 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7334,7 +7334,7 @@
     },
     {
       "Route": "imagenes/fc4315e5-3e68-4968-8790-5ef9f9bb98d4.k0ttrqynvw.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\imagenes\\fc4315e5-3e68-4968-8790-5ef9f9bb98d4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7355,7 +7355,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 22:16:11 GMT"
+          "Value": "Tue, 20 May 2025 11:30:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7379,7 +7379,7 @@
     },
     {
       "Route": "Promociones/1f7cb359-3329-4f1f-a390-9ff9575864ba.h9g89rfmqu.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7400,7 +7400,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 05:45:28 GMT"
+          "Value": "Wed, 28 May 2025 11:31:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7424,7 +7424,7 @@
     },
     {
       "Route": "Promociones/1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\1f7cb359-3329-4f1f-a390-9ff9575864ba.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7445,7 +7445,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 05:45:28 GMT"
+          "Value": "Wed, 28 May 2025 11:31:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7461,7 +7461,7 @@
     },
     {
       "Route": "Promociones/227f5e98-0d51-4e33-8ef5-2d4280138e49.3zcy8hhhlf.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\227f5e98-0d51-4e33-8ef5-2d4280138e49.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\227f5e98-0d51-4e33-8ef5-2d4280138e49.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7482,7 +7482,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7506,7 +7506,7 @@
     },
     {
       "Route": "Promociones/227f5e98-0d51-4e33-8ef5-2d4280138e49.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\227f5e98-0d51-4e33-8ef5-2d4280138e49.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\227f5e98-0d51-4e33-8ef5-2d4280138e49.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7527,7 +7527,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7543,7 +7543,7 @@
     },
     {
       "Route": "Promociones/3418a149-c281-488b-a246-d7b80d8d64f1.6dega66b00.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7564,7 +7564,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 19:17:49 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7588,7 +7588,7 @@
     },
     {
       "Route": "Promociones/3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3418a149-c281-488b-a246-d7b80d8d64f1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7609,7 +7609,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 19:17:49 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7625,7 +7625,7 @@
     },
     {
       "Route": "Promociones/3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.b5ltcwhidv.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7646,7 +7646,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 01 Jun 2025 00:56:39 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7670,7 +7670,7 @@
     },
     {
       "Route": "Promociones/3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\3a66f6fc-543b-4025-ba17-dd2fa77a6ac8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7691,7 +7691,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 01 Jun 2025 00:56:39 GMT"
+          "Value": "Mon, 02 Jun 2025 04:17:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7707,7 +7707,7 @@
     },
     {
       "Route": "Promociones/43e2e478-0ad9-472d-98f2-fc106cf4c52a.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7728,7 +7728,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7744,7 +7744,7 @@
     },
     {
       "Route": "Promociones/43e2e478-0ad9-472d-98f2-fc106cf4c52a.vwstxkak1p.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\43e2e478-0ad9-472d-98f2-fc106cf4c52a.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7765,7 +7765,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7789,7 +7789,7 @@
     },
     {
       "Route": "Promociones/45578a04-c985-4efd-8628-a7712e719e9a.6dega66b00.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7810,7 +7810,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 16:05:19 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7834,7 +7834,7 @@
     },
     {
       "Route": "Promociones/45578a04-c985-4efd-8628-a7712e719e9a.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45578a04-c985-4efd-8628-a7712e719e9a.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7855,7 +7855,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 16:05:19 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7871,7 +7871,7 @@
     },
     {
       "Route": "Promociones/45dbb6cd-2cd4-481c-82a7-8ea538231cd9.3zcy8hhhlf.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7892,7 +7892,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7916,7 +7916,7 @@
     },
     {
       "Route": "Promociones/45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\45dbb6cd-2cd4-481c-82a7-8ea538231cd9.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7937,7 +7937,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7953,7 +7953,7 @@
     },
     {
       "Route": "Promociones/6ff8d76d-bac9-4853-8578-7fa32b6040c2.jo4lzqa8rh.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\6ff8d76d-bac9-4853-8578-7fa32b6040c2.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\6ff8d76d-bac9-4853-8578-7fa32b6040c2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7974,7 +7974,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7998,7 +7998,7 @@
     },
     {
       "Route": "Promociones/6ff8d76d-bac9-4853-8578-7fa32b6040c2.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\6ff8d76d-bac9-4853-8578-7fa32b6040c2.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\6ff8d76d-bac9-4853-8578-7fa32b6040c2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8019,7 +8019,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8035,7 +8035,7 @@
     },
     {
       "Route": "Promociones/825b384e-a601-4b5e-be7e-9caf1cd34007.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\825b384e-a601-4b5e-be7e-9caf1cd34007.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\825b384e-a601-4b5e-be7e-9caf1cd34007.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8056,7 +8056,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8072,7 +8072,7 @@
     },
     {
       "Route": "Promociones/825b384e-a601-4b5e-be7e-9caf1cd34007.vwstxkak1p.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\825b384e-a601-4b5e-be7e-9caf1cd34007.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\825b384e-a601-4b5e-be7e-9caf1cd34007.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8093,7 +8093,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8117,7 +8117,7 @@
     },
     {
       "Route": "Promociones/92d3dcfb-d46a-4073-a581-8a6200c2ad26.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\92d3dcfb-d46a-4073-a581-8a6200c2ad26.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\92d3dcfb-d46a-4073-a581-8a6200c2ad26.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8138,7 +8138,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8154,7 +8154,7 @@
     },
     {
       "Route": "Promociones/92d3dcfb-d46a-4073-a581-8a6200c2ad26.vwstxkak1p.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\92d3dcfb-d46a-4073-a581-8a6200c2ad26.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\92d3dcfb-d46a-4073-a581-8a6200c2ad26.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8175,7 +8175,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8199,7 +8199,7 @@
     },
     {
       "Route": "Promociones/cf3b6795-e8ca-4b61-ac00-34eced257817.8gudhsxn11.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8220,7 +8220,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 02:42:44 GMT"
+          "Value": "Wed, 28 May 2025 11:31:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8244,7 +8244,7 @@
     },
     {
       "Route": "Promociones/cf3b6795-e8ca-4b61-ac00-34eced257817.jpg",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\cf3b6795-e8ca-4b61-ac00-34eced257817.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8265,7 +8265,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 02:42:44 GMT"
+          "Value": "Wed, 28 May 2025 11:31:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8281,7 +8281,7 @@
     },
     {
       "Route": "Promociones/f793797a-34b9-4d54-b0cb-b3a54b5c97c1.2s09263mil.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\f793797a-34b9-4d54-b0cb-b3a54b5c97c1.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\f793797a-34b9-4d54-b0cb-b3a54b5c97c1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8302,7 +8302,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8326,7 +8326,7 @@
     },
     {
       "Route": "Promociones/f793797a-34b9-4d54-b0cb-b3a54b5c97c1.png",
-      "AssetFile": "D:\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\f793797a-34b9-4d54-b0cb-b3a54b5c97c1.png",
+      "AssetFile": "C:\\Users\\ASUS ZEPHYRUS M16\\Documents\\Cafeteria\\Cafeteria_back\\wwwroot\\Promociones\\f793797a-34b9-4d54-b0cb-b3a54b5c97c1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8347,7 +8347,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 00:36:44 GMT"
+          "Value": "Wed, 11 Jun 2025 03:05:34 GMT"
         },
         {
           "Name": "Cache-Control",

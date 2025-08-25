@@ -1,0 +1,5 @@
+Id_user,Ubicacion,Nit,Latitud,Longitud,Nombre,ApellidoPaterno,ApellidoMaterno,Telefono,Usuari,Password
+1,"Calama 0477, Cochabamba, Bolivia",6555086,-17.39567703668103,-66.1542216213663,Thiago,Sossa,Chugar,73902650,leonidas,61c0fdcca631a16690676edcaedb73c1b7912b9b30455ab6d1110b53a93b3f4f
+2,Dirección no encontrada,0,0,0,string,string,string,0,string,473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8
+3,"Suarez de Figeroa 35, Santa Cruz de la Sierra, Bolivia",34343,-17.785473991215568,-63.18187684230544,dsfa,dsdfasdf,sdfasdf,234324,user,e606e38b0d8c19b24cf0ee3808183162ea7cd63ff7912dbb22b5e803286b4446
+12,"Av Salamanca 560, Cochabamba, Bolivia",7777777,-17.38698267280147,-66.15477293729782,Local,SINIT,LOCAL,7777777,local7777777,f6c4c859d4b304a4bb615c99933dfb2b21305ac8daf6999c3dd1d0edfc0739eb

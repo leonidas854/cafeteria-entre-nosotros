@@ -852,3 +852,15 @@ C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net9.0\C
 C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.genruntimeconfig.cache
 C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net9.0\ref\Cafeteria_back.dll
 C:\Users\ASUS ZEPHYRUS M16\Documents\Cafeteria\Cafeteria_back\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.csproj.AssemblyReference.cache
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.AssemblyInfoInputs.cache
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.AssemblyInfo.cs
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.csproj.CoreCompileInputs.cache
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.sourcelink.json
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\scopedcss\bundle\Cafeteria_back.styles.css
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.dll
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\refint\Cafeteria_back.dll
+C:\Users\foonky\OneDrive\Documentos\cafeteria-entre-nosotros\Cafeteria_back\obj\Debug\net9.0\Cafeteria_back.pdb

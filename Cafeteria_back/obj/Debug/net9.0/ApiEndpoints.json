@@ -479,6 +479,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafeteria_back.Controllers.HomeController",
+    "Method": "Agregar2",
+    "RelativePath": "api/Home/agregar_varios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "repeticiones",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafeteria_back.Controllers.PedidoController",
     "Method": "CambiarEstadoPedido",
     "RelativePath": "api/Pedido/cambiar-estado/{pedidoId}",

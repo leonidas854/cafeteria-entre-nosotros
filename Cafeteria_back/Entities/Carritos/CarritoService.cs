@@ -1,4 +1,5 @@
 ﻿using Cafeteria_back.Data;
+using Cafeteria_back.Repositorio;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
@@ -10,6 +11,7 @@ namespace Cafeteria_back.Entities.Carritos
         Task<Carrito?> ObtenerPorCliente(long clienteId);
         Task<Carrito?> ObtenerPorEmpleado(long empleadoId);
         Task Crear(Carrito carrito);
+        Task<Carrito> Crear_(Carrito carrito);
         Task Actualizar(string id, Carrito carrito);
         Task Eliminar(string id);
         Task AgregarProducto(long clienteId, ItemCarrito item);
@@ -30,6 +32,13 @@ namespace Cafeteria_back.Entities.Carritos
 
         public virtual async Task<Carrito?> ObtenerPorId(string id)
             => await _carritos.Find(c => c.Id == id).FirstOrDefaultAsync();
+
+        public virtual async Task<Carrito> Crear_(Carrito carrito)
+        {
+             await _carritos.InsertOneAsync(carrito);
+
+            return carrito; 
+        }
 
         public virtual async Task<Carrito?> ObtenerPorCliente(long clienteId)
             => await _carritos.Find(c => c.ClienteId == clienteId).FirstOrDefaultAsync();

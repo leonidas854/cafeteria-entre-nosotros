@@ -851,6 +851,28 @@
         }
       }
     },
+    "/api/Home/agregar_varios": {
+      "post": {
+        "tags": [
+          "Home"
+        ],
+        "parameters": [
+          {
+            "name": "repeticiones",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Pedido/mis-pedidos": {
       "get": {
         "tags": [

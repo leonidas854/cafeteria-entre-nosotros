@@ -1,31 +1,22 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from Admin.models import Producto
+from Admin.models import Producto, UsuarioBase
 from django.contrib.auth.models import AbstractUser, Group, Permission
 
 # Create your models here.
 
-class Cliente(AbstractUser):
+class Cliente(models.Model):
+    user = models.OneToOneField(
+        UsuarioBase,
+        on_delete=models.CASCADE,
+        related_name='cliente'
+    )
     ubicacion = models.CharField(max_length=100)
-    nit =  models.IntegerField()
+    apell_materno = models.CharField(max_length=100,default=' ')
+    telefono = models.IntegerField(default=0)
+    nit =  models.IntegerField(default=0)
     latitud = models.FloatField()
     longitud = models.FloatField()
-    groups = models.ManyToManyField(
-    Group,
-        verbose_name='groups',
-        blank=True,
-        help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
-        related_name="cliente_set",  
-        related_query_name="cliente",
-    )
-    user_permissions = models.ManyToManyField(
-        Permission,
-        verbose_name='user permissions',
-        blank=True,
-        help_text='Specific permissions for this user.',
-        related_name="cliente_permissions_set",  
-        related_query_name="cliente",
-    )
     
 class Pedido(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE,related_name="pedidos")

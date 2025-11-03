@@ -16,6 +16,6 @@ namespace Cafeteria_back.Entities.Extras
         public List<Detalle_extra>? Detalle_extra { get; set; }
 
         public float ObtenerPrecio() => Precio;
-        public string ObtenerNombre() => Name;
+        public string ObtenerNombre() => Name!;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Cafeteria_back.Entities.Pedidos;
+using Cafeteria_back.Entities.Resenas;
 
 namespace Cafeteria_back.Entities.Usuarios
 {
@@ -13,5 +14,6 @@ namespace Cafeteria_back.Entities.Usuarios
         public double Longitud { get; set; }
 
         public List<Pedido>? Pedidos { get; set; }
+        public List<Resena>? Resena { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Cafeteria_back.Entities.Tablas_intermedias;
+﻿using Cafeteria_back.Entities.Resenas;
+using Cafeteria_back.Entities.Tablas_intermedias;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cafeteria_back.Entities.Productos
@@ -28,6 +29,7 @@ namespace Cafeteria_back.Entities.Productos
         public List<Detalle_pedido>? Detalle_pedido { get; set; }
 
         public List<Producto_Promocion>? Producto_promocion { get; set; }
+        public List<Resena>? Resena { get; set; }
 
 
     }

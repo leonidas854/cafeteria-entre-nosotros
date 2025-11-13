@@ -12,3 +12,15 @@ class UsuarioBaseSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = UsuarioBase.objects.create_user(**validated_data)
         return user
+
+class LoginSerializer(serializers.Serializer):
+    username=serializers.CharField(required =True)
+    password=serializers.CharField(write_only=True,
+                                   required=True)
+class LoginSuccessResponseSerializer(serializers.Serializer):
+    message = serializers.CharField()
+class ErrorResponseSerializer(serializers.Serializer):
+    error = serializers.CharField()
+class LogoutSuccessResponseSerializer(serializers.Serializer):
+    isSuccess = serializers.BooleanField()
+    message = serializers.CharField()

@@ -21,8 +21,8 @@ namespace Cafeteria_back.Entities.Resenas
         [ForeignKey("Cliente_id")]
         public Cliente? Cliente { get; set; }
 
-        [ForeignKey("Producto_id")]
-        public Producto? Producto { get; set; }
+        //[ForeignKey("Producto_id")]
+        //public Producto? Producto { get; set; }
 
     }
 }

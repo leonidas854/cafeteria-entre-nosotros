@@ -191,9 +191,6 @@ namespace Cafeteria_back.Migrations
                     b.Property<DateTime?>("Fech_resena")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<long?>("Producto_id")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("comentario")
                         .HasColumnType("text");
 
@@ -203,8 +200,6 @@ namespace Cafeteria_back.Migrations
                     b.HasKey("Id_resena");
 
                     b.HasIndex("Cliente_id");
-
-                    b.HasIndex("Producto_id");
 
                     b.ToTable("Resena");
                 });
@@ -404,13 +399,7 @@ namespace Cafeteria_back.Migrations
                         .WithMany("Resena")
                         .HasForeignKey("Cliente_id");
 
-                    b.HasOne("Cafeteria_back.Entities.Productos.Producto", "Producto")
-                        .WithMany("Resena")
-                        .HasForeignKey("Producto_id");
-
                     b.Navigation("Cliente");
-
-                    b.Navigation("Producto");
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Detalle_extra", b =>
@@ -505,8 +494,6 @@ namespace Cafeteria_back.Migrations
                     b.Navigation("Detalle_pedido");
 
                     b.Navigation("Producto_promocion");
-
-                    b.Navigation("Resena");
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Promociones.Promocion", b =>

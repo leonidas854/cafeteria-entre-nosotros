@@ -37,7 +37,7 @@ class UsuarioBase(AbstractUser):
     )
     tipo = models.CharField(max_length=20, choices=TIPO_USUARIO, default='cliente')
 
-    # Aseguramos nombres únicos para las relaciones reversas:
+   
     groups = models.ManyToManyField(
         Group,
         verbose_name='groups',

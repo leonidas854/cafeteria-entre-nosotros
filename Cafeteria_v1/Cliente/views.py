@@ -14,7 +14,7 @@ from .serializers import ClienteSerializer
 from Caja.models import Empleado
 from Admin.models import UsuarioBase
 
-@permission_classes([AllowAny])
+#@permission_classes([AllowAny])
 class ClienteViewSet(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer

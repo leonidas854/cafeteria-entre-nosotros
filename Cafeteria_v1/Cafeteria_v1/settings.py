@@ -33,7 +33,15 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'DJANGO',
+    'DESCRIPTION': 'API PARA IR PROBANDO.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': True,
 }
 
 
@@ -53,6 +61,7 @@ INSTALLED_APPS = [
     'Admin',
     'Cliente',
     'Caja',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [

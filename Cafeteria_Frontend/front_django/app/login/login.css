@@ -1,0 +1,113 @@
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.error-message {
+  color: #d9534f; /* rojo Bootstrap para mejor visibilidad */
+  font-weight: 500;
+}
+
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/img4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-label {
+  font-family: 'URWClassico-Bold', serif;
+  color: #1f2937; 
+  font-size: 1rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  color: #111827;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2563eb; 
+}
+
+.form-input::placeholder {
+  color: #9ca3af; 
+}
+
+.login-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #35310f; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #4b3f1a; 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+@font-face {
+  font-family: 'URWClassico-Bold';
+  src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

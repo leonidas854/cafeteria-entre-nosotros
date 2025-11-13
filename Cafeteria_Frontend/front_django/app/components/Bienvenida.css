@@ -1,0 +1,39 @@
+.bienvenida-linea {
+  position: fixed;
+  top: 47rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f59e0b;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bienvenida-linea-titulo {
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+.bienvenida-linea-nombre {
+  font-weight: 500;
+}
+
+.bienvenida-linea-frase {
+  color: #fcd34d;
+  font-size: 2rem;
+   font-family: 'BlueofParadise', serif; 
+}
+
+@font-face {
+  font-family: 'BlueofParadise'; 
+  src: url('/Fonts/BlueofParadise.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+}

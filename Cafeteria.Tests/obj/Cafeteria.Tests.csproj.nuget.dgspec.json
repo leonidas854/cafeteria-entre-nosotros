@@ -1,40 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\General\\cafeteria-entre-nosotros\\Cafeteria.Tests\\Cafeteria.Tests.csproj": {}
+    "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj": {}
   },
   "projects": {
-    "D:\\General\\cafeteria-entre-nosotros\\Cafeteria.Tests\\Cafeteria.Tests.csproj": {
+    "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\General\\cafeteria-entre-nosotros\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
+        "projectUniqueName": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
         "projectName": "Cafeteria.Tests",
-        "projectPath": "D:\\General\\cafeteria-entre-nosotros\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
-        "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
-        "outputPath": "D:\\General\\cafeteria-entre-nosotros\\Cafeteria.Tests\\obj\\",
+        "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
+        "packagesPath": "/home/leonidas/.nuget/packages/",
+        "outputPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/leonidas/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\General\\cafeteria-entre-nosotros\\Cafeteria_back\\Cafeteria_back.csproj": {
-                "projectPath": "D:\\General\\cafeteria-entre-nosotros\\Cafeteria_back\\Cafeteria_back.csproj"
+              "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj": {
+                "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj"
               }
             }
           }
@@ -49,7 +42,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -113,38 +106,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\General\\cafeteria-entre-nosotros\\Cafeteria_back\\Cafeteria_back.csproj": {
+    "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\General\\cafeteria-entre-nosotros\\Cafeteria_back\\Cafeteria_back.csproj",
+        "projectUniqueName": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
         "projectName": "Cafeteria_back",
-        "projectPath": "D:\\General\\cafeteria-entre-nosotros\\Cafeteria_back\\Cafeteria_back.csproj",
-        "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
-        "outputPath": "D:\\General\\cafeteria-entre-nosotros\\Cafeteria_back\\obj\\",
+        "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
+        "packagesPath": "/home/leonidas/.nuget/packages/",
+        "outputPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/leonidas/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -163,7 +155,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -227,6 +219,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -235,7 +233,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

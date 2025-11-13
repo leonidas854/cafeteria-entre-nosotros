@@ -29,7 +29,7 @@ namespace Cafeteria_back.Entities.Productos
         public List<Detalle_pedido>? Detalle_pedido { get; set; }
 
         public List<Producto_Promocion>? Producto_promocion { get; set; }
-        public List<Resena>? Resena { get; set; }
+       // public List<Resena>? Resena { get; set; }
 
 
     }

@@ -80,11 +80,7 @@ export default function LoginPage() {
             Ingresar
           </button>
 
-          <Link href="/registro">
-            <button type="button" className="login-button">
-              Crear Cuenta
-            </button>
-          </Link>
+
         </form>
       </div>
     </div>

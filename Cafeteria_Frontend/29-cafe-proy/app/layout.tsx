@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Cafeteria - ENTRE AMIGOS",
   description: " El aroma del café, el calor de la amistad.",
   icons: {
-    icon: "/logo.png", 
+    icon: "https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330782/logo_cizy3g.png", 
   },
 };
 

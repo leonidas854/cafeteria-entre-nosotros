@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   opacity: 0.9;
   z-index: 0;
-  background-image: url('/img6.jpg');
+  background-image: url('https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330513/img3_uovbsv.jpg');
 }
 
 .container {
@@ -15,7 +15,14 @@
   flex-direction: column;
   justify-content: center;
   padding: 1.5rem 0;
+  opacity: 0.9;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330380/img1_auyjjp.jpg');
 }
+
 
 .header {
   margin-left: auto;

@@ -161,7 +161,7 @@
         <ParallaxBanner
           layers={[
           {
-            image: "/fondo2.png",
+            image: "https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330182/fondo2_a0qg8l.png",
             translateY: [0, 0],
             opacity: [1, 0.7],
             scale: [1.05, 1, 'easeOutCubic'],
@@ -186,7 +186,7 @@
                   rotate={[-180, 0]}
                     easing="easeInQuad"
                   >
-                  <img src="/grano6.png" alt="Logo animado" className="w-40 mx-auto" />
+                  <img src="https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330307/grano6_hug20x.png" alt="Logo animado" className="w-40 mx-auto" />
                 </Parallax>
 
 
@@ -209,7 +209,7 @@
   <ParallaxBanner 
           layers={[
             {
-              image: "/fondo3.png",
+              image: "https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330359/fondo3_ejkduj.png",
               translateY: [0, 0],
               shouldAlwaysCompleteAnimation: true,
               expanded: false,
@@ -229,7 +229,7 @@
                       <div className="card">
                         <div className="face front">
                           <Image
-                            src="/img10.jpg"
+                            src="https://res.cloudinary.com/dmrszrfdx/image/upload/v1763329991/img10_kwvf9f.jpg"
                             alt="MISION"
                             width={800}
                             height={400}
@@ -248,7 +248,7 @@
                       <div className="card">
                         <div className="face front">
                           <Image
-                            src="/img5.jpg"
+                            src="https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330044/img5_nbjgmf.jpg"
                             alt="VISION"
                             width={800}
                             height={400}
@@ -273,88 +273,39 @@
           className="w-full min-h-screen"
         />
 
-        
-<section id="servicios" className="servicios h-auto w-full py-16 bg-gray-100">
-  <div className="text-center p-8">
-    <h2 className="text-4xl font-bold mb-4">SERVICIOS</h2>
-    <p className="text-xl max-w-2xl mx-auto mb-6">
-      Explora en nuestra página todos los servicios que le ofrecemos.
-    </p>
+  {/* SERVICIOS */}
+        <section id="servicios" className="servicios h-auto w-full py-16 bg-gray-100">
+          <div className="text-center p-8">
+            <h2 className="text-4xl font-bold mb-4">SERVICIOS</h2>
+            <p className="text-xl max-w-2xl mx-auto mb-6">
+              Explora en nuestra página todos los servicios que le ofrecemos.
+            </p>
 
-    <div className="services-container max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
-
-      <div className="service-item flex flex-col items-center">
-        <div className="circle w-50 h-50 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-          <img 
-            src="/desayunu.gif" 
-            alt="Representación de Audiencia"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="service-title font-bold text-lg text-center">Desayunos</div>
-      </div>
-      
-      <div className="service-item flex flex-col items-center">
-        <div className="circle w-50 h-50 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-          <img 
-            src="/bebidas.webp" 
-            alt="Imputación de Cargos"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="service-title font-bold text-lg text-center">Jugos Frutales</div>
-      </div>
-      
-      <div className="service-item flex flex-col items-center">
-        <div className="circle w-50 h-50 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-          <img 
-            src="/pasteleria.webp" 
-            alt="Legalización de Captura"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="service-title font-bold text-lg text-center">Panederias y Pasteleria</div>
-      </div>
-      
-      <div className="service-item flex flex-col items-center">
-        <div className="circle w-50 h-50 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-          <img 
-            src="/cafe.gif" 
-            alt="Lectura de Fallo"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="service-title font-bold text-lg text-center">Compras Online</div>
-      </div>
-      
-      <div className="service-item flex flex-col items-center">
-        <div className="circle w-50 h-50 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-          <img 
-            src="/granocafe.gif" 
-            alt="Aplicación Recurso de Casos"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="service-title font-bold text-lg text-center">Cafe en grano hecho en casa</div>
-      </div>
-      
-      
-      
-      <div className="service-item flex flex-col items-center">
-        <div className="circle w-50 h-50 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-          <img 
-            src="/cocha.jpg" 
-            alt="Apelación ante el Tribunal"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="service-title font-bold text-lg text-center">El mejor cafe de COCHABAMBA</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+            <div className="services-container max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+              {[
+                { src: "https://res.cloudinary.com/dmrszrfdx/image/upload/v1763329621/desayunu_t2ot7s.gif", alt: "Desayunos", title: "Desayunos" },
+                { src: "https://res.cloudinary.com/dmrszrfdx/image/upload/v1763329143/bebidas_xmurki.webp", alt: "Jugos Frutales", title: "Jugos Frutales" },
+                { src: "https://res.cloudinary.com/dmrszrfdx/image/upload/v1763329850/pasteleria_lym2af.webp", alt: "Panaderías y Pastelería", title: "Panaderías y Pastelería" },
+                { src: "https://res.cloudinary.com/dmrszrfdx/image/upload/v1763329500/cafe_l191go.gif", alt: "Compras Online", title: "Compras Online" },
+                { src: "https://res.cloudinary.com/dmrszrfdx/image/upload/v1763329904/granocafe_y3n9ck.gif", alt: "Café en grano hecho en casa", title: "Café en grano hecho en casa" },
+                { src: "https://res.cloudinary.com/dmrszrfdx/image/upload/v1763329528/cocha_elfrai.jpg", alt: "El mejor café de COCHABAMBA", title: "El mejor café de COCHABAMBA" }
+              ].map((service, index) => (
+                <div key={index} className="service-item flex flex-col items-center">
+                  <div className="circle w-50 h-50 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
+                    <Image 
+                      src={service.src} 
+                      alt={service.alt}
+                      width={200}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="service-title font-bold text-lg text-center">{service.title}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
 
           {/* Seccion de promociones */}
@@ -534,7 +485,7 @@
         }}
       >
         <img 
-          src="/grano5.png" 
+          src="https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330378/grano5_e40iwo.png" 
           alt="Grano de café"
           className="w-full h-full object-contain animate-float"
         />
@@ -559,7 +510,7 @@
       >
         {/* Reemplazamos el div por una imagen */}
         <img 
-          src="/grano6.png" 
+          src="https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330307/grano6_hug20x.png" 
           alt="Grano de café animado"
           className="w-full h-full object-contain animate-float" 
         />
@@ -584,7 +535,7 @@
       >
         {/* Reemplazamos el div por una imagen */}
         <img 
-          src="/grano4.png" 
+          src="https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330378/grano4_i5nsmo.png" 
           alt="Grano de café animado"
           className="w-full h-full object-contain animate-float" 
         />

@@ -59,7 +59,7 @@
 
 .CONDER_PROD { /* Contenedor derecho de información de producto */
   position: relative;
-  background-image: url('/img4.jpg'); /* Asegúrate que la ruta sea correcta desde /public */
+  background-image: url('https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330782/img4_j2n8w1.jpg'); /* Asegúrate que la ruta sea correcta desde /public */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

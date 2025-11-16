@@ -53,7 +53,7 @@
 
 .CONDER_PROM { /* Contenedor derecho con imagen de fondo */
   position: relative;
-  background-image: url('/img11.jpg'); /* Asegúrate que la ruta sea correcta desde /public */
+  background-image: url('https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330782/img11_qdmyrt.jpg'); /* Asegúrate que la ruta sea correcta desde /public */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

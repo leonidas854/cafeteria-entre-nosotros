@@ -51,7 +51,7 @@
 
 .CONIZ_EMPLE { /* Contenedor izquierdo con imagen de fondo */
   position: relative;
-  background-image: url('/img7.jpg'); /* Asegúrate que la ruta sea correcta desde /public */
+  background-image: url('https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330781/img7_h5jeyx.jpg'); /* Asegúrate que la ruta sea correcta desde /public */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

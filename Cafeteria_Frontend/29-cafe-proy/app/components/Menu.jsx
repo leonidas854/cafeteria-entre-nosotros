@@ -74,7 +74,7 @@ const HamburgerIcon = ({ isOpen }) => (
     <nav className="menu-container">
       <div className="logo-brand-container">  
         <img 
-          src="/logo.png" 
+          src="https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330782/logo_cizy3g.png" 
           alt="Logo" 
           className="logo"
           onClick={() => {

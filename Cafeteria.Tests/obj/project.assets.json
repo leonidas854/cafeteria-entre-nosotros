@@ -10269,19 +10269,19 @@
     ]
   },
   "packageFolders": {
-    "/home/leonidas/.nuget/packages/": {}
+    "C:\\Users\\foonky\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
       "projectName": "Cafeteria.Tests",
-      "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
-      "packagesPath": "/home/leonidas/.nuget/packages/",
-      "outputPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/obj/",
+      "projectPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
+      "packagesPath": "C:\\Users\\foonky\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/leonidas/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\foonky\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -10293,8 +10293,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj": {
-              "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj"
+            "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj": {
+              "projectPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj"
             }
           }
         }
@@ -10309,7 +10309,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -10373,18 +10373,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[9.0.9, 9.0.9]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

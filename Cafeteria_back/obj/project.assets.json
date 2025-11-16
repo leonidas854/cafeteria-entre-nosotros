@@ -9835,19 +9835,19 @@
     ]
   },
   "packageFolders": {
-    "/home/leonidas/.nuget/packages/": {}
+    "C:\\Users\\foonky\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
+      "projectUniqueName": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
       "projectName": "Cafeteria_back",
-      "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
-      "packagesPath": "/home/leonidas/.nuget/packages/",
-      "outputPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/obj/",
+      "projectPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
+      "packagesPath": "C:\\Users\\foonky\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/leonidas/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\foonky\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -9871,7 +9871,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -9935,12 +9935,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[9.0.9, 9.0.9]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -9949,7 +9943,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

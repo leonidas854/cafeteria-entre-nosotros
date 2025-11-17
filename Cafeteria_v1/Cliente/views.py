@@ -9,13 +9,14 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 
-from .models import Cliente, Pedido, Detalle_pedido, Extra
+from .models import Cliente,  Detalle_pedido, Extra
 from .serializers import ClienteSerializer
 from Caja.models import Empleado
-from Admin.models import UsuarioBase
+from Admin.models import UsuarioBase,Pedido
 
 #@permission_classes([AllowAny])
 class ClienteViewSet(viewsets.ModelViewSet):
+    permission_classes = [AllowAny]
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
     

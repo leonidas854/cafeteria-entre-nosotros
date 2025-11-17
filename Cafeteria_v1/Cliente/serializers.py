@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from Admin.serializers import UsuarioBaseSerializer
-from .models import Cliente, Pedido, Detalle_pedido, Extra
+from .models import Cliente, Detalle_pedido, Extra
 from .google_maps import get_direccion
 
 

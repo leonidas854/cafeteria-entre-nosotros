@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UsuarioBase
+from .models import UsuarioBase,Producto,Bebida,Comida
 
 class UsuarioBaseSerializer(serializers.ModelSerializer):
     class Meta:
@@ -24,3 +24,6 @@ class ErrorResponseSerializer(serializers.Serializer):
 class LogoutSuccessResponseSerializer(serializers.Serializer):
     isSuccess = serializers.BooleanField()
     message = serializers.CharField()
+class ProductoSerializer(serializers.ModelSerializer):
+    pass
+

@@ -1,10 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, Group, Permission
 
+
 #from Cliente.models import Detalle_pedido
 # Create your models here.
 
 class Producto(models.Model):
+    TIPO_PRODUCTO = (
+        ('bebida','Bebida'),
+        ('comida','Comida')
+     )
     nombre = models.CharField(max_length=100)
     precio = models.FloatField()
     tipo = models.CharField(max_length=100)
@@ -16,11 +21,24 @@ class Producto(models.Model):
     imagen_url =  models.CharField(max_length=100)
     
 class Bebida(models.Model):
-    producto = models.OneToOneField(Producto, on_delete=models.CASCADE, primary_key=True)
+    producto = models.OneToOneField(Producto, 
+                                    on_delete=models.CASCADE,
+                                      primary_key=True,
+                                      related_name='bebida')
+    tamanio = models.CharField(default="")
+class Comida(models.Model):
+    producto = models.OneToOneField(Producto,on_delete=models.CASCADE,primary_key=True,
+                                    related_name='comida')
     proporcion = models.CharField(max_length=100)
+
 class Pedido(models.Model):
-    producto = models.OneToOneField(Producto, on_delete=models.CASCADE, primary_key=True)
-    tamaño = models.CharField(max_length=50)
+    #producto = models.ForeignKey(Producto,on_delete=models.CASCADE,primary_key=True)
+    cliente = models.ForeignKey('Cliente.Cliente',
+                                on_delete=models.CASCADE)
+    total_estimado = models.FloatField(default=0)
+    total_descuento = models.FloatField(default=0)
+    tipo_entrega = models.CharField(default="")
+    estado = models.CharField(default="")
     
 class Promocion(models.Model):  
     descuento = models.FloatField()

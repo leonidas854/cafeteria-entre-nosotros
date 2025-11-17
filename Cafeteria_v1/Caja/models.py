@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import AbstractUser, Group, Permission
-from Admin.models import UsuarioBase
-from Cliente.models import Pedido
+from Admin.models import UsuarioBase,Pedido
 # Create your models here.
 
 class Empleado(models.Model):

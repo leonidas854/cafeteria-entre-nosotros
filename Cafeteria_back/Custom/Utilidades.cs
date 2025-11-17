@@ -1,0 +1,61 @@
+﻿using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
+using Cafeteria_back.Entities.Usuarios;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+namespace Cafeteria_back.Custom
+{
+
+    public interface IUtilidades
+    {
+        string EncriptarSHA256(string texto);
+        string GenerarJWT(Usuario usuario);
+    }
+
+    public class Utilidades : IUtilidades
+    {
+        public readonly IConfiguration Configuration;
+        public Utilidades(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+        public string EncriptarSHA256(string texto)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(texto));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+            
+        }
+        public string GenerarJWT(Usuario usuario)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, usuario.Id_user.ToString()),
+                new Claim(ClaimTypes.Email, usuario.Usuari!),
+                new Claim(ClaimTypes.Role, usuario.GetType().Name) 
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:key"]!));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.UtcNow.AddHours(5),
+                signingCredentials: credentials
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+    }
+
+}

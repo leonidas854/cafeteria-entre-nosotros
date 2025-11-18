@@ -49,7 +49,7 @@ const [clienteActual, setClienteActual] = useState<UsuarioNit | null>(null);
     const agrupado: GroupedProducts = {};
     productosList.forEach((producto) => {
       const categoria = producto.categoria?.trim();
-      const subcategoria = producto.sub_categoria?.trim();
+      const subcategoria = producto.subcategoria?.trim();
       if (!categoria || categoria === "S/D") return;
       if (!agrupado[categoria]) agrupado[categoria] = {};
       if (subcategoria && subcategoria !== "S/D") {

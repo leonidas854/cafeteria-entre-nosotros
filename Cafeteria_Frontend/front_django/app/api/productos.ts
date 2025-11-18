@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 // Configuración base
-const API_URL = "http://localhost:8000/api/productos/";
+const API_URL = process.env.NEXT_PUBLIC_API+"/api/productos/";
 
-const BASE_BACKEND_URL = "http://localhost:8000/api/productos/"
+const BASE_BACKEND_URL = process.env.NEXT_PUBLIC_API+"/api/productos/";
 
 //process.env.NEXT_PUBLIC_BACKEND_URL;
 
@@ -39,13 +39,8 @@ export const getProductos = async (): Promise<Producto[]> => {
 export const getProductoPorId = async (id: number): Promise<Producto> => {
   try {
     const { data } = await axios.get<Producto>(`${API_URL}${id}/`);
-
-    return {
-      ...data,
-      imagen_url: data.imagen_url
-        ? `${BASE_BACKEND_URL}${data.imagen_url}`
-        : undefined
-    };
+    // Simplemente devuelve los datos, sin manipular la URL.
+    return data;
   } catch (error) {
     console.error(`Error al obtener el producto con ID ${id}:`, error);
     throw new Error("Producto no encontrado");

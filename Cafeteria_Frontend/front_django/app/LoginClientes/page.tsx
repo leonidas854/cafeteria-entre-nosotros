@@ -9,7 +9,7 @@ import "./loginC.css";
 import "../login/menu.css";
 
 export default function LoginClientePage() {
-  const [usuario, setUsuario] = useState('');
+  const [username, setUsuario] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -22,9 +22,9 @@ export default function LoginClientePage() {
     setIsLoading(true);
 
     try {
-      const { isSuccess, message } = await loginCliente({ usuario, password });
+      const { tipo, message ,error} = await loginCliente({ username,password});
 
-      if (!isSuccess) {
+      if (error == 'Credenciales inválidas') {
         throw new Error('Credenciales incorrectas');
       }
 
@@ -68,7 +68,7 @@ export default function LoginClientePage() {
               id="username" 
               className="form-input"
               placeholder="Ingresa tu usuario"
-              value={usuario}
+              value={username}
               onChange={(e) => setUsuario(e.target.value)}
               required
             />

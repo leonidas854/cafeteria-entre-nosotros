@@ -33,7 +33,6 @@ class ComidaSerializer(serializers.ModelSerializer):
         model = Comida
         fields = ['proporcion']
 class ProductoSerializer(serializers.ModelSerializer):
-    #imagen_url = serializers.SerializerMethodField()
     tamanio = serializers.CharField(read_only = True,required = False)
     proporcion = serializers.CharField(read_only = True,required = False)
 
@@ -58,4 +57,6 @@ class ProductoSerializer(serializers.ModelSerializer):
         elif instance.tipo == 'comida' and hasattr(instance, 'comida'):
             detalles_comida = ComidaSerializer(instance.comida).data
             representation.update(detalles_comida)
-        return {key: value for key, value in representation.items() if value is not None}
+
+            
+        return representation

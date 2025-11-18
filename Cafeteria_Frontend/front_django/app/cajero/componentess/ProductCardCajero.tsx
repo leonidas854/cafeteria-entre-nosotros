@@ -12,12 +12,12 @@ export default function ProductCardCajero({ product, onAddToOrder }: ProductCard
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg flex flex-col">
       <div className="relative h-40 bg-gray-200">
-        {product.image_url && (
+        {product.imagen_url && (
           <img
             src={
-              typeof product.image_url === 'string'
-                ? product.image_url
-                : URL.createObjectURL(product.image_url)
+              typeof product.imagen_url === 'string'
+                ? product.imagen_url
+                : URL.createObjectURL(product.imagen_url)
             }
             alt={product.nombre}
             className="w-full h-full object-cover"

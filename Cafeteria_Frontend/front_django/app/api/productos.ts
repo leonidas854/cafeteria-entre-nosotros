@@ -1,15 +1,18 @@
 import axios from 'axios';
 
 // Configuración base
-const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/Producto`;
-const BASE_BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+const API_URL = "http://localhost:8000/api/productos/";
+
+const BASE_BACKEND_URL = "http://localhost:8000/api/productos/"
+
+//process.env.NEXT_PUBLIC_BACKEND_URL;
 
 // Interfaz
 export interface Producto {
   id: number;
   tipo: string;
   categoria: string;
-  sub_categoria: string;
+  subcategoria: string;
   descripcion: string;
   nombre: string;
   precio: number;
@@ -17,7 +20,7 @@ export interface Producto {
   sabores: string;
   proporcion?: string;
   tamanio?: string;
-  image_url?: File | string;
+  imagen_url?: File | string;
 }
 
 // 1. Obtener todos los productos activos
@@ -25,12 +28,7 @@ export const getProductos = async (): Promise<Producto[]> => {
   try {
     const { data } = await axios.get<Producto[]>(API_URL);
 
-    return data.map((producto) => ({
-      ...producto,
-      image_url: producto.image_url
-        ? `${BASE_BACKEND_URL}${producto.image_url}`
-        : undefined
-    }));
+    return data;
   } catch (error) {
     console.error("Error al cargar los productos:", error);
     throw new Error("Error al cargar los productos");
@@ -40,12 +38,12 @@ export const getProductos = async (): Promise<Producto[]> => {
 // 2. Obtener producto por ID
 export const getProductoPorId = async (id: number): Promise<Producto> => {
   try {
-    const { data } = await axios.get<Producto>(`${API_URL}/${id}`);
+    const { data } = await axios.get<Producto>(`${API_URL}${id}/`);
 
     return {
       ...data,
-      image_url: data.image_url
-        ? `${BASE_BACKEND_URL}${data.image_url}`
+      imagen_url: data.imagen_url
+        ? `${BASE_BACKEND_URL}${data.imagen_url}`
         : undefined
     };
   } catch (error) {
@@ -119,8 +117,8 @@ export const getTodosProductos = async (): Promise<Producto[]> => {
 
     return data.map((producto) => ({
       ...producto,
-      image_url: producto.image_url
-        ? `${BASE_BACKEND_URL}${producto.image_url}`
+      image_url: producto.imagen_url
+        ? `${BASE_BACKEND_URL}${producto.imagen_url}`
         : undefined
     }));
   } catch (error) {

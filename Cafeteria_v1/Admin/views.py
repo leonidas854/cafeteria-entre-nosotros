@@ -6,15 +6,15 @@ from django.contrib.auth import authenticate, login,logout
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from .models import UsuarioBase
-
+from .models import UsuarioBase,Producto
+from rest_framework import viewsets
 from drf_spectacular.utils import extend_schema
 
 from .serializers import (
     LoginSerializer,
     LoginSuccessResponseSerializer,
     ErrorResponseSerializer,
-    LogoutSuccessResponseSerializer
+    LogoutSuccessResponseSerializer,ProductoSerializer
 )
 from django.views.decorators.csrf import csrf_exempt
 
@@ -73,4 +73,12 @@ def logout_view(request):
     logout(request)
     return Response({'isSuccess' : True,
                          'message': 'Sesión cerrada exitosamente'})
+@permission_classes([AllowAny])
+class ProductoViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Producto.objects.select_related('bebida','comida').all()
+    serializer_class = ProductoSerializer
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context.update({'request': self.request})
+        return context
 

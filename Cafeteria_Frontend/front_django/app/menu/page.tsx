@@ -139,7 +139,7 @@ const agruparPorCategoria = (productos: Producto[]): GroupedProducts => {
 
   productos.forEach((producto) => {
     const categoria = producto.categoria?.trim();
-    const subcategoria = producto.sub_categoria?.trim();
+    const subcategoria = producto.subcategoria?.trim();
 
     if (!categoria || categoria === "S/D") return;
 
@@ -393,12 +393,12 @@ export function ProductCard({
       onMouseLeave={() => setShowDescription(false)}
     >
       <div className="relative h-68 bg-gray-200 overflow-hidden">
-        {product.image_url && (
+        {product.imagen_url && (
           <img
             src={
-              typeof product.image_url === 'string'
-                ? product.image_url
-                : URL.createObjectURL(product.image_url)
+              typeof product.imagen_url === 'string'
+                ? product.imagen_url
+                : URL.createObjectURL(product.imagen_url)
             }
             alt={product.nombre}
             className="w-full h-full object-cover"

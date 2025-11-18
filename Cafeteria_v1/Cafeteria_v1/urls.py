@@ -20,6 +20,10 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('Cliente.urls')),
@@ -43,3 +47,6 @@ urlpatterns = [
         name='redoc'
     ),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj": {}
+    "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj": {
+    "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
+        "projectUniqueName": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
         "projectName": "Cafeteria.Tests",
-        "projectPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria.Tests\\Cafeteria.Tests.csproj",
-        "packagesPath": "C:\\Users\\foonky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria.Tests\\obj\\",
+        "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
+        "packagesPath": "/home/leonidas/.nuget/packages/",
+        "outputPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\foonky\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/leonidas/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -26,8 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj": {
-                "projectPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj"
+              "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj": {
+                "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj"
               }
             }
           }
@@ -42,7 +42,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -106,26 +106,32 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj": {
+    "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
+        "projectUniqueName": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
         "projectName": "Cafeteria_back",
-        "projectPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\Cafeteria_back.csproj",
-        "packagesPath": "C:\\Users\\foonky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\foonky\\OneDrive\\Documentos\\Cafeteria\\Cafeteria_back\\obj\\",
+        "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
+        "packagesPath": "/home/leonidas/.nuget/packages/",
+        "outputPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\foonky\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/leonidas/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -149,7 +155,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -213,6 +219,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -221,7 +233,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

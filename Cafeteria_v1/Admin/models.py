@@ -1,6 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, Group, Permission
 
+class EstadoPedido(models.TextChoices):
+    PENDIENTE = 'pendiente', 'Pendiente'
+    EN_PROCESO = 'en_proceso', 'En Proceso'
+    COMPLETADO = 'completado', 'Completado'
+    CANCELADO = 'cancelado', 'Cancelado'
+
+class TipoEntrega(models.TextChoices):
+    RECOGER = 'recoger', 'Recoger en tienda'
+    DOMICILIO = 'domicilio', 'A Domicilio'
+
 class UsuarioBase(AbstractUser):
     TIPO_USUARIO = (
         ('cliente', 'Cliente'),
@@ -69,20 +79,32 @@ class Comida(models.Model):
     proporcion = models.CharField(max_length=100)
 
 class Pedido(models.Model):
-    #producto = models.ForeignKey(Producto,on_delete=models.CASCADE,primary_key=True)
+
     cliente = models.ForeignKey(Cliente,
                                 on_delete=models.CASCADE,
                                 null=True,blank=True)
     total_estimado = models.FloatField(default=0)
     total_descuento = models.FloatField(default=0)
-    tipo_entrega = models.CharField(default="",max_length=100)
-    estado = models.CharField(default="",max_length=100)
-    
+    tipo_entrega = models.CharField(
+    max_length=20, 
+    choices=TipoEntrega.choices, 
+    default=TipoEntrega.RECOGER
+)
+    estado = models.CharField(
+    max_length=20, 
+    choices=EstadoPedido.choices, 
+    default=EstadoPedido.PENDIENTE
+)
 class Promocion(models.Model):  
     descuento = models.FloatField()
     fecha_ini =  models.DateField()
     fech_final = models.DateField()
     descripcion = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=100,default="")
+    url_imagen = models.CharField(max_length=100,default="")
+
     producto  = models.ManyToManyField(Producto,related_name="promociones")
     
+
+
 

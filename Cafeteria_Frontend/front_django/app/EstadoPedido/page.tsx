@@ -14,7 +14,7 @@ interface Extra {
 
 interface DetallePedido {
   producto_id: number;
-  productoNombre: string;
+  producto_nombre: string;
   cantidad: number;
   precio_unitario: number;
   extras: Extra[];
@@ -28,14 +28,16 @@ interface VentaRelacionada {
 }
 
 interface Pedido {
-  id_pedido: number;
+  id: number;
   total_estimado: number;
   total_descuento: number;
-  tipoEntrega: string;
+  tipo_entrega: string;
   estado: string;
   detalles: DetallePedido[];
   venta?: VentaRelacionada;
 }
+
+
 
 export default function MisPedidosPage() {
   const [pedidos, setPedidos] = useState<Pedido[]>([]);
@@ -75,11 +77,11 @@ export default function MisPedidosPage() {
         ) : (
           pedidos.map((pedido) => (
             <div
-              key={pedido.id_pedido}
+              key={pedido.id}
               className="border border-amber-300 bg-[#FFF8F0] rounded-xl shadow-md p-6 mb-6 transition-all hover:shadow-lg"
             >
               <div className="flex justify-between items-center mb-3">
-                <h2 className="text-lg font-semibold text-blue-800">Pedido #{pedido.id_pedido}</h2>
+                <h2 className="text-lg font-semibold text-blue-800">Pedido #{pedido.id}</h2>
                 <span
                   className={`px-3 py-1 rounded-full text-sm font-medium ${
                     pedido.estado === 'Confirmado'
@@ -92,7 +94,7 @@ export default function MisPedidosPage() {
               </div>
 
               <p className="text-sm text-gray-700 mb-1">
-                Tipo de entrega: <strong>{pedido.tipoEntrega}</strong>
+                Tipo de entrega: <strong>{pedido.tipo_entrega}</strong>
               </p>
               <p className="text-sm text-gray-700 mb-1">
                 Total : <strong>{pedido.total_estimado?.toFixed(2)} Bs</strong>
@@ -104,11 +106,11 @@ export default function MisPedidosPage() {
               <div className="space-y-4">
                 {pedido.detalles?.map((detalle, index) => (
                   <div
-                    key={`${pedido.id_pedido}-${detalle.producto_id}-${index}`}
+                    key={`${pedido.id}-${detalle.producto_id}-${index}`}
                     className="border-t pt-3"
                   >
                     <p className="text-base font-medium text-gray-900">
-                      {detalle.productoNombre} x{detalle.cantidad}
+                      {detalle.producto_nombre} x{detalle.cantidad}
                     </p>
                     <p className="text-sm text-gray-600">
                       Precio unitario: {detalle.precio_unitario.toFixed(2)} Bs

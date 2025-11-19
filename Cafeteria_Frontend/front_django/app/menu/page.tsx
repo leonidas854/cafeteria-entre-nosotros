@@ -93,10 +93,10 @@ const cargarCarrito = async () => {
   const verificarPedidos = async () => {
   try {
     
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Pedido/mis-pedidos`, {
-      withCredentials: true
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/pedidos/mis-pedidos/`, {
+      withCredentials: true,
     });
-    if (Array.isArray(res.data) && res.data.length > 0) {
+    if (res.data.length >= 0&&Array.isArray(res.data)) {
       setMostrarBotonHistorial(true);
     } else {
       setMostrarBotonHistorial(false);

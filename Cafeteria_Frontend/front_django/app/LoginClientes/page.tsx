@@ -25,6 +25,9 @@ export default function LoginClientePage() {
     try {
       const { tipo, message ,error} = await loginCliente({ username,password});
       //router.push('/menu');
+      if (error=='Credenciales inválidas') {
+        throw { response: { data: { error } } };
+      }
       window.location.href='/menu';
     } catch (err:any) {
       const errorMessage = err?.response?.data?.error || 'Error desconocido';

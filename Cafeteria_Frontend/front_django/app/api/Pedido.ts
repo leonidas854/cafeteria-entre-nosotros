@@ -33,7 +33,7 @@ export const fetchPedidos = async (
   setLoading: (val: boolean) => void
 ) => {
   try {
-    const res = await axios.get(`${API_URL_}/mis-pedidos`, {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/pedidos/mis-pedidos/`, {
       withCredentials: true,
     });
 

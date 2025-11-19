@@ -80,7 +80,7 @@ class PedidoSerializer(serializers.ModelSerializer):
     tipo_entrega = serializers.CharField(source='get_tipo_entrega_display')
     estado = serializers.CharField(source = 'get_estado_display')
 
-    detalles = DetallePedidoSerializer(source = 'detalle_productos',many=True,read_only=True)
+    detalles = DetallePedidoSerializer(source = 'detalle_pedido',many=True,read_only=True)
 
     class Meta:
         model =Pedido

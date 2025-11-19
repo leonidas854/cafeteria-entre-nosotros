@@ -7,6 +7,7 @@ import Menu from "../components/Menu.jsx";
 import Link from "next/link";
 import "./loginC.css";
 import "../login/menu.css";
+import { Finlandica } from 'next/font/google/index.js';
 
 export default function LoginClientePage() {
   const [username, setUsuario] = useState('');
@@ -23,27 +24,32 @@ export default function LoginClientePage() {
 
     try {
       const { tipo, message ,error} = await loginCliente({ username,password});
+      //router.push('/menu');
+      window.location.href='/menu';
+    } catch (err:any) {
+      const errorMessage = err?.response?.data?.error || 'Error desconocido';
 
-      if (error == 'Credenciales inválidas') {
-        throw new Error('Credenciales incorrectas');
-      }
-
-      router.push('/menu');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error desconocido');
-    } finally {
-      setIsLoading(false);
+    if (errorMessage === 'Credenciales inválidas') {
+      setError('Credenciales incorrectas'); 
+    } else {
+      setError(errorMessage); 
     }
-  };
+    
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   const handleLogout = async () => {
     try {
       await logout();
       //router.push('/LoginClientes'); 
+      window.location.href = '/LoginClientes';
+  
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error al cerrar sesión');
-    }
-  };
+   
+  }};
 
   return (
     <div className="login-page">
@@ -104,7 +110,7 @@ export default function LoginClientePage() {
             className="login-button secondary-button" 
             onClick={(e) =>{
               e.preventDefault();
-              router.push('/menu');
+              //router.push('/menu');
               handleLogout();
               
             }

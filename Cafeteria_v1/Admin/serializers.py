@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from .models import UsuarioBase,Producto,Bebida,Comida
-
+from .models import UsuarioBase,Producto,Bebida,Comida,Pedido
+from Cliente.models import Detalle_pedido,Extra
 class UsuarioBaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = UsuarioBase
@@ -60,3 +60,34 @@ class ProductoSerializer(serializers.ModelSerializer):
 
             
         return representation
+    
+
+class ExtraSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Extra
+        fields= ['id','nombre','precio']
+
+class DetallePedidoSerializer(serializers.ModelSerializer):
+    producto_nombre = serializers.CharField(source = 'producto.nombre',read_only=True)
+    extras = ExtraSerializer(many=True,read_only=True)
+
+    class Meta:
+        model =Detalle_pedido
+        fields = ['producto_id','producto_nombre','cantidad','precio_unitario','extras']
+
+
+class PedidoSerializer(serializers.ModelSerializer):
+    tipo_entrega = serializers.CharField(source='get_tipo_entrega_display')
+    estado = serializers.CharField(source = 'get_estado_display')
+
+    detalles = DetallePedidoSerializer(source = 'detalle_productos',many=True,read_only=True)
+
+    class Meta:
+        model =Pedido
+        fields = ['id',
+                  'total_estimado',
+                  'total_descuento',
+                  'tipo_entrega',
+                  'estado',
+                  'detalles']
+

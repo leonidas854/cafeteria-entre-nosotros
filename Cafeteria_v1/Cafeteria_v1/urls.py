@@ -36,7 +36,7 @@ urlpatterns = [
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
 
     path(
-        'swagger-ui/', 
+        'api/schema/swagger-ui/', 
         ensure_csrf_cookie(SpectacularSwaggerView.as_view(url_name='schema')), 
         name='swagger-ui'
     ),

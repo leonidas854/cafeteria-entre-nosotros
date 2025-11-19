@@ -1,4 +1,4 @@
-const API_URL_ = process.env.NEXT_PUBLIC_API+" /api/Login/";
+const API_URL_ = process.env.NEXT_PUBLIC_API+"/api/login/";
 //`${process.env.NEXT_PUBLIC_BACKEND_URL}/Acceso/Login`;
 
 export interface LoginClienteRequest {
@@ -10,7 +10,6 @@ export interface LoginClienteRequest {
 export interface LoginClienteResponse {
   message?: string;
   tipo?: string;
-  username?: string;
  error?: string;
 }
 
@@ -39,12 +38,8 @@ try {
   throw new Error("La respuesta del servidor no es un JSON válido");
 }
 
-if (!response.ok || !data.isSuccess) {
-  throw new Error(data.message || "Error en login");
-}
 
-
-if (data.isSuccess) {
+if (data.tipo == "cliente") {
     sessionStorage.setItem('nombreCliente', credenciales.username);
   }
 

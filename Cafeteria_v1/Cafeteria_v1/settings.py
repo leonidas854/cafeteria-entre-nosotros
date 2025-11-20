@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'Admin',
     'Cliente',
     'Caja',
+    'Carrito',
     'drf_spectacular',
 ]
 

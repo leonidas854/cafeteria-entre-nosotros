@@ -1,189 +1,179 @@
-
 import axios from 'axios';
 
-const API_URL_ = `${process.env.NEXT_PUBLIC_API_URL}/Carrito`;
+const API_URL = `${process.env.NEXT_PUBLIC_API}/api/carrito`;
+
+
+const getCsrfToken = (): string | null => {
+  if (typeof document === 'undefined') return null;
+  const csrfCookie = document.cookie.split('; ').find(row => row.startsWith('csrftoken='));
+  return csrfCookie ? csrfCookie.split('=')[1] : null;
+};
+
+export interface Extra {
+  id: number;
+  name: string;
+  precio: number;
+}
+
+export interface ItemCarrito {
+  id: number; 
+  producto_id: number;
+  nombre: string;
+  categoria: string;
+  precio_unitario: number;
+  cantidad: number;
+  extras: Extra[];
+  tiene_promocion: boolean;
+  precio_promocional?: number;
+  descripcion_promocion?: string;
+}
+
+export interface Carrito {
+  id: number;
+  cliente_id?: number;
+  empleado_id?: number;
+  items: ItemCarrito[];
+}
+
+
+export async function obtenerCarrito(): Promise<Carrito | null> {
+  try {
+
+    const response = await axios.get<Carrito>(`${API_URL}/mi-carrito/`, {
+      withCredentials: true 
+    });
+    return response.data;
+  } catch (error: any) {
+    if (error.response?.status === 404 || error.response?.status === 401) {
+      console.warn('No se encontró un carrito para el usuario o no está autorizado.');
+      return null;
+    }
+    console.error('Error al obtener el carrito:', error);
+    throw error;
+  }
+}
 
 export async function agregarProductoAlCarrito(
   productoId: number,
-  nombre: string,
-  categoria:string,
-  precioUnitario: number,
-  cantidad = 1,
-  extras: { extraId: number; nombre: string; precio: number }[] = [],
-  clienteId?: number
-)
- {
+  cantidad: number,
+  extraIds: number[] = [] 
+): Promise<Carrito> {
+
+ const csrfToken = getCsrfToken();
+  if (!csrfToken) {
+    throw new Error("Token CSRF no encontrado. No se puede agregar al carrito.");
+  }
+
   try {
-    const item = {
-      productoId,
-      nombre,
-      categoria,
-      precioUnitario,
-      cantidad,
-      extras
+    const body = {
+      producto_id: productoId,
+      cantidad: cantidad,
+      extra_ids: extraIds
     };
 
-    const body: any = {
-      items: [item]
-    };
 
-  if (clienteId) {
-      body.clienteId = clienteId;
-    }
+    const response = await axios.post<Carrito>(`${API_URL}/agregar-item/`, body, {
+      withCredentials: true,
+      headers:{
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrfToken, 
+      }
 
-
-    const response = await axios.post(`${API_URL_}/agregar`, body, {
-  withCredentials: true
-});
-
+    });
     return response.data;
   } catch (error: any) {
-    if (error.response?.status === 401) {
-      console.warn('No autorizado: el usuario debe iniciar sesión para agregar productos al carrito.');
-      return null;
-    }
-
     console.error('Error al agregar producto al carrito:', error);
     throw error;
   }
 }
 
-export async function modificarCantidad(productoId: number, extraIds: number[], nuevaCantidad: number) {
-  try {
-    const response = await axios.put(
-  `${API_URL_}/modificar-cantidad`,
-  {
-    productoId,
-    extraIds,
-    nuevaCantidad
-  },
-  {
-    withCredentials: true
-  }
-);
 
+export async function modificarCantidad(
+  itemId: number, 
+  nuevaCantidad: number
+): Promise<Carrito> {
+
+
+  const csrfToken = getCsrfToken();
+  if (!csrfToken) {
+    throw new Error("Token CSRF no encontrado.");
+  }
+  try {
+    const body = {
+      item_id: itemId,
+      nueva_cantidad: nuevaCantidad
+    };
+
+    const response = await axios.put<Carrito>(`${API_URL}/modificar-cantidad/`, body, {
+      withCredentials: true,
+      headers: { 'X-CSRFToken': csrfToken },
+    });
     return response.data;
   } catch (error: any) {
-    if (error.response?.status === 401) {
-      console.warn('No autorizado: el usuario debe iniciar sesión para modificar la cantidad.');
-      return null;
-    }
-
     console.error('Error al modificar cantidad:', error);
-    throw error;
-  }
-}
-
-export async function obtenerCarrito() {
-  try {
-    const response = await axios.get(API_URL_, {
-      withCredentials: true
-    });
-
-    const data = response.data;
-
-    // Verifica si hay carrito válido y con items
-    if (!data || !Array.isArray(data.items)) {
-      return null; 
-    }
-
-    return {
-      id: data.id,
-      clienteId: data.clienteId,
-      items: data.items
-    };
-  } catch (error: any) {
-    if (error.response?.status === 401) {
-      console.warn('No autorizado: el usuario debe iniciar sesión para obtener el carrito.');
-      return { error: 'NO_AUTORIZADO' };
-    }
-
-    if (error.response?.status === 404 || error.message.includes('Network')) {
-      console.warn('Carrito no encontrado. Se devolverá null.');
-      return null;
-    }
-
-    console.error('Error al obtener el carrito:', error);
     throw error;
   }
 }
 
 
 export async function modificarExtras(
-  productoId: number,
-  nuevosExtras: { extraId: number; nombre: string; precio: number }[]
-) {
+  itemId: number, 
+  nuevosExtraIds: number[]
+): Promise<Carrito> {
   try {
-    const response = await axios.put(`${API_URL_}/modificar-extras`, {
-      productoId,
-      nuevosExtras
-    }, {
+    const body = {
+      item_id: itemId,
+      nuevos_extra_ids: nuevosExtraIds
+    };
+    const response = await axios.put<Carrito>(`${API_URL}/modificar-extras/`, body, {
       withCredentials: true
     });
-
     return response.data;
-  } catch (error:any) {
-    
-    if (error.response?.status === 401) {
-      console.warn('No autorizado: el usuario debe iniciar sesión para modificar los extras.');
-      return null;
-    }
+  } catch (error: any) {
     console.error('Error al modificar extras del producto:', error);
     throw error;
   }
 }
+
 export async function quitarProducto(
-  productoId: number,
-  extraIds: number[]
-) {
+  itemId: number 
+): Promise<Carrito> {
   try {
-    const response = await axios.delete(`${API_URL_}/quitar-producto`, {
-      data: {
-        productoId,
-        extraIds
-      },
+
+    const response = await axios.delete<Carrito>(`${API_URL}/quitar-item/${itemId}/`, {
       withCredentials: true
     });
-
     return response.data;
   } catch (error: any) {
-    if (error.response?.status === 401) {
-      console.warn('No autorizado para quitar productos.');
-      return null;
-    }
-
     console.error('Error al quitar producto del carrito:', error);
     throw error;
   }
 }
 
-export async function eliminarCarrito(id: string) {
+export async function eliminarCarrito(): Promise<void> {
   try {
-    const response = await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/Carrito/${id}`, {
+    await axios.delete(`${API_URL}/vaciar-carrito/`, {
       withCredentials: true,
     });
-    return response.data;
   } catch (error: any) {
     console.error("Error al eliminar el carrito:", error);
     throw error;
   }
 }
 
-export async function asignarCarritoACliente(carritoId: string, clienteId: number) {
+export async function asignarCarritoACliente(
+  carritoId: number, 
+  clienteId: number
+): Promise<Carrito> {
   try {
-    const response = await axios.put(
-      `${API_URL_}/asignar-a-cliente/${carritoId}?clienteId=${clienteId}`,
-      {},
-      { withCredentials: true }
-    );
+    const body = { cliente_id: clienteId };
+    
+    const response = await axios.put<Carrito>(`${API_URL}/${carritoId}/asignar-cliente/`, body, { 
+      withCredentials: true 
+    });
     return response.data;
   } catch (error: any) {
     console.error("Error al asignar el carrito al cliente:", error);
     throw error;
   }
 }
-
-
-
-
-

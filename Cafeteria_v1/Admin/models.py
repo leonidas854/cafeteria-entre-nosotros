@@ -82,7 +82,7 @@ class Pedido(models.Model):
 
     cliente = models.ForeignKey(Cliente,
                                 on_delete=models.CASCADE,
-                                null=True,blank=True)
+                                null=True,blank=True,related_name='cliente')
     total_estimado = models.FloatField(default=0)
     total_descuento = models.FloatField(default=0)
     tipo_entrega = models.CharField(

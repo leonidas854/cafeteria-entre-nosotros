@@ -60,7 +60,7 @@ export const fetchVentas = async (
   setLoading: (val: boolean) => void
 ) => {
   try {
-    const res = await axios.get(`${API_URL_}/mis-ventas`, {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/ventas/mis-ventas/`, {
       withCredentials: true,
     });
 

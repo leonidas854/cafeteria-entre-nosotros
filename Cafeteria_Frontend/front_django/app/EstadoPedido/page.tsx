@@ -7,8 +7,8 @@ import "./menu.css";
 import { fetchPedidos, fetchVentas } from "@/app/api/Pedido";
 
 interface Extra {
-  extra_id: number;
-  extraNombre: string;
+  id: number;
+  nombre: string;
   precio: number;
 }
 
@@ -21,8 +21,8 @@ interface DetallePedido {
 }
 
 interface VentaRelacionada {
-  pedidoId: number;
-  total_final: number;
+  id: number;
+  total: number;
   tipo_de_Pago: string;
   fecha: string;
 }
@@ -118,8 +118,8 @@ export default function MisPedidosPage() {
                     {detalle.extras.length > 0 && (
                       <ul className="list-disc pl-6 mt-1 text-sm text-gray-600">
                         {detalle.extras.map((extra) => (
-                          <li key={extra.extra_id}>
-                            {extra.extraNombre} (+{extra.precio.toFixed(2)} Bs)
+                          <li key={extra.id}>
+                            {extra.nombre} (+{extra.precio.toFixed(2)} Bs)
                           </li>
                         ))}
                       </ul>
@@ -132,7 +132,7 @@ export default function MisPedidosPage() {
                 <div className="mt-4 border-t pt-3 text-sm text-gray-700">
                   <p><strong>Fecha de venta:</strong> {new Date(pedido.venta.fecha).toLocaleString()}</p>
                   <p><strong>Tipo de pago:</strong> {pedido.venta.tipo_de_Pago}</p>
-                  <p><strong>Total final:</strong> {pedido.venta.total_final.toFixed(2)} Bs</p>
+                  <p><strong>Total final:</strong> {pedido.venta.total.toFixed(2)} Bs</p>
                 </div>
               )}
             </div>

@@ -1,8 +1,13 @@
 'use client';
-import { obtenerCarrito } from '@/app/api/Carrito';
+import {obtenerCarrito,
+  agregarProductoAlCarrito , 
+  ItemCarrito,
+  Carrito,
+  Extra
+
+} from '@/app/api/Carrito';
 import { useEffect, useState } from 'react';
 import { getProductos, Producto } from '@/app/api/productos';
-import { agregarProductoAlCarrito } from '@/app/api/Carrito';
 import Menu from "../components/Menu.jsx";
 import MenuLateral from "../components/MenuLateral.jsx";
 import CarritoFlotante from '../components/CarritoFlotante';
@@ -14,7 +19,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 
-
+/*
 interface ExtraCarrito {
   extraId: number;
   nombre: string;
@@ -37,7 +42,7 @@ interface Carrito {
   id?: string;
   clienteId?: number;
   items: ItemCarrito[];
-}
+}*/
 
 type GroupedProducts = {
   [categoria: string]: {
@@ -64,7 +69,7 @@ const [carritoCargando, setCarritoCargando] = useState(true);
 
 const totalItems = carrito?.items.reduce((sum, item) => sum + item.cantidad, 0) || 0;
 const totalAmount = carrito?.items.reduce((sum, item) => {
-  const precio = item.precioPromocional ?? item.precioUnitario;
+  const precio = item.precio_promocional ?? item.precio_unitario;
   const extras = item.extras?.reduce((eSum, e) => eSum + e.precio, 0) || 0;
   return sum + (precio + extras) * item.cantidad;
 }, 0) || 0;
@@ -102,7 +107,7 @@ const cargarCarrito = async () => {
       setMostrarBotonHistorial(false);
     }
   } catch (error: any) {
-    if (error.response?.status === 401|| error.response?.status === 404) {
+    if (error.response?.status === 403|| error.response?.status === 404) {
       setMostrarBotonHistorial(false);
       
     } else {
@@ -358,9 +363,6 @@ export function ProductCard({
     try {
       await agregarProductoAlCarrito(
         product.id,
-        product.nombre,
-        product.categoria,
-        product.precio,
         1,
         []
       );

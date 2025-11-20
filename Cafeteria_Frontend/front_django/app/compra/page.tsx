@@ -14,10 +14,15 @@ import {
   modificarCantidad,
   modificarExtras,
    quitarProducto,
-    eliminarCarrito
+    eliminarCarrito,
+    Carrito,
+    Extra,
+    ItemCarrito
 } from '@/app/api/Carrito';
 import './compra.css';
 
+
+/*
 interface ExtraCarrito {
   extraId: number;
   nombre: string;
@@ -41,13 +46,13 @@ interface Carrito {
   id?: string;
   clienteId?: number;
   items: ItemCarrito[];
-}
+}*/
 
 
 
-export const obtenerExtrasDisponibles = async (): Promise<ExtraCarrito[] | null | { error: string }> => {
+export const obtenerExtrasDisponibles = async (): Promise<Extra[] | null | { error: string }> => {
   try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Extras`, {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/extras/`, {
       withCredentials: true
     });
 
@@ -55,9 +60,9 @@ export const obtenerExtrasDisponibles = async (): Promise<ExtraCarrito[] | null 
       return null; 
     }
 
-    const adaptados: ExtraCarrito[] = res.data.map((e: any) => ({
-      extraId: e.id,
-      nombre: e.nombre,
+    const adaptados: Extra[] = res.data.map((e: any) => ({
+      id: e.id,
+      name: e.nombre,
       precio: e.precio
     }));
 
@@ -82,7 +87,7 @@ const esCafe = (nombre: string) => {
 
 export default function HomePage() {
 
-  const [extrasDisponibles, setExtrasDisponibles] = useState<ExtraCarrito[]>([]);
+  const [extrasDisponibles, setExtrasDisponibles] = useState<Extra[]>([]);
   const [carrito, setCarrito] = useState<Carrito | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -201,7 +206,7 @@ const fetchCarrito = async () => {
 
   const totalAmount =
     carrito?.items?.reduce((sum, item) => {
-      const precio = item.precioPromocional ?? item.precioUnitario;
+      const precio = item.precio_promocional ?? item.precio_unitario;
       const extras = item.extras?.reduce((s, e) => s + e.precio, 0) || 0;
       return sum + (precio + extras) * item.cantidad;
     }, 0) || 0;
@@ -209,8 +214,8 @@ const fetchCarrito = async () => {
 
   const handleModificarCantidad = async (item: ItemCarrito, nuevaCantidad: number) => {
   try {
-    const extraIds = item.extras.map(e => e.extraId);
-    await modificarCantidad(item.productoId, extraIds, nuevaCantidad);
+    const extraIds = item.extras.map(e => e.id);
+    await modificarCantidad(item.producto_id, nuevaCantidad);
 
     const actualizado = await obtenerCarrito();
 
@@ -226,10 +231,11 @@ const fetchCarrito = async () => {
 };
 
 
-  const handleAgregarExtra = async (item: ItemCarrito, extra: ExtraCarrito) => {
+  const handleAgregarExtra = async (item: ItemCarrito, extra: Extra) => {
   try {
     const nuevosExtras = [...item.extras, extra];
-    await modificarExtras(item.productoId, nuevosExtras);
+    const nuevosExtrasIds = nuevosExtras.map(e => e.id);
+    await modificarExtras(item.producto_id, nuevosExtrasIds);
 
     const actualizado = await obtenerCarrito();
 
@@ -247,8 +253,11 @@ const fetchCarrito = async () => {
 
   const handleQuitarExtra = async (item: ItemCarrito, extraId: number) => {
   try {
-    const nuevosExtras = item.extras.filter(e => e.extraId !== extraId);
-    await modificarExtras(item.productoId, nuevosExtras);
+    const nuevosExtras = item.extras.filter(e => e.id !== extraId);
+
+    const nuevosExtrasIds = nuevosExtras.map(e => e.id);
+
+    await modificarExtras(item.producto_id, nuevosExtrasIds);
 
     const actualizado = await obtenerCarrito();
 
@@ -295,7 +304,7 @@ const fetchCarrito = async () => {
             <p className="text-gray-500">Tu carrito está vacío.</p>
           ) : (
             carrito?.items?.map((item, index) => {
-              const precio = item.precioPromocional ?? item.precioUnitario;
+              const precio = item.precio_promocional ?? item.precio_unitario;
               const extras = item.extras?.reduce((s, e) => s + e.precio, 0) || 0;
               const subtotal = (precio + extras) * item.cantidad;
 
@@ -325,10 +334,10 @@ const fetchCarrito = async () => {
                     {item.extras?.length > 0 && (
                       <ul className="mt-1 ml-4 list-disc text-sm text-gray-600">
                         {item.extras.map(extra => (
-                          <li key={`${item.productoId}-${extra.extraId}`} className="flex justify-between items-center">
-                            <span>{extra.nombre} (+${extra.precio.toFixed(2)})</span>
+                          <li key={`${item.producto_id}-${extra.id}`} className="flex justify-between items-center">
+                            <span>{extra.name} (+${extra.precio.toFixed(2)})</span>
                             <button
-                              onClick={() => handleQuitarExtra(item, extra.extraId)}
+                              onClick={() => handleQuitarExtra(item, extra.id)}
                               className="text-red-500 text-xs ml-4 hover:underline"
                             >
                               Quitar
@@ -343,15 +352,15 @@ const fetchCarrito = async () => {
                           <div className="mt-2 ml-1 text-sm">
                             <p className="text-gray-700 font-semibold">Agregar extras:</p>
                             {extrasDisponibles
-  .filter(extra => extra.extraId !== undefined && !item.extras.some(e => e.extraId === extra.extraId))
+  .filter(extra => extra.id !== undefined && !item.extras.some(e => e.id === extra.id))
 
                               .map(extra => (
-                                <div key={`${item.productoId}-${extra.extraId}`}>
+                                <div key={`${item.producto_id}-${extra.id}`}>
                                   <button
                                     onClick={() => handleAgregarExtra(item, extra)}
                                     className="text-amber-700 hover:underline block text-left"
                                   >
-                                    {extra.nombre} (+Bs{extra.precio.toFixed(2)})
+                                    {extra.name} (+Bs{extra.precio.toFixed(2)})
                                   </button>
                                 </div>
                               ))}
@@ -359,9 +368,9 @@ const fetchCarrito = async () => {
                         )}
 
 
-                    {item.precioPromocional && (
+                    {item.precio_promocional && (
                       <p className="text-sm text-amber-600 mt-1 italic">
-                        Promoción: {item.descripcionPromocion}
+                        Promoción: {item.descripcion_promocion}
                       </p>
                     )}
                   </div>
@@ -372,8 +381,7 @@ const fetchCarrito = async () => {
   onClick={async () => {
     try {
       await quitarProducto(
-        item.productoId,
-        item.extras.map((e) => e.extraId)
+        item.producto_id
       );
       const actualizado = await obtenerCarrito();
 
@@ -458,7 +466,7 @@ setCarrito(actualizado);
                   <button
                     onClick={async () => {
                       try {
-                        await eliminarCarrito(carrito.id!);
+                        await eliminarCarrito();
                         toast.success("🗑️ Carrito eliminado correctamente");
                         setCarrito(null); 
                        router.push('/menu');

@@ -29,6 +29,7 @@ urlpatterns = [
     path('api/',include('Cliente.urls')),
     path('api/',include('Admin.urls')),
     path('api/',include('Caja.urls')),
+        path('api/',include('Carrito.urls')),
 
 
 

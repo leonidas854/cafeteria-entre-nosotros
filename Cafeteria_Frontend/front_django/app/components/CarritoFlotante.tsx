@@ -1,7 +1,16 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+import {obtenerCarrito,
+  agregarProductoAlCarrito , 
+  ItemCarrito,
+  Carrito,
+  Extra
 
+} from '@/app/api/Carrito';
+
+
+/*
 interface ExtraCarrito {
   extraId: number;
   nombre: string;
@@ -25,7 +34,7 @@ interface Carrito {
   clienteId?: number;
   items: ItemCarrito[];
 }
-
+*/
 interface Props {
   carrito: Carrito | null;
   totalItems: number;

@@ -20,5 +20,5 @@ class Venta(models.Model):
     #estado = models.CharField(max_length=100)
     tipo_de_pago = models.CharField(max_length=100)
     empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE,related_name="ventas")
-    pedido = models.OneToOneField(Pedido, on_delete=models.CASCADE)
+    pedido = models.OneToOneField(Pedido, on_delete=models.CASCADE,related_name='pedido')
     

@@ -8,11 +8,12 @@ import MenuLateral from "../components/MenuLateral.jsx";
 import CarritoFlotante from '../components/CarritoFlotante';
 import Bienvenida from '../components/Bienvenida';
 import Link from "next/link";
-//import "./menu.css";
-//import "./catalogo.css";
+import "../menu.css";
+import "./catalogo.css";
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import ReseñaModal from '../components/reseñasModel';
 
 
 interface ExtraCarrito {
@@ -54,16 +55,14 @@ export default function HomePage() {
   const [productos, setProductos] = useState<Producto[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
   const [groupedProducts, setGroupedProducts] = useState<GroupedProducts>({});
-
   const [carrito, setCarrito] = useState<Carrito | null>(null);
-const [carritoCargando, setCarritoCargando] = useState(true);
-
-const totalItems = carrito?.items.reduce((sum, item) => sum + item.cantidad, 0) || 0;
-const totalAmount = carrito?.items.reduce((sum, item) => {
+  const [carritoCargando, setCarritoCargando] = useState(true);
+  const [showReviewModal, setShowReviewModal] = useState(false);
+  const totalItems = carrito?.items.reduce((sum, item) => sum + item.cantidad, 0) || 0;
+  const totalAmount = carrito?.items.reduce((sum, item) => {
   const precio = item.precioPromocional ?? item.precioUnitario;
   const extras = item.extras?.reduce((eSum, e) => eSum + e.precio, 0) || 0;
   return sum + (precio + extras) * item.cantidad;
@@ -71,9 +70,6 @@ const totalAmount = carrito?.items.reduce((sum, item) => {
 
 
 const [mostrarBotonHistorial, setMostrarBotonHistorial] = useState(false);
-
-
-
 
 const cargarCarrito = async () => {
     try {
@@ -131,8 +127,8 @@ const cargarCarrito = async () => {
 
     
   cargarCarrito();
-verificarPedidos();
-    fetchProductos();
+  verificarPedidos();
+  fetchProductos();
   }, []);
 const agruparPorCategoria = (productos: Producto[]): GroupedProducts => {
   const agrupado: GroupedProducts = {};
@@ -188,11 +184,11 @@ const renderProducts = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {grupo.sinSubcategoria.map((product) => (
            <ProductCard
-  key={`${product.nombre}-${product.precio}`}
-  product={product}
-  cargarCarrito={cargarCarrito}
-  mostrarBotonHistorial={mostrarBotonHistorial}
-/>
+            key={`${product.nombre}-${product.precio}`}
+            product={product}
+            cargarCarrito={cargarCarrito}
+            mostrarBotonHistorial={mostrarBotonHistorial}
+            />
 
           ))}
         </div>
@@ -205,11 +201,11 @@ const renderProducts = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {productos.map((product) => (
                 <ProductCard
-  key={`${product.nombre}-${product.precio}`}
-  product={product}
-  cargarCarrito={cargarCarrito}
-  mostrarBotonHistorial={mostrarBotonHistorial}
-/>
+              key={`${product.nombre}-${product.precio}`}
+              product={product}
+              cargarCarrito={cargarCarrito}
+              mostrarBotonHistorial={mostrarBotonHistorial}
+              />
 
               ))}
             </div>
@@ -234,11 +230,11 @@ const renderProducts = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {productos.map((product) => (
            <ProductCard
-  key={`${product.nombre}-${product.precio}`}
-  product={product}
-  cargarCarrito={cargarCarrito}
-  mostrarBotonHistorial={mostrarBotonHistorial}
-/>
+            key={`${product.nombre}-${product.precio}`}
+            product={product}
+            cargarCarrito={cargarCarrito}
+            mostrarBotonHistorial={mostrarBotonHistorial}
+            />
 
           ))}
         </div>
@@ -254,11 +250,11 @@ const renderProducts = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categoriaData.sinSubcategoria.map((product) => (
            <ProductCard
-  key={`${product.nombre}-${product.precio}`}
-  product={product}
-  cargarCarrito={cargarCarrito}
-  mostrarBotonHistorial={mostrarBotonHistorial}
-/>
+            key={`${product.nombre}-${product.precio}`}
+            product={product}
+            cargarCarrito={cargarCarrito}
+            mostrarBotonHistorial={mostrarBotonHistorial}
+            />
 
           ))}
         </div>
@@ -349,7 +345,10 @@ export function ProductCard({
 
   const [showDescription, setShowDescription] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const [rating, setRating] = useState(0); // Puntuación seleccionada
+  const [comment, setComment] = useState(''); // Comentario del usuario
+  const [averageRating, setAverageRating] = useState<number>(0); // Promedio de reseñas
+  const [showReviewModal, setShowReviewModal] = useState(false);
 
 
 
@@ -423,6 +422,16 @@ export function ProductCard({
       <div className="p-4">
         <h3 className="font-bold text-lg mb-1 text-gray-900">
           {product.nombre || 'Producto sin nombre'}</h3>
+        {/** Calculo de calificación promedio */}
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-yellow-500 font-bold">{averageRating.toFixed(1)}</span>
+          <span className="text-yellow-500">
+            {Array.from({ length: 5 }, (_, i) => (
+            <span key={i}>{i < Math.round(averageRating) ? '⭐' : '☆'}</span>
+            ))}
+          </span>
+        </div>
+        {/** Calculo de calificación promedio */}
         <p className="text-amber-700 font-bold text-xl mb-2">Bs.{product.precio.toFixed(2)}</p>
 
         <div className={`overflow-hidden transition-all duration-300 ${showDescription ? 'max-h-40' : 'max-h-0'}`}>
@@ -430,18 +439,31 @@ export function ProductCard({
 
           <button
             onClick={handleAddToCart}
-            className="mt-3 bg-amber-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-amber-700 transition disabled:opacity-50"
+            className="mt-3 bg-amber-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-amber-600 transition disabled:opacity-50"
             disabled={loading}
           >
             {loading ? 'Agregando...' : 'Añadir al carrito'}
           </button>
+
+          <button
+          onClick={() => setShowReviewModal(true)}
+          className="mt-3 bg-amber-700 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-800 transition"
+          >
+          Reseñas
+          </button>
+
         </div>
       </div>
 
-
-
-      
-
+  <ReseñaModal 
+  productId={product.id}
+  isOpen={showReviewModal}
+  onClose={() => setShowReviewModal(false)}
+  onSubmit={() => {
+    // Aquí puedes refrescar reseñas/promedio si deseas
+    console.log("Reseña enviada");
+  }}
+/>
 
     </div>
   );

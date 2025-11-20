@@ -74,7 +74,7 @@ namespace Cafeteria_back.Entities.Carritos
                     existente.Cantidad += item.Cantidad;
                 else
                     carrito.Items.Add(item);
-                await Actualizar(carrito.Id, carrito);
+                await Actualizar(carrito.Id!, carrito);
             }
         }
 
@@ -86,7 +86,7 @@ namespace Cafeteria_back.Entities.Carritos
             if (item != null)
             {
                 item.Cantidad = nuevaCantidad;
-                await Actualizar(carrito.Id, carrito);
+                await Actualizar(carrito.Id!, carrito);
             }
         }
 
@@ -95,7 +95,7 @@ namespace Cafeteria_back.Entities.Carritos
             var carrito = await ObtenerPorCliente(clienteId);
             if (carrito == null) return;
             carrito.Items.RemoveAll(i => i.ProductoId == productoId);
-            await Actualizar(carrito.Id, carrito);
+            await Actualizar(carrito.Id!, carrito);
         }
     }
 }

@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
 from Admin.serializers import UsuarioBaseSerializer
-from .models import Cliente, Pedido, Detalle_pedido, Extra
+from .models import Detalle_pedido, Extra
 from .google_maps import get_direccion
-
+from Admin.models import Cliente
 
 
 class ClienteSerializer(serializers.ModelSerializer):
@@ -22,4 +22,27 @@ class ClienteSerializer(serializers.ModelSerializer):
             )
         cliente = Cliente.objects.create(user=user, **validated_data)
         return cliente
+
+class ExtraSerializer(serializers.ModelSerializer):
+
+    
+    class Meta:
+        model = Extra
+        fields = ['id', 'nombre', 'precio']
+
+    def validate_nombre(self, value):
+
+
+        instance = self.instance
+        
+        query = Extra.objects.filter(name__iexact=value)
+        
+        if instance:
+            query = query.exclude(pk=instance.pk)
+            
+
+        if query.exists():
+            raise serializers.ValidationError("Ya existe un Extra con ese nombre.")
+            
+        return value
         

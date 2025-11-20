@@ -1,14 +1,16 @@
-const API_URL_ = `${process.env.NEXT_PUBLIC_BACKEND_URL}/Acceso/Login`;
+const API_URL_ = process.env.NEXT_PUBLIC_API+"/api/login/";
+//`${process.env.NEXT_PUBLIC_BACKEND_URL}/Acceso/Login`;
 
 export interface LoginClienteRequest {
-  usuario: string;
+  username: string;
   password: string;
 }
+// Respuesta del servidor
 
 export interface LoginClienteResponse {
-  isSuccess: boolean;
   message?: string;
-  token?: string; // aunque se guarda en cookie, lo puedes conservar si lo devuelves
+  tipo?: string;
+ error?: string;
 }
 
 export const loginCliente = async (
@@ -36,13 +38,9 @@ try {
   throw new Error("La respuesta del servidor no es un JSON válido");
 }
 
-if (!response.ok || !data.isSuccess) {
-  throw new Error(data.message || "Error en login");
-}
 
-
-if (data.isSuccess) {
-    sessionStorage.setItem('nombreCliente', credenciales.usuario);
+if (data.tipo == "cliente") {
+    sessionStorage.setItem('nombreCliente', credenciales.username);
   }
 
 return data;

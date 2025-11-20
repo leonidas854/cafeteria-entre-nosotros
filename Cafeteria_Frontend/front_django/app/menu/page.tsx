@@ -1,20 +1,25 @@
 'use client';
-import { obtenerCarrito } from '@/app/api/Carrito';
+import {obtenerCarrito,
+  agregarProductoAlCarrito , 
+  ItemCarrito,
+  Carrito,
+  Extra
+
+} from '@/app/api/Carrito';
 import { useEffect, useState } from 'react';
 import { getProductos, Producto } from '@/app/api/productos';
-import { agregarProductoAlCarrito } from '@/app/api/Carrito';
 import Menu from "../components/Menu.jsx";
 import MenuLateral from "../components/MenuLateral.jsx";
 import CarritoFlotante from '../components/CarritoFlotante';
 import Bienvenida from '../components/Bienvenida';
 import Link from "next/link";
-//import "./menu.css";
-//import "./catalogo.css";
+import "./menu.css";
+import "./catalogo.css";
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 
-
+/*
 interface ExtraCarrito {
   extraId: number;
   nombre: string;
@@ -37,7 +42,7 @@ interface Carrito {
   id?: string;
   clienteId?: number;
   items: ItemCarrito[];
-}
+}*/
 
 type GroupedProducts = {
   [categoria: string]: {
@@ -64,7 +69,7 @@ const [carritoCargando, setCarritoCargando] = useState(true);
 
 const totalItems = carrito?.items.reduce((sum, item) => sum + item.cantidad, 0) || 0;
 const totalAmount = carrito?.items.reduce((sum, item) => {
-  const precio = item.precioPromocional ?? item.precioUnitario;
+  const precio = item.precio_promocional ?? item.precio_unitario;
   const extras = item.extras?.reduce((eSum, e) => eSum + e.precio, 0) || 0;
   return sum + (precio + extras) * item.cantidad;
 }, 0) || 0;
@@ -93,16 +98,16 @@ const cargarCarrito = async () => {
   const verificarPedidos = async () => {
   try {
     
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Pedido/mis-pedidos`, {
-      withCredentials: true
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/pedidos/mis-pedidos/`, {
+      withCredentials: true,
     });
-    if (Array.isArray(res.data) && res.data.length > 0) {
+    if (res.data.length >= 0&&Array.isArray(res.data)) {
       setMostrarBotonHistorial(true);
     } else {
       setMostrarBotonHistorial(false);
     }
   } catch (error: any) {
-    if (error.response?.status === 401|| error.response?.status === 404) {
+    if (error.response?.status === 403|| error.response?.status === 404) {
       setMostrarBotonHistorial(false);
       
     } else {
@@ -139,7 +144,7 @@ const agruparPorCategoria = (productos: Producto[]): GroupedProducts => {
 
   productos.forEach((producto) => {
     const categoria = producto.categoria?.trim();
-    const subcategoria = producto.sub_categoria?.trim();
+    const subcategoria = producto.subcategoria?.trim();
 
     if (!categoria || categoria === "S/D") return;
 
@@ -358,9 +363,6 @@ export function ProductCard({
     try {
       await agregarProductoAlCarrito(
         product.id,
-        product.nombre,
-        product.categoria,
-        product.precio,
         1,
         []
       );
@@ -393,12 +395,12 @@ export function ProductCard({
       onMouseLeave={() => setShowDescription(false)}
     >
       <div className="relative h-68 bg-gray-200 overflow-hidden">
-        {product.image_url && (
+        {product.imagen_url && (
           <img
             src={
-              typeof product.image_url === 'string'
-                ? product.image_url
-                : URL.createObjectURL(product.image_url)
+              typeof product.imagen_url === 'string'
+                ? product.imagen_url
+                : URL.createObjectURL(product.imagen_url)
             }
             alt={product.nombre}
             className="w-full h-full object-cover"

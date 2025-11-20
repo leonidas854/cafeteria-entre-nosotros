@@ -7,9 +7,10 @@ import Menu from "../components/Menu.jsx";
 import Link from "next/link";
 import "./loginC.css";
 import "../login/menu.css";
+import { Finlandica } from 'next/font/google/index.js';
 
 export default function LoginClientePage() {
-  const [usuario, setUsuario] = useState('');
+  const [username, setUsuario] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -22,28 +23,36 @@ export default function LoginClientePage() {
     setIsLoading(true);
 
     try {
-      const { isSuccess, message } = await loginCliente({ usuario, password });
-
-      if (!isSuccess) {
-        throw new Error('Credenciales incorrectas');
+      const { tipo, message ,error} = await loginCliente({ username,password});
+      //router.push('/menu');
+      if (error=='Credenciales inválidas') {
+        throw { response: { data: { error } } };
       }
+      window.location.href='/menu';
+    } catch (err:any) {
+      const errorMessage = err?.response?.data?.error || 'Error desconocido';
 
-      router.push('/menu');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error desconocido');
-    } finally {
-      setIsLoading(false);
+    if (errorMessage === 'Credenciales inválidas') {
+      setError('Credenciales incorrectas'); 
+    } else {
+      setError(errorMessage); 
     }
-  };
+    
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   const handleLogout = async () => {
     try {
       await logout();
       //router.push('/LoginClientes'); 
+      window.location.href = '/LoginClientes';
+  
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error al cerrar sesión');
-    }
-  };
+   
+  }};
 
   return (
     <div className="login-page">
@@ -68,7 +77,7 @@ export default function LoginClientePage() {
               id="username" 
               className="form-input"
               placeholder="Ingresa tu usuario"
-              value={usuario}
+              value={username}
               onChange={(e) => setUsuario(e.target.value)}
               required
             />
@@ -104,7 +113,7 @@ export default function LoginClientePage() {
             className="login-button secondary-button" 
             onClick={(e) =>{
               e.preventDefault();
-              router.push('/menu');
+              //router.push('/menu');
               handleLogout();
               
             }

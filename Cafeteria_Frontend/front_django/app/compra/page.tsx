@@ -97,6 +97,14 @@ const [tarjeta, setTarjeta] = useState('');
 const [tarjetaValida, setTarjetaValida] = useState(true);
 const [metodoPagoSeleccionado, setMetodoPagoSeleccionado] = useState('');
 const [isModalOpen, setIsModalOpen] = useState(false);
+
+const getCsrfToken = (): string | null => {
+  if (typeof document === 'undefined') return null;
+  const csrfCookie = document.cookie.split('; ').find(row => row.startsWith('csrftoken='));
+  return csrfCookie ? csrfCookie.split('=')[1] : null;
+};
+
+
 const handleGenerarFactura = () => {
     // Puedes implementar la generación de PDF aquí
   };
@@ -108,6 +116,8 @@ const validarTarjeta = (numero: string) => {
 
   
 const router = useRouter();
+
+
   const confirmarPedido = async () => {
 
     if (!metodoPagoSeleccionado) {
@@ -129,30 +139,48 @@ const router = useRouter();
     toast.error("⚠️ Carrito no disponible. Por favor, actualiza la página.");
     return false;
   }
+const csrfToken = getCsrfToken();
+  if (!csrfToken) {
+    throw new Error("Token CSRF no encontrado. No se puede agregar al carrito.");
+  }
+   try {
 
-  try {
+    const body = {
+      carrito_id: carrito.id,
+      tipo_entrega: tipoEntrega, 
+      tipo_pago: metodoPagoSeleccionado
+    };
+
+ 
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/Pedido/confirmar`,
-      
-      null,
+      `${process.env.NEXT_PUBLIC_API}/api/carrito/confirmar-pedido/`,
+      body, 
       {
-        params: {
-          carritoId: carrito.id,
-          tipoEntrega: tipoEntrega,
-          Tipo_pago:metodoPagoSeleccionado
+        withCredentials: true,
+        headers: { 
+          'Content-Type': 'application/json', 
+          'X-CSRFToken': csrfToken 
         },
-        withCredentials: true
       }
-    ); 
-    const { pedido_id, total_estimado, total_descuento } = response.data;
-    console.log("Pedido confirmado:", { pedido_id, total_estimado, total_descuento });
+    );
+
+    const { id, total_estimado, total_descuento } = response.data; 
+    console.log("Pedido confirmado:", { id, total_estimado, total_descuento });
     setShowPreparando(true);
     return true;
+
   } catch (error: any) {
-    console.error("Error al confirmar el pedido:", error);
-    toast.error("No se pudo confirmar el pedido. Intenta de nuevo.");
-  }
-};
+    if (error.response && error.response.status === 400) {
+      console.error("Error de validación del backend:", error.response.data);
+  
+      const errorMessages = Object.values(error.response.data).join('\n');
+      toast.error(`Error de validación: ${errorMessages}`);
+    } else {
+      console.error("Error al confirmar el pedido:", error);
+      toast.error("No se pudo confirmar el pedido. Intenta de nuevo.");
+    }
+    return false; 
+};}
  useEffect(() => {
   const fetchExtras = async () => {
     try {
@@ -212,66 +240,77 @@ const fetchCarrito = async () => {
     }, 0) || 0;
 
 
-  const handleModificarCantidad = async (item: ItemCarrito, nuevaCantidad: number) => {
+  
+const handleModificarCantidad = async (item: ItemCarrito, nuevaCantidad: number) => {
   try {
-    const extraIds = item.extras.map(e => e.id);
-    await modificarCantidad(item.producto_id, nuevaCantidad);
 
-    const actualizado = await obtenerCarrito();
-
-    if (!actualizado || 'error' in actualizado) {
-      router.push('/menu');
-      return;
+    const carritoActualizado = await modificarCantidad(item.id, nuevaCantidad);
+    
+    if (carritoActualizado && carritoActualizado.items.length > 0) {
+      setCarrito(carritoActualizado);
+      if (nuevaCantidad > item.cantidad) {
+        toast.success("Cantidad aumentada.");
+      } else {
+      toast.error("Cantidad disminuida.");
+      }
+    } else {
+      setCarrito(null);
     }
 
-    setCarrito(actualizado);
   } catch (error) {
     console.error("Error al modificar cantidad:", error);
+    toast.error("No se pudo actualizar el carrito.");
+  }
+};
+
+const handleQuitarProducto = async (itemId: number) => {
+  try {
+    const carritoActualizado = await quitarProducto(itemId); 
+    
+    if (carritoActualizado.items.length === 0) {
+      toast("🛒 Carrito vacío. Redirigiendo al menú...");
+      setCarrito(null);
+      router.push('/menu');
+    } else {
+      setCarrito(carritoActualizado);
+      toast.error("Producto eliminado.");
+    }
+  } catch (error) {
+    console.error("Error al quitar el producto:", error);
+    toast.error("No se pudo quitar el producto.");
   }
 };
 
 
-  const handleAgregarExtra = async (item: ItemCarrito, extra: Extra) => {
+const handleAgregarExtra = async (item: ItemCarrito, extra: Extra) => {
   try {
     const nuevosExtras = [...item.extras, extra];
     const nuevosExtrasIds = nuevosExtras.map(e => e.id);
-    await modificarExtras(item.producto_id, nuevosExtrasIds);
 
-    const actualizado = await obtenerCarrito();
+    const carritoActualizado = await modificarExtras(item.id, nuevosExtrasIds);
 
-    if (!actualizado || 'error' in actualizado) {
-      router.push('/menu');
-      return;
-    }
-
-    setCarrito(actualizado);
+    setCarrito(carritoActualizado);
+    toast.success(`${extra.name} añadido.`);
   } catch (error) {
     console.error("Error al agregar extra:", error);
+    toast.error("No se pudo agregar el extra.");
   }
 };
 
-
-  const handleQuitarExtra = async (item: ItemCarrito, extraId: number) => {
+const handleQuitarExtra = async (item: ItemCarrito, extraId: number) => {
   try {
     const nuevosExtras = item.extras.filter(e => e.id !== extraId);
-
     const nuevosExtrasIds = nuevosExtras.map(e => e.id);
 
-    await modificarExtras(item.producto_id, nuevosExtrasIds);
+    const carritoActualizado = await modificarExtras(item.id, nuevosExtrasIds);
 
-    const actualizado = await obtenerCarrito();
-
-    if (!actualizado || 'error' in actualizado) {
-      router.push('/menu');
-      return;
-    }
-
-    setCarrito(actualizado);
+    setCarrito(carritoActualizado);
+    toast.error("Extra quitado.");
   } catch (error) {
     console.error("Error al quitar extra:", error);
+    toast.error("No se pudo quitar el extra.");
   }
 };
-
 
   return (
     <div className="page-container">
@@ -316,8 +355,13 @@ const fetchCarrito = async () => {
                     {/* Cantidad */}
                     <div className="flex items-center gap-2 my-2">
                       <button
-                        onClick={() => handleModificarCantidad(item, Math.max(1, item.cantidad - 1))}
-                        className="producto-cantidad-boton"
+                        onClick={() => handleModificarCantidad(item, Math.max(1, item.cantidad - 1))
+                        }
+                        disabled={item.cantidad <2}
+                        className={`producto-cantidad-boton ${
+          item.cantidad < 2 ? 'bg-gray-700 text-gray-500 cursor-not-allowed' : 'hover:bg-gray-600'
+                           }`}
+                        
                       >
                         -
                       </button>
@@ -381,7 +425,7 @@ const fetchCarrito = async () => {
   onClick={async () => {
     try {
       await quitarProducto(
-        item.producto_id
+       item.id
       );
       const actualizado = await obtenerCarrito();
 

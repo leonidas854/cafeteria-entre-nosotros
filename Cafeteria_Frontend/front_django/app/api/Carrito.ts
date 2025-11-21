@@ -44,7 +44,7 @@ export async function obtenerCarrito(): Promise<Carrito | null> {
     });
     return response.data;
   } catch (error: any) {
-    if (error.response?.status === 404 || error.response?.status === 401) {
+    if (error.response?.status === 404 || error.response?.status === 403) {
       console.warn('No se encontró un carrito para el usuario o no está autorizado.');
       return null;
     }
@@ -120,13 +120,19 @@ export async function modificarExtras(
   itemId: number, 
   nuevosExtraIds: number[]
 ): Promise<Carrito> {
+
+  const csrfToken = getCsrfToken();
+  if (!csrfToken) {
+    throw new Error("Token CSRF no encontrado. No se puede agregar al carrito.");
+  }
+
   try {
     const body = {
       item_id: itemId,
       nuevos_extra_ids: nuevosExtraIds
     };
     const response = await axios.put<Carrito>(`${API_URL}/modificar-extras/`, body, {
-      withCredentials: true
+      withCredentials: true,headers: { 'X-CSRFToken': csrfToken },
     });
     return response.data;
   } catch (error: any) {
@@ -138,10 +144,18 @@ export async function modificarExtras(
 export async function quitarProducto(
   itemId: number 
 ): Promise<Carrito> {
+    const csrfToken = getCsrfToken();
+  if (!csrfToken) {
+    throw new Error("Token CSRF no encontrado. No se puede agregar al carrito.");
+  }
+
+  
+  
   try {
 
     const response = await axios.delete<Carrito>(`${API_URL}/quitar-item/${itemId}/`, {
-      withCredentials: true
+      withCredentials: true,
+            headers: { 'X-CSRFToken': csrfToken },
     });
     return response.data;
   } catch (error: any) {
@@ -151,9 +165,16 @@ export async function quitarProducto(
 }
 
 export async function eliminarCarrito(): Promise<void> {
+
+    const csrfToken = getCsrfToken();
+  if (!csrfToken) {
+    throw new Error("Token CSRF no encontrado. No se puede agregar al carrito.");
+  }
+
   try {
     await axios.delete(`${API_URL}/vaciar-carrito/`, {
       withCredentials: true,
+      headers: { 'X-CSRFToken': csrfToken },
     });
   } catch (error: any) {
     console.error("Error al eliminar el carrito:", error);

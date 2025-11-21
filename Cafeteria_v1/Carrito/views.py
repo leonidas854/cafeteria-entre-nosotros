@@ -3,12 +3,14 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.db import transaction
-from .logic import actualizar_promociones_en_items
+from .logic import actualizar_promociones_en_items, crear_pedido_desde_carrito, PedidoError
 
 from .models import Carrito, ItemCarrito
 from .serializers import (CarritoSerializer,
                            AgregarItemSerializer, ModificarCantidadSerializer,
-                           ModificarExtrasSerializer,AsignarClienteSerializer)
+                           ModificarExtrasSerializer,AsignarClienteSerializer,
+                           ConfirmarPedidoSerializer, PedidoConfirmadoSerializer,
+                           )
 
 def _get_o_crear_carrito_usuario(user):
     if user.tipo == 'cliente':
@@ -90,7 +92,7 @@ class CarritoViewSet(viewsets.ViewSet):
         if item.carrito != carrito:
             return Response({"detail": "No autorizado."}, status=status.HTTP_403_FORBIDDEN)
 
-        if data['nueva_cantidad'] > 0:
+        if data['nueva_cantidad'] >= 0:
             item.cantidad = data['nueva_cantidad']
             item.save()
         else:
@@ -166,3 +168,28 @@ class CarritoViewSet(viewsets.ViewSet):
         items_procesados = actualizar_promociones_en_items(list(carrito_cliente.items.select_related('producto').all()))
         serializer = CarritoSerializer(carrito_cliente, context={'items': items_procesados})
         return Response(serializer.data)
+    @action(detail=False, methods=['post'], url_path='confirmar-pedido')
+    def confirmar_pedido(self, request):
+        input_serializer = ConfirmarPedidoSerializer(data=request.data)
+        if not input_serializer.is_valid():
+            return Response(input_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+        data = input_serializer.validated_data
+        
+        try:
+            pedido_creado = crear_pedido_desde_carrito(
+                carrito_id=data['carrito_id'],
+                tipo_entrega=data['tipo_entrega'],
+                tipo_pago=data['tipo_pago']
+            )
+            
+            output_serializer = PedidoConfirmadoSerializer(pedido_creado)
+            return Response(output_serializer.data, status=status.HTTP_200_OK)
+
+        except PedidoError as e:
+            return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+
+            print(e) 
+            return Response({"detail": "Error interno al confirmar el pedido."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        

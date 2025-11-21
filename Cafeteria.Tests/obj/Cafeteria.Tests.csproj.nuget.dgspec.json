@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj": {}
+    "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj": {}
   },
   "projects": {
-    "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj": {
+    "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
+        "projectUniqueName": "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
         "projectName": "Cafeteria.Tests",
-        "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
+        "projectPath": "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
         "packagesPath": "/home/leonidas/.nuget/packages/",
-        "outputPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/obj/",
+        "outputPath": "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/leonidas/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj": {
-                "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj"
+              "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj": {
+                "projectPath": "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj"
               }
             }
           }
@@ -121,14 +121,14 @@
         }
       }
     },
-    "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj": {
+    "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
+        "projectUniqueName": "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
         "projectName": "Cafeteria_back",
-        "projectPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
+        "projectPath": "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
         "packagesPath": "/home/leonidas/.nuget/packages/",
-        "outputPath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/obj/",
+        "outputPath": "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria_back/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/leonidas/.nuget/NuGet/NuGet.Config"

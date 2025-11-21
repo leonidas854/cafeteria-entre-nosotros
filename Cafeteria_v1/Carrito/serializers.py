@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Carrito, ItemCarrito
-from Admin.models import  Producto,Cliente
-from Admin.serializers import ExtraSerializer 
+from Admin.models import  Producto,Cliente,Pedido
+from Admin.serializers import ExtraSerializer
 from Cliente.models import Extra
 
 
@@ -75,3 +75,15 @@ class ModificarExtrasSerializer(serializers.Serializer):
 
 class AsignarClienteSerializer(serializers.Serializer):
     cliente_id = serializers.PrimaryKeyRelatedField(queryset=Cliente.objects.all())
+
+
+class ConfirmarPedidoSerializer(serializers.Serializer):
+    carrito_id = serializers.IntegerField()
+    tipo_entrega = serializers.ChoiceField(choices=Pedido.tipo_entrega.field.choices)
+    tipo_pago = serializers.CharField(max_length=50)
+
+
+class PedidoConfirmadoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pedido
+        fields = ['id', 'total_estimado', 'total_descuento']

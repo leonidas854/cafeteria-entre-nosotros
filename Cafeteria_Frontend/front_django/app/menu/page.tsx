@@ -88,9 +88,14 @@ const cargarCarrito = async () => {
       } else {
         setCarrito(null);
       }
-    } catch (err) {
-      console.error('Error al obtener el carrito:', err);
-      setCarrito(null);
+    } catch (err:any) {
+      if(err.response?.status===403){
+ setCarrito(null);
+  console.error('Error al obtener el carrito:', err);
+      }
+
+     
+     
     } finally {
       setCarritoCargando(false);
     }

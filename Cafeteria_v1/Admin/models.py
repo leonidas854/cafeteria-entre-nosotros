@@ -10,6 +10,8 @@ class EstadoPedido(models.TextChoices):
 class TipoEntrega(models.TextChoices):
     RECOGER = 'recoger', 'Recoger en tienda'
     DOMICILIO = 'domicilio', 'A Domicilio'
+    LLEVAR = 'Llevar', 'Para Llevar'
+    DELIVERY = 'delivery', 'Delivery'
 
 class UsuarioBase(AbstractUser):
     TIPO_USUARIO = (

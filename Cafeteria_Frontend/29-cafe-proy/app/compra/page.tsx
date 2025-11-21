@@ -498,8 +498,6 @@ setCarrito(actualizado);
 
 
 
-     
-
         {/* Acceso alternativo */}
         <div className="fixed right-8 bottom-8 z-50 compra-btn">
           <Link href="/menu">

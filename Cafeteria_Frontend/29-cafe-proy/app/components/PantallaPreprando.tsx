@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Spline from '@splinetool/react-spline';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import "./Robot.css"; 
 
@@ -38,7 +39,7 @@ export default function PantallaPreparando({
   
         <div className="mb-6">
             <img 
-            src="./logo.png" 
+            src="https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330782/logo_cizy3g.png" 
             alt="Logo" 
             className="h-48 w-auto" 
             />

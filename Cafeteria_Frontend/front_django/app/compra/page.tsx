@@ -130,11 +130,6 @@ const router = useRouter();
     return false;
   }
 
-  if (metodoPagoSeleccionado === 'Tarjeta de crédito/débito' && !validarTarjeta(tarjeta)) {
-    toast.error("⚠️ Número de tarjeta inválido.");
-    return false;
-  }
-
   if (!carrito || !carrito.id) {
     toast.error("⚠️ Carrito no disponible. Por favor, actualiza la página.");
     return false;

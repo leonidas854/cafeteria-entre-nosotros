@@ -1,4 +1,8 @@
-from Admin.views import login_view,logout_view,ProductoViewSet,PedidoViewSet
+from Admin.views import (login_view,
+                         logout_view,
+                         ProductoViewSet,
+                         PedidoViewSet,
+                         PromocionViewSet)
 from .models import UsuarioBase
 from django.urls import path, include
 
@@ -6,6 +10,7 @@ from rest_framework.routers import DefaultRouter
 router  = DefaultRouter()
 router.register(r'productos',ProductoViewSet,basename='producto')
 router.register(r'pedidos', PedidoViewSet, basename='pedido')
+router.register(r'promociones',PromocionViewSet,basename='promocion')
 
 urlpatterns = [
     path('login/',login_view,name='login'),

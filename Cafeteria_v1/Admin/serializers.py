@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UsuarioBase,Producto,Bebida,Comida,Pedido
+from .models import UsuarioBase,Producto,Bebida,Comida,Pedido,Promocion
 from Cliente.models import Detalle_pedido,Extra
 class UsuarioBaseSerializer(serializers.ModelSerializer):
     class Meta:
@@ -91,3 +91,78 @@ class PedidoSerializer(serializers.ModelSerializer):
                   'estado',
                   'detalles']
 
+
+class PromocionSerializer(serializers.ModelSerializer):
+    
+    strategykey = serializers.CharField(source='nombre')
+
+    fecha_final = serializers.DateField(source='fech_final')
+
+
+    fech_ini = serializers.DateField(source='fecha_ini')
+
+
+    imagen = serializers.ImageField(source='image', write_only=True, required=False)
+
+    full_image_url = serializers.SerializerMethodField(read_only=True)
+    
+
+    productos = serializers.PrimaryKeyRelatedField(
+        source='producto', queryset=Producto.objects.all(), many=True
+    )
+
+    class Meta:
+        model = Promocion
+
+        fields = [
+            'id', 'strategykey', 'descuento', 'fech_ini', 'fecha_final',
+            'descripcion', 'productos', 'imagen', 'full_image_url'
+        ]
+
+    def get_full_image_url(self, obj):
+        request = self.context.get('request')
+ 
+        if obj.image and hasattr(obj.image, 'url'):
+            return request.build_absolute_uri(obj.image.url)
+
+        if obj.url_imagen:
+            return request.build_absolute_uri(obj.url_imagen)
+        return None
+
+    def validate_nombre(self, value):
+
+        instance = self.instance
+        query = Promocion.objects.filter(nombre__iexact=value)
+        if instance:
+            query = query.exclude(pk=instance.pk)
+        if query.exists():
+            raise serializers.ValidationError("Ya existe una promoción con ese nombre (Strategykey).")
+        return value
+
+class PromocionTodoSerializer(serializers.ModelSerializer):
+
+    strategykey = serializers.CharField(source='nombre')
+    fecha_final = serializers.DateField(source='fech_final')
+    fech_ini = serializers.DateField(source='fecha_ini')
+    full_image_url = serializers.SerializerMethodField(read_only=True)
+    
+
+    productos = ProductoSerializer(source='producto', many=True, read_only=True)
+
+    class Meta:
+        model = Promocion
+        fields = [
+            'id', 'strategykey', 'descuento', 'fech_ini', 'fecha_final',
+            'descripcion', 'full_image_url', 'productos'
+        ]
+        
+    def get_full_image_url(self, obj):
+
+        request = self.context.get('request')
+        if obj.image and hasattr(obj.image, 'url'):
+            return request.build_absolute_uri(obj.image.url)
+        if obj.url_imagen:
+            if obj.url_imagen.startswith('http'):
+                return obj.url_imagen
+            return request.build_absolute_uri(obj.url_imagen)
+        return None

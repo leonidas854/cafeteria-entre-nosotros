@@ -23,8 +23,11 @@ interface DetallePedido {
 interface VentaRelacionada {
   id: number;
   total: number;
-  tipo_de_Pago: string;
   fecha: string;
+  tipo_de_pago: string;
+  pedido_id :number;
+  tipo_entrega:string;
+  estado_pedido:string;
 }
 
 interface Pedido {
@@ -52,7 +55,7 @@ export default function MisPedidosPage() {
     ])
       .then(([pedidosData, ventasData]) => {
         const pedidosConVenta = pedidosData.map((pedido: any) => {
-          const venta = ventasData.find((v) => v.pedidoId === pedido.id_pedido);
+          const venta = ventasData.find((v) => v.pedido_id === pedido.id);
           return { ...pedido, venta };
         });
         setPedidos(pedidosConVenta);
@@ -131,7 +134,7 @@ export default function MisPedidosPage() {
               {pedido.venta && (
                 <div className="mt-4 border-t pt-3 text-sm text-gray-700">
                   <p><strong>Fecha de venta:</strong> {new Date(pedido.venta.fecha).toLocaleString()}</p>
-                  <p><strong>Tipo de pago:</strong> {pedido.venta.tipo_de_Pago}</p>
+                  <p><strong>Tipo de pago:</strong> {pedido.venta.tipo_de_pago}</p>
                   <p><strong>Total final:</strong> {pedido.venta.total.toFixed(2)} Bs</p>
                 </div>
               )}

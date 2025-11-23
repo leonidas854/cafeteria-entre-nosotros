@@ -2,9 +2,14 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import {getProductos} from '@/app/api/productos';
 
-const API_PROMOCIONES_URL = `${process.env.NEXT_PUBLIC_API_URL}/Promociones`;
-const BASE_BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+const API_PROMOCIONES_URL = `${process.env.NEXT_PUBLIC_API}/api/promociones/`;
+//const BASE_BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
+const getCsrfToken = (): string | null => {
+  if (typeof document === 'undefined') return null;
+  const csrfCookie = document.cookie.split('; ').find(row => row.startsWith('csrftoken='));
+  return csrfCookie ? csrfCookie.split('=')[1] : null;
+};
 export interface Promocion {
   id: number;
   descripcion: string;
@@ -28,13 +33,24 @@ export interface NuevaPromocion {
   productos: number[];
 }
 
+export interface PromocionConIds {
+  id: number;
+  descripcion: string;
+  descuento: number;
+  fech_ini: string;
+  fecha_final: string;
+  strategykey: string;
+  productos: number[]; 
+  full_image_url?: string; 
+}
+
 
 export interface Producto {
   id: number;
   nombre: string;
   precio: number;
   categoria?: string;
-  imageUrl?: string;
+  imagen_url?: string;
 }
 
 
@@ -51,6 +67,17 @@ export interface Promocion2 {
 
 }
 
+export interface PromocionConProductos {
+  id: number;
+  descripcion: string;
+  descuento: number;
+  fech_ini: string;       
+  fecha_final: string;
+  strategykey: string;
+  productos: Producto[]; 
+  full_image_url?: string;
+}
+
 
 export const getPromociones = async (): Promise<Promocion[]> => {
   try {
@@ -58,12 +85,7 @@ export const getPromociones = async (): Promise<Promocion[]> => {
       withCredentials: true,
     });
 
-    return response.data.map((promo) => ({
-      ...promo,
-      full_image_url: promo.url_imagen
-        ? `${BASE_BACKEND_URL}${promo.url_imagen}`
-        : undefined,
-    }));
+    return response.data;
   } catch (error: any) {
     toast.error("Error al cargar las promociones.");
     throw new Error(
@@ -76,33 +98,42 @@ export const getPromociones = async (): Promise<Promocion[]> => {
 
 export const crearPromocion = async (promo: NuevaPromocion) => {
   const formData = new FormData();
-
-  formData.append('Descripcion', promo.descripcion);
-  formData.append('Descuento', promo.descuento.toString());
-  formData.append('Fech_ini', promo.fech_ini);
-  formData.append('Fecha_final', promo.fecha_final);
-  formData.append('Strategykey', promo.strategykey);
+  
+  formData.append('descripcion', promo.descripcion);
+  formData.append('descuento', promo.descuento.toString());
+  formData.append('fech_ini', promo.fech_ini);
+  formData.append('fecha_final', promo.fecha_final);
+  formData.append('strategykey', promo.strategykey);
 
   if (promo.imagen) {
-    formData.append('Imagen', promo.imagen);
+
+    formData.append('imagen', promo.imagen);
   }
 
+
   promo.productos.forEach((id) => {
-    formData.append('Productos', id.toString()); 
+    formData.append('productos', id.toString()); 
   });
+  
+
+  const csrfToken = getCsrfToken(); 
+  if (!csrfToken) throw new Error("Token CSRF no encontrado.");
 
   try {
     const response = await axios.post(`${API_PROMOCIONES_URL}`, formData, {
       withCredentials: true,
       headers: {
         'Content-Type': 'multipart/form-data',
+        'X-CSRFToken': csrfToken,
       },
     });
 
     toast.success("Promoción creada exitosamente.");
     return response.data;
   } catch (error: any) {
-    const msg = error.response?.data?.message || 'Error al crear la promoción.';
+
+    const errorData = error.response?.data;
+    const msg = typeof errorData === 'object' ? Object.values(errorData).flat().join(' ') : 'Error al crear la promoción.';
     toast.error(msg);
     throw new Error(msg);
   }
@@ -111,8 +142,9 @@ export const crearPromocion = async (promo: NuevaPromocion) => {
 
 export const editarPromocion = async (
   originalStrategyKey: string,
-  data: NuevaPromocion
+  data: Omit<NuevaPromocion, 'imagen'> // Omitimos el campo imagen para la actualización
 ) => {
+   // ¡CORRECCIÓN! Los nombres de los campos deben estar en minúsculas y snake_case.
    const payload = {
     descripcion: data.descripcion,
     descuento: data.descuento,
@@ -120,39 +152,52 @@ export const editarPromocion = async (
     fecha_final: data.fecha_final,
     strategykey: data.strategykey,
     productos: data.productos,
-   
   };
+
+  const csrfToken = getCsrfToken();
+  if (!csrfToken) throw new Error("Token CSRF no encontrado.");
 
   try {
     const response = await axios.put(
-      `${API_PROMOCIONES_URL}/${originalStrategyKey}`,
+      `${API_PROMOCIONES_URL}${encodeURIComponent(originalStrategyKey)}/`, 
       payload, 
       {
         withCredentials: true,
-     
+        headers: {
+
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrfToken,
+        }
       }
     );
 
     toast.success("Promoción actualizada correctamente.");
     return response.data;
   } catch (error: any) {
-    const msg = error.response?.data || 'Error al editar promoción.';
+    const errorData = error.response?.data;
+    const msg = typeof errorData === 'object' ? Object.values(errorData).flat().join(' ') : 'Error al editar promoción.';
     toast.error(msg);
-    throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg));
+    throw new Error(msg);
   }
 };
 
 export const eliminarPromocion = async (strategykey: string) => {
+  const csrfToken = getCsrfToken();
+  if (!csrfToken) throw new Error("Token CSRF no encontrado.");
+
   try {
-    await axios.delete(`${API_PROMOCIONES_URL}/${strategykey}`, {
+    await axios.delete(`${API_PROMOCIONES_URL}${encodeURIComponent(strategykey)}/`, { 
       withCredentials: true,
+      headers: {
+        'X-CSRFToken': csrfToken,
+      }
     });
 
     toast.success("Promoción eliminada.");
   } catch (error: any) {
-    const msg = error.response?.data || 'Error al eliminar promoción.';
+    const msg = error.response?.data?.detail || 'Error al eliminar promoción.';
     toast.error(msg);
-    throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg));
+    throw new Error(msg);
   }
 };
 
@@ -163,12 +208,7 @@ export const Todas_las_Promociones = async (): Promise<Promocion2[]> => {
       withCredentials: true,
     });
 
-    return response.data.map((promo) => ({
-      ...promo,
-      full_image_url: promo.url_imagen
-        ? `${BASE_BACKEND_URL}${promo.url_imagen}`
-        : undefined,
-    }));
+    return response.data;
   } catch (error: any) {
     toast.error("Error al cargar las promociones.");
     throw new Error(

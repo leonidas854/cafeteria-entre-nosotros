@@ -11,7 +11,7 @@ class TipoEntrega(models.TextChoices):
     RECOGER = 'recoger', 'Recoger en tienda'
     DOMICILIO = 'domicilio', 'A Domicilio'
     LLEVAR = 'Llevar', 'Para Llevar'
-    DELIVERY = 'delivery', 'Delivery'
+    DELIVERY = 'Delivery','delivery', 
 
 class UsuarioBase(AbstractUser):
     TIPO_USUARIO = (
@@ -104,7 +104,7 @@ class Promocion(models.Model):
     descripcion = models.CharField(max_length=100)
     nombre = models.CharField(max_length=100,default="")
     url_imagen = models.CharField(max_length=100,default="")
-
+    image = models.ImageField(upload_to='Promociones/', null=True, blank=True)
     producto  = models.ManyToManyField(Producto,related_name="promociones")
     
 

@@ -81,10 +81,8 @@
       try {
         await agregarProductoAlCarrito(
           producto.id,
-          producto.nombre,
-          producto.categoria,
-          producto.precio,
-          1
+          1,
+          []
         );
       } catch (error) {
         console.error("Error al agregar producto:", producto.nombre);

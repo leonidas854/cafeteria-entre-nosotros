@@ -19,6 +19,15 @@ class Venta(models.Model):
     total = models.IntegerField()
     #estado = models.CharField(max_length=100)
     tipo_de_pago = models.CharField(max_length=100)
-    empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE,related_name="ventas")
+
+    empleado = models.ForeignKey(
+        Empleado, 
+        on_delete=models.SET_NULL, 
+        null=True,                 
+        blank=True,
+        related_name="ventas"               
+    )
+
+
     pedido = models.OneToOneField(Pedido, on_delete=models.CASCADE,related_name='pedido')
     

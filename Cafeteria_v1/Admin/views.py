@@ -6,16 +6,20 @@ from django.contrib.auth import authenticate, login,logout
 from rest_framework.decorators import api_view, permission_classes,action
 from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework.response import Response
-from .models import UsuarioBase,Producto,Pedido,Cliente
+from rest_framework.parsers import MultiPartParser,FormParser
+from .models import UsuarioBase,Producto,Pedido,Cliente,Promocion
 from rest_framework import viewsets
+
 from drf_spectacular.utils import extend_schema
 
 from .serializers import (
     LoginSerializer,
     LoginSuccessResponseSerializer,
     ErrorResponseSerializer,
-    LogoutSuccessResponseSerializer,ProductoSerializer,PedidoSerializer
+    LogoutSuccessResponseSerializer,ProductoSerializer,PedidoSerializer,PromocionSerializer,PromocionTodoSerializer
+    
 )
+from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
 
 from rest_framework import status
@@ -105,4 +109,38 @@ class PedidoViewSet(viewsets.ReadOnlyModelViewSet):
             return Response({"detail": "No se encontraron pedidos para este cliente."}, status=status.HTTP_404_NOT_FOUND)
         serializer = self.get_serializer(pedidos, many=True)
 
+        return Response(serializer.data)
+
+class PromocionViewSet(viewsets.ModelViewSet):
+
+    queryset = Promocion.objects.prefetch_related('producto').all()
+    serializer_class = PromocionSerializer
+    permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser]
+
+    lookup_field = 'nombre'
+    lookup_url_kwarg = 'strategykey' 
+
+    def get_permissions(self):
+        if self.action in ['list', 'todas', 'retrieve']:
+            return [AllowAny()]
+        return super().get_permissions()
+
+    def get_object(self):
+
+        queryset = self.filter_queryset(self.get_queryset())
+ 
+        filter_kwargs = {f'nombre__iexact': self.kwargs[self.lookup_url_kwarg]}
+        obj = queryset.filter(**filter_kwargs).first()
+        if not obj:
+            raise Http404("No se encontró la promoción.")
+        self.check_object_permissions(self.request, obj)
+        return obj
+
+
+    @action(detail=False, methods=['get'])
+    def todas(self, request):
+        queryset = self.get_queryset()
+ 
+        serializer = PromocionTodoSerializer(queryset, many=True, context={'request': request})
         return Response(serializer.data)

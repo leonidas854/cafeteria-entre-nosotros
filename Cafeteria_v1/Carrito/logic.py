@@ -5,7 +5,7 @@ from Caja.models import Venta
 from Cliente.models import Detalle_pedido
 from django.utils import timezone
 from Admin.models import Promocion 
-
+import datetime
 
 from django.db import transaction
 from decimal import Decimal
@@ -102,27 +102,33 @@ def crear_pedido_desde_carrito(carrito_id: int, tipo_entrega: str, tipo_pago: st
         else:
             precio_unitario_final = precio_base
 
-        detalle = Detalle_pedido(
+        detalle = Detalle_pedido.objects.create(
             pedido=pedido,
             producto=item.producto,
             cantidad=item.cantidad,
             precio_unitario=precio_unitario_final
         )
-        detalles_a_crear.append(detalle)
-        extras_por_detalle[detalle] = item.extras.all()
+
+        extras_a_asignar = item.extras.all()
+        if extras_a_asignar.exists():
+            detalle.extras.set(extras_a_asignar)
+
+        #detalles_a_crear.append(detalle)
+        #extras_por_detalle[detalle] = item.extras.all()
 
         total_estimado += precio_final_item * item.cantidad
         total_descuento += descuento_item * item.cantidad
 
-    Detalle_pedido.objects.bulk_create(detalles_a_crear)
+    #Detalle_pedido.objects.bulk_create(detalles_a_crear)
     
     pedido.total_estimado = total_estimado
     pedido.total_descuento = total_descuento
     pedido.save()
 
     Venta.objects.create(
+        fecha = datetime.datetime.now(tz= datetime.timezone.utc),
         pedido=pedido,
-        total_final=total_estimado - total_descuento,
+        total=total_estimado - total_descuento,
         tipo_de_pago=tipo_pago
     )
 

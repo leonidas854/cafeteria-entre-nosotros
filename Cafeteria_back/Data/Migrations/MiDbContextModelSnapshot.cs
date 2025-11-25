@@ -38,7 +38,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasKey("Id_extra");
 
-                    b.ToTable("Extras");
+                    b.ToTable("Extras", (string)null);
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Pedidos.Pedido", b =>
@@ -68,7 +68,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasIndex("Cliente_id");
 
-                    b.ToTable("Pedidos");
+                    b.ToTable("Pedidos", (string)null);
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Pedidos.Venta", b =>
@@ -101,7 +101,7 @@ namespace Cafeteria_back.Migrations
                     b.HasIndex("Pedido_id")
                         .IsUnique();
 
-                    b.ToTable("Ventas");
+                    b.ToTable("Ventas", (string)null);
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Productos.Producto", b =>
@@ -174,7 +174,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasKey("Id_promocion");
 
-                    b.ToTable("Promociones");
+                    b.ToTable("Promociones", (string)null);
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Resenas.Resena", b =>
@@ -206,7 +206,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasIndex("Producto_id");
 
-                    b.ToTable("Resenas");
+                    b.ToTable("Resenas", (string)null);
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Detalle_extra", b =>
@@ -221,7 +221,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasIndex("Extra_id");
 
-                    b.ToTable("DetalleExtra");
+                    b.ToTable("DetalleExtra", (string)null);
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Detalle_pedido", b =>
@@ -250,7 +250,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasIndex("Producto_id");
 
-                    b.ToTable("DetallesPedido");
+                    b.ToTable("DetallesPedido", (string)null);
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Producto_Promocion", b =>
@@ -265,7 +265,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasIndex("Promocion_id");
 
-                    b.ToTable("ProductopPromocion");
+                    b.ToTable("ProductopPromocion", (string)null);
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Usuarios.Cliente", b =>

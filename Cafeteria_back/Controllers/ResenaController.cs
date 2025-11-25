@@ -63,7 +63,7 @@ namespace Cafeteria_back.Controllers
             using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
-                _context.Resenas.Add(resena);
+                _context.Resena.Add(resena);
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
             }

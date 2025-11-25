@@ -5,6 +5,7 @@ import { getProductos, Producto } from '@/app/api/productos';
 import { agregarProductoAlCarrito } from '@/app/api/Carrito';
 import Menu from "../components/Menu.jsx";
 import MenuLateral from "../components/MenuLateral.jsx";
+import RecomendadosCarousel from '../components/RecomendadosCarousel';
 import CarritoFlotante from '../components/CarritoFlotante';
 import Bienvenida from '../components/Bienvenida';
 import Link from "next/link";
@@ -295,7 +296,17 @@ const renderProducts = () => {
             groupedProducts={groupedProducts} 
           />
         </div>
+
         <div className="flex-1 ml-64 p-8 overflow-y-auto">
+          
+          
+          <RecomendadosCarousel 
+            onSelectProduct={(producto:any) => {
+              console.log("Recomendación clickeada:", producto);
+              toast("Recomendación: " + producto.nombre);
+              // Opcional: Buscar el producto en la lista 'productos' y abrir detalle
+            }}
+          />
           <h1 className="text-4xl font-urwclassico mb-8">
             {activeCategory}
             {activeSubcategory && ` - ${activeSubcategory}`}

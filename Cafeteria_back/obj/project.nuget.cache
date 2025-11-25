@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LXJuZ+wDyv4=",
+  "dgSpecHash": "DSeRuvswbGE=",
   "success": true,
-  "projectFilePath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
+  "projectFilePath": "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria_back/Cafeteria_back.csproj",
   "expectedPackageFiles": [
     "/home/leonidas/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/leonidas/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",

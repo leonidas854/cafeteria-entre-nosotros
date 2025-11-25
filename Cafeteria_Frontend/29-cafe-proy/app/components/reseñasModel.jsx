@@ -5,6 +5,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { request } from 'http';
 //import { error } from 'console';
+const PYTHON_API_URL = "http://localhost:8000"; 
 
 // Icono de Estrella SVG para tener control total del color
 const StarIcon = ({ filled, onClick }) => {
@@ -37,7 +38,7 @@ export default function ReseñaModal({
 }) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
-
+const [isSubmitting, setIsSubmitting] = useState(false); 
   if (!isOpen) return null;
 
   const enviarReseña = async () => {
@@ -45,6 +46,8 @@ export default function ReseñaModal({
       toast.error('Por favor selecciona una puntuación');
       return;
     }
+
+    setIsSubmitting(true);
 
     try {
       await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Resena`, {
@@ -59,6 +62,20 @@ export default function ReseñaModal({
       setComment('');
       setRating(0);
 
+
+      try {
+        await axios.post(`${PYTHON_API_URL}/entrenar`);
+        console.log("Modelo IA re-entrenado con éxito.");
+        
+        window.dispatchEvent(new Event('modeloActualizado'));
+        
+      } catch (aiError) {
+        console.warn("La reseña se guardó, pero la IA no respondió:", aiError);
+      }
+
+      setComment('');
+      setRating(0);
+
       if (onSubmit) onSubmit();
       onClose();
       
@@ -69,8 +86,8 @@ export default function ReseñaModal({
     } else {
       toast.error('Error');
     }
-    //throw error;
     }
+    
   };
 
   return (

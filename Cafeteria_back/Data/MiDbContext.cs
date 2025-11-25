@@ -103,7 +103,7 @@ namespace Cafeteria_back.Repositorio
 
         public virtual  DbSet<Producto_Promocion> ProductopPromocion { get; set; }
         public virtual DbSet<Venta> Ventas { get; set; }
-       public virtual DbSet<Resena> Resenas{get;set;}
+       public virtual DbSet<Resena> Resena{get;set;}
 
     }
 }

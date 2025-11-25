@@ -3,6 +3,7 @@ using Cafeteria_back.Entities.Extras;
 using Cafeteria_back.Entities.Pedidos;
 using Cafeteria_back.Entities.Productos;
 using Cafeteria_back.Entities.Promociones;
+using Cafeteria_back.Entities.Resenas;
 using Cafeteria_back.Entities.Tablas_intermedias;
 using Cafeteria_back.Entities.Usuarios;
 using Microsoft.EntityFrameworkCore;
@@ -89,6 +90,7 @@ namespace Cafeteria_back.Repositorio
         public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<Bebida> Bebidas { get; set; }
         public virtual DbSet<Comida> Comidas { get; set; }
+        
 
 
         public virtual DbSet<Promocion> Promociones { get; set; }
@@ -101,7 +103,7 @@ namespace Cafeteria_back.Repositorio
 
         public virtual  DbSet<Producto_Promocion> ProductopPromocion { get; set; }
         public virtual DbSet<Venta> Ventas { get; set; }
-       
+       public virtual DbSet<Resena> Resenas{get;set;}
 
     }
 }

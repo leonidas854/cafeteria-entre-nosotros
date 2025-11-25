@@ -8,7 +8,7 @@ import MenuLateral from "../components/MenuLateral.jsx";
 import CarritoFlotante from '../components/CarritoFlotante';
 import Bienvenida from '../components/Bienvenida';
 import Link from "next/link";
-import "../menu.css";
+import "./menu.css";
 import "./catalogo.css";
 import { useRouter } from 'next/navigation';
 import axios from 'axios';

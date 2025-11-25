@@ -3,6 +3,7 @@ using System;
 using Cafeteria_back.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cafeteria_back.Migrations
 {
     [DbContext(typeof(MiDbContext))]
-    partial class MiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251125051650_productoid_v2")]
+    partial class productoid_v2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -206,7 +209,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasIndex("Producto_id");
 
-                    b.ToTable("Resenas");
+                    b.ToTable("Resena");
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Detalle_extra", b =>

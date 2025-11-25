@@ -3,6 +3,7 @@ using System;
 using Cafeteria_back.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cafeteria_back.Migrations
 {
     [DbContext(typeof(MiDbContext))]
-    partial class MiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251125045454_productoid")]
+    partial class productoid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,13 +188,13 @@ namespace Cafeteria_back.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id_resena"));
 
-                    b.Property<long>("Cliente_id")
+                    b.Property<long?>("Cliente_id")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("Fech_resena")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<long>("Producto_id")
+                    b.Property<long?>("Producto_id")
                         .HasColumnType("bigint");
 
                     b.Property<string>("comentario")
@@ -206,7 +209,7 @@ namespace Cafeteria_back.Migrations
 
                     b.HasIndex("Producto_id");
 
-                    b.ToTable("Resenas");
+                    b.ToTable("Resena");
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Tablas_intermedias.Detalle_extra", b =>
@@ -402,15 +405,11 @@ namespace Cafeteria_back.Migrations
                 {
                     b.HasOne("Cafeteria_back.Entities.Usuarios.Cliente", "Cliente")
                         .WithMany("Resena")
-                        .HasForeignKey("Cliente_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Cliente_id");
 
                     b.HasOne("Cafeteria_back.Entities.Productos.Producto", "Producto")
-                        .WithMany("Resena")
-                        .HasForeignKey("Producto_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("Producto_id");
 
                     b.Navigation("Cliente");
 
@@ -509,8 +508,6 @@ namespace Cafeteria_back.Migrations
                     b.Navigation("Detalle_pedido");
 
                     b.Navigation("Producto_promocion");
-
-                    b.Navigation("Resena");
                 });
 
             modelBuilder.Entity("Cafeteria_back.Entities.Promociones.Promocion", b =>

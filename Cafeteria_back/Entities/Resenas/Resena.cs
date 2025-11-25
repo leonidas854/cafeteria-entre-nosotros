@@ -17,12 +17,16 @@ namespace Cafeteria_back.Entities.Resenas
         public int puntuacion { get; set; }
 
         public DateTime? Fech_resena { get; set; }
+         public long Cliente_id { get; set; }
 
-        [ForeignKey("Cliente_id")]
+        [ForeignKey(nameof(Cliente_id))]
         public Cliente? Cliente { get; set; }
 
-        //[ForeignKey("Producto_id")]
-        //public Producto? Producto { get; set; }
+       
+      public long Producto_id { get; set; }
+
+        [ForeignKey(nameof(Producto_id))]
+        public Producto? Producto { get; set; }
 
     }
 }

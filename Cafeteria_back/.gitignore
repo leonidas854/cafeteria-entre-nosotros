@@ -1,2 +1,5 @@
 bin/
 obj/
+obj/Debug/
+obj/Cafeteria_back.csproj.nuget.dgspec.json
+obj/project.nuget.cache

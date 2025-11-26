@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sGo5zWJxAFQ=",
+  "dgSpecHash": "WkTphJ/ny68=",
   "success": true,
-  "projectFilePath": "/home/leonidas/develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
+  "projectFilePath": "/home/leonidas/Develoment/cafeteria-entre-nosotros/Cafeteria.Tests/Cafeteria.Tests.csproj",
   "expectedPackageFiles": [
     "/home/leonidas/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/leonidas/.nuget/packages/coverlet.collector/6.0.2/coverlet.collector.6.0.2.nupkg.sha512",
@@ -228,7 +228,8 @@
     "/home/leonidas/.nuget/packages/xunit.extensibility.core/2.9.3/xunit.extensibility.core.2.9.3.nupkg.sha512",
     "/home/leonidas/.nuget/packages/xunit.extensibility.execution/2.9.3/xunit.extensibility.execution.2.9.3.nupkg.sha512",
     "/home/leonidas/.nuget/packages/xunit.runner.visualstudio/3.1.0/xunit.runner.visualstudio.3.1.0.nupkg.sha512",
-    "/home/leonidas/.nuget/packages/zstdsharp.port/0.7.3/zstdsharp.port.0.7.3.nupkg.sha512"
+    "/home/leonidas/.nuget/packages/zstdsharp.port/0.7.3/zstdsharp.port.0.7.3.nupkg.sha512",
+    "/home/leonidas/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
   ],
   "logs": []
 }

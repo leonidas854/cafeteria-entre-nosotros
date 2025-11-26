@@ -3,3 +3,9 @@ obj/
 obj/Debug/
 obj/Cafeteria_back.csproj.nuget.dgspec.json
 obj/project.nuget.cache
+bin/Debug/net9.0/
+
+*.user
+*.suo
+*.nupkg
+*.vs/

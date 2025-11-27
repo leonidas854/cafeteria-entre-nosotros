@@ -1,0 +1,48 @@
+SELECT
+    p.id AS id,
+    p.total_estimado,
+    p.total_descuento,
+    p.tipo_entrega,
+    p.estado,
+    -- Usamos COALESCE para manejar el caso en que un pedido no tenga detalles
+    CONCAT('[',
+        COALESCE(
+            GROUP_CONCAT(
+                DISTINCT JSON_OBJECT(
+                    'id', dp.id,
+                    'producto_id', dp.producto_id,
+                    'producto_nombre', prod.nombre,
+                    'cantidad', dp.cantidad,
+                    'precio_unitario', dp.precio_unitario,
+                    'extras', (
+                        -- La subconsulta para los extras
+                        SELECT
+                            CONCAT('[',
+                                COALESCE(
+                                    GROUP_CONCAT(
+                                        JSON_OBJECT('id', e.id, 'nombre', e.nombre, 'precio', e.precio)
+                                    ),
+                                '')
+                            ,']')
+                        -- Los nombres de las tablas intermedias deben ser correctos
+                        -- Django crea 'nombreapp_modelo_campo'
+                        FROM Carrito_itemcarrito_extras AS dpe 
+                        JOIN Cliente_extra  AS e ON dpe.extra_id = e.id
+                        WHERE dpe.itemcarrito_id = dp.id -- Asumiendo que esta es la relación
+                    )
+                )
+            ),
+        '')
+    ,']') AS detalles_json
+FROM
+    -- Los nombres de las tablas deben ser los que Django crea (ej. 'Admin_pedido')
+    Admin_pedido p
+LEFT JOIN
+    Cliente_detalle_pedido  dp ON p.id = dp.pedido_id
+LEFT JOIN
+    Admin_producto prod ON dp.producto_id = prod.id
+GROUP BY
+    p.id
+ORDER BY
+    p.id DESC
+LIMIT 25 OFFSET 0;

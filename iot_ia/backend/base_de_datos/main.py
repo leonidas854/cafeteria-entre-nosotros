@@ -133,7 +133,6 @@ def entrenar_modelo():
         raise HTTPException(status_code=500, detail=str(e))
 
 
-
 @app.get("/recomendaciones")
 def obtener_recomendaciones():
     if not os.path.exists(MODEL_FILE):

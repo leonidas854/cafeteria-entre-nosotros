@@ -166,3 +166,14 @@ class PromocionTodoSerializer(serializers.ModelSerializer):
                 return obj.url_imagen
             return request.build_absolute_uri(obj.url_imagen)
         return None
+
+
+
+class PedidoDetalladoSerializer(serializers.ModelSerializer):
+    tipo_entrega = serializers.CharField(source='get_tipo_entrega_display')
+    estado = serializers.CharField(source='get_estado_display')
+    detalles = DetallePedidoSerializer(many=True, source='detalle_pedido') 
+
+    class Meta:
+        model = Pedido
+        fields = ['id', 'total_estimado', 'total_descuento', 'tipo_entrega', 'estado', 'detalles']

@@ -18,7 +18,7 @@ class FakeMenuRepository {
       description:
           'Un suave y reconfortante latte hecho con leche vaporizada y un toque de espuma.',
       price: 15.00,
-      imageUrl: 'images.jpg',
+      imageUrl: 'images2.jpg',
       category: 'Cafés Calientes',
     ),
     Product(
@@ -27,7 +27,7 @@ class FakeMenuRepository {
       description:
           'Una deliciosa y refrescante bebida helada con café, leche, hielo y un rico sirope de caramelo.',
       price: 20.00,
-      imageUrl: 'images.jpg',
+      imageUrl: 'images4.jpg',
       category: 'Bebidas Frías',
     ),
     Product(
@@ -36,7 +36,7 @@ class FakeMenuRepository {
       description:
           'Hojaldre crujiente relleno de una suave crema de almendras y cubierto con almendras fileteadas.',
       price: 18.00,
-      imageUrl: 'images.jpg',
+      imageUrl: 'images3.jpg',
       category: 'Postres',
     ),
   ];

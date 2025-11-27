@@ -4,19 +4,25 @@ from django.shortcuts import render
 
 from django.contrib.auth import authenticate, login,logout
 from rest_framework.decorators import api_view, permission_classes,action
-from rest_framework.permissions import AllowAny,IsAuthenticated
+from rest_framework.permissions import AllowAny,IsAuthenticated,IsAdminUser
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser,FormParser
+from django.db.models import Prefetch
+from rest_framework.pagination import PageNumberPagination
+from Cliente.models import Detalle_pedido
 from .models import UsuarioBase,Producto,Pedido,Cliente,Promocion
 from rest_framework import viewsets
-
+import json
+from rest_framework.views import APIView
+from django.db import connection
 from drf_spectacular.utils import extend_schema
 
 from .serializers import (
     LoginSerializer,
     LoginSuccessResponseSerializer,
     ErrorResponseSerializer,
-    LogoutSuccessResponseSerializer,ProductoSerializer,PedidoSerializer,PromocionSerializer,PromocionTodoSerializer
+    LogoutSuccessResponseSerializer,
+    PedidoDetalladoSerializer,ProductoSerializer,PedidoSerializer,PromocionSerializer,PromocionTodoSerializer
     
 )
 from django.http import Http404
@@ -89,12 +95,11 @@ class ProductoViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class PedidoViewSet(viewsets.ReadOnlyModelViewSet):
-    serializer_class = PedidoSerializer
-
+    queryset = Pedido.objects.all()
+    serializer_class = PedidoDetalladoSerializer
     permission_classes = [IsAuthenticated]
 
-    def get_queryset(self):
-        return Pedido.objects.filter(cliente = self.request.user)
+    
     
     @action(detail=False, methods=['get'], url_path='mis-pedidos')
     def mis_pedidos(self, request):
@@ -109,6 +114,26 @@ class PedidoViewSet(viewsets.ReadOnlyModelViewSet):
             return Response({"detail": "No se encontraron pedidos para este cliente."}, status=status.HTTP_404_NOT_FOUND)
         serializer = self.get_serializer(pedidos, many=True)
 
+        return Response(serializer.data)
+    
+    
+        
+    def retrieve(self, request, *args, **kwargs):
+
+        try:
+            instance = self.get_object()
+        except Http404:
+            return Response({"detail": "Pedido no encontrado."}, status=status.HTTP_404_NOT_FOUND)
+
+        user = request.user
+  
+        if not user.is_staff and instance.cliente.user != user:
+            return Response(
+                {"detail": "No tienes permiso para ver este pedido."},
+                status=status.HTTP_403_FORBIDDEN
+            )
+ 
+        serializer = self.get_serializer(instance)
         return Response(serializer.data)
 
 class PromocionViewSet(viewsets.ModelViewSet):
@@ -144,3 +169,96 @@ class PromocionViewSet(viewsets.ModelViewSet):
  
         serializer = PromocionTodoSerializer(queryset, many=True, context={'request': request})
         return Response(serializer.data)
+    
+
+class TodosPedidosOptimizadosView(APIView):
+    permission_classes = [IsAdminUser]
+    pagination_class = PageNumberPagination
+
+    def get(self, request, *args, **kwargs):
+        paginator = self.pagination_class()
+        
+        page_size = paginator.get_page_size(request)
+        page_number = int(request.query_params.get(paginator.page_query_param, 1))
+        offset = (page_number - 1) * page_size
+        
+        query = f"""
+            SELECT
+                p.id AS id,
+                p.total_estimado,
+                p.total_descuento,
+                p.tipo_entrega,
+                p.estado,
+                CONCAT('[',
+                    COALESCE(
+                        GROUP_CONCAT(
+                            DISTINCT JSON_OBJECT(
+                                'id', dp.id,
+                                'producto_id', dp.producto_id,
+                                'producto_nombre', prod.nombre,
+                                'cantidad', dp.cantidad,
+                                'precio_unitario', dp.precio_unitario,
+                                'extras', (
+                                    SELECT
+                                        CONCAT('[',
+                                            COALESCE(
+                                                GROUP_CONCAT(
+                                                    JSON_OBJECT('id', e.id, 'nombre', e.nombre, 'precio', e.precio)
+                                                ),
+                                            '')
+                                        ,']')
+                                    FROM Carrito_itemcarrito_extras AS dpe 
+                                    JOIN Cliente_extra AS e ON dpe.extra_id = e.id
+                                    WHERE dpe.itemcarrito_id = dp.id
+                                )
+                            )
+                        ),
+                    '')
+                ,']') AS detalles_json
+            FROM
+                Admin_pedido p
+            LEFT JOIN
+                Cliente_detalle_pedido dp ON p.id = dp.pedido_id
+            LEFT JOIN
+                Admin_producto prod ON dp.producto_id = prod.id
+            GROUP BY
+                p.id
+            ORDER BY
+                p.id DESC
+            LIMIT %s OFFSET %s;
+        """
+
+        with connection.cursor() as cursor:
+            cursor.execute(query, [page_size, offset])
+            columns = [col[0] for col in cursor.description]
+            results = [dict(zip(columns, row)) for row in cursor.fetchall()]
+
+        for pedido in results:
+            detalles_str = pedido.get('detalles_json')
+            if detalles_str:
+                try:
+            
+                    pedido['detalles'] = json.loads(detalles_str.replace('\\"', '"'))
+                except json.JSONDecodeError:
+                    pedido['detalles'] = []
+            else:
+                pedido['detalles'] = []
+            del pedido['detalles_json'] 
+
+     
+        total_count = Pedido.objects.count()
+        
+        next_url = None
+        if (page_number * page_size) < total_count:
+            next_url = request.build_absolute_uri(f'?{paginator.page_query_param}={page_number + 1}')
+
+        previous_url = None
+        if page_number > 1:
+            previous_url = request.build_absolute_uri(f'?{paginator.page_query_param}={page_number - 1}')
+
+        return Response({
+            'count': total_count,
+            'next': next_url,
+            'previous': previous_url,
+            'results': results
+        })

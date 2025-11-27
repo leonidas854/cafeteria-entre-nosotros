@@ -61,7 +61,7 @@ export default function RecomendadosCarousel({ onSelectProduct ,onCarritoUpdated
  if (onCarritoUpdated) {
         await onCarritoUpdated(); 
       }
-    toast.success('✅ Producto añadido al carrito');
+   // toast.success('✅ Producto añadido al carrito');
      //await cargarCarrito();
 
     } catch (error) {

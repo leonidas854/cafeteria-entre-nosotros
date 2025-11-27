@@ -101,7 +101,7 @@ class CarritoViewSet(viewsets.ViewSet):
         return self.obtener_carrito(request)
 
 
-    @action(detail=False, methods=['delete'], url_path='quitar-item/(?P<item_id>\d+)')
+    @action(detail=False, methods=['delete'], url_path=r'quitar-item/(?P<item_id>\d+)')
     def quitar_item(self, request, item_id=None):
         carrito = _get_o_crear_carrito_usuario(request.user)
         try:

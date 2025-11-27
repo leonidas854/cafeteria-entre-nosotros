@@ -15,21 +15,24 @@ class ProductCard extends StatelessWidget {
         context.go('/product/${product.id}');
       },
       child: Card(
-        clipBehavior: Clip.antiAlias, // Para que la imagen respete los bordes redondeados
+        clipBehavior:
+            Clip.antiAlias, // Para que la imagen respete los bordes redondeados
         elevation: 3,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Image.network(
-                product.imageUrl,
+              child: Image.asset(
+                'assets/images/${product.imageUrl}',
                 fit: BoxFit.cover,
                 width: double.infinity,
-                // Placeholder mientras carga la imagen
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return const Center(child: CircularProgressIndicator());
+
+                errorBuilder: (context, error, stackTrace) {
+                  return const Icon(
+                    Icons.image_not_supported,
+                    color: Colors.grey,
+                  );
                 },
               ),
             ),
@@ -46,7 +49,10 @@ class ProductCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                 'Bs. ${product.price.toStringAsFixed(2)}',
-                style: const TextStyle(color: AppColors.accent, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  color: AppColors.accent,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(height: 8),

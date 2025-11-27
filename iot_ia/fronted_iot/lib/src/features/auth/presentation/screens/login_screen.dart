@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fronted_iot/src/features/auth/presentation/widgets/google_sign_in_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fronted_iot/src/features/auth/presentation/providers/auth_providers.dart';
 import 'package:fronted_iot/src/core/theme/app_colors.dart';
@@ -82,7 +83,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 onPressed: isLoading
                     ? null
                     : () {
-                        // CAMBIO 3: Llamamos al método del nuevo provider 'authNotifierProvider'
                         ref.read(authNotifierProvider.notifier).login(
                               _emailController.text.trim(),
                               _passwordController.text.trim(),
@@ -91,6 +91,23 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 child: isLoading
                     ? const CircularProgressIndicator(color: Colors.white, strokeWidth: 2)
                     : const Text('INGRESAR'),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  const Expanded(child: Divider()),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text('O', style: Theme.of(context).textTheme.bodySmall),
+                  ),
+                  const Expanded(child: Divider()),
+                ],
+              ),
+              const SizedBox(height: 20),
+              GoogleSignInButton(
+                onPressed: isLoading ? () {} : () { 
+                  ref.read(authNotifierProvider.notifier).signInWithGoogle();
+                },
               ),
             ],
           ),

@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const API_URL_ = `${process.env.NEXT_PUBLIC_API_URL}/Carrito`;
-
+import toast, { Toaster } from 'react-hot-toast';
 export async function agregarProductoAlCarrito(
   productoId: number,
   nombre: string,
@@ -39,11 +39,11 @@ export async function agregarProductoAlCarrito(
     return response.data;
   } catch (error: any) {
     if (error.response?.status === 401) {
-      console.warn('No autorizado: el usuario debe iniciar sesión para agregar productos al carrito.');
+      toast.error('No autorizado: el usuario debe iniciar sesión para agregar productos al carrito.');
       return null;
     }
 
-    console.error('Error al agregar producto al carrito:', error);
+    toast.error('Error al agregar producto al carrito:', error);
     throw error;
   }
 }

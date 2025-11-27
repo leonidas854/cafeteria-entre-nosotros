@@ -1,12 +1,15 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-
+import { agregarProductoAlCarrito } from '@/app/api/Carrito';
+import {getProductoPorId} from '@/app/api/productos';
+import toast, { Toaster } from 'react-hot-toast';
 // URL de tu API Python
 const PYTHON_API_URL = "http://localhost:8000"; 
 
-export default function RecomendadosCarousel({ onSelectProduct }) {
+export default function RecomendadosCarousel({ onSelectProduct ,onCarritoUpdated}) {
   const [productos, setProductos] = useState([]);
+   const [addingId, setAddingId] = useState(null);
   const [loading, setLoading] = useState(true);
   const scrollContainer = useRef(null);
   const IMAGE_BASE_URL = "http://localhost:5054";
@@ -15,7 +18,6 @@ export default function RecomendadosCarousel({ onSelectProduct }) {
   const fetchRecomendaciones = async () => {
     try {
       setLoading(true);
-      // Petición a FastAPI
       const res = await axios.get(`${PYTHON_API_URL}/recomendaciones`);
       if (res.data && res.data.productos) {
         setProductos(res.data.productos);
@@ -29,13 +31,50 @@ export default function RecomendadosCarousel({ onSelectProduct }) {
 
   useEffect(() => {
     fetchRecomendaciones();
-
-    // Escuchar el evento que lanzamos desde el Modal de Reseña
     const handleUpdate = () => fetchRecomendaciones();
     window.addEventListener('modeloActualizado', handleUpdate);
     
     return () => window.removeEventListener('modeloActualizado', handleUpdate);
   }, []);
+
+
+  const handleAddToCart = async (e, prod) => {
+    e.stopPropagation(); 
+    setAddingId(prod.id_producto); 
+
+    try {
+      const productoCompleto = await getProductoPorId(prod.id_producto);
+
+      if (!productoCompleto) {
+        throw new Error("No se encontró la información completa del producto");
+      }
+      await agregarProductoAlCarrito(
+        productoCompleto.id,         
+        productoCompleto.nombre,     
+        productoCompleto.categoria,  
+        productoCompleto.precio,     
+        1,                          
+        []                          
+      );
+      
+      
+ if (onCarritoUpdated) {
+        await onCarritoUpdated(); 
+      }
+    toast.success('✅ Producto añadido al carrito');
+     //await cargarCarrito();
+
+    } catch (error) {
+      
+      if (error?.response?.status === 401) {
+        toast.error('⚠️ Debes iniciar sesión para comprar');
+      } else {
+        toast.error('❌ Error al añadir al carrito');
+      }
+    } finally {
+      setAddingId(null);
+    }
+  };
 
   const scroll = (direction) => {
     if (scrollContainer.current) {
@@ -47,14 +86,14 @@ export default function RecomendadosCarousel({ onSelectProduct }) {
     }
   };
 
-  if (loading) return null; // O un spinner pequeño
+  if (loading) return null; 
   if (productos.length === 0) return null;
 
   return (
     <div className="w-full bg-[#48150A]/5 p-6 rounded-xl mb-8 border border-[#48150A]/10">
       <div className="flex justify-between items-center mb-4">
         <div>
-            <h2 className="text-2xl font-bold text-[#48150A]">🌟 Recomendados para Hoy</h2>
+            <h2 className="text-2xl font-bold text-[#de6449]">🌟 Recomendados para Hoy</h2>
             <p className="text-sm text-gray-600">Basado en las reseñas de nuestros clientes</p>
         </div>
         <div className="flex gap-2">
@@ -89,7 +128,17 @@ export default function RecomendadosCarousel({ onSelectProduct }) {
               <p className="text-xs text-gray-500 mb-2">{prod.categoria}</p>
               <div className="flex justify-between items-center">
                 <span className="font-bold text-gray-700">Bs. {prod.precio}</span>
-                <span className="text-xs bg-[#48150A] text-white px-2 py-1 rounded">Ver</span>
+                <button 
+                  onClick={(e) => handleAddToCart(e, prod)}
+                  disabled={addingId === prod.id_producto}
+                  className={`text-xs px-3 py-1.5 rounded font-medium transition-colors shadow-sm z-10 ${
+                    addingId === prod.id_producto 
+                      ? 'bg-gray-400 text-white cursor-not-allowed'
+                      : 'bg-[#48150A] text-white hover:bg-orange-900'
+                  }`}
+                >
+                  {addingId === prod.id_producto ? '...' : 'Añadir +'}
+                </button>
               </div>
             </div>
           </div>

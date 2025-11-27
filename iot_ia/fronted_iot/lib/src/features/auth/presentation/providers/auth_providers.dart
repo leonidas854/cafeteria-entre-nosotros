@@ -37,6 +37,18 @@ class AuthNotifier extends _$AuthNotifier {
    
     return AuthState();
   }
+  Future<void> signInWithGoogle() async {
+  state = state.copyWith(actionState: const AsyncValue.loading());
+  final action = await AsyncValue.guard(() {
+    return ref.read(authRepositoryProvider).signInWithGoogle();
+  });
+
+  if (!action.hasError) {
+    state = state.copyWith(status: AuthStatus.authenticated, actionState: action);
+  } else {
+    state = state.copyWith(actionState: action);
+  }
+}
 
   Future<void> login(String email, String password) async {
     state = state.copyWith(actionState: const AsyncValue.loading());
@@ -56,7 +68,7 @@ class AuthNotifier extends _$AuthNotifier {
 
     state = state.copyWith(actionState: const AsyncValue.loading());
     final action = await AsyncValue.guard(() async {
-      await Future.delayed(const Duration(seconds: 2)); 
+      await Future.delayed(const Duration(seconds: 1)); 
       logger.i('REGISTRO EXITOSO (FAKE)');
     });
      if (!action.hasError) {

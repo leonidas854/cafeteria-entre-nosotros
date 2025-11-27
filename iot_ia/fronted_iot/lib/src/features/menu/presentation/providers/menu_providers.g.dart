@@ -6,11 +6,11 @@ part of 'menu_providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$menuRepositoryHash() => r'c3c7ee6faa5188b5d6dfc55e006d12e7c00e08da';
+String _$menuRepositoryHash() => r'40320faae1b38956b9e58e5d75591947ccb35f58';
 
 /// See also [menuRepository].
 @ProviderFor(menuRepository)
-final menuRepositoryProvider = AutoDisposeProvider<FakeMenuRepository>.internal(
+final menuRepositoryProvider = Provider<FakeMenuRepository>.internal(
   menuRepository,
   name: r'menuRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,12 +22,12 @@ final menuRepositoryProvider = AutoDisposeProvider<FakeMenuRepository>.internal(
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef MenuRepositoryRef = AutoDisposeProviderRef<FakeMenuRepository>;
-String _$productListHash() => r'171d5135daebc58d83a9a62ee80aa6ccd3f3fee2';
+typedef MenuRepositoryRef = ProviderRef<FakeMenuRepository>;
+String _$productListHash() => r'0a624025a017a9091edae41ef3c6e1d104c8978d';
 
 /// See also [productList].
 @ProviderFor(productList)
-final productListProvider = AutoDisposeFutureProvider<List<Product>>.internal(
+final productListProvider = FutureProvider<List<Product>>.internal(
   productList,
   name: r'productListProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -39,8 +39,8 @@ final productListProvider = AutoDisposeFutureProvider<List<Product>>.internal(
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef ProductListRef = AutoDisposeFutureProviderRef<List<Product>>;
-String _$productDetailHash() => r'a370dd36cb4922a38695aff6a87cc2a04dae9f9a';
+typedef ProductListRef = FutureProviderRef<List<Product>>;
+String _$productDetailHash() => r'2b26ee7f68ab2410ee8a45b006d6798c1a5349ec';
 
 /// Copied from Dart SDK
 class _SystemHash {

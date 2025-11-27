@@ -1,21 +1,23 @@
-// lib/src/core/routes/app_router.dart
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:fronted_iot/src/core/utils/logger.dart'; 
 import 'package:fronted_iot/src/features/auth/presentation/providers/auth_providers.dart';
+import 'package:flutter/material.dart';
 import 'package:fronted_iot/src/features/auth/presentation/screens/login_screen.dart';
-import 'package:fronted_iot/src/features/auth/presentation/screens/register_screen.dart'; // Nueva pantalla
+import 'package:fronted_iot/src/features/auth/presentation/screens/register_screen.dart';
 import 'package:fronted_iot/src/features/home/presentation/screens/home_screen.dart';
 import 'package:fronted_iot/src/features/menu/presentation/screens/product_detail_screen.dart';
-import 'package:fronted_iot/src/features/auth/presentation/screens/welcome_screen.dart'; // Nueva pantalla
-import 'package:fronted_iot/src/features/profile/presentation/screens/profile_screen.dart'; // Nueva pantalla
+import 'package:fronted_iot/src/features/auth/presentation/screens/welcome_screen.dart';
+import 'package:fronted_iot/src/features/profile/presentation/screens/profile_screen.dart';
 
-// Hacemos el router un provider para que pueda leer otros providers
 final goRouterProvider = Provider<GoRouter>((ref) {
-  final authState = ref.watch(authNotifierProvider);
-
+ 
+  
   return GoRouter(
-    initialLocation: '/welcome', // La nueva pantalla de inicio
+    initialLocation: '/welcome',
+    observers: [GoRouterObserver()],
+
     routes: [
       GoRoute(path: '/welcome', builder: (context, state) => const WelcomeScreen()),
       GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
@@ -30,23 +32,27 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         },
       ),
     ],
-    // Lógica de redirección
     redirect: (context, state) {
-      final isLoggedIn = authState.status == AuthStatus.authenticated;
-      final isGoingToAuthScreens = state.matchedLocation == '/login' || state.matchedLocation == '/register' || state.matchedLocation == '/welcome';
-
-      // Si el usuario está logueado y trata de ir a login/register/welcome, llévalo a home
-      if (isLoggedIn && isGoingToAuthScreens) {
-        return '/home';
-      }
-
-      // Si no está logueado y trata de ir a una pantalla protegida (perfil), llévalo a login
-      if (!isLoggedIn && state.matchedLocation == '/profile') {
-        return '/login';
-      }
+      final isLoggedIn = ref.read(authNotifierProvider).status == AuthStatus.authenticated;
+      final location = state.matchedLocation;
       
-      // En cualquier otro caso, no hagas nada
+      logger.d('Redirect Check: isLoggedIn=$isLoggedIn, location=$location');
+
+      final isGoingToAuthScreens = location == '/login' || location == '/register' || location == '/welcome'|| location == '/home';
+
+      if (!isLoggedIn && !isGoingToAuthScreens) {
+        return '/welcome';
+      }
+
+
       return null;
     },
   );
 });
+
+class GoRouterObserver extends NavigatorObserver {
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    logger.i('Pushed: ${route.settings.name}');
+  }
+}

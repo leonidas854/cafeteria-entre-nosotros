@@ -304,8 +304,9 @@ const renderProducts = () => {
             onSelectProduct={(producto:any) => {
               console.log("Recomendación clickeada:", producto);
               toast("Recomendación: " + producto.nombre);
-              // Opcional: Buscar el producto en la lista 'productos' y abrir detalle
+              
             }}
+            onCarritoUpdated={cargarCarrito}
           />
           <h1 className="text-4xl font-urwclassico mb-8">
             {activeCategory}
@@ -471,9 +472,10 @@ export function ProductCard({
   isOpen={showReviewModal}
   onClose={() => setShowReviewModal(false)}
   onSubmit={() => {
-    // Aquí puedes refrescar reseñas/promedio si deseas
     console.log("Reseña enviada");
   }}
+  
+  
 />
 
     </div>

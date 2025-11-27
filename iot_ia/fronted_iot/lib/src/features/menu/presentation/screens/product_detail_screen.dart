@@ -21,7 +21,22 @@ class ProductDetailScreen extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Image.network(product.imageUrl, height: 300, fit: BoxFit.cover),
+                Image.asset(
+                  'assets/images/${product.imageUrl}',
+                  height: 300,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      height: 300,
+                      color: Colors.grey[300],
+                      child: const Icon(
+                        Icons.broken_image,
+                        size: 50,
+                        color: Colors.grey,
+                      ),
+                    );
+                  },
+                ),
                 Padding(
                   padding: const EdgeInsets.all(24.0),
                   child: Column(

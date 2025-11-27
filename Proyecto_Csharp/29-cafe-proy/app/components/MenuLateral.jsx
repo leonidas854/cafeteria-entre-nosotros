@@ -1,24 +1,33 @@
 'use client';
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "./menuiz.css";
 
 export default function MenuLateral({ groupedProducts, onSelectCategory }) {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 780); // Usar el mismo breakpoint del CSS
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
   const toggleSubmenu = (id) => {
     setActiveSubmenu(activeSubmenu === id ? null : id);
   };
-
   const handleCategoryClick = (category, subcategory = null) => {
     onSelectCategory(category, subcategory);
   };
   const categorias = Object.entries(groupedProducts); 
 
-
-
  return (
-    <div className="nav-container">
+    <div className={`nav-container ${isMobile ? 'w-full md:w-64' : ''}`}>
       <ul className="nav">
         {categorias.map(([categoria, data], idx) => {
           const subcategorias = data.subcategorias

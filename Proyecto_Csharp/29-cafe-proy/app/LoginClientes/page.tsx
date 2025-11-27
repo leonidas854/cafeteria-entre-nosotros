@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Menu from "../components/Menu.jsx";
 import Link from "next/link";
 import "./loginC.css";
-import "../login/menu.css";
+import "./menu.css";
 
 export default function LoginClientePage() {
   const [usuario, setUsuario] = useState('');

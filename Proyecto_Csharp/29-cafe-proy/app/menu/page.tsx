@@ -446,7 +446,7 @@ export function ProductCard({
         {/** Calculo de calificación promedio */}
         <p className="text-amber-700 font-bold text-xl mb-2">Bs.{product.precio.toFixed(2)}</p>
 
-        <div className={`overflow-hidden transition-all duration-300 ${showDescription ? 'max-h-40' : 'max-h-0'}`}>
+        <div className={`overflow-hidden transition-all duration-300 max-h-40  md:max-h-0 ${showDescription ? 'md:max-h-40' : ''} `}>
           <p className="text-gray-600 text-sm">{product.descripcion}</p>
 
           <button

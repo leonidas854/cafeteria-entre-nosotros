@@ -1,13 +1,20 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/Acceso/Login_Empleado`;
+const API_URL = `${process.env.NEXT_PUBLIC_API}/api/login/`;
 const API_URL2 = `${process.env.NEXT_PUBLIC_BACKEND_URL}/Acceso/Datos`;
-export interface LoginEmpleadoRequest {
-  usuario: string;
+export interface LoginRequest {
+  username: string;
   password: string;
 }
 
+
+export interface LoginApiResponse {
+  message?: string;
+  tipo?: 'cliente' | 'empleado' | string;
+  username?: string;
+  rol?: string; 
+}
 export interface LoginEmpleadoResponse {
   isSuccess: boolean;
   rol?: string;
@@ -50,42 +57,53 @@ export const getUsuarioAutenticado = async (): Promise<UsuarioAutenticado> => {
 };
 
 export const loginEmpleado = async (
-  credenciales: LoginEmpleadoRequest
+  credenciales: LoginRequest 
 ): Promise<LoginEmpleadoResponse> => {
   try {
-    const response = await axios.post<LoginEmpleadoResponse>(
+    
+    const response = await axios.post<LoginApiResponse>( 
       API_URL,
-      credenciales,
+      credenciales, 
       {
         headers: {
           'Content-Type': 'application/json',
         },
-        withCredentials: true,
+        withCredentials: true, 
       }
     );
-
     const data = response.data;
-
-    if (!data.isSuccess) {
-      toast.error(data.message || '❌ Credenciales inválidas');
+    if (data.tipo === 'empleado') {
+      
+      toast.success("✅ ¡Bienvenido!");
+      return {
+        isSuccess: true,
+        rol: data.rol, 
+        message: data.message,
+      };
+    } else {
+     
+      toast.error(`❌ `);
+      return {
+        isSuccess: false,
+      };
     }
 
-    return data;
   } catch (error: any) {
+
     console.error("Error en loginEmpleado:", error);
 
-    toast.error(
-      error.response?.data?.message ||
-      '❌ Error de red o del servidor al iniciar sesión'
-    );
+    const errorMessage = error.response?.data?.error || 
+                         error.response?.data?.message ||
+                         'Error de red o del servidor al iniciar sesión';
+
+    toast.error(`❌ ${errorMessage}`);
 
     return {
       isSuccess: false,
-      message: 'Error al procesar la solicitud',
+      message: errorMessage,
     };
   }
 };
-
 const API_URL_REGISTRO = `${process.env.NEXT_PUBLIC_BACKEND_URL}/Acceso/Registrar_Empleado`;
 
 export const registrarEmpleado = async (empleado: EmpleadoRegistroRequest): Promise<{ isSuccess: boolean; mensaje?: string }> => {

@@ -16,6 +16,7 @@ import json
 from rest_framework.views import APIView
 from django.db import connection
 from drf_spectacular.utils import extend_schema
+from Caja.models import Empleado
 
 from .serializers import (
     LoginSerializer,
@@ -65,6 +66,13 @@ def login_view(request):
             'tipo': getattr(user, 'tipo', 'desconocido'),
             'username': user.username
         }
+
+        if user.tipo == 'empleado':
+            try:
+                empleado_perfil = user.empleado 
+                response_data['rol'] = empleado_perfil.rol
+            except Empleado.DoesNotExist:
+                response_data['rol'] = None
         return Response(response_data, status=status.HTTP_200_OK)
     else:
         return Response({'error': 'Credenciales inválidas'},
@@ -172,11 +180,13 @@ class PromocionViewSet(viewsets.ModelViewSet):
     
 
 class TodosPedidosOptimizadosView(APIView):
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]
     pagination_class = PageNumberPagination
 
     def get(self, request, *args, **kwargs):
         paginator = self.pagination_class()
+        if not getattr(paginator, 'page_size', None):
+             paginator.page_size = 25
         
         page_size = paginator.get_page_size(request)
         page_number = int(request.query_params.get(paginator.page_query_param, 1))

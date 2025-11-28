@@ -54,81 +54,76 @@ export default function LoginClientePage() {
    
   }};
 
-  return (
-    <div className="login-page">
+   return (
+ 
+    <div>
+   
       <Menu />
 
-      <div className="login-container">
-        <h2 className="text-4xl md:text-5xl text-black font-urwclassico mb-8">
-          Iniciar Sesión (Cliente)
-        </h2>
+     
+      <main className="login-page min-h-screen flex flex-col items-center justify-center pt-20 px-4">
+        
+      
+        <div className="login-container w-full max-w-md">
+          <h2 className="text-3xl md:text-4xl text-black font-urwclassico mb-6 text-center">
+            Iniciar Sesión
+          </h2>
 
-        {error && (
-          <div className="error-message">
-            {error}
-          </div>
-        )}
+          {error && (
+            <div className="error-message">
+              {error}
+            </div>
+          )}
 
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="form-group">
-            <label htmlFor="username" className="form-label">Usuario</label>
-            <input 
-              type="text" 
-              id="username" 
-              className="form-input"
-              placeholder="Ingresa tu usuario"
-              value={username}
-              onChange={(e) => setUsuario(e.target.value)}
-              required
-            />
-          </div>
+          <form onSubmit={handleSubmit} className="login-form">
+            <div className="form-group">
+              <label htmlFor="username" className="form-label">Usuario</label>
+              <input 
+                type="text" 
+                id="username" 
+                className="form-input"
+                placeholder="Ingresa tu usuario"
+                value={username}
+                onChange={(e) => setUsuario(e.target.value)}
+                required
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="password" className="form-label">Contraseña</label>
-            <input 
-              type="password" 
-              id="password" 
-              className="form-input"
-              placeholder="Ingresa tu contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="password" className="form-label">Contraseña</label>
+              <input 
+                type="password" 
+                id="password" 
+                className="form-input"
+                placeholder="Ingresa tu contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
 
-          <button type="submit" className="login-button" disabled={isLoading}>
-            {isLoading ? 'Verificando...' : 'Ingresar'}
-          </button>
+            <div className="flex flex-col gap-4 mt-4">
+              <button type="submit" className="login-button" disabled={isLoading}>
+                {isLoading ? 'Verificando...' : 'Ingresar'}
+              </button>
 
-          <Link href="/registro">
-            <button type="button" className="login-button">
-              Crear Cuenta
-            </button>
-          </Link>
-
-
-          
-          <button 
-            type="button" 
-            className="login-button secondary-button" 
-            onClick={(e) =>{
-              e.preventDefault();
-              //router.push('/menu');
-              handleLogout();
+              <Link href="/registro" className="w-full">
+                <button type="button" className="login-button secondary-button w-full">
+                  Crear Cuenta
+                </button>
+              </Link>
               
-            }
-              
-            
-            }
-          >
-            Cerrar Sesión
-          </button>
-          
-
-          
-          
-        </form>
-      </div>
+              <button 
+                type="button" 
+                className="login-button secondary-button" 
+                onClick={handleLogout}
+              >
+                Cerrar Sesión
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
     </div>
   );
 }

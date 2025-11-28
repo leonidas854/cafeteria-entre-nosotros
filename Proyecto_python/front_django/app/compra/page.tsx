@@ -22,32 +22,6 @@ import {
 import './compra.css';
 
 
-/*
-interface ExtraCarrito {
-  extraId: number;
-  nombre: string;
-  precio: number;
-}
-
-interface ItemCarrito {
-  productoId: number;
-  nombre: string;
-  categoria: string;
-  precioUnitario: number;
-  cantidad: number;
-  extras: ExtraCarrito[];
-  tienePromocion: boolean;
-  precioPromocional?: number;
-  descripcionPromocion?: string;
-  
-}
-
-interface Carrito {
-  id?: string;
-  clienteId?: number;
-  items: ItemCarrito[];
-}*/
-
 
 
 export const obtenerExtrasDisponibles = async (): Promise<Extra[] | null | { error: string }> => {

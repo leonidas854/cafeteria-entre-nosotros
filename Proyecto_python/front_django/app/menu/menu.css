@@ -1,6 +1,4 @@
 .menu-container {
-    /* Cambiado de 'fixed' a 'sticky' o déjalo así si usas la clase 'sticky top-0' en React */
-    /* Si quieres que se fije arriba y no se mueva: position: fixed; */
     position: fixed; /* O sticky si lo prefieres */ 
     display: flex;
     align-items: center;

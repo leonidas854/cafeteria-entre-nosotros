@@ -219,4 +219,43 @@ export const fetchPedidosConInfoCompleta = async (
   }
 };
 
+export const fetchMisPedidos = async (
+  setPedidos: (data: any[]) => void,
+  setSinPedidos: (val: boolean) => void,
+  setLoading: (val: boolean) => void
+) => {
+  setLoading(true); 
+  try {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/pedidos/mis-pedidos/`, {
+      withCredentials: true,
+    });
 
+ 
+    const pedidos = res.data.results; 
+  } catch (error: any) {
+    if (error.response?.status === 404) {
+      setSinPedidos(true);
+      setPedidos([]);
+    } else {
+      toast.error("No se pudieron cargar los pedidos.");
+      console.error("Error fetching pedidos:", error); 
+    }
+  } finally {
+    setLoading(false);
+  }}
+
+
+export const fetchMisVentas = async () => {
+  try {
+    const response = await axios.get(`${API_URL_}/api/ventas/mis-ventas/`, {
+      withCredentials: true,
+    });
+    return response.data; // Devuelve los datos
+  } catch (error: any) {
+    if (error.response?.status === 404) {
+      return []; // No es un error, solo no hay ventas
+    }
+    console.error("Error fetching mis ventas:", error);
+    throw new Error("No se pudieron cargar las ventas."); // Lanza error
+  }
+};

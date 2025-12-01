@@ -4,7 +4,9 @@ import axios from 'axios';
 import Menu from '@/app/components/Menu';
 import toast, { Toaster } from 'react-hot-toast';
 import "./menu.css";
-import { fetchPedidos, fetchVentas } from "@/app/api/Pedido";
+import { fetchPedidos
+  , fetchVentas } from "@/app/api/Pedido";
+
 
 interface Extra {
   id: number;
@@ -118,8 +120,13 @@ export default function MisPedidosPage() {
                     <p className="text-sm text-gray-600">
                       Precio unitario: {detalle.precio_unitario.toFixed(2)} Bs
                     </p>
+
+
+                 { /*
                     {detalle.extras.length > 0 && (
                       <ul className="list-disc pl-6 mt-1 text-sm text-gray-600">
+                        
+                        
                         {detalle.extras.map((extra) => (
                           <li key={extra.id}>
                             {extra.nombre} (+{extra.precio.toFixed(2)} Bs)
@@ -127,6 +134,10 @@ export default function MisPedidosPage() {
                         ))}
                       </ul>
                     )}
+
+
+
+                 */}
                   </div>
                 ))}
               </div>

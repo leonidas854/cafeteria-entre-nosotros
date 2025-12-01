@@ -6,12 +6,18 @@ class EstadoPedido(models.TextChoices):
     EN_PROCESO = 'en_proceso', 'En Proceso'
     COMPLETADO = 'completado', 'Completado'
     CANCELADO = 'cancelado', 'Cancelado'
+    EN_ESPERA = 'En_espera', 'En espera' 
+    PREPARANDO = 'Preparando', 'Preparando'
+    LISTO = 'Listo', 'Listo'
+    ENTREGADO = 'Entregado', 'Entregado' 
+    EN_DELIVERY = 'Delivery', 'En Delivery' 
 
 class TipoEntrega(models.TextChoices):
     RECOGER = 'recoger', 'Recoger en tienda'
     DOMICILIO = 'domicilio', 'A Domicilio'
-    LLEVAR = 'Llevar', 'Para Llevar'
+    LLEVAR = 'llevar', 'Para Llevar'
     DELIVERY = 'Delivery','delivery', 
+    MESA = 'mesa','En Mesa'
 
 class UsuarioBase(AbstractUser):
     TIPO_USUARIO = (

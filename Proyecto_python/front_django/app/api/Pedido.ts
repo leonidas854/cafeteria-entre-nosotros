@@ -2,6 +2,13 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 const API_URL_ = `${process.env.NEXT_PUBLIC_API_URL}/Pedido`;
 
+
+const getCsrfToken = (): string | null => {
+  if (typeof document === 'undefined') return null;
+  const csrfCookie = document.cookie.split('; ').find(row => row.startsWith('csrftoken='));
+  return csrfCookie ? csrfCookie.split('=')[1] : null;
+};
+
 export const confirmarPedido = async (
   carritoId: string,
   tipoEntrega: 'Mesa' | 'Llevar', 
@@ -32,27 +39,36 @@ export const fetchPedidos = async (
   setSinPedidos: (val: boolean) => void,
   setLoading: (val: boolean) => void
 ) => {
+  setLoading(true); 
   try {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/pedidos/todos-optimizados/`, {
       withCredentials: true,
     });
 
-    if (res.data.length === 0) {
+ 
+    const pedidos = res.data.results; 
+
+  
+    if (!pedidos || pedidos.length === 0) {
       setSinPedidos(true);
+      setPedidos([]); 
     } else {
-      const pedidosOrdenados = res.data.sort((a: any, b: any) => b.id_pedido - a.id_pedido);
+  
+      const pedidosOrdenados = pedidos.sort((a: any, b: any) => b.id - a.id);
       setPedidos(pedidosOrdenados);
+      setSinPedidos(false); 
     }
   } catch (error: any) {
     if (error.response?.status === 404) {
       setSinPedidos(true);
+      setPedidos([]);
     } else {
-      toast.error("No se pudieron cargar tus pedidos.");
+      toast.error("No se pudieron cargar los pedidos.");
+      console.error("Error fetching pedidos:", error); 
     }
   } finally {
     setLoading(false);
-  }
-};
+  }}
 
 export const fetchVentas = async (
   setVentas: (data: any[]) => void,
@@ -83,27 +99,38 @@ export const fetchVentas = async (
   }
 };
 
-
 export const cambiarEstadoPedido = async (
   pedidoId: number,
-  nuevoEstado: string
+  nuevoEstado: string,
+ 
+  onSuccessCallback: () => void 
 ): Promise<void> => {
+
+
+  const csrfToken = getCsrfToken();
+  if (!csrfToken) {
+    throw new Error("Token CSRF no encontrado.");
+  }
   try {
     const res = await axios.put(
-      `${API_URL_}/cambiar-estado/${pedidoId}`,
+      `${process.env.NEXT_PUBLIC_API}/api/pedidos/${pedidoId}/cambiar-estado/`,
       null,
       {
-        params: { nuevoEstado },
+        params: {
+          nuevo_estado: nuevoEstado 
+        },
         withCredentials: true,
+        headers: { 'X-CSRFToken': csrfToken },
       }
     );
     toast.success(`Estado actualizado a "${res.data.nuevo_estado}"`);
+    onSuccessCallback(); 
   } catch (error: any) {
     console.error("Error al cambiar estado del pedido:", error);
-    toast.error("No se pudo actualizar el estado del pedido.");
+    const errorMessage = error.response?.data?.detail || "No se pudo actualizar el estado.";
+    toast.error(errorMessage);
   }
 };
-
 
 
 export const fetchTodosPedidos = async (
@@ -141,7 +168,7 @@ export const fetchTodasVentas = async (
   setLoading: (val: boolean) => void
 ) => {
   try {
-    const res = await axios.get(`${API_URL_}/Todas-las-ventas`, {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/ventas/todas/`, {
       withCredentials: true,
     });
 

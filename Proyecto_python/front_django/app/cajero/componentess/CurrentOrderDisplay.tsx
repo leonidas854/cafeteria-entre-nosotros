@@ -17,16 +17,26 @@ import {
   modificarExtras,
   quitarProducto,
   eliminarCarrito,
-  asignarCarritoACliente
+  asignarCarritoACliente,
+  ItemCarrito,
+  Carrito,
+  Extra,
+  agregarProductoAlCarrito
 } from '@/app/api/Carrito';
 
 import {confirmarPedido} from '@/app/api/Pedido';
 
 
+interface CurrentOrderDisplayProps {
+  carrito: Carrito | null; 
+  refrescarCarrito: () => Promise<void>; 
+  cliente: UsuarioNit | null;
+  setCliente: (cliente: UsuarioNit | null) => void;
+}
 export interface UsuarioNit {
   id: number;
   apell_paterno: string;
-  NIT: number;
+  nit: number;
   usuario: string;
   password: string;
 }
@@ -36,46 +46,46 @@ interface ExtraCarrito {
   precio: number;
 }
 
+export interface ExtraDisponible {
+  id: number;
+  nombre: string;
+  precio: number;
+}
 import axios from 'axios';
 
-interface CurrentOrderDisplayProps {
-  items: ItemPedido[];
-  onUpdateQuantity: () => Promise<void>;
-  onRemoveItem: () => Promise<void>;
-  onClearOrder: () => void;
-  
-  isSubmitting: boolean;
-  cliente: UsuarioNit | null;
-  setCliente: (cliente: UsuarioNit | null) => void;
-}
 
-export const obtenerExtrasDisponibles = async (): Promise<ExtraCarrito[] | null | { error: string }> => {
-  try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Extras`, {
-      withCredentials: true
-    });
-
-    if (!res.data || !Array.isArray(res.data) || res.data.length === 0) {
-      return null; 
-    }
-
-    const adaptados: ExtraCarrito[] = res.data.map((e: any) => ({
-      extraId: e.id,
-      nombre: e.nombre,
-      precio: e.precio
-    }));
-
-    return adaptados;
-  } catch (error: any) {
-    if (error.response?.status === 401) {
-      console.warn('No autorizado para obtener extras');
-      return { error: 'NO_AUTORIZADO' };
-    }
-
-    console.error('Error inesperado al obtener los extras:', error);
-    return null;
-  }
+const getCsrfToken = (): string | null => {
+  if (typeof document === 'undefined') return null;
+  const csrfCookie = document.cookie.split('; ').find(row => row.startsWith('csrftoken='));
+  return csrfCookie ? csrfCookie.split('=')[1] : null;
 };
+
+export default function CurrentOrderDisplay({ carrito,
+   refrescarCarrito, cliente, setCliente }: CurrentOrderDisplayProps) {
+
+  const [extrasDisponibles, setExtrasDisponibles] = useState<ExtraDisponible[]>([]);
+  const [tipoOrden, setTipoOrden] = useState<'llevar' | 'mesa'>('llevar');
+  const [metodoPago, setMetodoPago] = useState<'tarjeta' | 'qr' | 'efectivo'>('efectivo');
+  const [mostrarModalNIT, setMostrarModalNIT] = useState(false);
+  const [nitInput, setNitInput] = useState('');
+  const [clienteNit, setClienteNit] = useState<UsuarioNit | null>(null);
+  const [apellidoManual, setApellidoManual] = useState('');
+  const [clienteNoEncontrado, setClienteNoEncontrado] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isAssigningClient, setIsAssigningClient] = useState(false);
+
+
+
+  const obtenerExtras = async () => {
+    try {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/extras/`, { withCredentials: true });
+      if (res.data && Array.isArray(res.data)) {
+        setExtrasDisponibles(res.data);
+      }
+    } catch (error) {
+      console.error('Error al obtener extras:', error);
+    }
+  };
 
 
 const esCafe = (nombre: string, categoria?: string) => {
@@ -86,45 +96,19 @@ const esCafe = (nombre: string, categoria?: string) => {
   );
 };
 
-export default function CurrentOrderDisplay({
-  items,
-  onUpdateQuantity,
-  onRemoveItem,
-  onClearOrder,
-  
-  isSubmitting,
-  cliente,
-  setCliente,
-}: CurrentOrderDisplayProps) {
-
-  const [extrasDisponibles, setExtrasDisponibles] = useState<ExtraCarrito[]>([]);
-  const [tipoOrden, setTipoOrden] = useState<'llevar' | 'mesa'>('llevar');
-  const [metodoPago, setMetodoPago] = useState<'tarjeta' | 'qr' | 'efectivo'>('efectivo');
-  const [mostrarModalNIT, setMostrarModalNIT] = useState(false);
-  const [nitInput, setNitInput] = useState('');
-  const [clienteNit, setClienteNit] = useState<any | null>(null);
-  const [apellidoManual, setApellidoManual] = useState('');
-  const [clienteNoEncontrado, setClienteNoEncontrado] = useState(false);
 
 
 
-  
-
-  
-
- useEffect(() => {
-    const fetchExtras = async () => {
-      const res = await obtenerExtrasDisponibles();
-      if (res && !('error' in res)) {
-        setExtrasDisponibles(res);
-      }
-    };
-    fetchExtras();
+  useEffect(() => {
+    obtenerExtras();
   }, []);
 
+  const items = carrito?.items || [];
+  
   const totalPedido = items.reduce((sum, item) => {
     const extrasTotal = item.extras.reduce((eSum, e) => eSum + e.precio, 0);
-    return sum + (item.precioUnitario + extrasTotal) * item.cantidad;
+    const precioConPromo = item.precio_promocional ?? item.precio_unitario;
+    return sum + (precioConPromo + extrasTotal) * item.cantidad;
   }, 0);
 
   const buscarClientePorNIT = async () => {
@@ -132,8 +116,9 @@ export default function CurrentOrderDisplay({
       const data = await buscarClienteApi(nitInput);
       setClienteNit(data);
       toast.success(`Cliente encontrado: ${data.usuario}`);
-      setCliente(data); // asignar también el cliente
+      setCliente(data); 
 setClienteNoEncontrado(false);
+
     } catch {
       toast.error("NIT no encontrado");
       setClienteNit(null);
@@ -141,97 +126,168 @@ setClienteNoEncontrado(false);
     }
   };
 
-  const handleModificarCantidad = async (productoId: number, nuevaCantidad: number, extrasIds: number[]) => {
+ const handleModificarCantidad = async (itemId: number, nuevaCantidad: number) => {
     try {
-      await modificarCantidad(productoId, extrasIds, nuevaCantidad);
-      await onUpdateQuantity();
-      toast.success("Cantidad actualizada");
+      const carritoActualizado = await modificarCantidad(itemId, nuevaCantidad);
+      await refrescarCarrito();
+      toast.success("Cantidad actualizada.");
     } catch (error) {
-      console.error("Error al modificar cantidad:", error);
-      toast.error("No se pudo actualizar la cantidad");
+      toast.error("No se pudo actualizar la cantidad.");
+    }
+  };
+
+  const handleQuitarProducto = async (itemId: number) => {
+    try {
+      const carritoActualizado = await quitarProducto(itemId);
+      await refrescarCarrito();
+      toast.error("Producto eliminado.");
+    } catch (error) {
+      toast.error("No se pudo quitar el producto.");
     }
   };
 
 const handleConfirmarPedido = async () => {
-  try {
-    const carrito = await obtenerCarrito();
-    if (!carrito?.id) {
-      toast.error("Carrito no encontrado");
+    setIsSubmitting(true);
+
+    // 1. Las validaciones iniciales se mantienen, son correctas.
+    if (!metodoPago) {
+      toast.error("⚠️ Debes seleccionar un método de pago.");
+      setIsSubmitting(false);
       return;
     }
+    if (!tipoOrden) {
+      toast.error("⚠️ Debes seleccionar un tipo de entrega.");
+      setIsSubmitting(false);
+      return;
+    }
+    if (!carrito || !carrito.id || carrito.items.length === 0) { 
+      toast.error("⚠️ El carrito está vacío o no está disponible.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const csrfToken = getCsrfToken();
+    if (!csrfToken) {
+      toast.error("Token de seguridad no encontrado. No se puede continuar.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const body = {
+        carrito_id: carrito.id,
+        tipo_entrega: tipoOrden,
+        tipo_pago: metodoPago
+      };
+
     
-    if (!carrito.clienteId) {
-  toast.error("Debe asignar un cliente antes de confirmar el pedido");
-  return;
-}
-    // Transformar los valores seleccionados de los radio buttons
-    const tipoEntregaBack = tipoOrden.charAt(0).toUpperCase() + tipoOrden.slice(1); 
-    const metodoPagoBack = metodoPago.charAt(0).toUpperCase() + metodoPago.slice(1);
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API}/api/carrito/confirmar-pedido/`,
+        body,
+        {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+          },
+        }
+      );
 
-    const resultado = await confirmarPedido(
-      carrito.id,
-      tipoEntregaBack as 'Mesa' | 'Llevar',
-      metodoPagoBack as 'Efectivo' | 'Tarjeta' | 'Qr'
-    );
+      console.log("Pedido confirmado:", response.data);
+      toast.success("¡Pedido confirmado y enviado a preparación!");
+   
+      await refrescarCarrito(); 
+      setCliente(null); 
 
-    toast.success(`Pedido confirmado. Total: Bs. ${(resultado.total_estimado - resultado.total_descuento).toFixed(2)}`);
-    onClearOrder();
-
-   setNitInput('');
-      setClienteNit(null);
-      setClienteNoEncontrado(false);
-      setCliente(null);
-  } catch (error: any) {
-    toast.error(error.message || "Error al confirmar el pedido");
-  }
-};
-
-
-
-  const handleQuitarProducto = async (productoId: number, extrasIds: number[]) => {
-    try {
-      await quitarProducto(productoId, extrasIds);
-      await onRemoveItem();
-      toast.success("Producto eliminado del pedido");
-    } catch (error) {
-      console.error("Error al quitar producto:", error);
-      toast.error("No se pudo eliminar el producto");
-    }
-  };
-
-  const handleModificarExtras = async (productoId: number, nuevosExtras: ExtraCarrito[]) => {
-    try {
-      await modificarExtras(productoId, nuevosExtras);
-      await onUpdateQuantity();
-      toast.success("Extras modificados correctamente");
-    } catch (error) {
-      console.error("Error al modificar extras:", error);
-      toast.error("No se pudieron modificar los extras");
-    }
-  };
-
-  const handleAgregarExtra = (item: ItemPedido, extra: ExtraCarrito) => {
-    const nuevosExtras = [...item.extras, extra];
-    handleModificarExtras(item.productoId, nuevosExtras);
-  };
-
-  const handleEliminarCarrito = async () => {
-    try {
-      const carrito = await obtenerCarrito();
-      if (!carrito?.id) {
-        toast.error("Carrito no encontrado");
-        return;
+    } catch (error: any) {
+      
+      if (error.response && error.response.status === 400) {
+        const errorMessage = error.response.data.detail || JSON.stringify(error.response.data);
+        toast.error(`Error de validación: ${errorMessage}`);
+      } else {
+        console.error("Error al confirmar el pedido:", error);
+        toast.error("No se pudo confirmar el pedido. Intenta de nuevo.");
       }
-      await eliminarCarrito(carrito.id);
-      onClearOrder();
-      toast.success("Pedido limpiado correctamente");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+   const handleModificarExtras = async (itemId: number, nuevosExtraIds: number[]) => {
+    try {
+      const carritoActualizado = await modificarExtras(itemId, nuevosExtraIds);
+      await refrescarCarrito();
+      toast.success("Extras actualizados.");
+    } catch (error) {
+        toast.error("No se pudieron modificar los extras.");
+    }
+  };
+
+   const handleAgregarExtra = (item: ItemCarrito, extra: ExtraDisponible) => {
+      const nuevosExtrasIds = [...item.extras.map(e => e.id), extra.id];
+      handleModificarExtras(item.id, nuevosExtrasIds);
+  };
+
+ const handleEliminarCarrito = async () => {
+    try {
+      await eliminarCarrito();
+      await refrescarCarrito();
+      toast.success("Pedido limpiado.");
+      setCliente(null);
       setNitInput('');
       setClienteNit(null);
-      setClienteNoEncontrado(false);
-      setCliente(null);
     } catch (error) {
-      console.error("Error al eliminar el carrito:", error);
-      toast.error("No se pudo limpiar el pedido");
+      toast.error("No se pudo limpiar el pedido.");
+    }
+  };
+
+ const asignarClienteYRestaurarCarrito = async (clienteParaAsignar: UsuarioNit) => {
+    setIsAssigningClient(true);
+    toast.loading('Asignando cliente y productos...');
+
+ 
+    const itemsParaRestaurar = carrito?.items ? [...carrito.items] : [];
+
+    try {
+    
+      const carritoActual = await obtenerCarrito();
+      if (!carritoActual?.id) {
+       
+        await refrescarCarrito();
+      } else {
+        await asignarCarritoACliente(carritoActual.id, clienteParaAsignar.id);
+      }
+      
+      
+      await refrescarCarrito();
+
+      if (itemsParaRestaurar.length > 0) {
+        for (const item of itemsParaRestaurar) {
+      
+          const extraIds = item.extras.map(extra => extra.id);
+          await agregarProductoAlCarrito(item.producto_id, item.cantidad, extraIds);
+        }
+      }
+
+     
+      await refrescarCarrito();
+      
+      setCliente(clienteParaAsignar);
+      toast.dismiss();
+      toast.success(`Cliente '${clienteParaAsignar.apell_paterno}' asignado. Productos restaurados.`);
+      
+     
+      setMostrarModalNIT(false);
+      setClienteNoEncontrado(false);
+      setNitInput('');
+      setClienteNit(null);
+
+    } catch (error) {
+      toast.dismiss();
+      toast.error("No se pudo asignar el cliente o restaurar los productos.");
+      console.error("Error en asignación:", error);
+    } finally {
+      setIsAssigningClient(false);
     }
   };
 
@@ -254,6 +310,7 @@ const handleConfirmarPedido = async () => {
       toast.success("Cliente registrado con éxito");
       setMostrarModalNIT(false);
       setClienteNoEncontrado(false);
+        await asignarClienteYRestaurarCarrito(nuevoCliente);
     } catch {
       toast.error("Error al registrar el cliente");
     }
@@ -273,7 +330,6 @@ const handleConfirmarPedido = async () => {
   </div>
 )}
 
-      {/* Lista de productos */}
       {items.length === 0 ? (
         <div className="flex-grow flex items-center justify-center">
           <p className="p-4 text-center text-gray-400">
@@ -283,19 +339,14 @@ const handleConfirmarPedido = async () => {
       ) : (
         <div className="flex-grow overflow-y-auto mb-3 pr-1" style={{ scrollbarWidth: 'thin', scrollbarColor: '#9CA3AF #F3F4F6' }}>
           {items.map((item) => (
-            <div key={item.productoId} className="border-b py-2.5 last:border-b-0">
+            <div key={item.producto_id} className="border-b py-2.5 last:border-b-0">
               <div className="flex justify-between items-start mb-1">
                 <div>
                   <p className="font-semibold text-sm text-gray-700 leading-tight">{item.nombre}</p>
-                  <p className="text-xs text-gray-500">Bs. {item.precioUnitario.toFixed(2)}</p>
+                  <p className="text-xs text-gray-500">Bs. {item.precio_unitario.toFixed(2)}</p>
                 </div>
                 <button
-                  onClick={() =>
-                    handleQuitarProducto(
-                      item.productoId,
-                      item.extras.map((e) => e.extraId)
-                    )
-                  }
+                  onClick={() => handleQuitarProducto(item.id)}
                   className="text-red-500 hover:text-red-700 text-lg font-semibold p-0 leading-none"
                 >
                   ×
@@ -304,7 +355,7 @@ const handleConfirmarPedido = async () => {
               </div>
               <div className="flex items-center">
                 <button
-                 onClick={() => handleModificarCantidad(item.productoId, item.cantidad - 1, item.extras.map(e => e.extraId))}
+                 onClick={() => handleModificarCantidad(item.id, item.cantidad - 1)}
                   disabled={item.cantidad <= 1}
                   className="px-2 py-0.5 border rounded-l bg-gray-100 hover:bg-gray-200 disabled:opacity-50 text-gray-700"
                 >
@@ -312,32 +363,34 @@ const handleConfirmarPedido = async () => {
                 </button>
                 <span className="px-3 py-0.5 border-t border-b text-gray-700 text-sm">{item.cantidad}</span>
                 <button
-                 onClick={() => handleModificarCantidad(item.productoId, item.cantidad + 1, item.extras.map(e => e.extraId))}
+                onClick={() => handleModificarCantidad(item.id, item.cantidad + 1)}
                   className="px-2 py-0.5 border rounded-r bg-gray-100 hover:bg-gray-200 text-gray-700"
                 >
                   +
                 </button>
                 <p className="ml-auto font-semibold text-sm text-gray-700">
-                  Bs. {(item.precioUnitario * item.cantidad).toFixed(2)}
+                  Bs. {(item.precio_unitario * item.cantidad).toFixed(2)}
                 </p>
               </div>
 
-              {item.extras.length > 0 && (
-  <div className="mt-1 pl-2 space-y-1">
-    {item.extras.map(extra => (
-      <div key={`${item.productoId}-${extra.extraId}`}
- className="flex justify-between items-center text-xs text-gray-600 bg-gray-100 rounded px-2 py-1">
-        <span>+ {extra.nombre} (Bs. {extra.precio.toFixed(2)})</span>
-        <button
-          onClick={() => {
-            const nuevosExtras = item.extras.filter(e => e.extraId !== extra.extraId);
-            handleModificarExtras(item.productoId, nuevosExtras);
-          }}
-          className="text-red-500 hover:text-red-700 ml-2 font-bold"
-        >
-          ✕
-        </button>
-      </div>
+ {item.extras.length > 0 && (
+                <div>
+                  {item.extras.map((extra: Extra) => (
+                    <div key={`${item.id}-${extra.id}`}>
+            
+                      <span>+ {extra.name} (Bs. {extra.precio.toFixed(2)})</span>
+                      <button
+                        onClick={() => {
+                          const nuevosExtrasIds = item.extras
+                            .filter(e => e.id !== extra.id)
+                            .map(e => e.id); 
+                          handleModificarExtras(item.id, nuevosExtrasIds); 
+                        }}
+                        className="..."
+                      >
+                        ✕
+                      </button>
+                    </div>
     ))}
   </div>
 )}
@@ -346,14 +399,14 @@ const handleConfirmarPedido = async () => {
   <div className="mt-1 pl-2">
     <p className="text-xs font-semibold text-gray-600">Añadir extra:</p>
 
-    {extrasDisponibles.filter(extra => !item.extras.some(e => e.extraId === extra.extraId)).length === 0 ? (
+    {extrasDisponibles.filter(extra => !item.extras.some(e => e.id === extra.id)).length === 0 ? (
       <p className="text-xs text-gray-400">Todos los extras ya fueron agregados.</p>
     ) : (
       extrasDisponibles
-        .filter(extra => !item.extras.some(e => e.extraId === extra.extraId))
+        .filter(extra => !item.extras.some(e => e.id === extra.id))
         .map(extra => (
           <button
-            key={`disp-${item.productoId}-${extra.extraId}`}
+            key={`disp-${item.producto_id}-${extra.id}`}
             onClick={() => handleAgregarExtra(item, extra)}
             className="text-xs bg-amber-100 hover:bg-amber-200 text-gray-800 rounded px-2 py-1 mr-2 mt-1"
           >
@@ -432,181 +485,137 @@ const handleConfirmarPedido = async () => {
   </button>
 </div>
 
-      {/* Modal NIT */}
-
     {mostrarModalNIT && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-    <div className="bg-white p-6 rounded-lg shadow-lg text-gray-800 w-80">
-      <h3 className="text-lg font-bold mb-3">Buscar cliente por NIT</h3>
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-gray-800 w-80">
+            <h3 className="text-lg font-bold mb-3">Buscar cliente por NIT</h3>
 
-      <label className="text-sm font-medium block mb-1">NIT:</label>
-      <div className="flex items-center space-x-2 mb-3">
-        <input
-          type="number"
-          value={nitInput}
-          onChange={(e) => setNitInput(e.target.value)}
-          readOnly={!!clienteNit}
-          className={`flex-1 px-3 py-1.5 border rounded bg-${clienteNit ? 'gray-100' : 'white'} border-gray-300`}
-        />
-        {clienteNit && (
-          <button
-            onClick={() => {
-              setClienteNit(null);
-              setClienteNoEncontrado(false);
-            }}
-            className="text-sm text-blue-600 hover:underline"
-          >
-            Editar
-          </button>
-        )}
-      </div>
+            <label className="text-sm font-medium block mb-1">NIT:</label>
+            <div className="flex items-center space-x-2 mb-3">
+              <input
+                type="number"
+                value={nitInput}
+                onChange={(e) => setNitInput(e.target.value)}
+                readOnly={!!clienteNit}
+                className={`flex-1 px-3 py-1.5 border rounded bg-${clienteNit ? 'gray-100' : 'white'} border-gray-300`}
+              />
+              {clienteNit && (
+                <button
+                  onClick={() => {
+                    setClienteNit(null);
+                    setClienteNoEncontrado(false);
+                  }}
+                  className="text-sm text-blue-600 hover:underline"
+                >
+                  Editar
+                </button>
+              )}
+            </div>
 
-      {/* Si encontró cliente */}
-      {clienteNit ? (
-        <>
-          <label className="text-sm font-medium block mb-1 mt-2">Apellido Paterno:</label>
-          <input
-            type="text"
-            value={clienteNit.apell_paterno}
-            onChange={(e) =>
-              setClienteNit({ ...clienteNit, apell_paterno: e.target.value })
-            }
-            className="w-full px-3 py-1.5 border border-gray-300 rounded mb-3"
-          />
+            {clienteNit ? (
+              // Vista cuando el cliente es encontrado
+              <>
+                <label className="text-sm font-medium block mb-1 mt-2">Apellido Paterno:</label>
+                <input
+                  type="text"
+                  value={clienteNit.apell_paterno}
+                  onChange={(e) =>
+                    setClienteNit({ ...clienteNit, apell_paterno: e.target.value })
+                  }
+                  className="w-full px-3 py-1.5 border border-gray-300 rounded mb-3"
+                />
 
-          <div className="flex justify-end space-x-2">
-            <button
-              onClick={() => setMostrarModalNIT(false)}
-              className="px-4 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
-            >
-              Cancelar
-            </button>
-            <button
-             onClick={async () => {
-  try {
-    if (!clienteNit?.id) return;
-
-    if (!clienteNit.apell_paterno.trim()) {
-      toast.error("Debe ingresar un apellido válido");
-      return;
-    }
-
-    await actualizarApellidoPorNIT(clienteNit.nit, clienteNit.apell_paterno);
-
-    const carrito = await obtenerCarrito();
-    if (carrito?.id) {
-      await asignarCarritoACliente(carrito.id, clienteNit.id);
-    }
-
-    setCliente(clienteNit);
-    toast.success("Cliente confirmado y carrito asignado.");
-    setMostrarModalNIT(false);
-    setClienteNoEncontrado(false);
-  } catch (error) {
-    console.error("Error al asignar el carrito al cliente:", error);
-    toast.error("No se pudo asignar el carrito al cliente.");
-  }
-}}
-
-              className="px-4 py-1 bg-green-600 text-white rounded hover:bg-green-700"
-            >
-              Confirmar
-            </button>
-          </div>
-        </>
-      ) : !clienteNoEncontrado ? (
-        // Si aún no buscó
-        <div className="flex justify-end space-x-2">
-          <button
-            onClick={() => setMostrarModalNIT(false)}
-            className="px-4 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
-          >
-            Cancelar
-          </button>
-          <button
-            onClick={buscarClientePorNIT}
-            className="px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
-          >
-            Buscar
-          </button>
-
-
-         <button
-            onClick={async () => {
-              try {
-              const nit = '7777777';
-              const cliente = await buscarClienteApi(nit);
-
-              if (!cliente?.id ) {
-              toast.error("No se pudo obtener cliente o carrito");
-               return;
-              }
-
-              const carrito = await obtenerCarrito();
-              if (carrito?.id) {
-              await asignarCarritoACliente(carrito.id, cliente.id);
-              }
-
-              setCliente(cliente);
-              toast.success("Cliente LOCAL asignado correctamente");
-              setMostrarModalNIT(false);
-              setClienteNoEncontrado(false);
-              } catch (error) {
-              console.error("Error al asignar cliente LOCAL:", error);
-              toast.error("No se pudo asignar el cliente LOCAL");
-              }
-                 }}
-              className="w-full bg-gray-600 hover:bg-gray-700 text-white py-1.5 rounded"
-          >
-              Usar Cliente LOCAL
-          </button>
-
-
-
-        </div>
-      ) : (
-        // Si no encontró cliente
-        
-        <>
-          <label className="text-sm font-medium block mb-1 mt-3">No se encontro su NIT, por favor registrese con un apellido</label>
-          <label className="text-sm font-medium block mb-1 mt-3">Apellido Paterno:</label>
-          <input
-            type="text"
-            value={apellidoManual}
-            onChange={(e) => setApellidoManual(e.target.value)}
-            className="w-full px-3 py-1.5 border border-gray-300 rounded mb-3"
-          />
-
-          <div className="flex flex-col space-y-2">
-            <button
-              onClick={() => registrarClienteManual(false)}
-              className="w-full bg-[#543F1D] hover:bg-amber-700 text-white py-1.5 rounded"
-            >
-              Registrar con este NIT
-            </button>
-            <button
+                <div className="flex justify-end space-x-2">
+                  <button
+                    onClick={() => setMostrarModalNIT(false)}
+                    className="px-4 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    onClick={async () => {
+                      // Llama a la función centralizada que maneja todo
+                      await asignarClienteYRestaurarCarrito(clienteNit);
+                    }}
+                    disabled={isAssigningClient}
+                    className="px-4 py-1 bg-green-600 text-white rounded hover:bg-green-700 disabled:bg-gray-400"
+                  >
+                    {isAssigningClient ? 'Asignando...' : 'Confirmar Cliente'}
+                  </button>
+                </div>
+              </>
+            ) : !clienteNoEncontrado ? (
+              // Vista de búsqueda inicial
+              <div className="flex justify-end space-x-2">
+                <button
+                  onClick={() => setMostrarModalNIT(false)}
+                  className="px-4 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+                >
+                  Cancelar
+                </button>
+                <button
+                  onClick={buscarClientePorNIT}
+                  disabled={isAssigningClient}
+                  className="px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400"
+                >
+                  Buscar
+                </button>
+                <button
+                  onClick={async () => {
+                    try {
+                      const clienteLocal = await buscarClienteApi('7777777'); // NIT local fijo
+                      await asignarClienteYRestaurarCarrito(clienteLocal); // <-- Usamos la función centralizada
+                    } catch (error) {
+                      toast.error("No se pudo asignar el cliente LOCAL");
+                    }
+                  }}
+                  disabled={isAssigningClient}
+                  className="w-full bg-gray-600 hover:bg-gray-700 text-white py-1.5 rounded disabled:bg-gray-400"
+                >
+                  {isAssigningClient ? '...' : 'Usar Cliente LOCAL'}
+                </button>
+              </div>
+            ) : (
+              // Vista si no se encontró el cliente
+              <>
+                <label className="text-sm font-medium block mb-1 mt-3">No se encontro su NIT, por favor registrese con un apellido</label>
+                <label className="text-sm font-medium block mb-1 mt-3">Apellido Paterno:</label>
+                <input
+                  type="text"
+                  value={apellidoManual}
+                  onChange={(e) => setApellidoManual(e.target.value)}
+                  className="w-full px-3 py-1.5 border border-gray-300 rounded mb-3"
+                />
+                <div className="flex flex-col space-y-2">
+                  <button
+                    onClick={() => registrarClienteManual(false)}
+                    disabled={isAssigningClient}
+                    className="w-full bg-[#543F1D] hover:bg-amber-700 text-white py-1.5 rounded disabled:bg-gray-400"
+                  >
+                    {isAssigningClient ? 'Registrando...' : 'Registrar con este NIT'}
+                  </button>
+                  <button
                     onClick={() => {
                       setClienteNit(null);
                       setClienteNoEncontrado(false);
                     }}
-                    className="w-full bg-[#FE9A00] hover:bg-amber-700 text-white py-1.5 rounded"
+                    disabled={isAssigningClient}
+                    className="w-full bg-[#FE9A00] hover:bg-amber-700 text-white py-1.5 rounded disabled:bg-gray-400"
                   >
                     Editar
                   </button>
-            
-            <button
-              onClick={() => setMostrarModalNIT(false)}
-              className="px-4 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
-            >
-              Cancelar
-            </button>
+                  <button
+                    onClick={() => setMostrarModalNIT(false)}
+                    className="px-4 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </>
+            )}
           </div>
-        </>
+        </div>
       )}
-    </div>
-  </div>
-)}
-
 
       {/* Total y acciones */}
       <div className="mt-auto pt-3 border-t border-gray-200">

@@ -87,3 +87,11 @@ class PedidoConfirmadoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
         fields = ['id', 'total_estimado', 'total_descuento']
+
+
+class AsignarClienteSerializer(serializers.Serializer):
+ 
+    cliente_id = serializers.PrimaryKeyRelatedField(
+        queryset=Cliente.objects.all(),
+        write_only=True 
+    )

@@ -181,16 +181,23 @@ export async function eliminarCarrito(): Promise<void> {
     throw error;
   }
 }
-
 export async function asignarCarritoACliente(
   carritoId: number, 
   clienteId: number
 ): Promise<Carrito> {
   try {
-    const body = { cliente_id: clienteId };
+
+    const csrfToken = getCsrfToken();
+  if (!csrfToken) {
+    throw new Error("Token CSRF no encontrado. No se puede agregar al carrito.");
+  }
+  
+    const body = { cliente_id: clienteId }; 
     
-    const response = await axios.put<Carrito>(`${API_URL}/${carritoId}/asignar-cliente/`, body, { 
-      withCredentials: true 
+
+    const response = await axios.put<Carrito>(`${API_URL}/${carritoId}/asignar-a-cliente/`, body, { 
+    
+      withCredentials: true , headers: { 'X-CSRFToken': csrfToken },
     });
     return response.data;
   } catch (error: any) {

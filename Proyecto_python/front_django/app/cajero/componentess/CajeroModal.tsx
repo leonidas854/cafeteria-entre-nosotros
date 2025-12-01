@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import {
-  fetchTodosPedidos,
+  fetchPedidos,
   cambiarEstadoPedido,
   fetchTodasVentas
 } from '@/app/api/Pedido';
@@ -12,7 +12,6 @@ interface Extra {
   extraNombre: string;
   precio: number;
 }
-
 interface DetallePedido {
   producto_id: number;
   productoNombre: string;
@@ -20,14 +19,12 @@ interface DetallePedido {
   precio_unitario: number;
   extras: Extra[];
 }
-
 interface VentaRelacionada {
   pedidoId: number;
   total_final: number;
   tipo_de_Pago: string;
   fecha: string;
 }
-
 interface Pedido {
   id_pedido: number;
   total_estimado: number;
@@ -37,86 +34,122 @@ interface Pedido {
   detalles: DetallePedido[];
   venta?: VentaRelacionada;
 }
-
 interface EstadoModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+
+type ApiPedido = {
+  id: number;
+  total_estimado: number;
+  total_descuento: number;
+  tipo_entrega: string; 
+  estado: string;
+  detalles: ApiDetallePedido[];
+};
+type ApiDetallePedido = {
+  producto_id: number;
+  producto_nombre: string; 
+  cantidad: number;
+  precio_unitario: number;
+  extras: any[]; 
+};
+type ApiVenta = {
+  id: number;
+  total: number;
+  fecha: string;
+  tipo_de_pago: string; 
+  pedido_id: number;    
+};
+
 const EstadoModal: React.FC<EstadoModalProps> = ({ isOpen, onClose }) => {
   const [pedidos, setPedidos] = useState<Pedido[]>([]);
-  const [ventas, setVentas] = useState<VentaRelacionada[]>([]);
   const [loading, setLoading] = useState(true);
   const [sinPedidos, setSinPedidos] = useState(false);
 
-const cargarDatos = async () => {
-  try {
-    setLoading(true);
+  const cargarDatos = async () => {
+    try {
+      setLoading(true);
 
-    const pedidosList: Pedido[] = await new Promise((resolve) =>
-      fetchTodosPedidos(resolve, setSinPedidos, () => {})
-    );
+    
+      const pedidosRaw: ApiPedido[] = await new Promise((resolve) =>
+        fetchPedidos(resolve, setSinPedidos, () => {})
+      );
+      const ventasRaw: ApiVenta[] = await new Promise((resolve) =>
+        fetchTodasVentas(resolve, () => {}, () => {})
+      );
 
-   const ventasRaw: any[] = await new Promise((resolve) =>
-   fetchTodasVentas(resolve, () => {}, () => {})
-);
+   
+      const pedidosMapeados: Pedido[] = pedidosRaw.map(p => ({
+        id_pedido: p.id, 
+        total_estimado: p.total_estimado,
+        total_descuento: p.total_descuento,
+        tipoEntrega: p.tipo_entrega, 
+        estado: p.estado,
+        detalles: p.detalles.map(d => ({
+          producto_id: d.producto_id,
+          productoNombre: d.producto_nombre, 
+          cantidad: d.cantidad,
+          precio_unitario: d.precio_unitario,
+        
+          extras: typeof d.extras === 'string' ? JSON.parse(d.extras) : d.extras,
+        })),
+      }));
 
-const ventasData: VentaRelacionada[] = ventasRaw.map((v) => ({
-  pedidoId: v.pedidoId ?? v.PedidoId ?? v.pedido_id,
-  total_final: v.total_final ?? v.Total_final,
-  tipo_de_Pago: v.tipo_de_Pago ?? v.Tipo_de_Pago,
-  fecha: v.fecha ?? v.Fecha,
-}));
+      const ventasMapeadas: VentaRelacionada[] = ventasRaw.map(v => ({
+        pedidoId: v.pedido_id, 
+        total_final: v.total, 
+        tipo_de_Pago: v.tipo_de_pago, 
+        fecha: v.fecha,
+      }));
 
-const ventasOrdenadas = ventasData.sort(
-  (a, b) => new Date(a.fecha).getTime() - new Date(b.fecha).getTime()
-);
+ 
+      const pedidosConVentas = pedidosMapeados.map((pedido) => {
+        const ventaAsociada = ventasMapeadas.find(v => v.pedidoId === pedido.id_pedido);
+        return { ...pedido, venta: ventaAsociada };
+      });
+      
+    
+      const pedidosFinalesOrdenados = pedidosConVentas.sort((a, b) => b.id_pedido - a.id_pedido); 
+      setPedidos(pedidosFinalesOrdenados);
 
-
-    const pedidosOrdenados = pedidosList.sort((a, b) => a.id_pedido - b.id_pedido); // <-- ASCENDENTE
-
-    const pedidosConVentas = pedidosOrdenados.map((pedido) => {
-      const venta = ventasOrdenadas.find((v) => v.pedidoId === pedido.id_pedido);
-      return { ...pedido, venta };
-    });
-
-    setPedidos(pedidosConVentas);
-    setVentas(ventasOrdenadas);
-
-
-    console.log('Pedidos:', pedidosList);
-console.log('Ventas:', ventasData);
-
-  } catch (error) {
-    toast.error("Ocurrió un error al cargar los datos");
-  } finally {
-    setLoading(false);
-  }
-};
-
-
+    } catch (error) {
+      toast.error("Ocurrió un error al cargar los datos");
+      console.error("Error en cargarDatos:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     if (isOpen) {
       cargarDatos();
     }
   }, [isOpen]);
+const getTransicionesValidas = (tipoEntrega: string): string[] => {
+    // Usamos toLowerCase() para manejar cualquier inconsistencia de mayúsculas/minúsculas de la API
+    switch (tipoEntrega.toLowerCase()) {
+      case 'mesa':
+      case 'llevar':
+      case 'recoger': // Añadido para coincidir con el backend
+        // Estos son los estados válidos que tu backend espera para estos tipos
+        return ['En_espera', 'Preparando', 'Listo', 'Entregado', 'Cancelado'];
 
-  const getTransicionesValidas = (tipoEntrega: string): string[] => {
-    switch (tipoEntrega) {
-      case 'Mesa':
-      case 'Llevar':
-        return ['Preparando', 'Listo', 'Entregado'];
-      case 'Delivery':
-        return ['Preparando', 'Listo', 'Delivery'];
+      case 'delivery':
+      case 'domicilio': // Añadido para coincidir con el backend
+        // Estos son los estados válidos para delivery
+        return ['En_espera', 'Preparando', 'Listo', 'Delivery', 'Cancelado'];
+        
       default:
+        // Si el tipo de entrega no se reconoce, devuelve un array vacío
         return [];
     }
   };
 
   const handleEstadoChange = async (pedidoId: number, nuevoEstado: string) => {
-    await cambiarEstadoPedido(pedidoId, nuevoEstado);
-    cargarDatos(); // <-- Se recarga automáticamente luego del cambio
+    await cambiarEstadoPedido(pedidoId, nuevoEstado, cargarDatos);
+    cargarDatos(); 
   };
 
   if (!isOpen) return null;

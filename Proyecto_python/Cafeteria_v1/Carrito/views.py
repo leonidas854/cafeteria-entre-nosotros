@@ -12,34 +12,44 @@ from .serializers import (CarritoSerializer,
                            ConfirmarPedidoSerializer, PedidoConfirmadoSerializer,
                            )
 
-def _get_o_crear_carrito_usuario(user):
-    if user.tipo == 'cliente':
-        carrito, created = Carrito.objects.get_or_create(cliente=user.cliente)
-    elif user.tipo == 'empleado':
-        carrito, created = Carrito.objects.get_or_create(empleado=user.empleado)
-    else:
-        raise PermissionError("Rol de usuario no válido para carrito.")
-    return carrito
 
+
+class IsEmpleadoUser(IsAuthenticated):
+
+    def has_permission(self, request, view):
+        return super().has_permission(request, view) and request.user.tipo == 'empleado'
 
 class CarritoViewSet(viewsets.ViewSet):
     permission_classes = [IsAuthenticated]
 
+    def _get_carrito_usuario_actual(self, user):
+            """Intenta obtener el carrito activo, no lo crea."""
+            carrito = None
+            if hasattr(user, 'empleado'):
+                carrito = Carrito.objects.filter(empleado=user.empleado).first()
+            elif hasattr(user, 'cliente'):
+                carrito = Carrito.objects.filter(cliente=user.cliente).first()
+            return carrito
+
+
 
     @action(detail=False, methods=['get'], url_path='mi-carrito')
     def obtener_carrito(self, request):
-        try:
-            carrito = _get_o_crear_carrito_usuario(request.user)
-        except (AttributeError, PermissionError):
-            return Response({"detail": "Usuario o rol no válido."}, status=status.HTTP_403_FORBIDDEN)
+        
+        carrito = self._get_carrito_usuario_actual(request.user)
+
+        if not carrito:
+            # Si no hay carrito, lo creamos aquí
+            if hasattr(request.user, 'empleado'):
+                carrito = Carrito.objects.create(empleado=request.user.empleado)
+            elif hasattr(request.user, 'cliente'):
+                carrito = Carrito.objects.create(cliente=request.user.cliente)
+            else:
+                 return Response({"detail": "Usuario no autorizado para crear carrito."}, status=status.HTTP_403_FORBIDDEN)
 
         items_a_procesar = carrito.items.select_related('producto').all()
         items_procesados = actualizar_promociones_en_items(items_a_procesar)
-
-        serializer_context = {
-            'request': request,
-            'items_procesados': items_procesados
-        }
+        serializer_context = {'request': request, 'items_procesados': items_procesados}
         serializer = CarritoSerializer(carrito, context=serializer_context)
         return Response(serializer.data)
 
@@ -52,7 +62,7 @@ class CarritoViewSet(viewsets.ViewSet):
             return Response(input_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
         data = input_serializer.validated_data
-        carrito = _get_o_crear_carrito_usuario(request.user)
+        carrito = self._get_carrito_usuario_actual(request.user)
         
 
         item_existente = None
@@ -88,7 +98,7 @@ class CarritoViewSet(viewsets.ViewSet):
         item = data['item_id']
         
      
-        carrito = _get_o_crear_carrito_usuario(request.user)
+        carrito = self._get_carrito_usuario_actual(request.user)
         if item.carrito != carrito:
             return Response({"detail": "No autorizado."}, status=status.HTTP_403_FORBIDDEN)
 
@@ -99,11 +109,39 @@ class CarritoViewSet(viewsets.ViewSet):
             item.delete() 
 
         return self.obtener_carrito(request)
+    
+    @action(detail=True, methods=['put'], url_path='asignar-a-cliente', permission_classes=[IsEmpleadoUser])
+    @transaction.atomic
+    def asignar_a_cliente(self, request, pk=None):
 
+        input_serializer = AsignarClienteSerializer(data=request.data)
+        if not input_serializer.is_valid():
+            return Response(input_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+        cliente_a_asignar = input_serializer.validated_data['cliente_id']
+
+        try:
+    
+            carrito_a_actualizar = Carrito.objects.get(pk=pk, empleado=request.user.empleado)
+        except Carrito.DoesNotExist:
+            return Response({"detail": "Carrito no encontrado o no pertenece a este empleado."}, status=status.HTTP_404_NOT_FOUND)
+        
+        carrito_antiguo_cliente = Carrito.objects.filter(cliente=cliente_a_asignar).first()
+        if carrito_antiguo_cliente:
+            carrito_antiguo_cliente.delete()
+
+
+        carrito_a_actualizar.cliente = cliente_a_asignar
+        carrito_a_actualizar.empleado = None
+        carrito_a_actualizar.save()
+
+     
+        serializer = CarritoSerializer(carrito_a_actualizar)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     @action(detail=False, methods=['delete'], url_path=r'quitar-item/(?P<item_id>\d+)')
     def quitar_item(self, request, item_id=None):
-        carrito = _get_o_crear_carrito_usuario(request.user)
+        carrito = self._get_carrito_usuario_actual(request.user)
         try:
             item = carrito.items.get(id=item_id)
             item.delete()
@@ -115,7 +153,7 @@ class CarritoViewSet(viewsets.ViewSet):
 
     @action(detail=False, methods=['delete'], url_path='vaciar-carrito')
     def vaciar_carrito(self, request):
-        carrito = _get_o_crear_carrito_usuario(request.user)
+        carrito = self._get_carrito_usuario_actual(request.user)
         carrito.items.all().delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
@@ -130,7 +168,7 @@ class CarritoViewSet(viewsets.ViewSet):
         data = input_serializer.validated_data
         item = data['item_id']
         
-        carrito = _get_o_crear_carrito_usuario(request.user)
+        carrito = self._get_carrito_usuario_actual(request.user)
         if item.carrito != carrito:
             return Response({"detail": "No autorizado."}, status=status.HTTP_403_FORBIDDEN)
 
@@ -141,33 +179,27 @@ class CarritoViewSet(viewsets.ViewSet):
         serializer = CarritoSerializer(carrito, context={'items': items_procesados}) # Pasamos los items procesados
         return Response(serializer.data)
 
-    @action(detail=True, methods=['put'], url_path='asignar-cliente')
-    def asignar_cliente(self, request, pk=None):
-        try:
-            carrito_empleado = Carrito.objects.get(pk=pk, empleado__isnull=False)
-        except Carrito.DoesNotExist:
-            return Response({"detail": "Carrito no encontrado o no pertenece a un empleado."}, status=status.HTTP_404_NOT_FOUND)
-
+    @action(detail=True, methods=['put'], url_path='asignar-a-cliente', permission_classes=[IsEmpleadoUser])
+    @transaction.atomic
+    def asignar_a_cliente(self, request, pk=None):
         input_serializer = AsignarClienteSerializer(data=request.data)
         if not input_serializer.is_valid():
             return Response(input_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
         cliente_a_asignar = input_serializer.validated_data['cliente_id']
-        
 
-        with transaction.atomic():
-            carrito_cliente, created = Carrito.objects.get_or_create(cliente=cliente_a_asignar)
-            
-            for item in carrito_empleado.items.all():
+        try:
+      
+            carrito_a_actualizar = Carrito.objects.get(pk=pk, empleado=request.user.empleado)
+        except Carrito.DoesNotExist:
+            return Response({"detail": "Carrito no encontrado o no pertenece a este empleado."}, status=status.HTTP_404_NOT_FOUND)
+     
+        carrito_a_actualizar.cliente = cliente_a_asignar
+        carrito_a_actualizar.save()
 
-                item.carrito = carrito_cliente
-                item.save()
-            
-            carrito_empleado.delete()
-
-        items_procesados = actualizar_promociones_en_items(list(carrito_cliente.items.select_related('producto').all()))
-        serializer = CarritoSerializer(carrito_cliente, context={'items': items_procesados})
-        return Response(serializer.data)
+     
+        serializer = CarritoSerializer(carrito_a_actualizar)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     @action(detail=False, methods=['post'], url_path='confirmar-pedido')
     def confirmar_pedido(self, request):
         input_serializer = ConfirmarPedidoSerializer(data=request.data)

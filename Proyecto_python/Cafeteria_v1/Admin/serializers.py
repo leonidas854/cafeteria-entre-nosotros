@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UsuarioBase,Producto,Bebida,Comida,Pedido,Promocion
+from .models import UsuarioBase,Producto,Bebida,Comida,Pedido,Promocion,Cliente
 from Cliente.models import Detalle_pedido,Extra
 class UsuarioBaseSerializer(serializers.ModelSerializer):
     class Meta:
@@ -177,3 +177,48 @@ class PedidoDetalladoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
         fields = ['id', 'total_estimado', 'total_descuento', 'tipo_entrega', 'estado', 'detalles']
+
+
+class ClientePorNitSerializer(serializers.ModelSerializer):
+    
+    id = serializers.IntegerField(source='user.id', read_only=True)
+    apell_paterno = serializers.CharField(source='user.last_name', read_only=True)
+    usuario = serializers.CharField(source='user.username', read_only=True)
+    
+    class Meta:
+        model = Cliente
+        fields = ['id', 'apell_paterno', 'nit', 'usuario']
+
+class ClienteRegistroSerializer(serializers.Serializer):
+    apell_paterno = serializers.CharField(max_length=150)
+    nit = serializers.IntegerField()
+    usuario = serializers.CharField(max_length=150)
+    password = serializers.CharField(write_only=True)
+
+    def validate_usuario(self, value):
+        
+        if UsuarioBase.objects.filter(username__iexact=value).exists():
+            raise serializers.ValidationError("El nombre de usuario ya está en uso.")
+        return value
+
+    def validate_nit(self, value):
+        
+        if Cliente.objects.filter(nit=value).exists():
+            raise serializers.ValidationError("Ya existe un cliente con ese NIT.")
+        return value
+
+    def create(self, validated_data):
+        
+        user = UsuarioBase.objects.create_user(
+            username=validated_data['usuario'],
+            password=validated_data['password'],
+            last_name=validated_data['apell_paterno'],
+            tipo='cliente' 
+    )
+
+        
+        cliente = Cliente.objects.create(
+            user=user,
+            nit=validated_data['nit']
+        )
+        return cliente

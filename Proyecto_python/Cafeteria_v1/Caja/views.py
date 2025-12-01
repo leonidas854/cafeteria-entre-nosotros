@@ -41,3 +41,15 @@ class VentaViewSet(viewsets.ReadOnlyModelViewSet):
         serializer = self.get_serializer(ventas, many=True)
 
         return Response(serializer.data)
+    @action(detail=False, methods=['get'], url_path='todas', permission_classes=[IsAuthenticated])
+    def todas_las_ventas(self, request):
+
+        queryset = Venta.objects.select_related('pedido', 'empleado').all().order_by('-fecha', '-id')
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)

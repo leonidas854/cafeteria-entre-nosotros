@@ -1,4 +1,4 @@
-from Admin.views import (login_view,
+from Admin.views import (CajeroViewSet, login_view,
                          logout_view,
                          ProductoViewSet,
                          PedidoViewSet,
@@ -12,6 +12,7 @@ router  = DefaultRouter()
 router.register(r'productos',ProductoViewSet,basename='producto')
 router.register(r'pedidos', PedidoViewSet, basename='pedido')
 router.register(r'promociones',PromocionViewSet,basename='promocion')
+router.register(r'cajero', CajeroViewSet, basename='cajero')
 
 urlpatterns = [
     path('login/',login_view,name='login'),

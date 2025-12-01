@@ -5,22 +5,22 @@ from django.db.models import CheckConstraint, Q
 
 
 class Carrito(models.Model):
-    cliente = models.OneToOneField(
-        'Admin.Cliente', on_delete=models.CASCADE, null=True, blank=True, related_name='carrito'
-    )
-    empleado = models.OneToOneField(
-        'Caja.Empleado', on_delete=models.CASCADE, null=True, blank=True, related_name='carrito'
-    )
+    
 
-    class Meta:
-        constraints = [
-            CheckConstraint(
-                check=Q(cliente__isnull=False, empleado__isnull=True) | 
-                      Q(cliente__isnull=True, empleado__isnull=False) |
-                      Q(cliente__isnull=True, empleado__isnull=True), 
-                name='un_solo_dueno_carrito'
-            )
-        ]
+    cliente = models.ForeignKey(
+        'Admin.Cliente', 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True, 
+        related_name='carritos'
+    )
+ 
+    empleado = models.ForeignKey(
+        'Caja.Empleado', 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True, 
+        related_name='carritos_atendidos')
 
 class ItemCarrito(models.Model):
     carrito = models.ForeignKey(Carrito, on_delete=models.CASCADE, related_name='items')

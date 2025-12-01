@@ -13,17 +13,23 @@ from Cliente.models import Detalle_pedido
 from .models import UsuarioBase,Producto,Pedido,Cliente,Promocion
 from rest_framework import viewsets
 import json
+from django.db import transaction
 from rest_framework.views import APIView
 from django.db import connection
 from drf_spectacular.utils import extend_schema
 from Caja.models import Empleado
 
+from .models import Pedido, EstadoPedido, TipoEntrega 
+
 from .serializers import (
+    ClienteRegistroSerializer,
     LoginSerializer,
     LoginSuccessResponseSerializer,
     ErrorResponseSerializer,
     LogoutSuccessResponseSerializer,
-    PedidoDetalladoSerializer,ProductoSerializer,PedidoSerializer,PromocionSerializer,PromocionTodoSerializer
+    PedidoDetalladoSerializer,ProductoSerializer,
+    PedidoSerializer,PromocionSerializer,PromocionTodoSerializer,
+    ClientePorNitSerializer
     
 )
 from django.http import Http404
@@ -106,6 +112,58 @@ class PedidoViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Pedido.objects.all()
     serializer_class = PedidoDetalladoSerializer
     permission_classes = [IsAuthenticated]
+
+    @action(detail=True, methods=['put'], url_path='cambiar-estado', permission_classes=[IsAuthenticated]) # O IsEmpleadoUser
+    @transaction.atomic 
+    def cambiar_estado(self, request, pk=None):
+        nuevo_estado = request.query_params.get('nuevo_estado', None)
+        if not nuevo_estado:
+            return Response({"detail": "Debe proporcionar 'nuevo_estado' en los query params."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # === SOLUCIÓN 2: USAR LOS NOMBRES DE CLASE CORRECTOS ===
+        valid_estados = [choice[0] for choice in EstadoPedido.choices]
+        if nuevo_estado not in valid_estados:
+            return Response({"detail": f"'{nuevo_estado}' no es un estado válido."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            pedido = self.get_object() 
+        except Pedido.DoesNotExist:
+            return Response({"detail": "Pedido no encontrado."}, status=status.HTTP_404_NOT_FOUND)
+
+        tipo_entrega = pedido.tipo_entrega
+        
+        transiciones_map = {
+            # Usamos los nombres de clase correctos aquí también
+            TipoEntrega.MESA: [EstadoPedido.EN_ESPERA, EstadoPedido.PREPARANDO, EstadoPedido.LISTO, EstadoPedido.ENTREGADO, EstadoPedido.CANCELADO],
+            TipoEntrega.LLEVAR: [EstadoPedido.EN_ESPERA, EstadoPedido.PREPARANDO, EstadoPedido.LISTO, EstadoPedido.ENTREGADO, EstadoPedido.CANCELADO],
+            TipoEntrega.RECOGER: [EstadoPedido.EN_ESPERA, EstadoPedido.PREPARANDO, EstadoPedido.LISTO, EstadoPedido.ENTREGADO, EstadoPedido.CANCELADO],
+            TipoEntrega.DELIVERY: [EstadoPedido.EN_ESPERA, EstadoPedido.PREPARANDO, EstadoPedido.LISTO, EstadoPedido.EN_DELIVERY, EstadoPedido.CANCELADO],
+            TipoEntrega.DOMICILIO: [EstadoPedido.EN_ESPERA, EstadoPedido.PREPARANDO, EstadoPedido.LISTO, EstadoPedido.EN_DELIVERY, EstadoPedido.CANCELADO],
+        }
+        transiciones_validas = transiciones_map.get(tipo_entrega, [])
+
+        if nuevo_estado not in transiciones_validas:
+            return Response(
+                {"detail": f"Transición a '{nuevo_estado}' no válida para el tipo de entrega '{tipo_entrega}'."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # El resto de tu lógica es correcta y no necesita cambios
+        try:
+            if hasattr(pedido, 'venta') and pedido.venta.empleado is None:
+                if hasattr(request.user, 'empleado'):
+                    pedido.venta.empleado = request.user.empleado
+                    pedido.venta.save()
+        except Exception as e:
+            print(f"Error al intentar asignar empleado a la venta: {e}")
+
+        pedido.estado = nuevo_estado
+        pedido.save()
+
+        return Response({
+            "mensaje": "Estado actualizado correctamente.",
+            "nuevo_estado": pedido.estado
+        }, status=status.HTTP_200_OK)
 
     
     
@@ -272,3 +330,66 @@ class TodosPedidosOptimizadosView(APIView):
             'previous': previous_url,
             'results': results
         })
+    
+class CajeroViewSet(viewsets.ViewSet):
+
+    permission_classes = [IsAuthenticated] 
+
+    @action(detail=False, methods=['get'], url_path='nit/(?P<nit>\d+)')
+    def buscar_cliente_por_nit(self, request, nit=None):
+        try:
+           
+            cliente = Cliente.objects.select_related('user').get(nit=nit)
+        except Cliente.DoesNotExist:
+            return Response({"detail": "Cliente no encontrado con ese NIT."}, status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = ClientePorNitSerializer(cliente)
+        return Response(serializer.data)
+
+   
+    @action(detail=False, methods=['put'], url_path='actualizar-apellido/(?P<nit>\d+)')
+    def actualizar_apellido_por_nit(self, request, nit=None):
+        nuevo_apellido = request.data.get('nuevo_apellido')
+        if not nuevo_apellido:
+            return Response({"detail": "El campo 'nuevo_apellido' es requerido."}, status=status.HTTP_400_BAD_REQUEST)
+            
+        try:
+            cliente = Cliente.objects.select_related('user').get(nit=nit)
+        except Cliente.DoesNotExist:
+            return Response({"mensaje": "Cliente no encontrado con ese NIT."}, status=status.HTTP_404_NOT_FOUND)
+
+        
+        user = cliente.user
+        user.last_name = nuevo_apellido
+        user.save(update_fields=['last_name'])
+
+        return Response({
+            "mensaje": "Apellido actualizado correctamente.",
+            "cliente": {
+                "id_user": user.id,
+                "nit": cliente.nit,
+                "apellido_paterno": user.last_name
+            }
+        })
+
+ 
+    @action(detail=False, methods=['post'], url_path='registrar-cliente', permission_classes=[AllowAny])
+    @transaction.atomic
+    def registrar_cliente(self, request):
+        serializer = ClienteRegistroSerializer(data=request.data)
+        
+        if serializer.is_valid():
+            cliente_creado = serializer.save()
+            
+    
+            output_serializer = ClientePorNitSerializer(cliente_creado)
+            
+            return Response({
+                "isSuccess": True,
+                "cliente": output_serializer.data
+            }, status=status.HTTP_201_CREATED)
+        
+        if 'usuario' in serializer.errors or 'nit' in serializer.errors:
+            return Response({"mensaje": serializer.errors}, status=status.HTTP_409_CONFLICT)
+            
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

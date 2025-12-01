@@ -7,12 +7,7 @@ import { getProductos, Producto, getProductoPorId} from '@/app/api/productos';
 
 
 import { logout} from '@/app/api/CerrarSesC';
-
-
-
-
-
-import { ItemPedido, GroupedProducts } from './type';
+import {  GroupedProducts } from './type';
 import CajeroHeader from './componentess/CajeroHeader';
 import ProductCardCajero from './componentess/ProductCardCajero';
 import CurrentOrderDisplay from './componentess/CurrentOrderDisplay';
@@ -21,7 +16,7 @@ import CategoryFilterPanel from './componentess/CategoryFilterPanel';
 import { UsuarioNit } from './componentess/CurrentOrderDisplay';
 
 
-import { agregarProductoAlCarrito, obtenerCarrito } from '@/app/api/Carrito';
+import { agregarProductoAlCarrito, obtenerCarrito,ItemCarrito,Carrito } from '@/app/api/Carrito';
 
 import { getPromociones, Promocion } from '@/app/api/Promociones';
 
@@ -30,8 +25,8 @@ import { getPromociones, Promocion } from '@/app/api/Promociones';
 
 export default function CajeroPage() {
   const router = useRouter();
-  const [items, setItems] = useState<ItemPedido[]>([]);
-
+const [carrito, setCarrito] = useState<Carrito | null>(null);
+ 
   const [productos, setProductos] = useState<Producto[]>([]);
   const [loadingProductos, setLoadingProductos] = useState(true);
   const [errorProductos, setErrorProductos] = useState<string | null>(null);
@@ -48,7 +43,6 @@ const [promociones, setPromociones] = useState<(Promocion & { productosDetallado
 
 const [loadingPromo, setLoadingPromo] = useState(true);
 
-  const [currentOrderItems, setCurrentOrderItems] = useState<ItemPedido[]>([]);
   const [isSubmittingOrder, setIsSubmittingOrder] = useState(false);
 const [productosPromoListos, setProductosPromoListos] = useState<Producto[]>([]);
 
@@ -76,9 +70,9 @@ const [clienteActual, setClienteActual] = useState<UsuarioNit | null>(null);
   const refrescarCarrito = async () => {
   const carrito = await obtenerCarrito();
   if (carrito && carrito.items) {
-    setCurrentOrderItems(carrito.items);
+    setCarrito(carrito);
   } else {
-    setCurrentOrderItems([]);
+    setCarrito(null);
   }
 };
 
@@ -88,9 +82,6 @@ const [clienteActual, setClienteActual] = useState<UsuarioNit | null>(null);
     const validarSesion = async () => {
       const cargarCarrito = async () => {
     const carrito = await obtenerCarrito();
-    if (carrito && carrito.items) {
-      setItems(carrito.items);
-    }
   };
 
   cargarCarrito();
@@ -180,12 +171,8 @@ const handleAgregarPromo = async (productoIds: number[]) => {
          
         await agregarProductoAlCarrito(
           producto.id,
-          producto.nombre,
-          producto.categoria,
-          producto.precio,
           1,
-          [], 
-          clienteActual?.id
+          [],
         );
 
         await refrescarCarrito();
@@ -209,6 +196,9 @@ const handleAgregarPromo = async (productoIds: number[]) => {
     setActiveSubcategory(subcategory);
   };
 
+   const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const triggerCarritoRefresh = () => setRefreshTrigger(prev => prev + 1);
+
  const handleAddToOrder = async (product: Producto, quantity: number) => {
   try {
     const  ClienteId = clienteActual?.id; 
@@ -216,39 +206,19 @@ const handleAgregarPromo = async (productoIds: number[]) => {
     await agregarProductoAlCarrito(
       product.id,
       quantity,
-      [], 
-       ClienteId
     );
+    toast.success("Anadido")
 
-    /*toast.success(`${product.nombre} añadido al carrito`);*/
-     await refrescarCarrito();
+   await refrescarCarrito();
   } catch (error) {
     toast.error('Error al agregar producto al carrito.');
     console.error(error);
   }
 };
 
-  const handleUpdateOrderItemQuantity = (productoId: number, newQuantity: number) => {
-    if (newQuantity < 1) {
-      handleRemoveOrderItem(productoId);
-      return;
-    }
-    setCurrentOrderItems(prevItems =>
-      prevItems.map(item =>
-        item.productoId === productoId ? { ...item, cantidad: newQuantity } : item
-      )
-    );
-  };
-
-  const handleRemoveOrderItem = (productoId: number) => {
-    setCurrentOrderItems(prevItems =>
-      prevItems.filter(item => item.productoId !== productoId)
-    );
-    toast.error('Producto eliminado.');
-  };
 
   const handleClearOrder = () => {
-    setCurrentOrderItems([]);
+    setCarrito(null);
    
   };
 
@@ -404,19 +374,12 @@ const handleAgregarPromo = async (productoIds: number[]) => {
     {/* Pedido Actual */}
 
    <CurrentOrderDisplay
-  items={currentOrderItems}
-  onUpdateQuantity={refrescarCarrito}
-  onRemoveItem={refrescarCarrito} 
-  onClearOrder={handleClearOrder}
-  isSubmitting={isSubmittingOrder}
-  cliente={clienteActual}
-  setCliente={setClienteActual}
-/>
+              carrito={carrito}
+              refrescarCarrito={refrescarCarrito}
+              cliente={clienteActual}
+              setCliente={setClienteActual}
+            />
 
-
-
-
-    
   </div>
 </aside>
 
@@ -427,6 +390,5 @@ const handleAgregarPromo = async (productoIds: number[]) => {
     </div>
   );
 }
-
 
 

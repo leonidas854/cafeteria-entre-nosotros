@@ -16,9 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MEDIA_URL = '/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -62,8 +59,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'drf_spectacular',
+    'drf_spectacular_sidecar',
     'rest_framework.authtoken',
     'corsheaders',
+    'apps.usuario',
+    'apps.creditos',
+    'apps.bebidas',
+    'apps.dispensacion',
+    'apps.sensores',
+    'apps.reconocimiento',
 ]
 
 MIDDLEWARE = [
@@ -151,3 +155,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+
+FIREBASE_API_KEY = os.environ.get('FIREBASE_API_KEY', 'AIzaSyC3J3Cqen8SY8QXln6L8NhTRRYoSvpcx-s')

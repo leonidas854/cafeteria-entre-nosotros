@@ -1,0 +1,15 @@
+backports.tarfile
+cryptography
+django-cors-headers
+drf-spectacular
+drf-spectacular-sidecar
+firebase-admin
+grpcio-status
+h2
+importlib-metadata
+jaraco.collections
+packaging
+pandas
+pip-chill
+platformdirs
+tomli

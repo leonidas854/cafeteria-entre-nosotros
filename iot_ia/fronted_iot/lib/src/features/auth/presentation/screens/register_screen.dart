@@ -1,6 +1,7 @@
+// lib/src/features/auth/presentation/screens/register_screen.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:fronted_iot/src/features/auth/presentation/widgets/google_sign_in_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fronted_iot/src/features/auth/presentation/providers/auth_providers.dart';
 import 'package:fronted_iot/src/core/theme/app_colors.dart';
@@ -27,17 +28,21 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ref.listen<AuthState>(authNotifierProvider, (previous, next) {
-      final actionState = next.actionState;
-      if (actionState is AsyncError && !actionState.isLoading) {
+    ref.listen<AsyncValue<AuthState>>(authNotifierProvider, (previous, next) {
+      if (next is AsyncError) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(actionState.error.toString()), backgroundColor: Colors.red),
+          SnackBar(
+            content: Text(next.error.toString()),
+            backgroundColor: Colors.red,
+          ),
         );
       }
     });
 
+  
     final authState = ref.watch(authNotifierProvider);
-    final isLoading = authState.actionState.isLoading;
+   
+    final isLoading = authState.isLoading && authState.isReloading;
 
     return Scaffold(
       appBar: AppBar(
@@ -64,49 +69,38 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
               TextFormField(
                 controller: _nameController,
                 decoration: const InputDecoration(labelText: 'Nombre', border: OutlineInputBorder()),
+                enabled: !isLoading,
               ),
               const SizedBox(height: 20),
               TextFormField(
                 controller: _emailController,
                 decoration: const InputDecoration(labelText: 'Email', border: OutlineInputBorder()),
                 keyboardType: TextInputType.emailAddress,
+                enabled: !isLoading,
               ),
               const SizedBox(height: 20),
               TextFormField(
                 controller: _passwordController,
                 decoration: const InputDecoration(labelText: 'Contraseña', border: OutlineInputBorder()),
                 obscureText: true,
+                enabled: !isLoading,
               ),
               const SizedBox(height: 40),
               ElevatedButton(
-                onPressed: isLoading ? null : () {
-                  ref.read(authNotifierProvider.notifier).register(
-                        _nameController.text.trim(),
-                        _emailController.text.trim(),
-                        _passwordController.text.trim(),
-                      );
-                },
+                onPressed: isLoading
+                    ? null
+                    : () {
+                        ref.read(authNotifierProvider.notifier).register(
+                              _nameController.text.trim(),
+                              _emailController.text.trim(),
+                              _passwordController.text.trim(),
+                            );
+                      },
                 child: isLoading
                     ? const CircularProgressIndicator(color: Colors.white, strokeWidth: 2)
                     : const Text('REGISTRARSE'),
               ),
-              const SizedBox(height: 20),
-              Row(
-                children: [
-                  const Expanded(child: Divider()),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text('O', style: Theme.of(context).textTheme.bodySmall),
-                  ),
-                  const Expanded(child: Divider()),
-                ],
-              ),
-              const SizedBox(height: 20),
-              GoogleSignInButton(
-                onPressed: isLoading ? () {} : () { 
-                  ref.read(authNotifierProvider.notifier).signInWithGoogle();
-                },
-              ),
+              
             ],
           ),
         ),

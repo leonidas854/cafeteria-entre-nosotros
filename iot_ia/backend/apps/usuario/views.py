@@ -42,6 +42,7 @@ class RegistroView(APIView):
             db.collection("usuarios").document(user.uid).set({
                 "email": email,
                 "name": name,
+                "password":password,
                 "saldo": 0,
             })
 

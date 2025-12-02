@@ -1,11 +1,14 @@
 
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:fronted_iot/src/features/auth/data/repositories/fake_auth_repository_impl.dart';
 import 'package:fronted_iot/src/features/auth/domain/repositories/auth_repository.dart';
-import 'package:fronted_iot/src/core/utils/logger.dart';
+import 'package:fronted_iot/src/core/providers/dio_provider.dart';
+import 'package:fronted_iot/src/core/storage/secure_storage.dart';
+import 'package:fronted_iot/src/features/auth/data/repositories/api_auth_repository_impl.dart';
+
 part 'auth_providers.g.dart';
+
+
 
 
 enum AuthStatus { authenticated, unauthenticated }
@@ -27,59 +30,59 @@ class AuthState {
 
 @riverpod
 AuthRepository authRepository(Ref ref) {
-  return FakeAuthRepositoryImpl();
+  final dio = ref.watch(dioProvider);
+  final storage = ref.watch(secureStorageProvider);
+  return ApiAuthRepositoryImpl(dio, storage);
 }
+
 
 @riverpod
 class AuthNotifier extends _$AuthNotifier {
+  
   @override
-  AuthState build() {
-   
-    return AuthState();
+  Future<AuthState> build() async {
+  
+    final storage = ref.read(secureStorageProvider);
+    final token = await storage.read(key: 'idToken');
+    if (token != null) {
+      return AuthState(status: AuthStatus.authenticated);
+    }
+    return AuthState(status: AuthStatus.unauthenticated);
   }
-  Future<void> signInWithGoogle() async {
-  state = state.copyWith(actionState: const AsyncValue.loading());
-  final action = await AsyncValue.guard(() {
-    return ref.read(authRepositoryProvider).signInWithGoogle();
-  });
 
-  if (!action.hasError) {
-    state = state.copyWith(status: AuthStatus.authenticated, actionState: action);
-  } else {
-    state = state.copyWith(actionState: action);
-  }
-}
+  AuthRepository get _authRepo => ref.read(authRepositoryProvider);
 
   Future<void> login(String email, String password) async {
-    state = state.copyWith(actionState: const AsyncValue.loading());
-    final action = await AsyncValue.guard(() {
-      return ref.read(authRepositoryProvider).login(email, password);
-    });
-
-    if (!action.hasError) {
+   
+    state = const AsyncLoading<AuthState>().copyWithPrevious(state);
+    
+   
+    state = await AsyncValue.guard(() async {
+      await _authRepo.login(email, password);
      
-      state = state.copyWith(status: AuthStatus.authenticated, actionState: action);
-    } else {
-      state = state.copyWith(actionState: action);
-    }
+      return AuthState(status: AuthStatus.authenticated);
+    });
   }
 
   Future<void> register(String name, String email, String password) async {
-
-    state = state.copyWith(actionState: const AsyncValue.loading());
-    final action = await AsyncValue.guard(() async {
-      await Future.delayed(const Duration(seconds: 1)); 
-      logger.i('REGISTRO EXITOSO (FAKE)');
+    state = const AsyncLoading<AuthState>().copyWithPrevious(state);
+    state = await AsyncValue.guard(() async {
+      await _authRepo.register(name, email, password);
+      return AuthState(status: AuthStatus.authenticated);
     });
-     if (!action.hasError) {
-      state = state.copyWith(status: AuthStatus.authenticated, actionState: action);
-    } else {
-      state = state.copyWith(actionState: action);
-    }
+  }
+
+  Future<void> signInWithGoogle() async {
+    state = const AsyncLoading<AuthState>().copyWithPrevious(state);
+    state = await AsyncValue.guard(() async {
+      await _authRepo.signInWithGoogle();
+      return AuthState(status: AuthStatus.authenticated);
+    });
   }
 
   Future<void> logout() async {
-   
-    state = AuthState(); 
+    await _authRepo.logout();
+
+    state = AsyncData(AuthState(status: AuthStatus.unauthenticated));
   }
 }

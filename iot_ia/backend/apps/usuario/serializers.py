@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 class RegistroSerializer(serializers.Serializer):
     email = serializers.EmailField()
-    password = serializers.CharField(min_length=6)
+    password = serializers.CharField(min_length=5)
     name = serializers.CharField(max_length=150, required=False)
 
 class VerificacionTokenSerializer(serializers.Serializer):

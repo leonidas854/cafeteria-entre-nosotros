@@ -1,11 +1,13 @@
 from rest_framework.views import APIView
 from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
+from firebase_admin.auth import verify_id_token
+
 from django.conf import settings
 from rest_framework.response import Response
 from rest_framework import status
 from firebase_admin import auth as firebase_auth
 from rest_framework.permissions import AllowAny
-from firebase.firebase_init import db
+from firebase.firebase_init import firestore_db
 from .serializers import (
     RegistroSerializer,
     VerificacionTokenSerializer,
@@ -14,7 +16,9 @@ from .serializers import (
 )
 from drf_spectacular.utils import extend_schema, OpenApiResponse
 import requests
+import datetime
 
+#from apps.creditos.serializers import TransaccionSerializer
 
 class RegistroView(APIView):
     permission_classes = [AllowAny]
@@ -39,7 +43,7 @@ class RegistroView(APIView):
                 display_name=name
             )
 
-            db.collection("usuarios").document(user.uid).set({
+            firestore_db.collection("usuarios").document(user.uid).set({
                 "email": email,
                 "name": name,
                 "password":password,
@@ -105,7 +109,7 @@ class LoginView(APIView):
                 return Response({"error": data.get("error")}, status=400)
 
             # Leer Firestore
-            user_data = db.collection("usuarios").document(data["localId"]).get().to_dict()
+            user_data = firestore_db.collection("usuarios").document(data["localId"]).get().to_dict()
 
             return Response({
                 "uid": data["localId"],
@@ -119,32 +123,65 @@ class LoginView(APIView):
         
         
 class MeView(APIView):
+    permission_classes = [AllowAny]
     @extend_schema(
-        responses={200: OpenApiResponse(description="Perfil del usuario")}
+        description="Devuelve el perfil completo del usuario a partir de su idToken enviado en el cuerpo de la petición.",
+     
+        request=VerificacionTokenSerializer,
+        responses={200: OpenApiResponse(description="Perfil completo del usuario")}
     )
-    def get(self, request):
-        
-        auth_header = request.headers.get("Authorization")
-
-        if not auth_header:
-            return Response({"error": "Token requerido"}, status=401)
+    def post(self, request): 
+        serializer = VerificacionTokenSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
 
         try:
-            token = auth_header.split(" ")[1]
-            decoded = firebase_auth.verify_id_token(token)
+           
+            token = serializer.validated_data['idToken']
+            decoded_token = verify_id_token(token)
+            uid = decoded_token["uid"]
 
-            uid = decoded["uid"]
-            user_data = db.collection("usuarios").document(uid).get().to_dict()
+            
+            user_doc = firestore_db.collection("usuarios").document(uid).get()
+            if not user_doc.exists:
+                return Response({"error": "Usuario no encontrado en la base de datos."}, status=status.HTTP_404_NOT_FOUND)
+            
+            user_profile = user_doc.to_dict()
+
+           
+            transacciones_query = firestore_db.collection('transacciones').where('uid', '==', uid).order_by('timestamp', direction='DESCENDING').limit(20)
+            transacciones_docs = transacciones_query.stream()
+            
+            historial = []
+            for doc in transacciones_docs:
+                transaccion_data = doc.to_dict()
+                transaccion_data['id'] = doc.id
+                
+                
+                try:
+                    timestamp_str = transaccion_data.get("timestamp")
+                    if timestamp_str:
+                        
+                        dt_object = datetime.datetime.strptime(timestamp_str, "%Y-%m-%d %H:%M:%S")
+                       
+                        transaccion_data["timestamp"] = dt_object.isoformat()
+                except (ValueError, TypeError):
+                   
+                    pass
+             
+                
+                historial.append(transaccion_data)
+
 
             return Response({
                 "uid": uid,
-                "email": decoded.get("email"),
-                "profile": user_data
+                "email": decoded_token.get("email"),
+                "name": user_profile.get("name"),
+                "saldo": user_profile.get("saldo", 0),
+                "historial_transacciones": historial
             })
 
         except Exception as e:
-            return Response({"error": str(e)}, status=401)
-
+            return Response({"error": f"Ocurrió un error inesperado: {e}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 class GoogleLoginView(APIView):
     permission_classes = [AllowAny]
 
@@ -156,87 +193,49 @@ class GoogleLoginView(APIView):
         serializer = GoogleLoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        id_token = serializer.validated_data["idToken"] # type: ignore
+        google_id_token = serializer.validated_data["idToken"] 
 
         try:
-            decoded = firebase_auth.verify_id_token(id_token)
-            uid = decoded["uid"]
+            
+            firebase_api_key = 'AIzaSyC3J3Cqen8SY8QXln6L8NhTRRYoSvpcx-s'
+           
+            url = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithIdp?key={firebase_api_key}"
 
-            # Si el usuario no existe en Firestore, se crea
-            user_ref = db.collection("usuarios").document(uid)
+            
+            payload = {
+                'postBody': f"id_token={google_id_token}&providerId=google.com",
+                'requestUri': 'http://localhost',
+                'returnSecureToken': True
+            }
+
+            resp = requests.post(url, json=payload)
+            data = resp.json()
+
+            if 'error' in data:
+                return Response({"error": data['error']['message']}, status=400)
+                
+            uid = data.get("localId")
+            
+        
+            user_ref = firestore_db.collection("usuarios").document(uid)
             if not user_ref.get().exists:
+    
                 user_ref.set({
-                    "email": decoded.get("email"),
-                    "name": decoded.get("name", ""),
+                    "email": data.get("email"), 
+                    "name": data.get("displayName", ""),
                     "saldo": 0
                 })
+         
+            user_data = user_ref.get().to_dict()
 
+          
             return Response({
                 "uid": uid,
-                "email": decoded.get("email"),
-                "name": decoded.get("name"),
-            })
+                "idToken": data.get("idToken"),
+                "refreshToken": data.get("refreshToken"),
+                "profile": user_data
+            }, status=status.HTTP_200_OK)
 
         except Exception as e:
-            return Response({"error": str(e)}, status=400)
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
         
-#class LogoutView(APIView):
-    #permission_classes = [AllowAny]
-
-    #@extend_schema(
-        #request=None,
-        #responses={
-            #200: OpenApiResponse(description="Sesión cerrada exitosamente"),
-            #401: OpenApiResponse(description="Token no proporcionado o inválido")
-        #},
-        #parameters=[
-            #OpenApiParameter(
-                #name='Authorization',
-                #description='Bearer Token',
-                #required=True,
-                #type=str,
-                #location=OpenApiParameter.HEADER,
-            #)
-        #]
-    #)
-    #def post(self, request):
-        # DEBUG: Verificar qué está llegando
-        #print("🔍 === DEBUG HEADERS ===")
-        #for header, value in request.headers.items():
-            #print(f"   {header}: {value}")
-        
-        #auth_header = request.headers.get("Authorization")
-        #print(f"🔍 Authorization header recibido: '{auth_header}'")
-        #print("🔍 =====================")
-
-        #if not auth_header:
-            #print("❌ No se recibió header Authorization")
-            #return Response({"error": "Token requerido"}, status=status.HTTP_401_UNAUTHORIZED)
-
-        #try:
-            # Verificar que empiece con 'Bearer '
-            #if not auth_header.startswith('Bearer '):
-                #print(f"❌ Formato incorrecto. Header: '{auth_header}'")
-                #return Response({"error": "Formato de token inválido. Use: Bearer <token>"}, 
-                              #status=status.HTTP_401_UNAUTHORIZED)
-
-            #token = auth_header.split(" ")[1]
-            #print(f"✅ Token extraído: {token[:20]}...")
-            
-            # Verificar token con Firebase
-            #decoded = firebase_auth.verify_id_token(token)
-            #uid = decoded["uid"]
-            #print(f"✅ Token válido para usuario: {uid}")
-
-            # Revocar tokens
-            #firebase_auth.revoke_refresh_tokens(uid)
-            #print(f"✅ Tokens revocados para: {uid}")
-            
-            #return Response({
-                #"message": "Sesión cerrada exitosamente",
-                #"uid": uid
-            #}, status=status.HTTP_200_OK)
-
-        #except Exception as e:
-            #print(f"❌ Error en logout: {str(e)}")
-            #return Response({"error": f"Error en logout: {str(e)}"}, status=status.HTTP_400_BAD_REQUEST)

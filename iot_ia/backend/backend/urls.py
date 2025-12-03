@@ -35,6 +35,10 @@ urlpatterns = [
     
     path('api/usuario/', include('apps.usuario.urls')),
     path('api/creditos/', include('apps.creditos.urls')),
-    
-    
+
+    path('api/sensores/',include('apps.sensores.urls')),
+    #path('api/sensores/',include('apps.bebidas.urls')),
+    #path('api/sensores/',include('apps.creditos.urls')),
+    path('api/dispensador/',include('apps.dispensacion.urls')),
+    #path('api/sensores/',include('apps.reconocimiento.urls')),
 ]

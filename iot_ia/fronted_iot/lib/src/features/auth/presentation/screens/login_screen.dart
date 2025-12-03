@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fronted_iot/src/features/auth/presentation/providers/auth_providers.dart';
 import 'package:fronted_iot/src/core/theme/app_colors.dart';
+import 'package:fronted_iot/src/features/auth/presentation/widgets/google_sign_in_button.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -24,7 +25,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     super.dispose();
   }
 
-     @override
+  @override
   Widget build(BuildContext context) {
     ref.listen<AsyncValue<AuthState>>(authNotifierProvider, (previous, next) {
       final wasLoading = previous?.isLoading ?? false;
@@ -34,12 +35,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           context.go('/home');
         });
       }
-      
+
       if (next is AsyncError) {
         Future.microtask(() {
-    
           if (!mounted) return;
- 
+
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(next.error.toString()),
@@ -69,11 +69,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               Text(
                 'Iniciar Sesión',
                 textAlign: TextAlign.center,
- 
+
                 style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.primary,
-                    ),
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.primary,
+                ),
               ),
               const SizedBox(height: 60),
               TextFormField(
@@ -113,7 +113,24 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         strokeWidth: 2,
                       )
                     : const Text('INGRESAR'),
+              ),const SizedBox(height: 20),
+              Row(
+                children: [
+                  const Expanded(child: Divider()),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text('O', style: Theme.of(context).textTheme.bodySmall),
+                  ),
+                  const Expanded(child: Divider()),
+                ],
               ),
+              const SizedBox(height: 20),
+              GoogleSignInButton(
+                onPressed: isLoading ? () {} : () {
+                  ref.read(authNotifierProvider.notifier).signInWithGoogle();
+                },
+              ),
+
             ],
           ),
         ),

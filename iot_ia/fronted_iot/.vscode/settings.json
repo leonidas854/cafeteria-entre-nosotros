@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/leonidas/Develoment/cafeteria-entre-nosotros/iot_ia/fronted_iot/linux"
+    "cmake.sourceDirectory": "/home/leonidas/Develoment/cafeteria-entre-nosotros/iot_ia/fronted_iot/linux",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

@@ -9,6 +9,7 @@ import 'package:fronted_iot/src/features/home/presentation/screens/home_screen.d
 import 'package:fronted_iot/src/features/menu/presentation/screens/product_detail_screen.dart';
 import 'package:fronted_iot/src/features/auth/presentation/screens/welcome_screen.dart';
 import 'package:fronted_iot/src/features/profile/presentation/screens/profile_screen.dart';
+import 'package:fronted_iot/src/features/recargas/presentation/screens/recarga_screen.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) {
   final listenable = ValueNotifier<int>(0);
@@ -43,7 +44,12 @@ final goRouterProvider = Provider<GoRouter>((ref) {
           final productId = state.pathParameters['id']!;
           return ProductDetailScreen(productId: productId);
         },
+        
       ),
+      GoRoute(
+      path: '/recarga',
+      builder: (context, state) => const RecargaScreen(),
+    ),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       final authStateAsync = ref.read(authNotifierProvider);

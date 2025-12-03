@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from sqlalchemy import create_engine, text
 import pandas as pd
 import numpy as np
@@ -184,7 +184,7 @@ def obtener_recomendaciones():
         
         df_prod['score_predicho'] = scores
 
-        top_productos = df_prod.sort_values(by='score_predicho', ascending=False).head(10)
+        top_productos = df_prod.sort_values(by='score_predicho', ascending=False).head(15)
 
         recomendaciones = []
         for _, row in top_productos.iterrows():
@@ -205,6 +205,125 @@ def obtener_recomendaciones():
     except Exception as e:
         print(f"Error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+    
+
+def obtener_predicciones_base_ia():
+    if not os.path.exists(MODEL_FILE):
+        raise HTTPException(
+            status_code=404, 
+            detail="Modelo no encontrado (modelo_final.joblib). Por favor, entrena el modelo primero usando el endpoint /entrenar."
+        )
+    
+    pipeline = load(MODEL_FILE)
+    
+    query = text("""
+        SELECT 
+            "Id_producto" as id, "Nombre" as nombre, "Tipo" as tipo, "Categoria" as categoria,
+            "Sub_categoria" as sub_categoria, "Sabores" as sabores, "Precio" as precio, "Image_url" as image_url
+        FROM "Producto" WHERE "Estado" = true
+    """)
+    
+    with engine.connect() as conn:
+        df_prod = pd.read_sql(query, conn)
+
+    if df_prod.empty:
+        raise HTTPException(status_code=404, detail="No se encontraron productos activos en la base de datos.")
+
+    df_pred = df_prod.copy()
+
+    
+    df_pred['comentario'] = df_pred['nombre'] + " " + df_pred['categoria']
+    
+
+    df_pred['estado'] = 'Activo'
+    df_pred['estado_activo'] = 1  
+    df_pred['comentario_largo'] = (df_pred['comentario'].str.len() > 50).astype(int) 
+    df_pred['latitud'] = 0  
+    df_pred['longitud'] = 0 
+
+
+    df_pred = df_pred.fillna({
+        'sabores': '', 
+        'tipo': 'General', 
+        'categoria': 'General', 
+        'sub_categoria': 'General', 
+        'precio': 0
+    })
+
+    probabilidades = pipeline.predict_proba(df_pred)
+    score_esperado = np.dot(probabilidades, pipeline.classes_)
+    
+    df_prod['score_ia'] = score_esperado
+    
+    return df_prod
+
+
+@app.get("/recomendaciones/clima", tags=["Recomendaciones"])
+def obtener_recomendaciones_por_clima(
+    temperatura: float = Query(..., description="Temperatura actual en grados Celsius (°C). Ejemplo: 28.5"),
+    humedad: float = Query(..., description="Humedad relativa actual en porcentaje (%). Ejemplo: 65")
+):
+    try:
+      
+        df_recomendaciones = obtener_predicciones_base_ia()
+
+
+        def calcular_ajuste_climatico(producto):
+            categoria = str(producto['categoria']).lower()
+            ajuste = 0.0
+            
+
+            if temperatura > 25:  
+                if any(keyword in categoria for keyword in ["frias", "fríos", "frutas", "tes fríos"]):
+                    ajuste += 1.5  
+                elif "calientes" in categoria:
+                    ajuste -= 1.0  
+            
+            elif temperatura < 15: 
+                if "calientes" in categoria:
+                    ajuste += 1.5  
+                elif any(keyword in categoria for keyword in ["frias", "fríos", "frutas"]):
+                    ajuste -= 1.0  
+            
+            if humedad > 80 and "reposteria" in categoria:
+                ajuste -= 0.3  
+
+            return ajuste
+
+        df_recomendaciones['ajuste_clima'] = df_recomendaciones.apply(calcular_ajuste_climatico, axis=1)
+        
+
+        df_recomendaciones['score_final'] = df_recomendaciones['score_ia'] + df_recomendaciones['ajuste_clima']
+        
+        top_10_productos = df_recomendaciones.sort_values(by='score_final', ascending=False).head(10)
+        
+        resultado_final = []
+        for _, producto in top_10_productos.iterrows():
+             resultado_final.append({
+                "id_producto": int(producto['id']),
+                "nombre": producto['nombre'],
+                "categoria": producto['categoria'],
+                "precio": float(producto['precio']),
+                "imagen": producto['image_url'],
+                "score_final_ajustado": round(float(producto['score_final']), 2),
+                "detalle_puntuacion": {
+                    "score_base_ia": round(float(producto['score_ia']), 2),
+                    "ajuste_por_clima": round(float(producto['ajuste_clima']), 2)
+                }
+            })
+
+        return {
+            "mensaje": f"Top 10 recomendaciones para {temperatura}°C y {humedad}% de humedad.",
+            "productos": resultado_final
+        }
+        
+    except HTTPException as e:
+
+        raise e
+    except Exception as e:
+ 
+        print(f"ERROR INESPERADO: {e}")
+        raise HTTPException(status_code=500, detail="Ocurrió un error interno en el servidor.")
 
 if __name__ == "__main__":
     import uvicorn

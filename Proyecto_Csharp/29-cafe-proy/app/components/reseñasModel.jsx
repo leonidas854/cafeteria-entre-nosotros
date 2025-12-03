@@ -4,10 +4,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { request } from 'http';
-//import { error } from 'console';
-const PYTHON_API_URL = "http://localhost:8000"; 
+const PYTHON_API_URL = process.env.PYTHON_API_URL_; 
 
-// Icono de Estrella SVG para tener control total del color
+
 const StarIcon = ({ filled, onClick }) => {
   return (
     <svg
@@ -15,7 +14,7 @@ const StarIcon = ({ filled, onClick }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill={filled ? "currentColor" : "none"} // Relleno si está activa
-      stroke="currentColor" // Borde siempre visible
+      stroke="currentColor" 
       strokeWidth={2}
       className={`w-8 h-8 cursor-pointer transition-colors duration-200 ${
         filled ? 'text-yellow-400' : 'text-gray-400'
@@ -92,13 +91,11 @@ const [isSubmitting, setIsSubmitting] = useState(false);
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      {/* Agregué text-white aquí para que las etiquetas se vean bien sobre el fondo oscuro */}
       <div className="bg-[#48150A] p-6 rounded-lg w-96 text-white"> 
 
         <h2 className="text-xl text-center font-bold mb-4">AGREGAR RESEÑA</h2>
 
         <label className="block mb-2 font-semibold">Comentario:</label>
-        {/* Cambié el color del texto dentro del textarea a negro para que sea legible */}
         <textarea
           className="w-full border rounded p-2 mb-4 text-white focus:ring-0 focus:border-red-500"
           rows={3}

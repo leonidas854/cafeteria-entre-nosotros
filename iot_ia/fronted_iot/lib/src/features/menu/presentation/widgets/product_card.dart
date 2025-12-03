@@ -1,61 +1,64 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:fronted_iot/src/features/menu/domain/entities/product.dart';
+import 'package:fronted_iot/src/features/menu/domain/entities/producto_recomendado.dart';
 import 'package:fronted_iot/src/core/theme/app_colors.dart';
 
 class ProductCard extends StatelessWidget {
-  final Product product;
+  final ProductoRecomendado product;
   const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navega a la pantalla de detalle al tocar la tarjeta
-        context.go('/product/${product.id}');
+        context.go('/product/${product.idProducto}');
       },
       child: Card(
-        clipBehavior:
-            Clip.antiAlias, // Para que la imagen respete los bordes redondeados
+        clipBehavior: Clip.antiAlias,
         elevation: 3,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
             Expanded(
-              child: Image.asset(
-                'assets/images/${product.imageUrl}',
+              child: Image.network(
+                product.imagen,
                 fit: BoxFit.cover,
                 width: double.infinity,
-
-                errorBuilder: (context, error, stackTrace) {
-                  return const Icon(
-                    Icons.image_not_supported,
-                    color: Colors.grey,
-                  );
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return const Center(child: CircularProgressIndicator());
                 },
+                errorBuilder: (context, error, stackTrace) => const Icon(Icons.broken_image),
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                product.name,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.nombre,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 4), 
+                  Text(
+                    'Bs. ${product.precio.toStringAsFixed(2)}',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: AppColors.accent,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text(
-                'Bs. ${product.price.toStringAsFixed(2)}',
-                style: const TextStyle(
-                  color: AppColors.accent,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const SizedBox(height: 8),
           ],
         ),
       ),

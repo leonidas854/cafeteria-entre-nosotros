@@ -6,11 +6,11 @@ part of 'menu_providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$menuRepositoryHash() => r'40320faae1b38956b9e58e5d75591947ccb35f58';
+String _$menuRepositoryHash() => r'7f9926dfb03f6e6e316f8f82b27d858eb0fd007f';
 
 /// See also [menuRepository].
 @ProviderFor(menuRepository)
-final menuRepositoryProvider = Provider<FakeMenuRepository>.internal(
+final menuRepositoryProvider = Provider<MenuRepository>.internal(
   menuRepository,
   name: r'menuRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,12 +22,12 @@ final menuRepositoryProvider = Provider<FakeMenuRepository>.internal(
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef MenuRepositoryRef = ProviderRef<FakeMenuRepository>;
-String _$productListHash() => r'0a624025a017a9091edae41ef3c6e1d104c8978d';
+typedef MenuRepositoryRef = ProviderRef<MenuRepository>;
+String _$productListHash() => r'471d2b97b780fa9f198692f8b48efe5683eea3e7';
 
 /// See also [productList].
 @ProviderFor(productList)
-final productListProvider = FutureProvider<List<Product>>.internal(
+final productListProvider = FutureProvider<List<ProductoRecomendado>>.internal(
   productList,
   name: r'productListProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -39,8 +39,8 @@ final productListProvider = FutureProvider<List<Product>>.internal(
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef ProductListRef = FutureProviderRef<List<Product>>;
-String _$productDetailHash() => r'2b26ee7f68ab2410ee8a45b006d6798c1a5349ec';
+typedef ProductListRef = FutureProviderRef<List<ProductoRecomendado>>;
+String _$productDetailHash() => r'9697b21c17e34201dcb9086b81fc71090f18e79f';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -68,20 +68,20 @@ class _SystemHash {
 const productDetailProvider = ProductDetailFamily();
 
 /// See also [productDetail].
-class ProductDetailFamily extends Family<AsyncValue<Product>> {
+class ProductDetailFamily extends Family<AsyncValue<ProductoRecomendado>> {
   /// See also [productDetail].
   const ProductDetailFamily();
 
   /// See also [productDetail].
-  ProductDetailProvider call(String id) {
-    return ProductDetailProvider(id);
+  ProductDetailProvider call(String productId) {
+    return ProductDetailProvider(productId);
   }
 
   @override
   ProductDetailProvider getProviderOverride(
     covariant ProductDetailProvider provider,
   ) {
-    return call(provider.id);
+    return call(provider.productId);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -100,11 +100,12 @@ class ProductDetailFamily extends Family<AsyncValue<Product>> {
 }
 
 /// See also [productDetail].
-class ProductDetailProvider extends AutoDisposeFutureProvider<Product> {
+class ProductDetailProvider
+    extends AutoDisposeFutureProvider<ProductoRecomendado> {
   /// See also [productDetail].
-  ProductDetailProvider(String id)
+  ProductDetailProvider(String productId)
     : this._internal(
-        (ref) => productDetail(ref as ProductDetailRef, id),
+        (ref) => productDetail(ref as ProductDetailRef, productId),
         from: productDetailProvider,
         name: r'productDetailProvider',
         debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -113,7 +114,7 @@ class ProductDetailProvider extends AutoDisposeFutureProvider<Product> {
         dependencies: ProductDetailFamily._dependencies,
         allTransitiveDependencies:
             ProductDetailFamily._allTransitiveDependencies,
-        id: id,
+        productId: productId,
       );
 
   ProductDetailProvider._internal(
@@ -123,14 +124,14 @@ class ProductDetailProvider extends AutoDisposeFutureProvider<Product> {
     required super.allTransitiveDependencies,
     required super.debugGetCreateSourceHash,
     required super.from,
-    required this.id,
+    required this.productId,
   }) : super.internal();
 
-  final String id;
+  final String productId;
 
   @override
   Override overrideWith(
-    FutureOr<Product> Function(ProductDetailRef provider) create,
+    FutureOr<ProductoRecomendado> Function(ProductDetailRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -141,25 +142,25 @@ class ProductDetailProvider extends AutoDisposeFutureProvider<Product> {
         dependencies: null,
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
-        id: id,
+        productId: productId,
       ),
     );
   }
 
   @override
-  AutoDisposeFutureProviderElement<Product> createElement() {
+  AutoDisposeFutureProviderElement<ProductoRecomendado> createElement() {
     return _ProductDetailProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is ProductDetailProvider && other.id == id;
+    return other is ProductDetailProvider && other.productId == productId;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, id.hashCode);
+    hash = _SystemHash.combine(hash, productId.hashCode);
 
     return _SystemHash.finish(hash);
   }
@@ -167,18 +168,18 @@ class ProductDetailProvider extends AutoDisposeFutureProvider<Product> {
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-mixin ProductDetailRef on AutoDisposeFutureProviderRef<Product> {
-  /// The parameter `id` of this provider.
-  String get id;
+mixin ProductDetailRef on AutoDisposeFutureProviderRef<ProductoRecomendado> {
+  /// The parameter `productId` of this provider.
+  String get productId;
 }
 
 class _ProductDetailProviderElement
-    extends AutoDisposeFutureProviderElement<Product>
+    extends AutoDisposeFutureProviderElement<ProductoRecomendado>
     with ProductDetailRef {
   _ProductDetailProviderElement(super.provider);
 
   @override
-  String get id => (origin as ProductDetailProvider).id;
+  String get productId => (origin as ProductDetailProvider).productId;
 }
 
 // ignore_for_file: type=lint

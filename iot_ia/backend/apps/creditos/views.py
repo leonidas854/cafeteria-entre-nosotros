@@ -2,88 +2,73 @@ from rest_framework.views import APIView
 from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiResponse
 from rest_framework.response import Response
 from rest_framework import status, permissions
-from .serializers import RecargaSerializer
 from .models import Recarga
-from firebase.firebase_init import db, get_user_doc
+from firebase.firebase_init import firestore_db, get_user_doc
+from firebase_admin import firestore 
+from rest_framework.permissions import AllowAny
 
+import datetime
 
-class SaldoView(APIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    
+from .serializers import TransaccionSerializer,RecargaRequestSerializer
+
+from rest_framework import serializers
+class RealizarRecargaView(APIView):
+    permission_classes = [permissions.AllowAny]
+
     @extend_schema(
-        parameters=[
-            OpenApiParameter(
-                name="uid",
-                description="ID del usuario",
-                required=True,
-                type=str
-            )
-        ],
-        responses={200: dict}
+        request=RecargaRequestSerializer,
+        description="Realiza una recarga de saldo para un usuario específico."
     )
-    
-    def get(self, request):
-# esperaremos que el frontend envíe el uid en headers o token
-        uid = request.query_params.get('uid')
-        if not uid:
-            return Response({'error': 'uid requerido'}, status=status.HTTP_400_BAD_REQUEST)
-        user_doc = get_user_doc(uid).get()
-        if not user_doc.exists:
-            return Response({'saldo': 0})
-        data = user_doc.to_dict()
-        return Response({'saldo': data.get('saldo', 0)}) # type: ignore
-    
-    
-
-class  CrearRecargaView(APIView):
-    
-    @extend_schema(
-        request=RecargaSerializer,
-        responses={
-            201: RecargaSerializer,
-            400: OpenApiResponse(description='Error en los datos')
-        },
-        description="Crea una solicitud de recarga pendiente."
-    )
-    
-    
     def post(self, request):
-        serializer = RecargaSerializer(data=request.data)
-        if serializer.is_valid():
-            recarga = serializer.save()
-        # Tdo: generar QR o marcar recarga pendiente en Firebase
-            db.collection('recargas').document(str(recarga.id)).set(serializer.data) # type: ignore
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer = RecargaRequestSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+  
+        uid = serializer.validated_data['uid']
+        monto = serializer.validated_data['monto']
 
-
-class ConfirmarRecargaView(APIView):
-    
-    @extend_schema(
-        request=RecargaSerializer,
-        responses={
-            201: RecargaSerializer,
-            400: OpenApiResponse(description='Error en los datos')
-        },
-        description="Crea una solicitud de recarga pendiente."
-    )
-    
-    def post(self, request):
-        recarga_id = request.data.get('recarga_id')
-        if not recarga_id:
-            return Response({'error': 'recarga_id requerido'}, status=status.HTTP_400_BAD_REQUEST)
         try:
-            recarga = Recarga.objects.get(id=recarga_id) # type: ignore
-        except Recarga.DoesNotExist: # type: ignore
-            return Response({'error': 'no existe'}, status=status.HTTP_404_NOT_FOUND)
-        recarga.confirmado = True
-        recarga.save()
-        uid = recarga.uid
-        user_ref = get_user_doc(uid)
-        user = user_ref.get()
-        current = 0
-        if user.exists:
-            current = user.to_dict().get('saldo', 0) # type: ignore
-        new_saldo = float(current) + float(recarga.cantidad)
-        user_ref.set({'saldo': new_saldo}, merge=True)
-        return Response({'ok': True, 'new_saldo': new_saldo})
+            monto = float(monto)
+            if monto <= 0:
+                return Response({"error": "El monto debe ser positivo."}, status=status.HTTP_400_BAD_REQUEST)
+        except ValueError:
+            return Response({"error": "Monto inválido."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+        
+            user_ref = firestore_db.collection("usuarios").document(uid)
+
+          
+            transaction = firestore_db.transaction()
+
+            @firestore.transactional
+            def update_saldo_in_transaction(trans, user_doc_ref, monto_recarga):
+          
+                user_doc = user_doc_ref.get(transaction=trans)
+                
+                saldo_actual = 0
+                if user_doc.exists:
+                    saldo_actual = user_doc.to_dict().get('saldo', 0)
+                
+                nuevo_saldo = saldo_actual + monto_recarga
+                
+          
+                trans.set(user_doc_ref, {'saldo': nuevo_saldo}, merge=True)
+                return nuevo_saldo
+
+
+            nuevo_saldo = update_saldo_in_transaction(transaction, user_ref, monto)
+            
+
+            firestore_db.collection('transacciones').add({
+                'uid': uid,
+                'tipo': 'recarga',
+                'monto': monto,
+                'descripcion': 'Recarga de saldo',
+                'timestamp': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+            })
+
+            return Response({"mensaje": "Recarga exitosa", "nuevo_saldo": nuevo_saldo}, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            return Response({"error": f"Error al procesar la recarga: {e}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

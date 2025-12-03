@@ -8,7 +8,7 @@ import 'package:fronted_iot/src/core/utils/logger.dart';
 
 final dioProvider = Provider<Dio>((ref) {
 
-  final baseUrl = dotenv.env['API_BASE_URL'] ?? 'http://locahost:5000/api';
+  final baseUrl = dotenv.env['API_BASE_URL'] ?? 'http://localhost:5000/api';
   logger.i('API Base URL: $baseUrl'); 
 
   final dio = Dio(BaseOptions(

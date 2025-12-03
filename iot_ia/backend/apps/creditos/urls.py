@@ -1,8 +1,6 @@
 from django.urls import path
-from .views import CrearRecargaView, ConfirmarRecargaView, SaldoView
+from .views import RealizarRecargaView
 
 urlpatterns = [
-    path('crear/', CrearRecargaView.as_view()),
-    path('confirmar/', ConfirmarRecargaView.as_view()),
-    path('saldo/', SaldoView.as_view()),
+    path('hacer_recarga/', RealizarRecargaView.as_view()),
 ]

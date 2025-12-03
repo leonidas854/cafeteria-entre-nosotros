@@ -5,20 +5,20 @@ import { agregarProductoAlCarrito } from '@/app/api/Carrito';
 import {getProductoPorId} from '@/app/api/productos';
 import toast, { Toaster } from 'react-hot-toast';
 // URL de tu API Python
-const PYTHON_API_URL = "http://localhost:8000"; 
+const PYTHON_API_URL = process.env.NEXT_PUBLIC_PYTHON_API_URL_; 
 
 export default function RecomendadosCarousel({ onSelectProduct ,onCarritoUpdated}) {
   const [productos, setProductos] = useState([]);
    const [addingId, setAddingId] = useState(null);
   const [loading, setLoading] = useState(true);
   const scrollContainer = useRef(null);
-  const IMAGE_BASE_URL = "http://localhost:5054";
+  const IMAGE_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL ;
 
 
   const fetchRecomendaciones = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`${PYTHON_API_URL}/recomendaciones`);
+      const res = await axios.get(PYTHON_API_URL);
       if (res.data && res.data.productos) {
         setProductos(res.data.productos);
       }

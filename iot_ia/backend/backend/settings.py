@@ -12,10 +12,21 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+BROKER_HOST = env("BROKER_HOST")
+BROKER_PORT = env("BROKER_PORT")
+RECOMENDACIONES=env("RECOMENDACIONES")
+IMAGE_SERVER_BASE_URL = env("IMAGE_SERVER_BASE_URL")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -68,6 +79,7 @@ INSTALLED_APPS = [
     'apps.dispensacion',
     'apps.sensores',
     'apps.reconocimiento',
+    'firebase',
 ]
 
 MIDDLEWARE = [

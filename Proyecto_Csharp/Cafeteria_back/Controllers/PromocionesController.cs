@@ -1,5 +1,5 @@
 ﻿using Cafeteria_back.Custom;
-using Cafeteria_back.Entities.DTOs;
+using Cafeteria_back.DTOs;
 using Cafeteria_back.Entities.Promociones;
 using Cafeteria_back.Entities.Tablas_intermedias;
 using Cafeteria_back.Repositories.Interfaces;

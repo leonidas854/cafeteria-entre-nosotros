@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Cafeteria_back.Entities.Extras;
 using Cafeteria_back.Repositorio;
-using Cafeteria_back.Entities.DTOs;
+using Cafeteria_back.DTOs;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Microsoft.AspNetCore.Authorization;
 using Cafeteria_back.Custom;

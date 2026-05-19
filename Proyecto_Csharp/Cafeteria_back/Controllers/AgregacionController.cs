@@ -1,5 +1,5 @@
 ﻿using Cafeteria_back.Custom;
-using Cafeteria_back.Entities.DTOs;
+using Cafeteria_back.DTOs;
 using Cafeteria_back.Entities.Productos;
 using Cafeteria_back.Repositorio;
 using Microsoft.AspNetCore.Authorization;

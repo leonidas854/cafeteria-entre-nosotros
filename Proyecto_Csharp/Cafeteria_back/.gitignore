@@ -9,3 +9,5 @@ bin/Debug/net9.0/
 *.suo
 *.nupkg
 *.vs/
+CLAUDE.md
+.claude

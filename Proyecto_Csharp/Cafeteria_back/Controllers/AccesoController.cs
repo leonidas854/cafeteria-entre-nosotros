@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Cafeteria_back.Entities.Usuarios;
 using Cafeteria_back.Repositorio;
 using Cafeteria_back.Custom;
-using Cafeteria_back.Entities.DTOs;
+using Cafeteria_back.DTOs;
 
 using Cafeteria_back.Repositories.Implementations;
 using Cafeteria_back.Repositories.Interfaces;

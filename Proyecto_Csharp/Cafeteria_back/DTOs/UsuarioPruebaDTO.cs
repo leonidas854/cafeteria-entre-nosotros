@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Npgsql.TypeMapping;
 
-namespace Cafeteria_back.Repositories.DTOs
+namespace Cafeteria_back.DTOs
 {
     public class UsuarioPruebaDTO
     {

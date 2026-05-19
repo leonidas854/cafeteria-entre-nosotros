@@ -1,4 +1,4 @@
-﻿namespace Cafeteria_back.Entities.DTOs
+﻿namespace Cafeteria_back.DTOs
 {
     public class EmpleadoDTO
     {

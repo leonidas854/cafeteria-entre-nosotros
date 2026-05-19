@@ -1,36 +1,14 @@
-﻿using Cafeteria_back.Data;
+using Cafeteria_back.Data;
 using Cafeteria_back.Entities.Carritos;
 using Cafeteria_back.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace Cafeteria_back.Repositories.Services
+using Cafeteria_back.Services.Interfaces;
+
+namespace Cafeteria_back.Services.Implementations
 {
-
-    public interface ICarritoService
-    {
-       
-        Task<Carrito?> ObtenerCarritoParaUsuarioAsync(long usuarioId, string rol);
-
-      
-        Task<Carrito> AgregarItemAsync(long usuarioId, string rol, ItemCarrito itemNuevo, long? clienteIdParaEmpleado = null);
-
-       
-        Task<Carrito?> ModificarCantidadItemAsync(long usuarioId, string rol, ModificarCantidadDto dto);
-
-      
-        Task<Carrito?> ModificarExtrasItemAsync(long usuarioId, string rol, ModificarExtrasDto dto);
-
-     
-        Task<Carrito?> QuitarItemAsync(long usuarioId, string rol, QuitarProductoDto dto);
-
-       
-        Task<Carrito?> AsignarCarritoAClienteAsync(string carritoId, long clienteId);
-
-      
-        Task EliminarCarritoCompletoAsync(string id);
-    }
 
     public class CarritoService : ICarritoService
     {
@@ -152,6 +130,33 @@ namespace Cafeteria_back.Repositories.Services
         public async Task EliminarCarritoCompletoAsync(string id)
         {
             await _carritos.DeleteOneAsync(c => c.Id == id);
+        }
+
+        // Métodos de compatibilidad temporal
+        public async Task<Carrito?> ObtenerPorId(string id)
+        {
+            return await _carritos.Find(c => c.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<Carrito?> ObtenerPorCliente(long clienteId)
+        {
+            return await _carritos.Find(c => c.ClienteId == clienteId).FirstOrDefaultAsync();
+        }
+
+        public async Task Eliminar(string id)
+        {
+            await EliminarCarritoCompletoAsync(id);
+        }
+
+        public async Task Crear(Carrito carrito)
+        {
+            await _carritos.InsertOneAsync(carrito);
+        }
+
+        public async Task<Carrito> Crear_(Carrito carrito)
+        {
+            await _carritos.InsertOneAsync(carrito);
+            return carrito;
         }
 
         #region Métodos Privados y Lógica de Promociones

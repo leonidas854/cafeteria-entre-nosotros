@@ -1,7 +1,7 @@
 ﻿using Cafeteria_back.Repositorio;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Cafeteria_back.Entities.DTOs;
+using Cafeteria_back.DTOs;
 using Cafeteria_back.Entities.Productos;
 using Microsoft.EntityFrameworkCore;
 

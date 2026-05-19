@@ -1,4 +1,4 @@
-﻿namespace Cafeteria_back.Repositories.DTOs
+﻿namespace Cafeteria_back.DTOs
 {
     public class ProductoDTO
     {

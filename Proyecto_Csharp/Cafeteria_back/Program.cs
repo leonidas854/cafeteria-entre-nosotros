@@ -6,11 +6,11 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Cafeteria_back.Custom;
 using Cafeteria_back.Entities.Usuarios;
+using Cafeteria_back.Services.Interfaces;
+using Cafeteria_back.Services.Implementations;
 using Cafeteria_back.Repositories.Implementations;
 using Cafeteria_back.Repositories.Interfaces;
 using Cafeteria_back.Data;
-using Cafeteria_back.Entities.Carritos;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +30,13 @@ options.UseNpgsql(connecctionString));
 //google maps
 builder.Services.AddHttpClient<GoogleMapsApi>();
 builder.Services.AddScoped<IGeolocalizador, GoogleMapsAdapter>();
+
+// AutoMapper y HttpContextAccessor
+builder.Services.AddAutoMapper(cfg => {
+    cfg.AddProfile<Cafeteria_back.Mappings.MappingProfile>();
+});
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<Cafeteria_back.Services.Interfaces.ICurrentUserService, Cafeteria_back.Services.Implementations.CurrentUserService>();
 
 //jwt
 builder.Services.AddSingleton<IUtilidades, Utilidades>();
@@ -101,6 +108,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseStaticFiles(); 
+
+// Añadir Middleware de Excepciones Globales
+app.UseMiddleware<Cafeteria_back.Middlewares.GlobalExceptionMiddleware>();
 
 app.UseCors("NewPolicy");
 app.UseHttpsRedirection();

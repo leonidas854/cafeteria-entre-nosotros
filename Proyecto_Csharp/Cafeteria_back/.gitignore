@@ -11,3 +11,7 @@ bin/Debug/net9.0/
 *.vs/
 CLAUDE.md
 .claude
+
+# Logs
+logs/
+*.log

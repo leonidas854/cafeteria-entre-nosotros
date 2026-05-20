@@ -11,8 +11,17 @@ using Cafeteria_back.Services.Implementations;
 using Cafeteria_back.Repositories.Implementations;
 using Cafeteria_back.Repositories.Interfaces;
 using Cafeteria_back.Data;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configurar Serilog
+builder.Host.UseSerilog((context, services, configuration) => configuration
+    .ReadFrom.Configuration(context.Configuration)
+    .ReadFrom.Services(services)
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.File("logs/cafeteria-log-.txt", rollingInterval: RollingInterval.Day));
 
 // Add services to the container.
 
@@ -37,6 +46,16 @@ builder.Services.AddAutoMapper(cfg => {
 });
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<Cafeteria_back.Services.Interfaces.ICurrentUserService, Cafeteria_back.Services.Implementations.CurrentUserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUsuariosService, UsuariosService>();
+builder.Services.AddScoped<IProductoService, ProductoService>();
+builder.Services.AddScoped<IPedidoService, PedidoService>();
+builder.Services.AddScoped<ICajeroService, CajeroService>();
+builder.Services.AddScoped<IExtrasService, ExtrasService>();
+builder.Services.AddScoped<IPromocionesService, PromocionesService>();
+builder.Services.AddScoped<IAgregacionService, AgregacionService>();
+builder.Services.AddScoped<IResenaService, ResenaService>();
+builder.Services.AddScoped<IHomeService, HomeService>();
 
 //jwt
 builder.Services.AddSingleton<IUtilidades, Utilidades>();

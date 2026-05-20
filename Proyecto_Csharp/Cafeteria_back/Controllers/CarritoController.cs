@@ -1,5 +1,6 @@
 using Cafeteria_back.Entities.Carritos;
 using Cafeteria_back.Services.Interfaces;
+using Cafeteria_back.Custom;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,9 +29,9 @@ namespace Cafeteria_back.Controllers
             var carrito = await _carritoService.ObtenerCarritoParaUsuarioAsync(usuarioId, rol);
 
             if (carrito == null)
-                return NotFound(new { message = "Carrito no encontrado." });
+                return NotFound(ApiResponse<object>.ErrorResponse("Carrito no encontrado."));
 
-            return Ok(carrito);
+            return Ok(ApiResponse<Carrito>.SuccessResponse(carrito));
         }
 
         [HttpPost("agregar")]
@@ -40,16 +41,15 @@ namespace Cafeteria_back.Controllers
             var rol = _currentUserService.GetUserRole();
 
             if (carritoReq.Items == null || !carritoReq.Items.Any())
-                return BadRequest("El carrito debe contener al menos un ítem.");
+                return BadRequest(ApiResponse<object>.ErrorResponse("El carrito debe contener al menos un ítem."));
 
-            // Si se agregan múltiples items en una petición, iteramos sobre ellos
             Carrito? carritoActualizado = null;
             foreach (var item in carritoReq.Items)
             {
                 carritoActualizado = await _carritoService.AgregarItemAsync(usuarioId, rol, item, carritoReq.ClienteId);
             }
 
-            return Ok(carritoActualizado);
+            return Ok(ApiResponse<Carrito>.SuccessResponse(carritoActualizado!));
         }
 
         [HttpPut("modificar-cantidad")]
@@ -61,9 +61,9 @@ namespace Cafeteria_back.Controllers
             var carrito = await _carritoService.ModificarCantidadItemAsync(usuarioId, rol, dto);
 
             if (carrito == null) 
-                return NotFound("Ítem no encontrado en el carrito.");
+                return NotFound(ApiResponse<object>.ErrorResponse("Ítem no encontrado en el carrito."));
 
-            return Ok(carrito);
+            return Ok(ApiResponse<Carrito>.SuccessResponse(carrito));
         }
 
         [HttpPut("modificar-extras")]
@@ -75,9 +75,9 @@ namespace Cafeteria_back.Controllers
             var carrito = await _carritoService.ModificarExtrasItemAsync(usuarioId, rol, dto);
 
             if (carrito == null) 
-                return NotFound("Producto no encontrado en el carrito.");
+                return NotFound(ApiResponse<object>.ErrorResponse("Producto no encontrado en el carrito."));
 
-            return Ok(carrito);
+            return Ok(ApiResponse<Carrito>.SuccessResponse(carrito));
         }
 
         [HttpDelete("quitar-producto")]
@@ -89,16 +89,16 @@ namespace Cafeteria_back.Controllers
             var carrito = await _carritoService.QuitarItemAsync(usuarioId, rol, dto);
 
             if (carrito == null) 
-                return NotFound("Carrito o producto no encontrado.");
+                return NotFound(ApiResponse<object>.ErrorResponse("Carrito o producto no encontrado."));
 
-            return Ok(carrito);
+            return Ok(ApiResponse<Carrito>.SuccessResponse(carrito));
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Eliminar(string id)
         {
             await _carritoService.EliminarCarritoCompletoAsync(id);
-            return Ok();
+            return Ok(ApiResponse<object>.SuccessResponse(null, "Carrito eliminado exitosamente."));
         }
 
         [HttpPut("asignar-a-cliente/{carritoId}")]
@@ -107,9 +107,9 @@ namespace Cafeteria_back.Controllers
             var carrito = await _carritoService.AsignarCarritoAClienteAsync(carritoId, clienteId);
 
             if (carrito == null)
-                return NotFound("Carrito no encontrado.");
+                return NotFound(ApiResponse<object>.ErrorResponse("Carrito no encontrado."));
 
-            return Ok(carrito);
+            return Ok(ApiResponse<Carrito>.SuccessResponse(carrito));
         }
     }
 }

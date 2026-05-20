@@ -1,6 +1,7 @@
 using System.Net;
 using System.Text.Json;
 using Cafeteria_back.Exceptions;
+using Cafeteria_back.Custom;
 
 namespace Cafeteria_back.Middlewares
 {
@@ -23,7 +24,7 @@ namespace Cafeteria_back.Middlewares
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Ocurrió una excepción no controlada: {ex.Message}");
+                _logger.LogError(ex, "Ocurrió una excepción no controlada: {Message}", ex.Message);
                 await HandleExceptionAsync(context, ex);
             }
         }
@@ -32,23 +33,47 @@ namespace Cafeteria_back.Middlewares
         {
             context.Response.ContentType = "application/json";
             
-            var statusCode = exception switch
+            int statusCode = (int)HttpStatusCode.InternalServerError;
+            string message = "Ocurrió un error interno en el servidor.";
+            string? details = null;
+
+            switch (exception)
             {
-                NotFoundException => (int)HttpStatusCode.NotFound,
-                UnauthorizedException => (int)HttpStatusCode.Unauthorized,
-                BadRequestException => (int)HttpStatusCode.BadRequest,
-                _ => (int)HttpStatusCode.InternalServerError
-            };
+                case NotFoundException e:
+                    statusCode = (int)HttpStatusCode.NotFound;
+                    message = e.Message;
+                    break;
+                case UnauthorizedException e:
+                    statusCode = (int)HttpStatusCode.Unauthorized;
+                    message = e.Message;
+                    break;
+                case BadRequestException e:
+                    statusCode = (int)HttpStatusCode.BadRequest;
+                    message = e.Message;
+                    break;
+                case System.Data.Common.DbException dbEx:
+                    statusCode = (int)HttpStatusCode.ServiceUnavailable;
+                    message = "Servicio no disponible. Error al conectar con la base de datos.";
+                    details = dbEx.Message;
+                    break;
+                case Exception dbInnerEx when dbInnerEx.InnerException is System.Data.Common.DbException || dbInnerEx.GetType().Name.Contains("NpgsqlException"):
+                    statusCode = (int)HttpStatusCode.ServiceUnavailable;
+                    message = "Servicio no disponible. Error al conectar con la base de datos.";
+                    details = dbInnerEx.Message;
+                    break;
+                default:
+                    statusCode = (int)HttpStatusCode.InternalServerError;
+                    message = "Ocurrió un error inesperado.";
+                    details = exception.Message;
+                    break;
+            }
 
             context.Response.StatusCode = statusCode;
 
-            var result = JsonSerializer.Serialize(new
-            {
-                StatusCode = statusCode,
-                Message = exception.Message,
-                // Mostrar el stack trace solo en desarrollo podría ser buena práctica, pero por ahora mostramos mensaje genérico
-                Details = statusCode == 500 ? "Ocurrió un error interno en el servidor." : null
-            });
+            var response = ApiResponse<object>.ErrorResponse(message, details);
+            
+            var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+            var result = JsonSerializer.Serialize(response, options);
 
             return context.Response.WriteAsync(result);
         }

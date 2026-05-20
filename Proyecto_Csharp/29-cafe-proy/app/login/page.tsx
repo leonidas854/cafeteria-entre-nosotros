@@ -2,10 +2,10 @@
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from "next/link";
-import "./login.css";
-import "./menu.css";
-import Menu from "../components/Menu.jsx";
-import { loginEmpleado } from '@/app/api/LoginEmpleado'; 
+import "@/src/features/auth/styles/login.css";
+import "@/src/features/auth/styles/menu.css";
+import Menu from "@/src/shared/components/Menu.jsx";
+import { loginEmpleado } from '@/src/features/auth/api/LoginEmpleado'; 
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function LoginPage() {

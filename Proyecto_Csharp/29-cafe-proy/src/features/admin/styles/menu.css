@@ -1,0 +1,130 @@
+/* app/admin/styles/menu.css */
+
+/* Asegúrate que :root con --duration esté definido en admin-global.css o aquí si este menú se usa fuera de admin */
+/* :root {
+  --duration: 0.4s;
+} */
+
+.menu {
+  margin: 0;
+  display: flex;
+  width: 32.05em; /* Considera usar rem o % para mejor adaptabilidad si el font-size base cambia */
+  font-size: 1.5em; /* Tamaño base para los elementos del menú */
+  padding: 0 2.85em;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  align-items: center;
+  justify-content: center;
+  background-color: #000; /* var(--bgColorMenu) -> puedes definir --bgColorMenu en :root si quieres */
+  z-index: 1000; /* Asegurar que esté por encima de otros contenidos */
+}
+
+.menu__item {
+  all: unset; /* Resetea todos los estilos por defecto del botón/link */
+  box-sizing: border-box; /* Incluir padding y borde en el ancho/alto total */
+  flex-grow: 1;
+  z-index: 100; /* Debe ser menor que el z-index del .menu__border si este último lo cubre */
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  /* border-radius: 50%; No es necesario en el item, sino en el ::before */
+  align-items: center;
+  will-change: transform;
+  justify-content: center;
+  padding: 0.55em 0 0.85em;
+  transition: transform var(--timeOut, var(--duration)); /* var(--timeOut) no está definido, usa var(--duration) */
+}
+
+.menu__item::before {
+  content: "";
+  z-index: -1; /* Detrás del icono */
+  width: 4.2em;
+  height: 4.2em;
+  border-radius: 50%;
+  position: absolute;
+  transform: scale(0);
+  transition: background-color var(--duration), transform var(--duration);
+  /* background-color: var(--bgColorItem); -> Define --bgColorItem en :root o en el item.active */
+}
+
+.menu__item.active {
+  transform: translate3d(0, -0.8em, 0);
+}
+
+.menu__item.active::before {
+  transform: scale(1);
+  background-color: #525252; /* Ejemplo de var(--bgColorItem), ajusta el color */
+}
+
+.icon {
+  width: 2.6em;
+  height: 2.6em;
+  stroke: white;
+  fill: transparent;
+  stroke-width: 1pt; /* o 1px, 1pt es más para impresión */
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 400; /* Longitud aproximada del path del SVG */
+  stroke-dashoffset: 0; /* Estado inicial, el borde es visible */
+}
+
+.menu__item.active .icon {
+  animation: strok 1.5s reverse; /* 'reverse' significa que va de 0 a 400 en dashoffset */
+  /* Si la animación es para dibujar el ícono, debería ser 'normal', no 'reverse' */
+  /* animation: drawIcon 1.5s forwards; */
+}
+
+/* Animación para dibujar el trazo del icono */
+@keyframes strok { /* Nombre original */
+  from { /* Estado final de la animación (cuando NO está activo y se está "borrando") */
+    stroke-dashoffset: 0;
+  }
+  to { /* Estado inicial de la animación (cuando NO está activo y se está "borrando") */
+    stroke-dashoffset: 400; /* El trazo se "retrae" */
+  }
+}
+/* Si la idea es que el icono se dibuje al activarse:
+@keyframes drawIcon {
+  from {
+    stroke-dashoffset: 400; // Comienza "invisible"
+  }
+  to {
+    stroke-dashoffset: 0; // Termina "dibujado"
+  }
+}
+*/
+
+
+.menu__border {
+  left: 0; /* Se ajustará dinámicamente con JS */
+  top: -0.6em; /* Posición de la "ola" por encima del menú */
+  width: 10.9em; /* Ancho de la "ola" SVG */
+  height: 2.4em; /* Alto de la "ola" SVG */
+  position: absolute;
+  clip-path: url(#menu); /* Referencia al <clipPath> del SVG */
+  will-change: transform;
+  background-color: #000; /* var(--bgColorMenu) -> Mismo color que .menu */
+  transition: transform var(--timeOut, var(--duration)); /* var(--timeOut) no definido */
+  z-index: 50; /* Debe estar por debajo de .menu__item para que el item sea clickeable */
+}
+
+.svgContainer { /* Contenedor para el SVG del clip-path */
+  width: 0;
+  height: 0;
+  position: absolute; /* Para que no ocupe espacio en el layout */
+}
+
+@media screen and (max-width: 50em) { /* Aproximadamente 800px si 1em = 16px */
+  .menu {
+    font-size: 0.8em; /* Reduce el tamaño general del menú en pantallas pequeñas */
+    width: 90%; /* Hacerlo más adaptable al ancho de pantalla */
+    padding: 0 1em; /* Ajustar padding lateral */
+  }
+  /* Podrías necesitar ajustar también .menu__item::before y .icon si es necesario */
+}

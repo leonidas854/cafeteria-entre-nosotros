@@ -1,10 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Menu from '@/app/components/Menu';
+import Menu from '@/src/shared/components/Menu';
 import toast, { Toaster } from 'react-hot-toast';
-import "./menu.css";
-import { fetchPedidos, fetchVentas } from "@/app/api/Pedido";
+import "@/src/features/estado-pedido/styles/menu.css";
+import { fetchPedidos, fetchVentas } from "@/src/features/cajero/api/Pedido";
 
 interface Extra {
   extra_id: number;

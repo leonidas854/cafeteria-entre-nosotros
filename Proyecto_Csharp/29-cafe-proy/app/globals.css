@@ -5,6 +5,11 @@
   --foreground: #907761;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

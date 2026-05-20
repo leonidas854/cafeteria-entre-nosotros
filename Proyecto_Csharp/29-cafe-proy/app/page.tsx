@@ -1,20 +1,20 @@
-  'use client';
+'use client';
   import React from "react";
-  import Menu from "./components/Menu"; 
+  import Menu from "@/src/shared/components/Menu"; 
   import Link from 'next/link';
   import Image from "next/image";
-  import "@/app/Menu.css"
-  import "@/app/servicios.css"
-  import "@/app/Tarjetas.css"
+  import "@/src/features/menu/styles/menu.css"
+  import "@/src/shared/styles/servicios.css"
+  import "@/src/features/menu/styles/Tarjetas.css"
   import Script from 'next/script';
   import Spline from '@splinetool/react-spline';
   import "slick-carousel/slick/slick.css";
   import "slick-carousel/slick/slick-theme.css";
   import { useEffect, useState, useRef } from 'react';
   import Slider from 'react-slick';
-  import { Promocion, getPromociones } from '@/app/api/Promociones';
-  import { agregarProductoAlCarrito } from '@/app/api/Carrito';
-  import { getProductos,getProductoPorId, Producto } from '@/app/api/productos';
+  import { Promocion, getPromociones } from '@/src/features/admin/api/Promociones';
+  import { agregarProductoAlCarrito } from '@/src/features/menu/api/Carrito';
+  import { getProductos,getProductoPorId, Producto } from '@/src/features/menu/api/productos';
   import toast,{Toaster} from 'react-hot-toast';
   import { ParallaxProvider, ParallaxBanner, BannerLayer, Parallax } from 'react-scroll-parallax';
 

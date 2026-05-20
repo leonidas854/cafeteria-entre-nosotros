@@ -5,22 +5,22 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import toast, { Toaster } from 'react-hot-toast';
 
-import WelcomeSection from './componentes/WelcomeSection';
-import ProductManagementSection from './componentes/ProductManagementSection';
-import EmployeeManagementSection from './componentes/EmployeeManagementSection';
-import PromotionManagementSection from './componentes/PromotionManagementSection';
-import ReportsSection, { ReportItem, EmpleadoAPIResponse } from './componentes/ReportsSection';
-import AnimatedMenu from '../components/MenuAnimado';
+import WelcomeSection from '@/src/features/admin/components/WelcomeSection';
+import ProductManagementSection from '@/src/features/admin/components/ProductManagementSection';
+import EmployeeManagementSection from '@/src/features/admin/components/EmployeeManagementSection';
+import PromotionManagementSection from '@/src/features/admin/components/PromotionManagementSection';
+import ReportsSection, { ReportItem, EmpleadoAPIResponse } from '@/src/features/admin/components/ReportsSection';
+import AnimatedMenu from '@/src/shared/components/MenuAnimado';
 
-import './styles/admin-global.css';
-import './styles/product-section.css';
-import './styles/employee-section.css';
-import './styles/promotion-section.css';
-import './styles/reports-section.css';
+import '@/src/features/admin/styles/admin-global.css';
+import '@/src/features/admin/styles/product-section.css';
+import '@/src/features/admin/styles/employee-section.css';
+import '@/src/features/admin/styles/promotion-section.css';
+import '@/src/features/admin/styles/reports-section.css';
 
-import type { Producto } from '@/app/api/productos';
+import type { Producto } from '@/src/features/menu/api/productos';
 
-import type { Promocion2 } from '@/app/api/Promociones';
+import type { Promocion2 } from '@/src/features/admin/api/Promociones';
 
 export default function AdminDashboardPage() {
   const [currentUser, setCurrentUser] = useState('');

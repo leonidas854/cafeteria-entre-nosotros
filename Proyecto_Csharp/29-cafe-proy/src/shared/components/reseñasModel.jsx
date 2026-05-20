@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import axios from 'axios';
+import { apiClient as axios } from '@/src/shared/api/apiClient';
 import toast from 'react-hot-toast';
 import { request } from 'http';
 const PYTHON_API_URL = process.env.PYTHON_API_URL_; 

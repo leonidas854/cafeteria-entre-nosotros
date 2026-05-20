@@ -1,0 +1,99 @@
+/* app/admin/styles/reports-section.css */
+
+.reporte { /* ID #Repor, clase .reporte */
+  /* background-color: #f0eae3; Color original del fondo de inicio, el provisto era bg-gray-100 */
+  /* padding: 2rem; */ /* Tailwind */
+  font-family: 'URWClassico-Bold', serif; /* Aplicado globalmente a la sección */
+   border-radius: 40px;
+}
+
+.reporte-titulo {
+  font-family: 'URWClassico-Bold', serif;
+  font-weight: bold;
+  text-align: center;
+  color: #38100e;
+  font-size: 4rem; /* Original */
+  position: relative;
+  /* top: px; */ /* Tailwind */
+  z-index: 1;
+}
+
+.check-container,
+.fecha-container {
+  background-color: #ffffff; /* Originalmente #000000, pero bg-white en el JSX. Usando blanco. */
+  /* Clases de Tailwind ya definen padding, rounded, shadow */
+}
+
+/* Estilos para los inputs y labels dentro de los contenedores de filtro si Tailwind no es suficiente */
+.check-container input[type="text"],
+.fecha-container input[type="text"], /* Originalmente texto, cambiado a date en el TSX */
+.fecha-container input[type="date"] {
+  /* Tailwind ya define border, rounded, px, py. Aquí para overrides. */
+  /* color: #333; */ /* Color del texto del input */
+}
+
+.check-container label span,
+.fecha-container label span {
+  color: #333; /* Color del texto de los radio buttons */
+}
+
+.reporte-button {
+  /* background-image: linear-gradient(to right, #BDC3C9, #ceb66d); Original */
+  /* Tailwind ya define bg-blue-500, text-white, py, px, rounded, hover:bg-blue-600, transition */
+  /* Si quieres el gradiente original, descomenta y ajusta: */
+  /*
+  background-image: linear-gradient(to right, #a2a7ac, #bca75f);
+  color: white;
+  border: none;
+  font-family: 'URWClassico-Bold', serif; // Ya debería heredar
+  cursor: pointer;
+  transition: background-image 0.3s ease;
+  */
+}
+/*
+.reporte-button:hover {
+  background-image: linear-gradient(to right, #8f9499, #ae9a52);
+}
+*/
+
+
+/* Contenedores de tarjetas de reporte */
+.report-clientes {
+  background-color: #6e3e14;
+}
+
+.report-venta {
+  background-color: #9a6d4c;
+}
+
+.report-empleados {
+  background-color: #bb7640;
+}
+
+.report-productos {
+  background-color: #ddb89c;
+}
+
+/* Estilos para las tarjetas individuales dentro de los contenedores de reporte */
+/* Estos ya están mayormente manejados por Tailwind (.bg-white, .rounded-lg, .shadow, etc.) */
+/* Podrías añadir aquí overrides o estilos muy específicos no cubiertos por Tailwind. */
+.report-clientes h3,
+.report-venta h3,
+.report-empleados h3,
+.report-productos h3 {
+  /* text-white text-xl font-bold text-center mb-4 - Ya en Tailwind */
+}
+
+.report-clientes .bg-white h4, /* Targeting h4 dentro de la tarjeta */
+.report-venta .bg-white h4,
+.report-empleados .bg-white h4,
+.report-productos .bg-white h4 {
+  /* font-bold text-gray-800 - Ya en Tailwind */
+}
+
+.report-clientes .bg-white p, /* Targeting p dentro de la tarjeta */
+.report-venta .bg-white p,
+.report-empleados .bg-white p,
+.report-productos .bg-white p {
+  /* text-sm text-gray-600 - Ya en Tailwind */
+}

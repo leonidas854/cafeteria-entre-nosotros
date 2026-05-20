@@ -2,21 +2,23 @@
 import { useEffect, useState } from 'react';
 import {QRCodeSVG} from 'qrcode.react';
 import Link from 'next/link';
-import Menu from './../components/Menu.jsx';
-import TipoPago from '../components/TipoPago';
-import PantallaPreparando from '../components/PantallaPreprando';
+import Menu from '@/src/shared/components/Menu.jsx';
+import TipoPago from '@/src/shared/components/TipoPago';
+import PantallaPreparando from '@/src/shared/components/PantallaPreprando';
 import axios from 'axios';
 import { useRouter } from 'next/navigation'; 
 import toast, { Toaster } from 'react-hot-toast';
-import "./menu.css"
+import "@/src/features/compra/styles/menu.css"
 import {
   obtenerCarrito,
   modificarCantidad,
   modificarExtras,
    quitarProducto,
     eliminarCarrito
-} from '@/app/api/Carrito';
-import './compra.css';
+} from '@/src/features/menu/api/Carrito';
+import '@/src/features/compra/styles/compra.css';
+import { CheckoutSummary } from '@/src/features/compra/components/CheckoutSummary';
+import { CheckoutForm } from '@/src/features/compra/components/CheckoutForm';
 
 interface ExtraCarrito {
   extraId: number;
@@ -45,7 +47,7 @@ interface Carrito {
 
 
 
-export const obtenerExtrasDisponibles = async (): Promise<ExtraCarrito[] | null | { error: string }> => {
+const obtenerExtrasDisponibles = async (): Promise<ExtraCarrito[] | null | { error: string }> => {
   try {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Extras`, {
       withCredentials: true
@@ -287,165 +289,25 @@ const fetchCarrito = async () => {
         </div>
 
         {/* Productos */}
-        <div className="border-b pb-6 space-y-4">
-          <h3 className="text-xl font-semibold mb-4">Tus productos</h3>
-          {loading ? (
-            <p className="text-gray-500">Cargando productos...</p>
-          ) : carrito?.items?.length === 0 ? (
-            <p className="text-gray-500">Tu carrito está vacío.</p>
-          ) : (
-            carrito?.items?.map((item, index) => {
-              const precio = item.precioPromocional ?? item.precioUnitario;
-              const extras = item.extras?.reduce((s, e) => s + e.precio, 0) || 0;
-              const subtotal = (precio + extras) * item.cantidad;
+        <CheckoutSummary
+          loading={loading}
+          carrito={carrito}
+          setCarrito={setCarrito}
+          esCafe={esCafe}
+          handleModificarCantidad={handleModificarCantidad}
+          handleQuitarExtra={handleQuitarExtra}
+          handleAgregarExtra={handleAgregarExtra}
+          extrasDisponibles={extrasDisponibles}
+        />
 
-              return (
-                <div key={index} className="flex justify-between gap-4 items-start border-t pt-4">
-                  <div className="flex-1">
-                    <p className="font-medium text-base">{item.nombre}</p>
-
-                    {/* Cantidad */}
-                    <div className="flex items-center gap-2 my-2">
-                      <button
-                        onClick={() => handleModificarCantidad(item, Math.max(1, item.cantidad - 1))}
-                        className="producto-cantidad-boton"
-                      >
-                        -
-                      </button>
-                      <span className="font-semibold">{item.cantidad}</span>
-                      <button
-                        onClick={() => handleModificarCantidad(item, item.cantidad + 1)}
-                        className="producto-cantidad-boton"
-                      >
-                        +
-                      </button>
-                    </div>
-
-                    {/* Extras actuales */}
-                    {item.extras?.length > 0 && (
-                      <ul className="mt-1 ml-4 list-disc text-sm text-gray-600">
-                        {item.extras.map(extra => (
-                          <li key={`${item.productoId}-${extra.extraId}`} className="flex justify-between items-center">
-                            <span>{extra.nombre} (+${extra.precio.toFixed(2)})</span>
-                            <button
-                              onClick={() => handleQuitarExtra(item, extra.extraId)}
-                              className="text-red-500 text-xs ml-4 hover:underline"
-                            >
-                              Quitar
-                            </button>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {/* Agregar extras si contiene café */}
-                    {(esCafe(item.nombre) || esCafe(item.categoria))  && (
-                          <div className="mt-2 ml-1 text-sm">
-                            <p className="text-gray-700 font-semibold">Agregar extras:</p>
-                            {extrasDisponibles
-  .filter(extra => extra.extraId !== undefined && !item.extras.some(e => e.extraId === extra.extraId))
-
-                              .map(extra => (
-                                <div key={`${item.productoId}-${extra.extraId}`}>
-                                  <button
-                                    onClick={() => handleAgregarExtra(item, extra)}
-                                    className="text-amber-700 hover:underline block text-left"
-                                  >
-                                    {extra.nombre} (+Bs{extra.precio.toFixed(2)})
-                                  </button>
-                                </div>
-                              ))}
-                          </div>
-                        )}
-
-
-                    {item.precioPromocional && (
-                      <p className="text-sm text-amber-600 mt-1 italic">
-                        Promoción: {item.descripcionPromocion}
-                      </p>
-                    )}
-                  </div>
-                  <p className="text-base font-bold text-gray-800 whitespace-nowrap">
-                    Bs{subtotal.toFixed(2)}
-                  </p>
-                  <button
-  onClick={async () => {
-    try {
-      await quitarProducto(
-        item.productoId,
-        item.extras.map((e) => e.extraId)
-      );
-      const actualizado = await obtenerCarrito();
-
-if (!actualizado || 'error' in actualizado) {
-  router.push('/menu');
-  return;
-}
-
-if (actualizado.items.length === 0) {
-  toast("🛒 Carrito vacío. Redirigiendo al menú...");
-  router.push('/menu');
-  return;
-}
-
-setCarrito(actualizado);
-
-    } catch (error) {
-      console.error("Error al eliminar producto:", error);
-      alert("No se pudo eliminar el producto. Intente nuevamente.");
-    }
-  }}
-  className="mt-2 text-sm text-red-600 hover:underline"
->
-  Eliminar producto
-</button>
-
-                </div>
-              );
-            })
-          )}
-        </div>
-
-      {/* Tipo de entrega */}
-<div className="border-t pt-6 space-y-3 mb-6">
-  <h3 className="text-xl font-semibold mb-4">Tipo de entrega</h3>
-  {[
-    { label: 'Delivery', value: 'Delivery' },
-    { label: 'Para Llevar', value: 'Llevar' },
-  ].map(({ label, value }) => (
-    <label key={value} className="flex items-center space-x-3">
-      <input
-        type="radio"
-        name="entrega"
-        value={value}
-        checked={tipoEntrega === value}
-        onChange={() => setTipoEntrega(value)}
-        className="h-4 w-4 text-amber-600 focus:ring-amber-500"
-      />
-      <span>{label}</span>
-    </label>
-  ))}
-</div>
-
-
-{/* Método de pago */}
-<div className="border-t pt-6">
-        <h3 className="text-xl font-semibold mb-4">Método de pago</h3>
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="w-full py-2 px-4 border border-gray-300 rounded-md text-left hover:bg-gray-50"
-        >
-          {metodoPagoSeleccionado || "Seleccionar método de pago..."}
-        </button>
-        
-      </div>
-
-      {/* Modal de tipo de pago */}
-      <TipoPago
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onPaymentSelect={(metodo) => setMetodoPagoSeleccionado(metodo)}
-      />
+        <CheckoutForm
+          tipoEntrega={tipoEntrega}
+          setTipoEntrega={setTipoEntrega}
+          metodoPagoSeleccionado={metodoPagoSeleccionado}
+          setIsModalOpen={setIsModalOpen}
+          isModalOpen={isModalOpen}
+          setMetodoPagoSeleccionado={setMetodoPagoSeleccionado}
+        />
 
         {/* Total final */}
         <div className="flex justify-between items-center py-4 border-t border-b mt-6">

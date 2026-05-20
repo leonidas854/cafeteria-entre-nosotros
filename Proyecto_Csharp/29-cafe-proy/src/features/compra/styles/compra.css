@@ -1,0 +1,179 @@
+/* ========== TIPOGRAFÍA ========== */
+@font-face {
+  font-family: 'URWClassico-Bold';
+  src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ========== CONTENEDORES GENERALES ========== */
+.page-container {
+  background-color: #000;
+  min-height: 100vh;
+  font-family: 'URWClassico-Bold', serif;
+  color: #f5f5f5; /* texto claro */
+}
+
+/* ========== ENCABEZADO DE COMPRA ========== */
+.compra-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a; /* fondo más oscuro */
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+
+.compra-header svg {
+  color: #f59e0b; /* ámbar claro */
+}
+
+.compra-header .resumen-total {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+/* ========== PRODUCTOS EN CARRITO ========== */
+.producto-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #333; /* línea más clara */
+}
+.text-gray-800 {
+  color: #f5f5f5 !important;
+}
+.producto-cantidad-boton {
+  background-color: #333; /* fondo oscuro */
+  color: #f5f5f5;          /* texto claro */
+  border: 1px solid #666;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.producto-cantidad-boton:hover {
+  background-color: #555;
+}
+
+
+
+.producto-nombre {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.producto-cantidad {
+  color: #ccc;
+  font-size: 0.875rem;
+}
+
+.producto-extra {
+  margin-left: 1rem;
+  font-size: 0.875rem;
+  color: #aaa;
+}
+
+.producto-total {
+  font-weight: bold;
+  white-space: nowrap;
+  color:  #333;
+}
+
+/* ========== PROMOCIÓN ========== */
+.promocion {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #fbbf24;
+  margin-top: 4px;
+}
+
+/* ========== MÉTODOS DE PAGO ========== */
+.metodo-pago {
+  border-top: 1px solid #444;
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+.metodo-pago h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.metodo-pago label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: background 0.2s;
+  color: #ddd;
+}
+
+.metodo-pago input[type='radio'] {
+  accent-color: #f59e0b;
+}
+
+/* ========== BOTÓN DE CONFIRMACIÓN ========== */
+.boton-confirmar {
+  display: block;
+  width: 100%;
+  background: linear-gradient(to right, #f59e0b, #d97706);
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-family: 'URWClassico-Bold', serif;
+  letter-spacing: 1px;
+}
+
+.boton-confirmar:hover {
+  background: linear-gradient(to right, #b45309, #92400e);
+  transform: scale(1.02);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
+}
+
+/* ========== BOTÓN FLOTANTE ========== */
+.compra-btn {
+  animation: pulse 2s infinite;
+}
+
+.compra-btn button {
+  font-family: 'URWClassico-Bold', serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: linear-gradient(to right, #f59e0b, #d97706);
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.compra-btn button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #b45309, #92400e);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}

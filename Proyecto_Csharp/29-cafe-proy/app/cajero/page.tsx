@@ -3,18 +3,18 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import toast, { Toaster } from 'react-hot-toast';
-import { getProductos, Producto, getProductoPorId} from '@/app/api/productos';
-import { logout} from '@/app/api/CerrarSesC';
-import { getUsuarioAutenticado} from '@/app/api/LoginEmpleado';
-import { getPromociones, Promocion } from '@/app/api/Promociones';
-import { ItemPedido, GroupedProducts } from './type';
-import CajeroHeader from './componentess/CajeroHeader';
-import ProductCardCajero from './componentess/ProductCardCajero';
-import CurrentOrderDisplay from './componentess/CurrentOrderDisplay';
-import CategoryFilterPanel from './componentess/CategoryFilterPanel';
-import { UsuarioNit } from './componentess/CurrentOrderDisplay';
-import { agregarProductoAlCarrito } from '@/app/api/Carrito';
-import { obtenerCarrito } from '@/app/api/Carrito';
+import { getProductos, Producto, getProductoPorId} from '@/src/features/menu/api/productos';
+import { logout} from '@/src/features/auth/api/CerrarSesC';
+import { getUsuarioAutenticado} from '@/src/features/auth/api/LoginEmpleado';
+import { getPromociones, Promocion } from '@/src/features/admin/api/Promociones';
+import { ItemPedido, GroupedProducts } from '@/src/features/cajero/type';
+import CajeroHeader from '@/src/features/cajero/components/CajeroHeader';
+import ProductCardCajero from '@/src/features/cajero/components/ProductCardCajero';
+import CurrentOrderDisplay from '@/src/features/cajero/components/CurrentOrderDisplay';
+import CategoryFilterPanel from '@/src/features/cajero/components/CategoryFilterPanel';
+import { UsuarioNit } from '@/src/features/cajero/components/CurrentOrderDisplay';
+import { agregarProductoAlCarrito } from '@/src/features/menu/api/Carrito';
+import { obtenerCarrito } from '@/src/features/menu/api/Carrito';
 
 
 
@@ -428,6 +428,3 @@ const handleAgregarPromo = async (productoIds: number[]) => {
     </div>
   );
 }
-
-
-

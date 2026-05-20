@@ -1,8 +1,8 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
-import { agregarProductoAlCarrito } from '@/app/api/Carrito';
-import {getProductoPorId} from '@/app/api/productos';
+import { apiClient as axios } from '@/src/shared/api/apiClient';
+import { agregarProductoAlCarrito } from '@/src/features/menu/api/Carrito';
+import {getProductoPorId} from '@/src/features/menu/api/productos';
 import toast, { Toaster } from 'react-hot-toast';
 // URL de tu API Python
 const PYTHON_API_URL = process.env.NEXT_PUBLIC_PYTHON_API_URL_; 

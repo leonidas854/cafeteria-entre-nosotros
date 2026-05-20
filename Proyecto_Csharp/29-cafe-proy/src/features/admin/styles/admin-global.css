@@ -1,0 +1,172 @@
+:root {
+  --duration: 0.4s;
+  --color-principal: #907761;
+  --color-secundario: #f0eae3;
+  --color-borde: #c7b69f;
+  --color-texto: #e8cb9a;
+}
+
+
+.admin-product-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* se adapta en pantallas pequeñas */
+}
+
+.formulario {
+  flex: 1 1 600px; /* crece pero no es fijo */
+  min-width: 300px;
+}
+
+.fondo {
+  flex: 1 1 400px;
+  min-width: 300px;
+  background: url('/your-image.jpg') center/cover no-repeat;
+  color: var(--color-texto);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* Asegura que el contenido pueda crecer verticalmente */
+html, body {
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .admin-product-section {
+    flex-direction: column;
+  }
+
+  .fondo {
+    background-size: contain;
+  }
+}
+
+/* Fuente personalizada */
+@font-face {
+  font-family: 'URWClassico-Bold';
+  src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Fondo y scroll global */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  font-family: 'URWClassico-Bold', serif;
+  background-color: var(--color-principal);
+}
+
+/* Contenedor general del dashboard */
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+/* Estilo de bienvenida o inicio */
+.inicio {
+  background-color: var(--color-secundario);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Formularios */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: var(--color-borde);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--color-texto);
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #613e3e;
+}
+
+.form-input::placeholder {
+  color: var(--color-texto);
+}
+
+/* Estilo base para secciones */
+.section {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Listas internas con scroll opcional */
+.section-scrollable {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+/* Animación genérica */
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .form-input {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .inicio {
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+}

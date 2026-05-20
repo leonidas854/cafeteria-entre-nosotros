@@ -1,12 +1,12 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { loginCliente } from '@/app/api/LoginCliente';
-import { logout } from '@/app/api/CerrarSesC';
+import { loginCliente } from '@/src/features/auth/api/LoginCliente';
+import { logout } from '@/src/features/auth/api/CerrarSesC';
 import { useState } from 'react';
-import Menu from "../components/Menu.jsx";
+import Menu from "@/src/shared/components/Menu.jsx";
 import Link from "next/link";
-import "./loginC.css";
-import "./menu.css";
+import "@/src/features/auth/styles/loginC.css";
+import "@/src/features/auth/styles/menuCliente.css";
 
 export default function LoginClientePage() {
   const [usuario, setUsuario] = useState('');
@@ -39,7 +39,6 @@ export default function LoginClientePage() {
   const handleLogout = async () => {
     try {
       await logout();
-      //router.push('/LoginClientes'); 
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error al cerrar sesión');
     }
@@ -97,8 +96,6 @@ export default function LoginClientePage() {
             </button>
           </Link>
 
-
-          
           <button 
             type="button" 
             className="login-button secondary-button" 
@@ -106,18 +103,10 @@ export default function LoginClientePage() {
               e.preventDefault();
               router.push('/menu');
               handleLogout();
-              
-            }
-              
-            
-            }
+            }}
           >
             Cerrar Sesión
           </button>
-          
-
-          
-          
         </form>
       </div>
     </div>

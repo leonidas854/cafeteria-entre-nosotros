@@ -1,0 +1,458 @@
+/* ============================================================
+   Auth Shared Styles — Cafetería Entre Amigos
+   Estilos compartidos para Login Empleados, Login Clientes, Registro
+   
+   Paleta:
+   primary: #5D4037  |  primary-light: #8D6E63  |  primary-dark: #3E2723
+   accent: #d97706   |  accent-hover: #b45309
+   text: #1f2937     |  text-muted: #6b7280
+   border: #d1d5db   |  error: #dc2626  |  error-bg: #fef2f2
+   input-bg: #f9fafb |  input-focus: #8D6E63
+   card-bg: rgba(255,255,255,0.96)
+   shadow: 0 4px 24px rgba(93,64,55,0.12)
+   ============================================================ */
+
+/* ---- Page container (full-page with background) ---- */
+.authPage {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.authPage::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Background variants */
+.bgLogin::before {
+  background-image: url('https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330782/img9_jnaiyf.jpg');
+  opacity: 0.55;
+}
+
+.bgLoginCliente::before {
+  background-image: url('https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330782/img4_j2n8w1.jpg');
+  opacity: 0.5;
+}
+
+.bgRegistro::before {
+  background-image: url('https://res.cloudinary.com/dmrszrfdx/image/upload/v1763330380/img1_auyjjp.jpg');
+  opacity: 0.55;
+}
+
+/* ---- Auth Card ---- */
+.authCard {
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(93, 64, 55, 0.12);
+  position: relative;
+  z-index: 1;
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+.authCardWide {
+  max-width: 580px;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Logo & Title ---- */
+.authLogo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.authTitle {
+  text-align: center;
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #3E2723;
+  margin-bottom: 0.25rem;
+}
+
+.authSubtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+/* Variant: white title (for dark BG pages like registro) */
+.authTitleWhite {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* ---- Form ---- */
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ---- Grid for registro ---- */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 540px) {
+  .formGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formGridFullWidth {
+  grid-column: 1 / -1;
+}
+
+/* ---- Input Group ---- */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.label {
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.requiredMark {
+  color: #dc2626;
+  margin-left: 2px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #f9fafb;
+  color: #1f2937;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.inputWithIcon {
+  padding-left: 2.5rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #8D6E63;
+  box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.15);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.inputError {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.inputError:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+/* ---- Error & Helper Text ---- */
+.errorText {
+  font-size: 0.8rem;
+  color: #dc2626;
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  animation: shakeX 0.3s ease;
+}
+
+@keyframes shakeX {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.helperText {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+/* ---- Form-level error alert ---- */
+.formAlert {
+  background-color: #fef2f2;
+  border-left: 4px solid #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 0.5rem;
+}
+
+.formAlertText {
+  font-size: 0.85rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* ---- Buttons ---- */
+.btnPrimary {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: #5D4037;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background-color: #8D6E63;
+}
+
+.btnPrimary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnAccent {
+  composes: btnPrimary;
+  background-color: #d97706;
+}
+
+.btnAccent:hover:not(:disabled) {
+  background-color: #b45309;
+}
+
+.btnSecondary {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  color: #1f2937;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-family: 'URWClassico-Bold', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btnSecondary:hover {
+  background-color: #f5f0eb;
+  border-color: #8D6E63;
+}
+
+/* ---- Spinner for loading buttons ---- */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.3);
+  border-top: 2.5px solid #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+.spinnerDark {
+  composes: spinner;
+  border-color: rgba(0,0,0,0.15);
+  border-top-color: #5D4037;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---- Divider ---- */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: #d1d5db;
+}
+
+.dividerText {
+  font-size: 0.8rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+/* ---- Footer link ---- */
+.authFooter {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.authLink {
+  color: #5D4037;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.authLink:hover {
+  color: #d97706;
+  text-decoration: underline;
+}
+
+/* ---- Password Strength Bar ---- */
+.strengthContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.strengthBarTrack {
+  flex: 1;
+  height: 4px;
+  background-color: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strengthBarFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strengthLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 70px;
+}
+
+/* ---- Map (LocationPicker) ---- */
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mapWrapper {
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.mapWrapper:hover {
+  border-color: #8D6E63;
+}
+
+.mapLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.mapAddress {
+  font-size: 0.8rem;
+  color: #5D4037;
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .authCard {
+    padding: 1.75rem 1.25rem;
+    margin: 0 0.5rem;
+  }
+
+  .authTitle {
+    font-size: 1.4rem;
+  }
+}
+
+/* ---- Font Face ---- */
+@font-face {
+  font-family: 'URWClassico-Bold';
+  src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

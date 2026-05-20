@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Menu from '@/src/shared/components/Menu';
 import toast, { Toaster } from 'react-hot-toast';
-import "@/src/features/estado-pedido/styles/menu.css";
+// Menu.jsx ahora importa su propio CSS (navbar.css)
 import { fetchPedidos, fetchVentas } from "@/src/features/cajero/api/Pedido";
 
 interface Extra {

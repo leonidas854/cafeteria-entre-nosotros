@@ -1,4 +1,5 @@
-const API_URL_ = `${process.env.NEXT_PUBLIC_BACKEND_URL}/Acceso/Login`;
+import { apiClient } from '@/src/shared/api/apiClient';
+import toast from 'react-hot-toast';
 
 export interface LoginClienteRequest {
   usuario: string;
@@ -8,43 +9,36 @@ export interface LoginClienteRequest {
 export interface LoginClienteResponse {
   isSuccess: boolean;
   message?: string;
-  token?: string; // aunque se guarda en cookie, lo puedes conservar si lo devuelves
+  token?: string;
 }
 
+/**
+ * Login de clientes usando el apiClient centralizado.
+ * Guarda el nombre del cliente en sessionStorage si tiene éxito.
+ */
 export const loginCliente = async (
   credenciales: LoginClienteRequest
 ): Promise<LoginClienteResponse> => {
-  const response = await fetch(API_URL_, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  credentials: 'include',
-  body: JSON.stringify(credenciales),
-});
+  try {
+    const response = await apiClient.post('/Acceso/Login', credenciales, {
+      withCredentials: true,
+    });
 
-const text = await response.text(); 
+    // apiClient interceptor extrae .data, así que response.data ya es el payload
+    const data = response.data ?? response;
 
-if (!text) {
-  throw new Error("Respuesta vacía del servidor");
-}
+    if (data?.isSuccess || data === true) {
+      sessionStorage.setItem('nombreCliente', credenciales.usuario);
+      return { isSuccess: true, message: 'Login exitoso' };
+    }
 
-let data;
-try {
-  data = JSON.parse(text);
-} catch {
-  throw new Error("La respuesta del servidor no es un JSON válido");
-}
-
-if (!response.ok || !data.isSuccess) {
-  throw new Error(data.message || "Error en login");
-}
-
-
-if (data.isSuccess) {
-    sessionStorage.setItem('nombreCliente', credenciales.usuario);
+    // Respuesta controlada pero no exitosa
+    const msg = data?.message || 'Credenciales incorrectas';
+    toast.error(msg);
+    return { isSuccess: false, message: msg };
+  } catch (error: any) {
+    const msg = error?.message || 'Error de conexión al iniciar sesión';
+    toast.error(msg);
+    return { isSuccess: false, message: msg };
   }
-
-return data;
-
 };

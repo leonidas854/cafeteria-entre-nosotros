@@ -8,7 +8,7 @@ import PantallaPreparando from '@/src/shared/components/PantallaPreprando';
 import axios from 'axios';
 import { useRouter } from 'next/navigation'; 
 import toast, { Toaster } from 'react-hot-toast';
-import "@/src/features/compra/styles/menu.css"
+// Menu.jsx ahora importa su propio CSS (navbar.css)
 import {
   obtenerCarrito,
   modificarCantidad,

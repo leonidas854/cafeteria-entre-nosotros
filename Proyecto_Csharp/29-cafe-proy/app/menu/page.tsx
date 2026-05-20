@@ -11,7 +11,7 @@ import Bienvenida from '@/src/shared/components/Bienvenida';
 import { ProductGrid } from '@/src/features/menu/components/ProductGrid';
 import { useMenu } from '@/src/features/menu/hooks/useMenu';
 
-import "@/src/features/menu/styles/menu.css";
+// Menu.jsx ahora importa su propio CSS (navbar.css)
 import "@/src/features/menu/styles/catalogo.css";
 
 export default function HomePage() {

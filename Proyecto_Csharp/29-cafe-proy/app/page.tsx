@@ -3,7 +3,7 @@
   import Menu from "@/src/shared/components/Menu"; 
   import Link from 'next/link';
   import Image from "next/image";
-  import "@/src/features/menu/styles/menu.css"
+  // Menu.jsx ahora importa su propio CSS (navbar.css)
   import "@/src/shared/styles/servicios.css"
   import "@/src/features/menu/styles/Tarjetas.css"
   import Script from 'next/script';

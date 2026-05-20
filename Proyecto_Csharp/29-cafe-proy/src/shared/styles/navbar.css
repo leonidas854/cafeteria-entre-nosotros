@@ -1,0 +1,241 @@
+/* ============================================================
+   Navbar Styles — Cafetería Entre Amigos
+   Archivo único y centralizado para el navbar.
+   Se importa solo desde el componente Menu.jsx.
+   ============================================================ */
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    padding: 0 1.5rem;
+    background: rgba(35, 35, 35, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    font-family: 'URWClassico-Bold', serif;
+    transition: background 0.3s ease;
+}
+
+/* ---- Logo & Brand ---- */
+.logo-brand-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+}
+
+.cafe-name {
+    font-family: 'URWClassico-Bold', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* ---- Menu Items (Desktop) ---- */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.menu-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.menu-item:hover {
+    background-color: rgba(199, 182, 159, 0.3);
+    color: #fff;
+}
+
+.menu-item.active {
+    background-color: rgba(171, 150, 128, 0.5);
+    color: #fff;
+}
+
+.menu-icon {
+    font-size: 1.1rem;
+}
+
+/* ---- Hamburger Button (Mobile) ---- */
+.hamburger-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.hamburger-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---- Sidebar (Mobile Menu) ---- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    background: #2c2c2c;
+    z-index: 3000;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-header {
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #252525;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-title {
+    color: #fff;
+    font-family: 'URWClassico-Bold', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.sidebar-close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.sidebar-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0.75rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.sidebar-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sidebar-item:hover {
+    background: rgba(199, 182, 159, 0.2);
+    color: #fff;
+}
+
+.sidebar-item.active {
+    background: rgba(171, 150, 128, 0.4);
+    color: #fff;
+}
+
+/* ---- Overlay ---- */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.sidebar-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .menu-container {
+        height: 60px;
+        padding: 0 1rem;
+    }
+
+    .cafe-name {
+        font-size: 1.15rem;
+    }
+
+    .logo {
+        height: 38px;
+        width: 38px;
+    }
+}
+
+/* ---- Spacer (para evitar que el contenido se oculte bajo el navbar fijo) ---- */
+.nav-spacer {
+    height: 70px;
+}
+
+@media (max-width: 768px) {
+    .nav-spacer {
+        height: 60px;
+    }
+}
+
+/* ---- Font Face ---- */
+@font-face {
+    font-family: 'URWClassico-Bold';
+    src: url('/Fonts/URWClassico-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

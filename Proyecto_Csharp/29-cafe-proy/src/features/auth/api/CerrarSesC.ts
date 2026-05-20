@@ -1,34 +1,37 @@
-
-const API_LOGOUT_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/Acceso/Logout`;
+import { apiClient } from '@/src/shared/api/apiClient';
+import toast from 'react-hot-toast';
 
 export interface LogoutResponse {
   isSuccess: boolean;
   message?: string;
 }
 
+/**
+ * Cerrar sesión del cliente.
+ * Limpia sessionStorage, localStorage y cookies.
+ */
 export const logout = async (): Promise<LogoutResponse> => {
   try {
-    const response = await fetch(API_LOGOUT_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
+    await apiClient.post('/Acceso/Logout', {}, {
+      withCredentials: true,
     });
 
+    // Limpiar almacenamiento local
     sessionStorage.removeItem('nombreCliente');
-    
     document.cookie = 'token=; Max-Age=0; path=/;';
     localStorage.clear();
     sessionStorage.clear();
 
-    if (!response.ok) {
-      throw new Error('Error en la respuesta del servidor');
-    }
+    return { isSuccess: true, message: 'Sesión cerrada' };
+  } catch (error: any) {
+    // Limpiar de todas formas aunque falle el backend
+    sessionStorage.removeItem('nombreCliente');
+    document.cookie = 'token=; Max-Age=0; path=/;';
+    localStorage.clear();
+    sessionStorage.clear();
 
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    throw new Error('Error al cerrar sesión');
+    const msg = error?.message || 'Error al cerrar sesión';
+    toast.error(msg);
+    return { isSuccess: false, message: msg };
   }
 };
